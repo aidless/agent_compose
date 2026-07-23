@@ -1,0 +1,4993 @@
+{
+  "agent": "ReAct-template",
+  "split": "test_productivity",
+  "n_tasks": 30,
+  "task_metrics": [
+    {
+      "task_id": "T3_stock_sms_22761",
+      "template_id": "T3_stock_sms",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.06666666666666667,
+      "n_calls": 10,
+      "expected_chain": [
+        "search_web",
+        "unit_convert",
+        "send_sms",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T7_multi_search_merge_35329",
+      "template_id": "T7_multi_search_merge",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 1.0,
+      "aba": 0.06666666666666667,
+      "n_calls": 10,
+      "expected_chain": [
+        "search_web",
+        "search_web",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T7_multi_search_merge_73470",
+      "template_id": "T7_multi_search_merge",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 1.0,
+      "aba": 0.06666666666666667,
+      "n_calls": 10,
+      "expected_chain": [
+        "search_web",
+        "search_web",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T2_file_compute_write_87928",
+      "template_id": "T2_file_compute_write",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.06666666666666667,
+      "n_calls": 10,
+      "expected_chain": [
+        "read_file",
+        "calculator",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T8_file_chain_args_68045",
+      "template_id": "T8_file_chain_args",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.05,
+      "n_calls": 10,
+      "expected_chain": [
+        "read_file",
+        "calculator",
+        "send_email",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "T6_timezone_meeting_44737",
+      "template_id": "T6_timezone_meeting",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.1,
+      "n_calls": 10,
+      "expected_chain": [
+        "get_datetime",
+        "unit_convert",
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "T7_multi_search_merge_50844",
+      "template_id": "T7_multi_search_merge",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 1.0,
+      "aba": 0.06666666666666667,
+      "n_calls": 10,
+      "expected_chain": [
+        "search_web",
+        "search_web",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T6_timezone_meeting_51098",
+      "template_id": "T6_timezone_meeting",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.1,
+      "n_calls": 10,
+      "expected_chain": [
+        "get_datetime",
+        "unit_convert",
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "T3_stock_sms_33669",
+      "template_id": "T3_stock_sms",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.06666666666666667,
+      "n_calls": 10,
+      "expected_chain": [
+        "search_web",
+        "unit_convert",
+        "send_sms",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T7_multi_search_merge_24862",
+      "template_id": "T7_multi_search_merge",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 1.0,
+      "aba": 0.06666666666666667,
+      "n_calls": 10,
+      "expected_chain": [
+        "search_web",
+        "search_web",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T2_file_compute_write_99491",
+      "template_id": "T2_file_compute_write",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.06666666666666667,
+      "n_calls": 10,
+      "expected_chain": [
+        "read_file",
+        "calculator",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T4_url_extract_email_23108",
+      "template_id": "T4_url_extract_email",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.1,
+      "n_calls": 10,
+      "expected_chain": [
+        "fetch_url",
+        "calculator",
+        "send_email",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "T10_price_monitor_alert_33452",
+      "template_id": "T10_price_monitor_alert",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.075,
+      "n_calls": 10,
+      "expected_chain": [
+        "search_web",
+        "unit_convert",
+        "send_sms",
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "T7_multi_search_merge_44358",
+      "template_id": "T7_multi_search_merge",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 1.0,
+      "aba": 0.06666666666666667,
+      "n_calls": 10,
+      "expected_chain": [
+        "search_web",
+        "search_web",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T3_stock_sms_65520",
+      "template_id": "T3_stock_sms",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.06666666666666667,
+      "n_calls": 10,
+      "expected_chain": [
+        "search_web",
+        "unit_convert",
+        "send_sms",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T6_timezone_meeting_80453",
+      "template_id": "T6_timezone_meeting",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.1,
+      "n_calls": 10,
+      "expected_chain": [
+        "get_datetime",
+        "unit_convert",
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "T4_url_extract_email_65725",
+      "template_id": "T4_url_extract_email",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.1,
+      "n_calls": 10,
+      "expected_chain": [
+        "fetch_url",
+        "calculator",
+        "send_email",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "T3_stock_sms_63010",
+      "template_id": "T3_stock_sms",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.06666666666666667,
+      "n_calls": 10,
+      "expected_chain": [
+        "search_web",
+        "unit_convert",
+        "send_sms",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T7_multi_search_merge_64884",
+      "template_id": "T7_multi_search_merge",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 1.0,
+      "aba": 0.06666666666666667,
+      "n_calls": 10,
+      "expected_chain": [
+        "search_web",
+        "search_web",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T6_timezone_meeting_61968",
+      "template_id": "T6_timezone_meeting",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.1,
+      "n_calls": 10,
+      "expected_chain": [
+        "get_datetime",
+        "unit_convert",
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "T6_timezone_meeting_11200",
+      "template_id": "T6_timezone_meeting",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.1,
+      "n_calls": 10,
+      "expected_chain": [
+        "get_datetime",
+        "unit_convert",
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "T7_multi_search_merge_32925",
+      "template_id": "T7_multi_search_merge",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 1.0,
+      "aba": 0.06666666666666667,
+      "n_calls": 10,
+      "expected_chain": [
+        "search_web",
+        "search_web",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T3_stock_sms_66122",
+      "template_id": "T3_stock_sms",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.06666666666666667,
+      "n_calls": 10,
+      "expected_chain": [
+        "search_web",
+        "unit_convert",
+        "send_sms",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T8_file_chain_args_51419",
+      "template_id": "T8_file_chain_args",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.05,
+      "n_calls": 10,
+      "expected_chain": [
+        "read_file",
+        "calculator",
+        "send_email",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "T10_price_monitor_alert_20363",
+      "template_id": "T10_price_monitor_alert",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.125,
+      "n_calls": 10,
+      "expected_chain": [
+        "search_web",
+        "unit_convert",
+        "send_sms",
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "T3_stock_sms_58825",
+      "template_id": "T3_stock_sms",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.06666666666666667,
+      "n_calls": 10,
+      "expected_chain": [
+        "search_web",
+        "unit_convert",
+        "send_sms",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T10_price_monitor_alert_83246",
+      "template_id": "T10_price_monitor_alert",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.075,
+      "n_calls": 10,
+      "expected_chain": [
+        "search_web",
+        "unit_convert",
+        "send_sms",
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "T3_stock_sms_85738",
+      "template_id": "T3_stock_sms",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.06666666666666667,
+      "n_calls": 10,
+      "expected_chain": [
+        "search_web",
+        "unit_convert",
+        "send_sms",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T10_price_monitor_alert_68473",
+      "template_id": "T10_price_monitor_alert",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.125,
+      "n_calls": 10,
+      "expected_chain": [
+        "search_web",
+        "unit_convert",
+        "send_sms",
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "T3_stock_sms_31510",
+      "template_id": "T3_stock_sms",
+      "split": "test_productivity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 0.5,
+      "aba": 0.06666666666666667,
+      "n_calls": 10,
+      "expected_chain": [
+        "search_web",
+        "unit_convert",
+        "send_sms",
+        "send_email"
+      ]
+    }
+  ],
+  "traces": [
+    {
+      "task_id": "T3_stock_sms_22761",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+14155551003",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_d62b1697"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T7_multi_search_merge_35329",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "neural networks"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/report_a.md",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+10000000000",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: neural networks",
+              "url": "https://example.com/r1?q=neural+networks",
+              "snippet": "Mock snippet 1 discussing neural networks. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: neural networks",
+              "url": "https://example.com/r2?q=neural+networks",
+              "snippet": "Mock snippet 2 discussing neural networks. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: neural networks",
+              "url": "https://example.com/r3?q=neural+networks",
+              "snippet": "Mock snippet 3 discussing neural networks. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_3c611e66"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T7_multi_search_merge_73470",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "neural networks"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/report_b.md",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+10000000000",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: neural networks",
+              "url": "https://example.com/r1?q=neural+networks",
+              "snippet": "Mock snippet 1 discussing neural networks. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: neural networks",
+              "url": "https://example.com/r2?q=neural+networks",
+              "snippet": "Mock snippet 2 discussing neural networks. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: neural networks",
+              "url": "https://example.com/r3?q=neural+networks",
+              "snippet": "Mock snippet 3 discussing neural networks. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_3c611e66"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T2_file_compute_write_87928",
+      "calls": [
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/numbers_c.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result_a.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+10000000000",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": "10,20,30,40,50\n5,15,25,35,45\n"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_3c611e66"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T8_file_chain_args_68045",
+      "calls": [
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "alice@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/values_a.csv"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+10000000000",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_778bbedd"
+          }
+        },
+        {
+          "success": true,
+          "output": "100,200,300\n50,75,125\n"
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_3c611e66"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T6_timezone_meeting_44737",
+      "calls": [
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "14:30",
+            "duration_minutes": 60
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+10000000000",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "America/New_York"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_6b071376",
+            "conflicts": []
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_3c611e66"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "America/New_York",
+            "weekday": "Thursday"
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T7_multi_search_merge_50844",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "transformer models"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/report_b.md",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+10000000000",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: transformer models",
+              "url": "https://example.com/r1?q=transformer+models",
+              "snippet": "Mock snippet 1 discussing transformer models. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: transformer models",
+              "url": "https://example.com/r2?q=transformer+models",
+              "snippet": "Mock snippet 2 discussing transformer models. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: transformer models",
+              "url": "https://example.com/r3?q=transformer+models",
+              "snippet": "Mock snippet 3 discussing transformer models. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_3c611e66"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T6_timezone_meeting_51098",
+      "calls": [
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "16:00",
+            "duration_minutes": 60
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+10000000000",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "Europe/London"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_78ff2b7a",
+            "conflicts": []
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_3c611e66"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "Europe/London",
+            "weekday": "Thursday"
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T3_stock_sms_33669",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "KRW"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+14155551003",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": 138000.0
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_d62b1697"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T7_multi_search_merge_24862",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "transformer models"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/report_b.md",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+10000000000",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: transformer models",
+              "url": "https://example.com/r1?q=transformer+models",
+              "snippet": "Mock snippet 1 discussing transformer models. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: transformer models",
+              "url": "https://example.com/r2?q=transformer+models",
+              "snippet": "Mock snippet 2 discussing transformer models. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: transformer models",
+              "url": "https://example.com/r3?q=transformer+models",
+              "snippet": "Mock snippet 3 discussing transformer models. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_3c611e66"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T2_file_compute_write_99491",
+      "calls": [
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/numbers_b.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result_a.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+10000000000",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": "10,20,30,40,50\n5,15,25,35,45\n"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_3c611e66"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T4_url_extract_email_23108",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com/stats2"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "alice@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+10000000000",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com/stats2. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_778bbedd"
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_3c611e66"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T10_price_monitor_alert_33452",
+      "calls": [
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+14155551002",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_9fc120a6"
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T7_multi_search_merge_44358",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "machine learning"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/report_b.md",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+10000000000",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: machine learning",
+              "url": "https://example.com/r1?q=machine+learning",
+              "snippet": "Mock snippet 1 discussing machine learning. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: machine learning",
+              "url": "https://example.com/r2?q=machine+learning",
+              "snippet": "Mock snippet 2 discussing machine learning. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: machine learning",
+              "url": "https://example.com/r3?q=machine+learning",
+              "snippet": "Mock snippet 3 discussing machine learning. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_3c611e66"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T3_stock_sms_65520",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "JPY"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+14155551002",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": 15700.0
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_9fc120a6"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T6_timezone_meeting_80453",
+      "calls": [
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "10:00",
+            "duration_minutes": 60
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+10000000000",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "America/New_York"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_24b08b93",
+            "conflicts": []
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_3c611e66"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "America/New_York",
+            "weekday": "Thursday"
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T4_url_extract_email_65725",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com/stats1"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "alice@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+10000000000",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com/stats1. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_778bbedd"
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_3c611e66"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T3_stock_sms_63010",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "JPY"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+14155551002",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": 15700.0
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_9fc120a6"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T7_multi_search_merge_64884",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "machine learning"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/report_a.md",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+10000000000",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: machine learning",
+              "url": "https://example.com/r1?q=machine+learning",
+              "snippet": "Mock snippet 1 discussing machine learning. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: machine learning",
+              "url": "https://example.com/r2?q=machine+learning",
+              "snippet": "Mock snippet 2 discussing machine learning. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: machine learning",
+              "url": "https://example.com/r3?q=machine+learning",
+              "snippet": "Mock snippet 3 discussing machine learning. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_3c611e66"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T6_timezone_meeting_61968",
+      "calls": [
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "16:00",
+            "duration_minutes": 60
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+10000000000",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_78ff2b7a",
+            "conflicts": []
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_3c611e66"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T6_timezone_meeting_11200",
+      "calls": [
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "16:00",
+            "duration_minutes": 60
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+10000000000",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_78ff2b7a",
+            "conflicts": []
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_3c611e66"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T7_multi_search_merge_32925",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "machine learning"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/report_a.md",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+10000000000",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: machine learning",
+              "url": "https://example.com/r1?q=machine+learning",
+              "snippet": "Mock snippet 1 discussing machine learning. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: machine learning",
+              "url": "https://example.com/r2?q=machine+learning",
+              "snippet": "Mock snippet 2 discussing machine learning. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: machine learning",
+              "url": "https://example.com/r3?q=machine+learning",
+              "snippet": "Mock snippet 3 discussing machine learning. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_3c611e66"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T3_stock_sms_66122",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "GBP"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+14155551002",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": 79.0
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_9fc120a6"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T8_file_chain_args_51419",
+      "calls": [
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "alice@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/values_b.csv"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+10000000000",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_778bbedd"
+          }
+        },
+        {
+          "success": true,
+          "output": "100,200,300\n50,75,125\n"
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_3c611e66"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T10_price_monitor_alert_20363",
+      "calls": [
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+14155551001",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "JPY"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_d6b47e54"
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": 15700.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T3_stock_sms_58825",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+14155551001",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_d6b47e54"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T10_price_monitor_alert_83246",
+      "calls": [
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+14155551002",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "JPY"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_9fc120a6"
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": 15700.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T3_stock_sms_85738",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "EUR"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+14155551001",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": 93.0
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_d6b47e54"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T10_price_monitor_alert_68473",
+      "calls": [
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+14155551002",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "JPY"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_9fc120a6"
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": 15700.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    },
+    {
+      "task_id": "T3_stock_sms_31510",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "unknown"
+          }
+        },
+        {
+          "tool": "unit_convert",
+          "args": {
+            "value": 100,
+            "from_unit": "USD",
+            "to_unit": "CNY"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "(100 + 200) / 2"
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report",
+            "body": "Body content"
+          }
+        },
+        {
+          "tool": "send_sms",
+          "args": {
+            "phone": "+14155551002",
+            "message": "Alert message"
+          }
+        },
+        {
+          "tool": "read_file",
+          "args": {
+            "path": "/data/file.csv"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/output.txt",
+            "content": "Result content"
+          }
+        },
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Event",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: unknown",
+              "url": "https://example.com/r1?q=unknown",
+              "snippet": "Mock snippet 1 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: unknown",
+              "url": "https://example.com/r2?q=unknown",
+              "snippet": "Mock snippet 2 discussing unknown. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: unknown",
+              "url": "https://example.com/r3?q=unknown",
+              "snippet": "Mock snippet 3 discussing unknown. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": 725.0
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": 150.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_47466121"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "sms_9fc120a6"
+          }
+        },
+        {
+          "success": true,
+          "output": "Mock content of /data/file.csv\nLine 1\nLine 2\nNumbers: 42, 17, 88"
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 14
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_aa211bf2",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "max_steps_reached"
+    }
+  ]
+}
