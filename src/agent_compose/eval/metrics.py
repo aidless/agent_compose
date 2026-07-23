@@ -17,6 +17,39 @@ from agent_compose.env.simulator import ExecutionTrace
 from agent_compose.generator.tasks import Task
 
 
+def _trace_satisfies_task(task: Task, trace: ExecutionTrace, library=None) -> bool:
+    """Check whether the trace satisfies the task, with substitutability support.
+
+    An expected tool is considered 'called' if it appears in the trace OR an
+    equivalent tool (from the same equivalence group) appears.
+    """
+    expected = set(task.expected_chain)
+    actual = {c.tool_name for c in trace.calls}
+
+    equiv_groups: list[set[str]] = []
+    if library is not None:
+        for group in library.equivalence_groups:
+            members = {group["canonical"], *group.get("variants", [])}
+            equiv_groups.append(members)
+
+    def is_satisfied(exp_tool: str) -> bool:
+        if exp_tool in actual:
+            return True
+        for group in equiv_groups:
+            if exp_tool in group and (group & actual):
+                return True
+        return False
+
+    for exp_tool in expected:
+        if not is_satisfied(exp_tool):
+            return False
+    # No critical errors (ignore synthetic failures)
+    for r in trace.results:
+        if not r.success and not r.failed_injected:
+            return False
+    return True
+
+
 @dataclass
 class TaskMetrics:
     """Per-task metrics."""
@@ -75,8 +108,8 @@ class Evaluator:
         expected_chain = task.expected_chain
         actual_chain = [c.tool_name for c in trace.calls]
 
-        # TSR: check side effects match success criteria
-        tsr = 1.0 if self._check_success(task, trace) else 0.0
+        # TSR: check side effects match success criteria (substitutability-aware)
+        tsr = 1.0 if _trace_satisfies_task(task, trace) else 0.0
 
         # TCA: fraction of calls matching expected tools (set comparison)
         expected_set = set(expected_chain)

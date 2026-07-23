@@ -9,7 +9,7 @@ from typing import Any
 
 from agent_compose.agents.base import Agent, AgentRunResult
 from agent_compose.env.simulator import ExecutionTrace, ToolSimulator
-from agent_compose.eval.metrics import Evaluator, SplitMetrics, TaskMetrics
+from agent_compose.eval.metrics import Evaluator, SplitMetrics, TaskMetrics, _trace_satisfies_task
 from agent_compose.generator.tasks import Task
 
 
@@ -56,6 +56,12 @@ def run_task(agent: Agent, simulator: ToolSimulator, task: Task) -> tuple[Execut
         trace.calls.append(step.action)
         trace.results.append(result)
         total_steps += 1
+        # Notify LLM agent of observation
+        if hasattr(agent, "observe"):
+            agent.observe(step.action, result.success, result.output)
+        # If this was the final allowed step, ensure we exit next iteration
+        if step_num == agent.max_steps - 1:
+            trace.termination_reason = "max_steps_reached"
         # Track final state from side-effect tools
         if simulator.state.get("sent_emails"):
             trace.final_state["last_email"] = simulator.state["sent_emails"][-1]
@@ -71,17 +77,13 @@ def run_task(agent: Agent, simulator: ToolSimulator, task: Task) -> tuple[Execut
     return trace, total_steps
 
 
-def _evaluate_trace_success(task: Task, trace: ExecutionTrace) -> bool:
-    """Heuristic: trace is successful if all expected tools were called and no errors."""
-    expected = set(task.expected_chain)
-    actual = {c.tool_name for c in trace.calls}
-    if not expected.issubset(actual):
-        return False
-    # No critical errors (ignore synthetic failures)
-    for r in trace.results:
-        if not r.success and not r.failed_injected:
-            return False
-    return True
+def _evaluate_trace_success(task: Task, trace: ExecutionTrace, library=None) -> bool:
+    """Heuristic: trace is successful if all expected tools were called (or their
+    equivalents) and no critical errors occurred.
+
+    For substitutability test, an equivalent tool call counts as a hit.
+    """
+    return _trace_satisfies_task(task, trace, library=library)
 
 
 def evaluate_split(

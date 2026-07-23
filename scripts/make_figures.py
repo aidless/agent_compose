@@ -26,6 +26,8 @@ COLORS = {
     "reflexion": "#2ca02c",
     "plan_execute": "#d62728",
     "chain_aware": "#9467bd",
+    "deepseek_react": "#8c564b",
+    "deepseek_fc": "#e377c2",
 }
 
 
@@ -39,15 +41,17 @@ def load_all_summaries(results_dir: Path) -> dict[str, dict[str, dict]]:
 
 
 def fig1_cgg_bar(summaries: dict, output_dir: Path) -> None:
-    """Bar chart: CGG across 5 agents × 3 test splits."""
-    agents = ["react", "native_fc", "reflexion", "plan_execute", "chain_aware"]
+    """Bar chart: CGG across agents × 3 test splits. Includes template + DeepSeek agents."""
+    agents = ["react", "native_fc", "reflexion", "plan_execute", "chain_aware",
+              "deepseek_react", "deepseek_fc"]
     splits = ["test_systematicity", "test_productivity", "test_substitutability"]
     split_labels = ["Systematicity", "Productivity", "Substitutability"]
 
     x = np.arange(len(splits))
-    width = 0.15
+    n_agents = len(agents)
+    width = min(0.13, 0.95 / n_agents)
 
-    fig, ax = plt.subplots(figsize=(10, 5))
+    fig, ax = plt.subplots(figsize=(12, 5.5))
     for i, agent in enumerate(agents):
         if agent not in summaries or "val" not in summaries[agent]:
             continue
@@ -59,14 +63,15 @@ def fig1_cgg_bar(summaries: dict, output_dir: Path) -> None:
             else:
                 cgg = 0
             cggs.append(cgg)
-        ax.bar(x + i * width, cggs, width, label=agent, color=COLORS.get(agent, "gray"))
+        offset = (i - (n_agents - 1) / 2) * width
+        ax.bar(x + offset, cggs, width, label=agent, color=COLORS.get(agent, "gray"))
 
     ax.set_xlabel("Test Split", fontsize=12)
     ax.set_ylabel("Compositional Generalization Gap (TSR drop)", fontsize=12)
     ax.set_title("Compositional Generalization Gap Across Agents", fontsize=14)
-    ax.set_xticks(x + width * 2)
+    ax.set_xticks(x)
     ax.set_xticklabels(split_labels)
-    ax.legend(loc="upper left")
+    ax.legend(loc="upper left", ncol=2, fontsize=9)
     ax.grid(axis="y", alpha=0.3)
     ax.set_ylim(0, 1.05)
 

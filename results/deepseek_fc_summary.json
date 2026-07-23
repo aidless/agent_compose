@@ -1,0 +1,33 @@
+{
+  "val": {
+    "tsr": 0.1,
+    "coc": 0.1,
+    "n": 30,
+    "tokens": 0,
+    "time_s": 0.0
+  },
+  "test_systematicity": {
+    "tsr": 0.06666666666666667,
+    "coc": 0.06666666666666667,
+    "n": 30,
+    "tokens": 2439,
+    "time_s": 511.8175985813141
+  },
+  "test_productivity": {
+    "tsr": 0.0,
+    "coc": 0.0,
+    "n": 30,
+    "tokens": 0,
+    "time_s": 0.0
+  },
+  "test_substitutability": {
+    "tsr": 0.0,
+    "coc": 0.0,
+    "n": 30,
+    "tokens": 0,
+    "time_s": 0.0
+  },
+  "cgg_productivity": 0.1,
+  "cgg_systematicity": 0.0333,
+  "cgg_substitutability": 0.1
+}
