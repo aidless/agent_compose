@@ -119,9 +119,9 @@ def fig2_metrics_heatmap(summaries: dict, output_dir: Path) -> None:
     print(f"✓ fig2_metrics_heatmap saved")
 
 
-def fig3_error_breakdown(output_dir: Path) -> None:
+def fig3_error_breakdown(results_dir: Path, figures_dir: Path) -> None:
     """Stacked bar of error types per split (using NativeFC)."""
-    error_file = output_dir / "error_analysis.json"
+    error_file = results_dir / "error_analysis.json"
     if not error_file.exists():
         return
     data = json.loads(error_file.read_text(encoding="utf-8"))
@@ -151,21 +151,21 @@ def fig3_error_breakdown(output_dir: Path) -> None:
         bottom += np.array(values)
 
     ax.set_ylabel("Fraction of Tasks")
-    ax.set_title("Error Type Breakdown (NativeFC Agent)")
+    ax.set_title("Error Type Breakdown (NativeFC Agent, 30-tool benchmark)")
     ax.legend(loc="upper right")
     ax.set_ylim(0, 1.05)
     plt.xticks(rotation=15)
 
     fig.tight_layout()
-    fig.savefig(output_dir / "fig3_error_breakdown.pdf", dpi=300, bbox_inches="tight")
-    fig.savefig(output_dir / "fig3_error_breakdown.png", dpi=150, bbox_inches="tight")
+    fig.savefig(figures_dir / "fig3_error_breakdown.pdf", dpi=300, bbox_inches="tight")
+    fig.savefig(figures_dir / "fig3_error_breakdown.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
     print(f"✓ fig3_error_breakdown saved")
 
 
-def fig4_ablation(output_dir: Path) -> None:
+def fig4_ablation(results_dir: Path, figures_dir: Path) -> None:
     """Ablation: n_synthetic_chains vs Productivity TSR."""
-    abl_file = output_dir / "ablation_n_synthetic.json"
+    abl_file = results_dir / "ablation_n_synthetic.json"
     if not abl_file.exists():
         return
     data = json.loads(abl_file.read_text(encoding="utf-8"))
@@ -179,14 +179,14 @@ def fig4_ablation(output_dir: Path) -> None:
     ax1.plot(x, coc, "s--", color="#ff7f0e", label="Productivity COC", linewidth=2, markersize=8)
     ax1.set_xlabel("Number of Synthetic Chains (n_synthetic)")
     ax1.set_ylabel("Score")
-    ax1.set_title("Ablation: Effect of Synthetic Chain Augmentation")
+    ax1.set_title("Ablation: Effect of Synthetic Chain Augmentation (30-tool)")
     ax1.legend()
     ax1.grid(alpha=0.3)
     ax1.set_ylim(0, 0.5)
 
     fig.tight_layout()
-    fig.savefig(output_dir / "fig4_ablation.pdf", dpi=300, bbox_inches="tight")
-    fig.savefig(output_dir / "fig4_ablation.png", dpi=150, bbox_inches="tight")
+    fig.savefig(figures_dir / "fig4_ablation.pdf", dpi=300, bbox_inches="tight")
+    fig.savefig(figures_dir / "fig4_ablation.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
     print(f"✓ fig4_ablation saved")
 
@@ -232,8 +232,8 @@ def main() -> None:
     print("Generating figures...")
     fig1_cgg_bar(summaries, figures_dir)
     fig2_metrics_heatmap(summaries, figures_dir)
-    fig3_error_breakdown(results_dir)
-    fig4_ablation(results_dir)
+    fig3_error_breakdown(results_dir, figures_dir)
+    fig4_ablation(results_dir, figures_dir)
     fig5_chain_length_dist(data_dir, figures_dir)
     print(f"\n✓ All figures saved to {figures_dir}")
 
