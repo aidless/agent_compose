@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 license = {text = "MIT"}
 authors = [
-    {name = "Your Name", email = "your.email@example.com"},
+    {name = "Anonymous", email = "anonymous@example.com"},
 ]
 keywords = ["llm", "agent", "tool-use", "compositional-generalization", "benchmark"]
 classifiers = [
@@ -25,19 +25,11 @@ classifiers = [
 
 dependencies = [
     "pydantic>=2.0",
-    "jsonschema>=4.0",
-    "openai>=1.0",
-    "anthropic>=0.18",
-    "langchain>=0.1",
-    "langgraph>=0.0.20",
-    "tiktoken>=0.5",
+    "requests>=2.31",
+    "pyyaml>=6.0",
     "numpy>=1.24",
-    "pandas>=2.0",
     "scipy>=1.10",
     "matplotlib>=3.7",
-    "seaborn>=0.12",
-    "tqdm>=4.65",
-    "pyyaml>=6.0",
 ]
 
 [project.optional-dependencies]
@@ -49,10 +41,15 @@ dev = [
     "mypy>=1.7",
     "pre-commit>=3.5",
 ]
+llm = [
+    # Only required for the optional DeepSeek-V4-Flash validation runs
+    # (scripts/evaluate_llm.py). Not pulled in by `pip install -e .`.
+    # No SDK required — we use the OpenAI-compatible REST endpoint via `requests`.
+]
 all = ["agent-compose[dev]"]
 
 [project.urls]
-Homepage = "https://github.com/yourname/agent-compose"
+Homepage = "TBD (anonymized for double-blind submission)"
 Paper = "TBD"
 
 [project.scripts]
