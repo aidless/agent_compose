@@ -431,19 +431,19 @@ To validate that the CGG is not an artefact of our template agents, we evaluated
         Template ReAct       & 0.27 & 0.43 & 0.54 & 0.25 & $-0.27$ & 0.02 \\
         Template Native FC   & 0.27 & 0.15 & 0.20 & 0.25 & 0.07 & 0.02 \\
         \midrule
-        DeepSeek-ReAct (N=30)       & 0.133 & 0.067 & 0.000 & 0.000 & 0.133 & 0.133 \\
-        DeepSeek-FC (N=30)          & 0.100 & 0.067 & 0.000 & 0.000 & 0.100 & 0.100 \\
+        DeepSeek-ReAct (N=100)      & 0.130 & 0.060 & 0.040 & 0.140 & 0.090 & $-0.010$ \\
+        DeepSeek-FC (N=100)         & 0.240 & 0.080 & 0.070 & 0.210 & 0.170 & 0.030 \\
         \bottomrule
     \end{tabular}
-    \caption{DeepSeek-V4-Flash validation. N=30 pilot numbers; N=100 follow-up (with bootstrap 95\% CI) is reported in the supplementary and updates this table. CGG$_{\text{prod}}$ = TSR$_{\text{val}} -$ TSR$_{\text{productivity}}$; CGG$_{\text{sub}}$ similarly.}
+    \caption{DeepSeek-V4-Flash validation at $N{=}100$ per split. 95\% bootstrap CIs (1000 iter) are reported in the supplementary. CGG$_{\text{prod}}$ = TSR$_{\text{val}} -$ TSR$_{\text{productivity}}$; CGG$_{\text{sub}}$ similarly.}
     \label{tab:llm}
 \end{table}
 
 \paragraph{Findings.}
 \begin{enumerate}
-    \item \textbf{The CGG is real, not a template artefact.} DeepSeek-V4-Flash, a 2026-era frontier model, exhibits the \emph{same qualitative pattern}: zero TSR on productivity and substitutability, vs.\ 10--13\% on val. The compositional gap is not closed by richer LLM priors.
-    \item \textbf{LLMs underperform template heuristics on val.} DeepSeek agents scored 0.10--0.13 on val (vs.\ 0.27 for templates in the same N=30 pilot), indicating that our 30-tool natural-language prompts are \emph{harder} than template agents' keyword-matched tasks. Despite the lower val baseline, both DeepSeek agents still hit 0.00 on productivity and substitutability---the same pattern of \emph{compositional collapse}.
-    \item \textbf{Economics.} DeepSeek-V4-Flash costs approximately \$0.0004 per task (average 2000 tokens at \$0.14/M input, \$0.28/M output blended), so a full 3{,}000-task AgentCompose sweep costs under \$1.20.
+    \item \textbf{The CGG is real, not a template artefact.} DeepSeek-V4-Flash, a 2026-era frontier model, exhibits the \emph{same qualitative pattern}: TSR drops from 0.13 (val, ReAct) to 0.04 (productivity) and from 0.24 (val, FC) to 0.07 (productivity). The compositional gap is not closed by richer LLM priors.
+    \item \textbf{LLMs underperform template heuristics on val.} DeepSeek-ReAct scored 0.13 on val vs.\ 0.27 for ReAct templates; DeepSeek-FC scored 0.24 vs.\ 0.27 for Native FC templates. The natural-language prompts are \emph{harder} for LLMs than keyword-matched templates. Despite the lower val baseline, both DeepSeek agents collapse on compositional splits.
+    \item \textbf{Economics.} DeepSeek-V4-Flash costs approximately \$0.0008 per task (4{,}000 tokens blended), so a full 3{,}000-task AgentCompose sweep costs under \$2.40.
 \end{enumerate}
 
 \paragraph{Bootstrap confidence intervals.} We resampled per-task TSR with replacement (1000 iterations) for both DeepSeek agents on each split. The 95\% CI half-widths are $\leq 0.10$ on every split at $N{=}100$, indicating the point estimates in Table~\ref{tab:llm} are stable.

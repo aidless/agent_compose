@@ -1,33 +1,33 @@
 {
   "val": {
-    "tsr": 0.1,
-    "coc": 0.1,
-    "n": 30,
-    "tokens": 0,
-    "time_s": 0.0
+    "tsr": 0.24,
+    "coc": 0.24,
+    "n": 100,
+    "tokens": 3726,
+    "time_s": 1693.9067602157593
   },
   "test_systematicity": {
-    "tsr": 0.06666666666666667,
-    "coc": 0.06666666666666667,
-    "n": 30,
-    "tokens": 2439,
-    "time_s": 511.8175985813141
+    "tsr": 0.08,
+    "coc": 0.08,
+    "n": 100,
+    "tokens": 2161,
+    "time_s": 1631.1869041919708
   },
   "test_productivity": {
-    "tsr": 0.0,
+    "tsr": 0.07,
     "coc": 0.0,
-    "n": 30,
-    "tokens": 0,
-    "time_s": 0.0
+    "n": 100,
+    "tokens": 6294,
+    "time_s": 1793.3731079101562
   },
   "test_substitutability": {
-    "tsr": 0.0,
+    "tsr": 0.21,
     "coc": 0.0,
-    "n": 30,
-    "tokens": 0,
-    "time_s": 0.0
+    "n": 100,
+    "tokens": 3643,
+    "time_s": 1845.5416712760925
   },
-  "cgg_productivity": 0.1,
-  "cgg_systematicity": 0.0333,
-  "cgg_substitutability": 0.1
+  "cgg_productivity": 0.17,
+  "cgg_systematicity": 0.16,
+  "cgg_substitutability": 0.03
 }

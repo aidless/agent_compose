@@ -1,33 +1,33 @@
 {
   "val": {
-    "tsr": 0.13333333333333333,
-    "coc": 0.13333333333333333,
-    "n": 30,
-    "tokens": 0,
-    "time_s": 0.0
+    "tsr": 0.13,
+    "coc": 0.12,
+    "n": 100,
+    "tokens": 3549,
+    "time_s": 1228.699494600296
   },
   "test_systematicity": {
-    "tsr": 0.06666666666666667,
-    "coc": 0.06666666666666667,
-    "n": 30,
-    "tokens": 0,
-    "time_s": 0.0
+    "tsr": 0.06,
+    "coc": 0.06,
+    "n": 100,
+    "tokens": 3266,
+    "time_s": 1175.0297801494598
   },
   "test_productivity": {
-    "tsr": 0.0,
+    "tsr": 0.04,
     "coc": 0.0,
-    "n": 30,
-    "tokens": 0,
-    "time_s": 0.0
+    "n": 100,
+    "tokens": 8416,
+    "time_s": 1395.7547104358673
   },
   "test_substitutability": {
-    "tsr": 0.0,
-    "coc": 0.0,
-    "n": 30,
-    "tokens": 3020,
-    "time_s": 381.51803970336914
+    "tsr": 0.14,
+    "coc": 0.02,
+    "n": 100,
+    "tokens": 4174,
+    "time_s": 1154.334988117218
   },
-  "cgg_productivity": 0.1333,
-  "cgg_systematicity": 0.0667,
-  "cgg_substitutability": 0.1333
+  "cgg_productivity": 0.09,
+  "cgg_systematicity": 0.07,
+  "cgg_substitutability": -0.01
 }

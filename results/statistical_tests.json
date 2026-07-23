@@ -1,0 +1,790 @@
+{
+  "friedman": {
+    "val": {
+      "test": "friedman",
+      "metric": "TSR_val",
+      "n_agents": 5,
+      "n_tasks": 400,
+      "statistic": 1596.0,
+      "p_value": 1.4401012511207823e-142,
+      "significant_at_05": 1.0,
+      "agent_names": [
+        "react",
+        "native_fc",
+        "reflexion",
+        "plan_execute",
+        "chain_aware"
+      ],
+      "aligned_n": 400
+    },
+    "test_systematicity": {
+      "test": "friedman",
+      "metric": "TSR_test_systematicity",
+      "n_agents": 5,
+      "n_tasks": 600,
+      "statistic": 1546.055706602296,
+      "p_value": 7.001907064749398e-85,
+      "significant_at_05": 1.0,
+      "agent_names": [
+        "react",
+        "native_fc",
+        "reflexion",
+        "plan_execute",
+        "chain_aware"
+      ],
+      "aligned_n": 600
+    },
+    "test_productivity": {
+      "test": "friedman",
+      "metric": "TSR_test_productivity",
+      "n_agents": 5,
+      "n_tasks": 600,
+      "statistic": 1833.8509864846449,
+      "p_value": 2.761060834739403e-125,
+      "significant_at_05": 1.0,
+      "agent_names": [
+        "react",
+        "native_fc",
+        "reflexion",
+        "plan_execute",
+        "chain_aware"
+      ],
+      "aligned_n": 600
+    },
+    "test_substitutability": {
+      "test": "friedman",
+      "metric": "TSR_test_substitutability",
+      "n_agents": 5,
+      "n_tasks": 200,
+      "statistic": 796.0000000000006,
+      "p_value": 2.458413116401175e-72,
+      "significant_at_05": 1.0,
+      "agent_names": [
+        "react",
+        "native_fc",
+        "reflexion",
+        "plan_execute",
+        "chain_aware"
+      ],
+      "aligned_n": 200
+    }
+  },
+  "wilcoxon": {
+    "val": {
+      "react_vs_native_fc": {
+        "agent_a": "react",
+        "agent_b": "native_fc",
+        "metric": "TSR_val",
+        "mean_a": 0.2675,
+        "mean_b": 0.2675,
+        "mean_diff": 0.0,
+        "statistic": 0.0,
+        "p_value": NaN,
+        "significant_at_05": false,
+        "effect_size": 0.0,
+        "test_name": "wilcoxon"
+      },
+      "react_vs_reflexion": {
+        "agent_a": "react",
+        "agent_b": "reflexion",
+        "metric": "TSR_val",
+        "mean_a": 0.2675,
+        "mean_b": 0.2675,
+        "mean_diff": 0.0,
+        "statistic": 0.0,
+        "p_value": NaN,
+        "significant_at_05": false,
+        "effect_size": 0.0,
+        "test_name": "wilcoxon"
+      },
+      "react_vs_plan_execute": {
+        "agent_a": "react",
+        "agent_b": "plan_execute",
+        "metric": "TSR_val",
+        "mean_a": 0.2675,
+        "mean_b": 0.2675,
+        "mean_diff": 0.0,
+        "statistic": 0.0,
+        "p_value": NaN,
+        "significant_at_05": false,
+        "effect_size": 0.0,
+        "test_name": "wilcoxon"
+      },
+      "react_vs_chain_aware": {
+        "agent_a": "react",
+        "agent_b": "chain_aware",
+        "metric": "TSR_val",
+        "mean_a": 0.2675,
+        "mean_b": 1.0,
+        "mean_diff": -0.7324999999999999,
+        "statistic": 0.0,
+        "p_value": 1.1038113563323383e-65,
+        "significant_at_05": true,
+        "effect_size": -2.337294146065839,
+        "test_name": "wilcoxon"
+      },
+      "native_fc_vs_reflexion": {
+        "agent_a": "native_fc",
+        "agent_b": "reflexion",
+        "metric": "TSR_val",
+        "mean_a": 0.2675,
+        "mean_b": 0.2675,
+        "mean_diff": 0.0,
+        "statistic": 0.0,
+        "p_value": NaN,
+        "significant_at_05": false,
+        "effect_size": 0.0,
+        "test_name": "wilcoxon"
+      },
+      "native_fc_vs_plan_execute": {
+        "agent_a": "native_fc",
+        "agent_b": "plan_execute",
+        "metric": "TSR_val",
+        "mean_a": 0.2675,
+        "mean_b": 0.2675,
+        "mean_diff": 0.0,
+        "statistic": 0.0,
+        "p_value": NaN,
+        "significant_at_05": false,
+        "effect_size": 0.0,
+        "test_name": "wilcoxon"
+      },
+      "native_fc_vs_chain_aware": {
+        "agent_a": "native_fc",
+        "agent_b": "chain_aware",
+        "metric": "TSR_val",
+        "mean_a": 0.2675,
+        "mean_b": 1.0,
+        "mean_diff": -0.7324999999999999,
+        "statistic": 0.0,
+        "p_value": 1.1038113563323383e-65,
+        "significant_at_05": true,
+        "effect_size": -2.337294146065839,
+        "test_name": "wilcoxon"
+      },
+      "reflexion_vs_plan_execute": {
+        "agent_a": "reflexion",
+        "agent_b": "plan_execute",
+        "metric": "TSR_val",
+        "mean_a": 0.2675,
+        "mean_b": 0.2675,
+        "mean_diff": 0.0,
+        "statistic": 0.0,
+        "p_value": NaN,
+        "significant_at_05": false,
+        "effect_size": 0.0,
+        "test_name": "wilcoxon"
+      },
+      "reflexion_vs_chain_aware": {
+        "agent_a": "reflexion",
+        "agent_b": "chain_aware",
+        "metric": "TSR_val",
+        "mean_a": 0.2675,
+        "mean_b": 1.0,
+        "mean_diff": -0.7324999999999999,
+        "statistic": 0.0,
+        "p_value": 1.1038113563323383e-65,
+        "significant_at_05": true,
+        "effect_size": -2.337294146065839,
+        "test_name": "wilcoxon"
+      },
+      "plan_execute_vs_chain_aware": {
+        "agent_a": "plan_execute",
+        "agent_b": "chain_aware",
+        "metric": "TSR_val",
+        "mean_a": 0.2675,
+        "mean_b": 1.0,
+        "mean_diff": -0.7324999999999999,
+        "statistic": 0.0,
+        "p_value": 1.1038113563323383e-65,
+        "significant_at_05": true,
+        "effect_size": -2.337294146065839,
+        "test_name": "wilcoxon"
+      }
+    },
+    "test_systematicity": {
+      "react_vs_native_fc": {
+        "agent_a": "react",
+        "agent_b": "native_fc",
+        "metric": "TSR_test_systematicity",
+        "mean_a": 0.42833333333333334,
+        "mean_b": 0.145,
+        "mean_diff": 0.2833333333333333,
+        "statistic": 0.0,
+        "p_value": 7.398888585397557e-39,
+        "significant_at_05": true,
+        "effect_size": 0.6592226220439423,
+        "test_name": "wilcoxon"
+      },
+      "react_vs_reflexion": {
+        "agent_a": "react",
+        "agent_b": "reflexion",
+        "metric": "TSR_test_systematicity",
+        "mean_a": 0.42833333333333334,
+        "mean_b": 0.42833333333333334,
+        "mean_diff": 0.0,
+        "statistic": 0.0,
+        "p_value": NaN,
+        "significant_at_05": false,
+        "effect_size": 0.0,
+        "test_name": "wilcoxon"
+      },
+      "react_vs_plan_execute": {
+        "agent_a": "react",
+        "agent_b": "plan_execute",
+        "metric": "TSR_test_systematicity",
+        "mean_a": 0.42833333333333334,
+        "mean_b": 0.145,
+        "mean_diff": 0.2833333333333333,
+        "statistic": 0.0,
+        "p_value": 7.398888585397557e-39,
+        "significant_at_05": true,
+        "effect_size": 0.6592226220439423,
+        "test_name": "wilcoxon"
+      },
+      "react_vs_chain_aware": {
+        "agent_a": "react",
+        "agent_b": "chain_aware",
+        "metric": "TSR_test_systematicity",
+        "mean_a": 0.42833333333333334,
+        "mean_b": 0.43833333333333335,
+        "mean_diff": -0.010000000000000009,
+        "statistic": 29495.0,
+        "p_value": 0.7470269774259244,
+        "significant_at_05": false,
+        "effect_size": -0.020164386480951056,
+        "test_name": "wilcoxon"
+      },
+      "native_fc_vs_reflexion": {
+        "agent_a": "native_fc",
+        "agent_b": "reflexion",
+        "metric": "TSR_test_systematicity",
+        "mean_a": 0.145,
+        "mean_b": 0.42833333333333334,
+        "mean_diff": -0.2833333333333333,
+        "statistic": 0.0,
+        "p_value": 7.398888585397557e-39,
+        "significant_at_05": true,
+        "effect_size": -0.6592226220439423,
+        "test_name": "wilcoxon"
+      },
+      "native_fc_vs_plan_execute": {
+        "agent_a": "native_fc",
+        "agent_b": "plan_execute",
+        "metric": "TSR_test_systematicity",
+        "mean_a": 0.145,
+        "mean_b": 0.145,
+        "mean_diff": 0.0,
+        "statistic": 0.0,
+        "p_value": NaN,
+        "significant_at_05": false,
+        "effect_size": 0.0,
+        "test_name": "wilcoxon"
+      },
+      "native_fc_vs_chain_aware": {
+        "agent_a": "native_fc",
+        "agent_b": "chain_aware",
+        "metric": "TSR_test_systematicity",
+        "mean_a": 0.145,
+        "mean_b": 0.43833333333333335,
+        "mean_diff": -0.29333333333333333,
+        "statistic": 0.0,
+        "p_value": 3.621061026843201e-40,
+        "significant_at_05": true,
+        "effect_size": -0.6812590556733906,
+        "test_name": "wilcoxon"
+      },
+      "reflexion_vs_plan_execute": {
+        "agent_a": "reflexion",
+        "agent_b": "plan_execute",
+        "metric": "TSR_test_systematicity",
+        "mean_a": 0.42833333333333334,
+        "mean_b": 0.145,
+        "mean_diff": 0.2833333333333333,
+        "statistic": 0.0,
+        "p_value": 7.398888585397557e-39,
+        "significant_at_05": true,
+        "effect_size": 0.6592226220439423,
+        "test_name": "wilcoxon"
+      },
+      "reflexion_vs_chain_aware": {
+        "agent_a": "reflexion",
+        "agent_b": "chain_aware",
+        "metric": "TSR_test_systematicity",
+        "mean_a": 0.42833333333333334,
+        "mean_b": 0.43833333333333335,
+        "mean_diff": -0.010000000000000009,
+        "statistic": 29495.0,
+        "p_value": 0.7470269774259244,
+        "significant_at_05": false,
+        "effect_size": -0.020164386480951056,
+        "test_name": "wilcoxon"
+      },
+      "plan_execute_vs_chain_aware": {
+        "agent_a": "plan_execute",
+        "agent_b": "chain_aware",
+        "metric": "TSR_test_systematicity",
+        "mean_a": 0.145,
+        "mean_b": 0.43833333333333335,
+        "mean_diff": -0.29333333333333333,
+        "statistic": 0.0,
+        "p_value": 3.621061026843201e-40,
+        "significant_at_05": true,
+        "effect_size": -0.6812590556733906,
+        "test_name": "wilcoxon"
+      }
+    },
+    "test_productivity": {
+      "react_vs_native_fc": {
+        "agent_a": "react",
+        "agent_b": "native_fc",
+        "metric": "TSR_test_productivity",
+        "mean_a": 0.5416666666666666,
+        "mean_b": 0.2,
+        "mean_diff": 0.3416666666666666,
+        "statistic": 0.0,
+        "p_value": 1.6935010128757979e-46,
+        "significant_at_05": true,
+        "effect_size": 0.7555877537784206,
+        "test_name": "wilcoxon"
+      },
+      "react_vs_reflexion": {
+        "agent_a": "react",
+        "agent_b": "reflexion",
+        "metric": "TSR_test_productivity",
+        "mean_a": 0.5416666666666666,
+        "mean_b": 0.5416666666666666,
+        "mean_diff": 0.0,
+        "statistic": 0.0,
+        "p_value": NaN,
+        "significant_at_05": false,
+        "effect_size": 0.0,
+        "test_name": "wilcoxon"
+      },
+      "react_vs_plan_execute": {
+        "agent_a": "react",
+        "agent_b": "plan_execute",
+        "metric": "TSR_test_productivity",
+        "mean_a": 0.5416666666666666,
+        "mean_b": 0.10666666666666667,
+        "mean_diff": 0.43499999999999994,
+        "statistic": 0.0,
+        "p_value": 1.0388231062975441e-58,
+        "significant_at_05": true,
+        "effect_size": 1.0486856098275037,
+        "test_name": "wilcoxon"
+      },
+      "react_vs_chain_aware": {
+        "agent_a": "react",
+        "agent_b": "chain_aware",
+        "metric": "TSR_test_productivity",
+        "mean_a": 0.5416666666666666,
+        "mean_b": 0.45166666666666666,
+        "mean_diff": 0.08999999999999997,
+        "statistic": 3875.0,
+        "p_value": 1.3524386259719455e-05,
+        "significant_at_05": true,
+        "effect_size": 0.1805868306163854,
+        "test_name": "wilcoxon"
+      },
+      "native_fc_vs_reflexion": {
+        "agent_a": "native_fc",
+        "agent_b": "reflexion",
+        "metric": "TSR_test_productivity",
+        "mean_a": 0.2,
+        "mean_b": 0.5416666666666666,
+        "mean_diff": -0.3416666666666666,
+        "statistic": 0.0,
+        "p_value": 1.6935010128757979e-46,
+        "significant_at_05": true,
+        "effect_size": -0.7555877537784206,
+        "test_name": "wilcoxon"
+      },
+      "native_fc_vs_plan_execute": {
+        "agent_a": "native_fc",
+        "agent_b": "plan_execute",
+        "metric": "TSR_test_productivity",
+        "mean_a": 0.2,
+        "mean_b": 0.10666666666666667,
+        "mean_diff": 0.09333333333333334,
+        "statistic": 0.0,
+        "p_value": 7.247101964362887e-14,
+        "significant_at_05": true,
+        "effect_size": 0.26101989095202766,
+        "test_name": "wilcoxon"
+      },
+      "native_fc_vs_chain_aware": {
+        "agent_a": "native_fc",
+        "agent_b": "chain_aware",
+        "metric": "TSR_test_productivity",
+        "mean_a": 0.2,
+        "mean_b": 0.45166666666666666,
+        "mean_diff": -0.25166666666666665,
+        "statistic": 0.0,
+        "p_value": 1.0480649889893112e-34,
+        "significant_at_05": true,
+        "effect_size": -0.556964300395781,
+        "test_name": "wilcoxon"
+      },
+      "reflexion_vs_plan_execute": {
+        "agent_a": "reflexion",
+        "agent_b": "plan_execute",
+        "metric": "TSR_test_productivity",
+        "mean_a": 0.5416666666666666,
+        "mean_b": 0.10666666666666667,
+        "mean_diff": 0.43499999999999994,
+        "statistic": 0.0,
+        "p_value": 1.0388231062975441e-58,
+        "significant_at_05": true,
+        "effect_size": 1.0486856098275037,
+        "test_name": "wilcoxon"
+      },
+      "reflexion_vs_chain_aware": {
+        "agent_a": "reflexion",
+        "agent_b": "chain_aware",
+        "metric": "TSR_test_productivity",
+        "mean_a": 0.5416666666666666,
+        "mean_b": 0.45166666666666666,
+        "mean_diff": 0.08999999999999997,
+        "statistic": 3875.0,
+        "p_value": 1.3524386259719455e-05,
+        "significant_at_05": true,
+        "effect_size": 0.1805868306163854,
+        "test_name": "wilcoxon"
+      },
+      "plan_execute_vs_chain_aware": {
+        "agent_a": "plan_execute",
+        "agent_b": "chain_aware",
+        "metric": "TSR_test_productivity",
+        "mean_a": 0.10666666666666667,
+        "mean_b": 0.45166666666666666,
+        "mean_diff": -0.345,
+        "statistic": 0.0,
+        "p_value": 6.200157553109177e-47,
+        "significant_at_05": true,
+        "effect_size": -0.8324434040884351,
+        "test_name": "wilcoxon"
+      }
+    },
+    "test_substitutability": {
+      "react_vs_native_fc": {
+        "agent_a": "react",
+        "agent_b": "native_fc",
+        "metric": "TSR_test_substitutability",
+        "mean_a": 0.25,
+        "mean_b": 0.25,
+        "mean_diff": 0.0,
+        "statistic": 0.0,
+        "p_value": NaN,
+        "significant_at_05": false,
+        "effect_size": 0.0,
+        "test_name": "wilcoxon"
+      },
+      "react_vs_reflexion": {
+        "agent_a": "react",
+        "agent_b": "reflexion",
+        "metric": "TSR_test_substitutability",
+        "mean_a": 0.25,
+        "mean_b": 0.25,
+        "mean_diff": 0.0,
+        "statistic": 0.0,
+        "p_value": NaN,
+        "significant_at_05": false,
+        "effect_size": 0.0,
+        "test_name": "wilcoxon"
+      },
+      "react_vs_plan_execute": {
+        "agent_a": "react",
+        "agent_b": "plan_execute",
+        "metric": "TSR_test_substitutability",
+        "mean_a": 0.25,
+        "mean_b": 0.25,
+        "mean_diff": 0.0,
+        "statistic": 0.0,
+        "p_value": NaN,
+        "significant_at_05": false,
+        "effect_size": 0.0,
+        "test_name": "wilcoxon"
+      },
+      "react_vs_chain_aware": {
+        "agent_a": "react",
+        "agent_b": "chain_aware",
+        "metric": "TSR_test_substitutability",
+        "mean_a": 0.25,
+        "mean_b": 1.0,
+        "mean_diff": -0.75,
+        "statistic": 0.0,
+        "p_value": 1.7336432457178015e-34,
+        "significant_at_05": true,
+        "effect_size": -2.443358344574123,
+        "test_name": "wilcoxon"
+      },
+      "native_fc_vs_reflexion": {
+        "agent_a": "native_fc",
+        "agent_b": "reflexion",
+        "metric": "TSR_test_substitutability",
+        "mean_a": 0.25,
+        "mean_b": 0.25,
+        "mean_diff": 0.0,
+        "statistic": 0.0,
+        "p_value": NaN,
+        "significant_at_05": false,
+        "effect_size": 0.0,
+        "test_name": "wilcoxon"
+      },
+      "native_fc_vs_plan_execute": {
+        "agent_a": "native_fc",
+        "agent_b": "plan_execute",
+        "metric": "TSR_test_substitutability",
+        "mean_a": 0.25,
+        "mean_b": 0.25,
+        "mean_diff": 0.0,
+        "statistic": 0.0,
+        "p_value": NaN,
+        "significant_at_05": false,
+        "effect_size": 0.0,
+        "test_name": "wilcoxon"
+      },
+      "native_fc_vs_chain_aware": {
+        "agent_a": "native_fc",
+        "agent_b": "chain_aware",
+        "metric": "TSR_test_substitutability",
+        "mean_a": 0.25,
+        "mean_b": 1.0,
+        "mean_diff": -0.75,
+        "statistic": 0.0,
+        "p_value": 1.7336432457178015e-34,
+        "significant_at_05": true,
+        "effect_size": -2.443358344574123,
+        "test_name": "wilcoxon"
+      },
+      "reflexion_vs_plan_execute": {
+        "agent_a": "reflexion",
+        "agent_b": "plan_execute",
+        "metric": "TSR_test_substitutability",
+        "mean_a": 0.25,
+        "mean_b": 0.25,
+        "mean_diff": 0.0,
+        "statistic": 0.0,
+        "p_value": NaN,
+        "significant_at_05": false,
+        "effect_size": 0.0,
+        "test_name": "wilcoxon"
+      },
+      "reflexion_vs_chain_aware": {
+        "agent_a": "reflexion",
+        "agent_b": "chain_aware",
+        "metric": "TSR_test_substitutability",
+        "mean_a": 0.25,
+        "mean_b": 1.0,
+        "mean_diff": -0.75,
+        "statistic": 0.0,
+        "p_value": 1.7336432457178015e-34,
+        "significant_at_05": true,
+        "effect_size": -2.443358344574123,
+        "test_name": "wilcoxon"
+      },
+      "plan_execute_vs_chain_aware": {
+        "agent_a": "plan_execute",
+        "agent_b": "chain_aware",
+        "metric": "TSR_test_substitutability",
+        "mean_a": 0.25,
+        "mean_b": 1.0,
+        "mean_diff": -0.75,
+        "statistic": 0.0,
+        "p_value": 1.7336432457178015e-34,
+        "significant_at_05": true,
+        "effect_size": -2.443358344574123,
+        "test_name": "wilcoxon"
+      }
+    }
+  },
+  "cd_data": {
+    "val": {
+      "split": "val",
+      "means": {
+        "react": 0.2675,
+        "native_fc": 0.2675,
+        "reflexion": 0.2675,
+        "plan_execute": 0.2675,
+        "chain_aware": 1.0
+      },
+      "ranks": {
+        "chain_aware": 1,
+        "react": 2,
+        "native_fc": 3,
+        "reflexion": 4,
+        "plan_execute": 5
+      },
+      "sorted_agents": [
+        "chain_aware",
+        "react",
+        "native_fc",
+        "reflexion",
+        "plan_execute"
+      ]
+    },
+    "test_systematicity": {
+      "split": "test_systematicity",
+      "means": {
+        "react": 0.42833333333333334,
+        "native_fc": 0.145,
+        "reflexion": 0.42833333333333334,
+        "plan_execute": 0.145,
+        "chain_aware": 0.43833333333333335
+      },
+      "ranks": {
+        "chain_aware": 1,
+        "react": 2,
+        "reflexion": 3,
+        "native_fc": 4,
+        "plan_execute": 5
+      },
+      "sorted_agents": [
+        "chain_aware",
+        "react",
+        "reflexion",
+        "native_fc",
+        "plan_execute"
+      ]
+    },
+    "test_productivity": {
+      "split": "test_productivity",
+      "means": {
+        "react": 0.5416666666666666,
+        "native_fc": 0.2,
+        "reflexion": 0.5416666666666666,
+        "plan_execute": 0.10666666666666667,
+        "chain_aware": 0.45166666666666666
+      },
+      "ranks": {
+        "react": 1,
+        "reflexion": 2,
+        "chain_aware": 3,
+        "native_fc": 4,
+        "plan_execute": 5
+      },
+      "sorted_agents": [
+        "react",
+        "reflexion",
+        "chain_aware",
+        "native_fc",
+        "plan_execute"
+      ]
+    },
+    "test_substitutability": {
+      "split": "test_substitutability",
+      "means": {
+        "react": 0.25,
+        "native_fc": 0.25,
+        "reflexion": 0.25,
+        "plan_execute": 0.25,
+        "chain_aware": 1.0
+      },
+      "ranks": {
+        "chain_aware": 1,
+        "react": 2,
+        "native_fc": 3,
+        "reflexion": 4,
+        "plan_execute": 5
+      },
+      "sorted_agents": [
+        "chain_aware",
+        "react",
+        "native_fc",
+        "reflexion",
+        "plan_execute"
+      ]
+    }
+  },
+  "win_tie_loss_chain_aware": {
+    "val": {
+      "react": {
+        "wins": 293,
+        "ties": 107,
+        "losses": 0
+      },
+      "native_fc": {
+        "wins": 293,
+        "ties": 107,
+        "losses": 0
+      },
+      "reflexion": {
+        "wins": 293,
+        "ties": 107,
+        "losses": 0
+      },
+      "plan_execute": {
+        "wins": 293,
+        "ties": 107,
+        "losses": 0
+      }
+    },
+    "test_systematicity": {
+      "react": {
+        "wins": 176,
+        "ties": 254,
+        "losses": 170
+      },
+      "native_fc": {
+        "wins": 176,
+        "ties": 424,
+        "losses": 0
+      },
+      "reflexion": {
+        "wins": 176,
+        "ties": 254,
+        "losses": 170
+      },
+      "plan_execute": {
+        "wins": 176,
+        "ties": 424,
+        "losses": 0
+      }
+    },
+    "test_productivity": {
+      "react": {
+        "wins": 50,
+        "ties": 446,
+        "losses": 104
+      },
+      "native_fc": {
+        "wins": 151,
+        "ties": 449,
+        "losses": 0
+      },
+      "reflexion": {
+        "wins": 50,
+        "ties": 446,
+        "losses": 104
+      },
+      "plan_execute": {
+        "wins": 207,
+        "ties": 393,
+        "losses": 0
+      }
+    },
+    "test_substitutability": {
+      "react": {
+        "wins": 150,
+        "ties": 50,
+        "losses": 0
+      },
+      "native_fc": {
+        "wins": 150,
+        "ties": 50,
+        "losses": 0
+      },
+      "reflexion": {
+        "wins": 150,
+        "ties": 50,
+        "losses": 0
+      },
+      "plan_execute": {
+        "wins": 150,
+        "ties": 50,
+        "losses": 0
+      }
+    }
+  }
+}

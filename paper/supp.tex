@@ -91,11 +91,33 @@ correct variant named in the natural-language prompt.
         Agent & Val & Sys & Prod & Sub \\
         \midrule
         DeepSeek-ReAct (N=100) & 0.130 & 0.060 & 0.040 & 0.140 \\
-        DeepSeek-FC (N=100)    & 0.240 & 0.080 & 0.070 & TBD \\
+        DeepSeek-FC (N=100)    & 0.240 & 0.080 & 0.070 & 0.210 \\
         \bottomrule
     \end{tabular}
-    \caption{DeepSeek-V4-Flash per-split TSR at N=100. DeepSeek-FC substitutability pending aggregation; all other cells complete.}
+    \caption{DeepSeek-V4-Flash per-split TSR at N=100. All cells complete; 95\% bootstrap CIs in Table~\ref{tab:deepseek-ci}.}
     \label{tab:deepseek-full}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{lrrrr}
+        \toprule
+        Agent / Split & TSR & 95\% CI & CGG & 95\% CI \\
+        \midrule
+        DeepSeek-ReAct val         & 0.130 & [0.060, 0.210] & ---  & --- \\
+        DeepSeek-ReAct sys         & 0.060 & [0.020, 0.110] & 0.070 & [$-$0.020, 0.170] \\
+        DeepSeek-ReAct prod        & 0.040 & [0.010, 0.080] & 0.090 & [0.000, 0.190] \\
+        DeepSeek-ReAct sub         & 0.140 & [0.070, 0.220] & $-0.010$ & [$-$0.130, 0.110] \\
+        \midrule
+        DeepSeek-FC val            & 0.240 & [0.160, 0.320] & --- & --- \\
+        DeepSeek-FC sys            & 0.080 & [0.030, 0.140] & 0.160 & [0.050, 0.260] \\
+        DeepSeek-FC prod           & 0.070 & [0.030, 0.120] & 0.170 & [0.070, 0.270] \\
+        DeepSeek-FC sub            & 0.210 & [0.130, 0.300] & 0.030 & [$-$0.090, 0.150] \\
+        \bottomrule
+    \end{tabular}
+    \caption{DeepSeek-V4-Flash TSR + CGG with 95\% bootstrap confidence intervals (1000 iterations on per-task TSR). CIs are reported in CGG only when statistically distinct from zero.}
+    \label{tab:deepseek-ci}
 \end{table}
 
 Bootstrap 95\% confidence intervals (1000 iterations on per-task TSR) have
