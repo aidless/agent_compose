@@ -1,0 +1,166 @@
+# AgentCompose Task Templates
+# Each template defines a parameterized task that requires a specific tool chain.
+# Templates use {variable} placeholders that get instantiated by the generator.
+
+templates:
+
+  - id: T1_weather_email
+    description: "Query weather for a location and email it to a recipient"
+    natural_language: |
+      Look up the current weather in {location} and send a summary email
+      to {recipient_email} with subject "Weather Report for {location}".
+    required_tools: [search_web, send_email]
+    minimal_chain: [search_web, send_email]
+    extended_chain: [get_datetime, search_web, send_email]
+    parameters:
+      location: [Tokyo, Paris, New York, London, Sydney, Beijing, Mumbai, Berlin]
+      recipient_email: ["alice@example.com", "bob@example.com", "carol@example.com"]
+    success_criteria:
+      - "send_email.to == {recipient_email}"
+      - "send_email.subject contains 'Weather'"
+      - "send_email.body mentions {location}"
+
+  - id: T2_file_compute_write
+    description: "Read numbers from a file, compute aggregate, write to another file"
+    natural_language: |
+      Read the list of numbers from {input_file}, calculate their {aggregation}
+      (e.g., sum, average, max), and write the result to {output_file}.
+    required_tools: [read_file, calculator, write_file]
+    minimal_chain: [read_file, calculator, write_file]
+    extended_chain: [read_file, calculator, unit_convert, write_file]
+    parameters:
+      input_file: ["/data/numbers_a.csv", "/data/numbers_b.csv", "/data/numbers_c.csv"]
+      output_file: ["/tmp/result_a.txt", "/tmp/result_b.txt", "/tmp/result_c.txt"]
+      aggregation: ["sum", "average", "maximum", "minimum"]
+    success_criteria:
+      - "write_file.path == {output_file}"
+      - "write_file.content is numeric and equals expected {aggregation}"
+
+  - id: T3_stock_sms
+    description: "Look up stock price, convert currency, send via SMS"
+    natural_language: |
+      Find the current price of {stock_ticker} stock in USD, convert it to {target_currency},
+      and text the converted price to {phone_number}.
+    required_tools: [search_web, unit_convert, send_sms]
+    minimal_chain: [search_web, unit_convert, send_sms]
+    extended_chain: [get_datetime, search_web, calculator, unit_convert, send_sms]
+    parameters:
+      stock_ticker: ["AAPL", "GOOGL", "MSFT", "AMZN", "TSLA", "NVDA"]
+      target_currency: ["EUR", "GBP", "JPY", "CNY", "KRW"]
+      phone_number: ["+14155551001", "+14155551002", "+14155551003"]
+    success_criteria:
+      - "send_sms.phone == {phone_number}"
+      - "send_sms.message contains numeric price in {target_currency}"
+
+  - id: T4_url_extract_email
+    description: "Fetch a URL, extract specific data, email it"
+    natural_language: |
+      Fetch the article at {url}, extract any numbers from the content,
+      and email the extracted numbers to {recipient_email}.
+    required_tools: [fetch_url, calculator, send_email]
+    minimal_chain: [fetch_url, calculator, send_email]
+    extended_chain: [fetch_url, calculator, unit_convert, send_email]
+    parameters:
+      url: ["https://example.com/stats1", "https://example.com/stats2"]
+      recipient_email: ["alice@example.com", "bob@example.com"]
+    success_criteria:
+      - "send_email.to == {recipient_email}"
+      - "send_email.body contains extracted numbers"
+
+  - id: T5_calendar_conflict_notify
+    description: "Check calendar conflicts and notify attendees"
+    natural_language: |
+      Check if there are calendar conflicts at {date}, and if conflicts exist,
+      email all affected attendees at {recipient_emails}.
+    required_tools: [calendar_add, send_email]
+    minimal_chain: [calendar_add, send_email]
+    extended_chain: [get_datetime, calendar_add, calculator, send_email]
+    parameters:
+      date: ["2026-08-01T10:00:00Z", "2026-08-02T14:00:00Z"]
+      recipient_emails: [["team@example.com"], ["alice@example.com", "bob@example.com"]]
+    success_criteria:
+      - "calendar_add.start_time matches {date}"
+      - "if conflict detected, send_email.to == {recipient_emails}"
+
+  - id: T6_timezone_meeting
+    description: "Calculate meeting time across timezones and create event"
+    natural_language: |
+      A meeting is scheduled for {meeting_time} in {source_timezone}.
+      Create a calendar event for this meeting and invite {attendees}.
+    required_tools: [get_datetime, calendar_add]
+    minimal_chain: [get_datetime, unit_convert, calendar_add]
+    extended_chain: [get_datetime, unit_convert, calendar_add, send_email]
+    parameters:
+      meeting_time: ["09:00", "14:30", "16:00", "10:00"]
+      source_timezone: ["UTC", "America/New_York", "Europe/London"]
+      attendees: [["alice@example.com"], ["bob@example.com", "carol@example.com"]]
+    success_criteria:
+      - "calendar_add.start_time correctly converted from {source_timezone} to local"
+      - "calendar_add.attendees == {attendees}"
+
+  - id: T7_multi_search_merge
+    description: "Multiple searches, merge/dedupe results, write report"
+    natural_language: |
+      Search for "{query1}" and "{query2}", merge the results into a unique list,
+      and write a summary report to {output_file}.
+    required_tools: [search_web, write_file]
+    minimal_chain: [search_web, search_web, write_file]
+    extended_chain: [search_web, fetch_url, calculator, write_file]
+    parameters:
+      query1: ["machine learning", "neural networks", "transformer models"]
+      query2: ["applications", "research", "evaluation"]
+      output_file: ["/tmp/report_a.md", "/tmp/report_b.md"]
+    success_criteria:
+      - "write_file.path == {output_file}"
+      - "write_file.content contains results from both queries"
+
+  - id: T8_file_chain_args
+    description: "Read file, transform with multiple computation steps, send"
+    natural_language: |
+      Read values from {input_file}, compute their {operation} (with intermediate
+      {transformation}), and email the result to {recipient_email}.
+    required_tools: [read_file, calculator, send_email]
+    minimal_chain: [read_file, calculator, send_email]
+    extended_chain: [read_file, unit_convert, calculator, send_email]
+    parameters:
+      input_file: ["/data/values_a.csv", "/data/values_b.csv"]
+      operation: ["sum", "product", "average"]
+      transformation: ["+ 10", "* 2", "- 5"]
+      recipient_email: ["alice@example.com", "bob@example.com"]
+    success_criteria:
+      - "send_email.body contains numeric result"
+      - "result equals correct {operation} after {transformation}"
+
+  - id: T9_rss_filter_summarize
+    description: "Fetch RSS-style feed, filter, summarize, email"
+    natural_language: |
+      Fetch items from {feed_url}, filter those containing "{keyword}",
+      summarize them, and email to {recipient_email}.
+    required_tools: [fetch_url, send_email]
+    minimal_chain: [fetch_url, search_web, send_email]
+    extended_chain: [fetch_url, search_web, calculator, write_file, send_email]
+    parameters:
+      feed_url: ["https://example.com/feed1", "https://example.com/feed2"]
+      keyword: ["AI", "machine learning", "neural"]
+      recipient_email: ["alice@example.com", "bob@example.com"]
+    success_criteria:
+      - "send_email.body contains filtered items mentioning {keyword}"
+
+  - id: T10_price_monitor_alert
+    description: "Monitor price, send alert + create calendar reminder if threshold met"
+    natural_language: |
+      Check the current price of {stock_ticker} in {target_currency}.
+      If the price is above {threshold}, send an SMS to {phone_number}
+      AND create a calendar reminder for tomorrow to re-check.
+    required_tools: [search_web, unit_convert, send_sms, calendar_add]
+    minimal_chain: [search_web, unit_convert, send_sms, calendar_add]
+    extended_chain: [get_datetime, search_web, unit_convert, calculator, send_sms, calendar_add]
+    parameters:
+      stock_ticker: ["AAPL", "GOOGL", "MSFT"]
+      target_currency: ["EUR", "JPY", "GBP"]
+      threshold: [100, 200, 500]
+      phone_number: ["+14155551001", "+14155551002"]
+    success_criteria:
+      - "if price > threshold: send_sms and calendar_add both called"
+      - "calendar_add.start_time is tomorrow"
+      - "send_sms.message contains the price"

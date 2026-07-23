@@ -1,0 +1,37 @@
+{
+  "name": "write_file",
+  "domain": "file_io",
+  "description": "Write text content to a file at the specified path. Overwrites if exists.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "path": {
+        "type": "string",
+        "description": "Absolute file path"
+      },
+      "content": {
+        "type": "string",
+        "description": "Content to write"
+      }
+    },
+    "required": ["path", "content"]
+  },
+  "returns": {
+    "type": "object",
+    "properties": {
+      "status": {"type": "string", "enum": ["written", "failed"]},
+      "bytes_written": {"type": "integer"}
+    },
+    "required": ["status"]
+  },
+  "side_effects": ["filesystem_write"],
+  "failure_modes": ["permission_denied", "disk_full", "invalid_path"],
+  "example_call": {
+    "path": "/tmp/report.txt",
+    "content": "Summary: 42 items processed."
+  },
+  "example_output": {
+    "status": "written",
+    "bytes_written": 30
+  }
+}

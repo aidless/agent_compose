@@ -1,0 +1,37 @@
+{
+  "name": "send_sms",
+  "domain": "communication",
+  "description": "Send a short text message (SMS) to a phone number.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "phone": {
+        "type": "string",
+        "description": "Phone number in E.164 format, e.g., '+14155552671'"
+      },
+      "message": {
+        "type": "string",
+        "description": "Message content, max 160 chars"
+      }
+    },
+    "required": ["phone", "message"]
+  },
+  "returns": {
+    "type": "object",
+    "properties": {
+      "status": {"type": "string", "enum": ["sent", "failed"]},
+      "message_id": {"type": "string"}
+    },
+    "required": ["status"]
+  },
+  "side_effects": ["external_communication"],
+  "failure_modes": ["invalid_number", "auth_error", "message_too_long"],
+  "example_call": {
+    "phone": "+14155552671",
+    "message": "Stock AAPL is now $178.50"
+  },
+  "example_output": {
+    "status": "sent",
+    "message_id": "sms_xyz789"
+  }
+}

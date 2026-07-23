@@ -1,0 +1,31 @@
+{
+  "name": "fetch_url",
+  "domain": "information_retrieval",
+  "description": "Fetch the content of a URL and return it as plain text.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "url": {
+        "type": "string",
+        "description": "The URL to fetch"
+      },
+      "max_chars": {
+        "type": "integer",
+        "description": "Maximum characters to return",
+        "default": 5000
+      }
+    },
+    "required": ["url"]
+  },
+  "returns": {
+    "type": "string",
+    "description": "Plain text content of the page"
+  },
+  "side_effects": [],
+  "failure_modes": ["network_error", "timeout", "404", "blocked"],
+  "example_call": {
+    "url": "https://example.com/article",
+    "max_chars": 2000
+  },
+  "example_output": "Article text content here..."
+}

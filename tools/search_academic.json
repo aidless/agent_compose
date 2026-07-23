@@ -1,0 +1,55 @@
+{
+  "name": "search_academic",
+  "domain": "information_retrieval",
+  "description": "Search academic papers and preprints for information given a natural language query.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "research_query": {
+        "type": "string",
+        "description": "Natural language research query"
+      },
+      "top_k": {
+        "type": "integer",
+        "description": "Number of papers to return",
+        "default": 5
+      },
+      "year_from": {
+        "type": "integer",
+        "description": "Earliest publication year"
+      }
+    },
+    "required": ["research_query"]
+  },
+  "returns": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "title": {"type": "string"},
+        "authors": {"type": "array", "items": {"type": "string"}},
+        "year": {"type": "integer"},
+        "venue": {"type": "string"},
+        "abstract": {"type": "string"},
+        "citations": {"type": "integer"}
+      }
+    }
+  },
+  "side_effects": [],
+  "failure_modes": ["network_error", "empty_results"],
+  "example_call": {
+    "research_query": "compositional generalization in neural networks",
+    "top_k": 3,
+    "year_from": 2020
+  },
+  "example_output": [
+    {
+      "title": "Compositional Generalization via Forced Backtracking",
+      "authors": ["Kim", "Linzen"],
+      "year": 2020,
+      "venue": "EMNLP",
+      "abstract": "We propose a method...",
+      "citations": 142
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "unit_convert",
+  "domain": "computation",
+  "description": "Convert a numeric value from one unit to another (length, mass, temperature, currency, time zones).",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "value": {
+        "type": "number",
+        "description": "The value to convert"
+      },
+      "from_unit": {
+        "type": "string",
+        "description": "Source unit, e.g., 'kg', 'USD', 'C', 'm', 'UTC+0'"
+      },
+      "to_unit": {
+        "type": "string",
+        "description": "Target unit, e.g., 'lb', 'EUR', 'F', 'ft', 'UTC+8'"
+      }
+    },
+    "required": ["value", "from_unit", "to_unit"]
+  },
+  "returns": {
+    "type": "number",
+    "description": "The converted value"
+  },
+  "side_effects": [],
+  "failure_modes": ["incompatible_units", "unknown_unit"],
+  "example_call": {
+    "value": 100,
+    "from_unit": "USD",
+    "to_unit": "EUR"
+  },
+  "example_output": 92.5
+}

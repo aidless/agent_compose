@@ -1,0 +1,25 @@
+{
+  "name": "read_file",
+  "domain": "file_io",
+  "description": "Read the content of a file from the local filesystem.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "path": {
+        "type": "string",
+        "description": "Absolute file path"
+      }
+    },
+    "required": ["path"]
+  },
+  "returns": {
+    "type": "string",
+    "description": "File content as text"
+  },
+  "side_effects": [],
+  "failure_modes": ["file_not_found", "permission_denied", "binary_file"],
+  "example_call": {
+    "path": "/tmp/data.csv"
+  },
+  "example_output": "name,value\nalice,42\nbob,17\n"
+}

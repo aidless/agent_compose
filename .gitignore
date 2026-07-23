@@ -1,0 +1,79 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ===== Virtual environments =====
+venv/
+env/
+ENV/
+.venv/
+
+# ===== IDE / Editor =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ===== Testing / Coverage =====
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.cover
+.tox/
+.nox/
+.cache
+coverage.xml
+*.py,cover
+
+# ===== Type checking =====
+.mypy_cache/
+.ruff_cache/
+
+# ===== Project specific =====
+# Experiment outputs (large JSONL/JSON)
+results/raw/
+results/*.log
+data/generated/*.jsonl
+data/generated/*.json
+*.eval_cache
+
+# API keys (NEVER commit)
+.env
+.env.local
+*.api_key
+secrets/
+
+# Logs
+*.log
+logs/
+
+# OS junk
+nul
+=*
+
+# Generated figures (uncomment if repo-locked)
+# figures/*.pdf
+# figures/*.png

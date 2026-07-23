@@ -1,0 +1,42 @@
+{
+  "name": "send_email",
+  "domain": "communication",
+  "description": "Send an email to a recipient with subject and body.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "to": {
+        "type": "string",
+        "description": "Recipient email address"
+      },
+      "subject": {
+        "type": "string",
+        "description": "Email subject line"
+      },
+      "body": {
+        "type": "string",
+        "description": "Email body content"
+      }
+    },
+    "required": ["to", "subject", "body"]
+  },
+  "returns": {
+    "type": "object",
+    "properties": {
+      "status": {"type": "string", "enum": ["sent", "failed"]},
+      "message_id": {"type": "string"}
+    },
+    "required": ["status"]
+  },
+  "side_effects": ["external_communication"],
+  "failure_modes": ["invalid_address", "auth_error", "rate_limit"],
+  "example_call": {
+    "to": "alice@example.com",
+    "subject": "Weather report",
+    "body": "Today's weather in Tokyo: 28°C, partly cloudy."
+  },
+  "example_output": {
+    "status": "sent",
+    "message_id": "msg_abc123"
+  }
+}

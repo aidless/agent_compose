@@ -1,0 +1,35 @@
+{
+  "name": "get_datetime",
+  "domain": "scheduling",
+  "description": "Get the current date and time in a specified timezone.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "timezone": {
+        "type": "string",
+        "description": "IANA timezone, e.g., 'America/New_York', 'Asia/Tokyo', 'UTC'",
+        "default": "UTC"
+      }
+    },
+    "required": []
+  },
+  "returns": {
+    "type": "object",
+    "properties": {
+      "datetime": {"type": "string", "description": "ISO 8601 format"},
+      "timezone": {"type": "string"},
+      "weekday": {"type": "string"}
+    },
+    "required": ["datetime", "timezone"]
+  },
+  "side_effects": [],
+  "failure_modes": ["unknown_timezone"],
+  "example_call": {
+    "timezone": "Asia/Tokyo"
+  },
+  "example_output": {
+    "datetime": "2026-07-23T20:15:00+09:00",
+    "timezone": "Asia/Tokyo",
+    "weekday": "Wednesday"
+  }
+}

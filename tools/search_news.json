@@ -1,0 +1,52 @@
+{
+  "name": "search_news",
+  "domain": "information_retrieval",
+  "description": "Search news articles for information given a natural language query. Returns recent news results.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "headline_query": {
+        "type": "string",
+        "description": "Natural language query for news headlines"
+      },
+      "max_articles": {
+        "type": "integer",
+        "description": "Maximum number of articles to return",
+        "default": 5
+      },
+      "time_filter": {
+        "type": "string",
+        "enum": ["1d", "7d", "30d", "all"],
+        "description": "Time range filter",
+        "default": "7d"
+      }
+    },
+    "required": ["headline_query"]
+  },
+  "returns": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "headline": {"type": "string"},
+        "source": {"type": "string"},
+        "published_at": {"type": "string"},
+        "summary": {"type": "string"}
+      }
+    }
+  },
+  "side_effects": [],
+  "failure_modes": ["network_error", "empty_results"],
+  "example_call": {
+    "headline_query": "stock market today",
+    "max_articles": 3
+  },
+  "example_output": [
+    {
+      "headline": "Tech stocks rally on AI optimism",
+      "source": "Reuters",
+      "published_at": "2026-07-23T14:30:00Z",
+      "summary": "Major indices closed higher..."
+    }
+  ]
+}

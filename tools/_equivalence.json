@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "description": "Tool library metadata and substitutability equivalence relations",
+    "version": "0.1.0",
+    "total_tools": 10,
+    "equivalent_tools": 3
+  },
+  "tools": {
+    "information_retrieval": ["search_web", "fetch_url", "search_news", "search_academic"],
+    "computation": ["calculator", "unit_convert"],
+    "communication": ["send_email", "send_sms"],
+    "file_io": ["read_file", "write_file"],
+    "scheduling": ["get_datetime", "calendar_add"]
+  },
+  "equivalence_groups": [
+    {
+      "group_id": "G1_search",
+      "canonical": "search_web",
+      "variants": ["search_news", "search_academic"],
+      "rationale": "All return list of results for a query. Schema differs (different param names, different return shapes) but semantically equivalent."
+    },
+    {
+      "group_id": "G2_communicate",
+      "canonical": "send_email",
+      "variants": ["send_sms"],
+      "rationale": "Both send external messages with body content. Different protocol (email vs SMS). For substitutability tests on short messages only."
+    }
+  ],
+  "domains": {
+    "information_retrieval": "Tools that fetch information from external sources (web, news, academic)",
+    "computation": "Tools that perform calculations or transformations on numeric data",
+    "communication": "Tools that send messages to external recipients",
+    "file_io": "Tools that interact with the local filesystem",
+    "scheduling": "Tools that handle date/time operations and calendar events"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "calculator",
+  "domain": "computation",
+  "description": "Evaluate a mathematical expression and return the numeric result.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "expression": {
+        "type": "string",
+        "description": "A mathematical expression, e.g., '(2 + 3) * 4'"
+      }
+    },
+    "required": ["expression"]
+  },
+  "returns": {
+    "type": "number",
+    "description": "The numeric result"
+  },
+  "side_effects": [],
+  "failure_modes": ["syntax_error", "division_by_zero", "overflow"],
+  "example_call": {
+    "expression": "(100 - 25) / 3 * 2"
+  },
+  "example_output": 50.0
+}
