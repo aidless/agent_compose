@@ -310,6 +310,8 @@ Figure~\ref{fig:ablation} shows that Chain-Aware's productivity TSR jumps from 0
 
 We introduced AgentCompose, a controlled benchmark for compositional generalization in LLM tool use, and showed that current agents suffer a large compositional gap across three orthogonal axes. Error analysis pinpoints chain-discovery as the bottleneck, and our chain-aware training method---extended with an equivalence-aware variant detector---recovers substantial gains on the productivity split and fully closes the substitutability split. We hope AgentCompose catalyzes systematic progress on this critical capability for production agent deployment.
 
+\paragraph{Future work.} Extending EquivAware into a generic \emph{agent-level} overlay (so that any baseline agent can benefit, not just ChainAware) requires either (i) letting the agent inspect its planned chain before execution or (ii) training-time augmentation with variant chains. The eval-time equivalence match we currently use is evaluator-side only and helps only when the agent already called a tool in the right equivalence group. We also plan to scale the benchmark to 100+ tools, add noise-injection ablations, and evaluate larger open-weight models (Llama-3, Qwen-2.5) under identical prompts.
+
 \section*{Acknowledgments}
 \addcontentsline{toc}{section}{Acknowledgments}
 % TODO (COLM double-blind): replace with non-anonymous acknowledgments after submission acceptance.

@@ -65,6 +65,16 @@ python scripts/evaluate.py --agent chain_aware --split test_productivity
 
 ```bash
 DEEPSEEK_API_KEY=sk-...
+# 可选 — 跑 OpenAI / Anthropic 对照时
+OPENAI_API_KEY=sk-...
+ANTHROPIC_API_KEY=sk-ant-...
+```
+
+跑 GPT-4o-mini 或 Claude Haiku 对照：
+
+```bash
+python scripts/evaluate_llm.py --agent gpt_react --split val --max-tasks 50
+python scripts/evaluate_llm.py --agent claude_fc --split test_productivity --max-tasks 30
 ```
 
 ## 📊 实际结果（30-tool benchmark）

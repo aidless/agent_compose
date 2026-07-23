@@ -104,3 +104,32 @@ def test_figures_exist() -> None:
             p = PROJECT_ROOT / "figures" / f"{fig}.{ext}"
             assert p.exists(), f"missing figure: {p}"
             assert p.stat().st_size > 1000, f"{p.name} suspiciously small ({p.stat().st_size} B)"
+
+
+def test_llm_vendor_registry() -> None:
+    """LLM_VENDORS exposes at least DeepSeek + OpenAI + Anthropic configs."""
+    from agent_compose.agents.llm_react import LLM_VENDORS
+    assert "deepseek" in LLM_VENDORS
+    assert "openai" in LLM_VENDORS
+    assert "anthropic" in LLM_VENDORS
+    for v in LLM_VENDORS.values():
+        assert "env_var" in v
+        assert "base_url" in v
+        assert "default_model" in v
+        assert "display_name" in v
+
+
+def test_llm_agent_raises_without_api_key(monkeypatch) -> None:
+    """DeepSeekReactAgent must raise ValueError when no API key is set."""
+    from pathlib import Path
+    from agent_compose.agents.llm_react import DeepSeekReactAgent
+    from agent_compose.tools import ToolLibrary
+
+    monkeypatch.delenv("DEEPSEEK_API_KEY", raising=False)
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+
+    library = ToolLibrary(Path(PROJECT_ROOT / "tools"))
+    for vendor in ("deepseek", "openai", "anthropic"):
+        with pytest.raises(ValueError, match="not set"):
+            DeepSeekReactAgent(library, max_steps=2, vendor=vendor)

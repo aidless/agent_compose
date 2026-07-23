@@ -1,8 +1,18 @@
 """Evaluate LLM-backed agent on AgentCompose splits.
 
 Usage:
+    # DeepSeek (default)
     python scripts/evaluate_llm.py --agent deepseek_react --split val --max-tasks 30
     python scripts/evaluate_llm.py --agent deepseek_react --split all --max-tasks 50
+
+    # GPT-4o-mini via OpenAI
+    python scripts/evaluate_llm.py --agent gpt_react --vendor openai --split val
+
+    # Claude Haiku via Anthropic
+    python scripts/evaluate_llm.py --agent claude_react --vendor anthropic --split val
+
+Requires the corresponding env var (DEEPSEEK_API_KEY, OPENAI_API_KEY,
+ANTHROPIC_API_KEY) to be set in .env.
 """
 
 from __future__ import annotations
@@ -16,16 +26,21 @@ from dotenv import load_dotenv
 
 load_dotenv(override=True)
 
-from agent_compose.agents.llm_react import DeepSeekFCAgent, DeepSeekReactAgent
+from agent_compose.agents.llm_react import LLM_VENDORS, DeepSeekFCAgent, DeepSeekReactAgent
 from agent_compose.env.simulator import ToolSimulator
 from agent_compose.eval.metrics import Evaluator
 from agent_compose.eval.runner import evaluate_split, load_split, save_results
 from agent_compose.tools import ToolLibrary
 
 
-AGENT_REGISTRY = {
-    "deepseek_react": DeepSeekReactAgent,
-    "deepseek_fc": DeepSeekFCAgent,
+# Maps agent_id → (class, default_vendor)
+AGENT_REGISTRY: dict[str, tuple[type, str]] = {
+    "deepseek_react": (DeepSeekReactAgent, "deepseek"),
+    "deepseek_fc": (DeepSeekFCAgent, "deepseek"),
+    "gpt_react": (DeepSeekReactAgent, "openai"),
+    "gpt_fc": (DeepSeekFCAgent, "openai"),
+    "claude_react": (DeepSeekReactAgent, "anthropic"),
+    "claude_fc": (DeepSeekFCAgent, "anthropic"),
 }
 
 
@@ -41,7 +56,10 @@ def main() -> None:
     parser.add_argument("--output-dir", type=Path, default=Path(__file__).parent.parent / "results")
     parser.add_argument("--max-tasks", type=int, default=None, help="Limit tasks per split")
     parser.add_argument("--max-steps", type=int, default=10)
-    parser.add_argument("--model", type=str, default="deepseek-v4-flash")
+    parser.add_argument("--model", type=str, default=None, help="Override default model for the vendor")
+    parser.add_argument("--vendor", type=str, default=None,
+                        choices=list(LLM_VENDORS.keys()),
+                        help="Override vendor (default: derived from agent id)")
     parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
 
@@ -49,8 +67,12 @@ def main() -> None:
     library = ToolLibrary(tools_dir)
     simulator = ToolSimulator(library, failure_rate=0.0, seed=args.seed)
 
-    agent_cls = AGENT_REGISTRY[args.agent]
-    agent = agent_cls(library, max_steps=args.max_steps, model=args.model)
+    agent_cls, default_vendor = AGENT_REGISTRY[args.agent]
+    vendor = args.vendor or default_vendor
+    default_model = LLM_VENDORS[vendor]["default_model"]
+    model = args.model or default_model
+    agent = agent_cls(library, max_steps=args.max_steps, model=model, vendor=vendor)
+    print(f"  vendor={vendor}  model={model}  agent.name={agent.name}")
 
     splits = (
         ["val", "test_systematicity", "test_productivity", "test_substitutability"]

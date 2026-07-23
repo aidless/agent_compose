@@ -54,8 +54,38 @@ Available tools:
 {tool_descriptions}"""
 
 
+# Vendor registry: maps short name → (env_var, base_url, default_model, display_name)
+LLM_VENDORS: dict[str, dict[str, str]] = {
+    "deepseek": {
+        "env_var": "DEEPSEEK_API_KEY",
+        "base_url": "https://api.deepseek.com",
+        "default_model": "deepseek-v4-flash",
+        "display_name": "DeepSeek",
+    },
+    "openai": {
+        "env_var": "OPENAI_API_KEY",
+        "base_url": "https://api.openai.com",
+        "default_model": "gpt-4o-mini",
+        "display_name": "OpenAI",
+    },
+    "anthropic": {
+        "env_var": "ANTHROPIC_API_KEY",
+        "base_url": "https://api.anthropic.com",
+        "default_model": "claude-3-haiku-20240307",
+        "display_name": "Anthropic",
+    },
+}
+
+
 class DeepSeekReactAgent(Agent):
-    """ReAct agent backed by DeepSeek V4 Flash (text completion style)."""
+    """ReAct agent backed by an OpenAI-compatible chat-completions API.
+
+    Default vendor is DeepSeek V4 Flash; pass ``vendor="openai"`` /
+    ``vendor="anthropic"`` and the matching env var to swap. Anthropic is
+    also OpenAI-compatible via its /v1/messages endpoint, but it requires
+    a different request body, so for now we route Anthropic through the
+    official SDK in future work.
+    """
 
     name = "DeepSeek-ReAct"
 
@@ -64,17 +94,26 @@ class DeepSeekReactAgent(Agent):
         tool_library: ToolLibrary,
         max_steps: int = 8,
         api_key: str | None = None,
-        model: str = "deepseek-v4-flash",
-        base_url: str = "https://api.deepseek.com",
+        model: str | None = None,
+        base_url: str | None = None,
         temperature: float = 0.0,
+        vendor: str = "deepseek",
     ) -> None:
         super().__init__(tool_library, max_steps)
-        self.api_key = api_key or os.getenv("DEEPSEEK_API_KEY")
+        if vendor not in LLM_VENDORS:
+            raise ValueError(
+                f"Unknown vendor {vendor!r}; valid: {list(LLM_VENDORS.keys())}"
+            )
+        v = LLM_VENDORS[vendor]
+        self.vendor = vendor
+        self.api_key = api_key or os.getenv(v["env_var"])
         if not self.api_key:
-            raise ValueError("DEEPSEEK_API_KEY not set")
-        self.model = model
-        self.base_url = base_url
+            raise ValueError(f"{v['env_var']} not set (vendor={vendor})")
+        self.model = model or v["default_model"]
+        self.base_url = base_url or v["base_url"]
         self.temperature = temperature
+        # Display name reflects active vendor (overrides class default)
+        self.name = f"{v['display_name']}-ReAct"
         self._total_tokens = 0
         self._step_history: list[str] = []
 
@@ -233,9 +272,19 @@ class DeepSeekReactAgent(Agent):
 
 
 class DeepSeekFCAgent(DeepSeekReactAgent):
-    """Native function-calling variant: uses JSON output instead of text parsing."""
+    """Native function-calling variant: uses JSON output instead of text parsing.
+
+    Default vendor is DeepSeek; pass ``vendor="openai"`` to evaluate
+    GPT-4o-mini with the same JSON-output protocol (OpenAI also supports
+    JSON mode via response_format).
+    """
 
     name = "DeepSeek-FC"
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Override the inherited "-ReAct" name with "-FC"
+        self.name = f"{LLM_VENDORS[self.vendor]['display_name']}-FC"
 
     def act(self, task: Task, trace: ExecutionTrace) -> AgentStep:
         history_str = "\n".join(self._step_history) if self._step_history else ""
