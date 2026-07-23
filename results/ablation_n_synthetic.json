@@ -1,0 +1,27 @@
+[
+  {
+    "n_synthetic": 0,
+    "tsr_productivity": 0.3,
+    "coc_productivity": 0.15
+  },
+  {
+    "n_synthetic": 10,
+    "tsr_productivity": 0.3,
+    "coc_productivity": 0.15
+  },
+  {
+    "n_synthetic": 25,
+    "tsr_productivity": 0.3,
+    "coc_productivity": 0.15
+  },
+  {
+    "n_synthetic": 50,
+    "tsr_productivity": 0.3,
+    "coc_productivity": 0.15
+  },
+  {
+    "n_synthetic": 100,
+    "tsr_productivity": 0.3,
+    "coc_productivity": 0.15
+  }
+]

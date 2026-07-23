@@ -1,7 +1,7 @@
 {
   "agent": "NativeFC-template",
   "split": "test_substitutability",
-  "n_tasks": 30,
+  "n_tasks": 100,
   "task_metrics": [
     {
       "task_id": "sub_T1_weather_email_75619",
@@ -421,6 +421,986 @@
       "expected_chain": [
         "search_news",
         "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_52310",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_68249",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_20363",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_44481",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_17969",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_38697",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_53450",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_23437",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_40147",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_87095",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_23065",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_48173",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_79888",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_92564",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_14785",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_32376",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_67079",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_90622",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_22300",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_86607",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_43390",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_97823",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_58348",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_14394",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_15756",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_84996",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_92868",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_83473",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_44674",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_24136",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_31808",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_27025",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_32553",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_34195",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_75806",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_15222",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_33426",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_12296",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_12933",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_16400",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_12453",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_62575",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_70820",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_89915",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_57628",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_94152",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_68284",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_29401",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_29205",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_76662",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_46369",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_74566",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_79755",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_54883",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_37342",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_13103",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_94179",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_12473",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_65987",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_13437",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_45530",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_95253",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_30641",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_71536",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_96032",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_39651",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_53073",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_11877",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_65003",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_11694",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_add",
+        "send_sms"
       ]
     }
   ],
@@ -2214,6 +3194,3576 @@
           "output": {
             "status": "written",
             "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_52310",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "Mumbai",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "Report for Mumbai",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: Mumbai', 'url': 'https://example.com/r1?q=Mumbai', 'snippet': 'Mock snippet 1 discussing Mumbai. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: Mumbai",
+              "url": "https://example.com/r1?q=Mumbai",
+              "snippet": "Mock snippet 1 discussing Mumbai. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: Mumbai",
+              "url": "https://example.com/r2?q=Mumbai",
+              "snippet": "Mock snippet 2 discussing Mumbai. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: Mumbai",
+              "url": "https://example.com/r3?q=Mumbai",
+              "snippet": "Mock snippet 3 discussing Mumbai. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_09eb0863"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_68249",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_20363",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_44481",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "Mumbai",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "carol@example.com",
+            "subject": "Report for Mumbai",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: Mumbai', 'url': 'https://example.com/r1?q=Mumbai', 'snippet': 'Mock snippet 1 discussing Mumbai. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: Mumbai",
+              "url": "https://example.com/r1?q=Mumbai",
+              "snippet": "Mock snippet 1 discussing Mumbai. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: Mumbai",
+              "url": "https://example.com/r2?q=Mumbai",
+              "snippet": "Mock snippet 2 discussing Mumbai. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: Mumbai",
+              "url": "https://example.com/r3?q=Mumbai",
+              "snippet": "Mock snippet 3 discussing Mumbai. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_2e26583e"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_17969",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_38697",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "Sydney",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "Report for Sydney",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: Sydney', 'url': 'https://example.com/r1?q=Sydney', 'snippet': 'Mock snippet 1 discussing Sydney. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: Sydney",
+              "url": "https://example.com/r1?q=Sydney",
+              "snippet": "Mock snippet 1 discussing Sydney. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: Sydney",
+              "url": "https://example.com/r2?q=Sydney",
+              "snippet": "Mock snippet 2 discussing Sydney. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: Sydney",
+              "url": "https://example.com/r3?q=Sydney",
+              "snippet": "Mock snippet 3 discussing Sydney. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_c9e2ae33"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_53450",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_23437",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "Tokyo",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "carol@example.com",
+            "subject": "Report for Tokyo",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: Tokyo', 'url': 'https://example.com/r1?q=Tokyo', 'snippet': 'Mock snippet 1 discussing Tokyo. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: Tokyo",
+              "url": "https://example.com/r1?q=Tokyo",
+              "snippet": "Mock snippet 1 discussing Tokyo. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: Tokyo",
+              "url": "https://example.com/r2?q=Tokyo",
+              "snippet": "Mock snippet 2 discussing Tokyo. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: Tokyo",
+              "url": "https://example.com/r3?q=Tokyo",
+              "snippet": "Mock snippet 3 discussing Tokyo. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_090dfa3d"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_40147",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_87095",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "New York",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "alice@example.com",
+            "subject": "Report for New York",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: New York', 'url': 'https://example.com/r1?q=New+York', 'snippet': 'Mock snippet 1 discussing New York. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: New York",
+              "url": "https://example.com/r1?q=New+York",
+              "snippet": "Mock snippet 1 discussing New York. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: New York",
+              "url": "https://example.com/r2?q=New+York",
+              "snippet": "Mock snippet 2 discussing New York. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: New York",
+              "url": "https://example.com/r3?q=New+York",
+              "snippet": "Mock snippet 3 discussing New York. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_2c0a834a"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_23065",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_48173",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_79888",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_92564",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_14785",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_32376",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "Mumbai",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "Report for Mumbai",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: Mumbai', 'url': 'https://example.com/r1?q=Mumbai', 'snippet': 'Mock snippet 1 discussing Mumbai. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: Mumbai",
+              "url": "https://example.com/r1?q=Mumbai",
+              "snippet": "Mock snippet 1 discussing Mumbai. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: Mumbai",
+              "url": "https://example.com/r2?q=Mumbai",
+              "snippet": "Mock snippet 2 discussing Mumbai. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: Mumbai",
+              "url": "https://example.com/r3?q=Mumbai",
+              "snippet": "Mock snippet 3 discussing Mumbai. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_09eb0863"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_67079",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "Sydney",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "alice@example.com",
+            "subject": "Report for Sydney",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: Sydney', 'url': 'https://example.com/r1?q=Sydney', 'snippet': 'Mock snippet 1 discussing Sydney. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: Sydney",
+              "url": "https://example.com/r1?q=Sydney",
+              "snippet": "Mock snippet 1 discussing Sydney. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: Sydney",
+              "url": "https://example.com/r2?q=Sydney",
+              "snippet": "Mock snippet 2 discussing Sydney. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: Sydney",
+              "url": "https://example.com/r3?q=Sydney",
+              "snippet": "Mock snippet 3 discussing Sydney. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_85d7265b"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_90622",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_22300",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_86607",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_43390",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_97823",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "Beijing",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "Report for Beijing",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: Beijing', 'url': 'https://example.com/r1?q=Beijing', 'snippet': 'Mock snippet 1 discussing Beijing. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: Beijing",
+              "url": "https://example.com/r1?q=Beijing",
+              "snippet": "Mock snippet 1 discussing Beijing. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: Beijing",
+              "url": "https://example.com/r2?q=Beijing",
+              "snippet": "Mock snippet 2 discussing Beijing. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: Beijing",
+              "url": "https://example.com/r3?q=Beijing",
+              "snippet": "Mock snippet 3 discussing Beijing. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_1fcbafb2"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_58348",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_14394",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_15756",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_84996",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_92868",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "Berlin",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "carol@example.com",
+            "subject": "Report for Berlin",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: Berlin', 'url': 'https://example.com/r1?q=Berlin', 'snippet': 'Mock snippet 1 discussing Berlin. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: Berlin",
+              "url": "https://example.com/r1?q=Berlin",
+              "snippet": "Mock snippet 1 discussing Berlin. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: Berlin",
+              "url": "https://example.com/r2?q=Berlin",
+              "snippet": "Mock snippet 2 discussing Berlin. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: Berlin",
+              "url": "https://example.com/r3?q=Berlin",
+              "snippet": "Mock snippet 3 discussing Berlin. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_10c82259"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_83473",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "Sydney",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "Report for Sydney",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: Sydney', 'url': 'https://example.com/r1?q=Sydney', 'snippet': 'Mock snippet 1 discussing Sydney. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: Sydney",
+              "url": "https://example.com/r1?q=Sydney",
+              "snippet": "Mock snippet 1 discussing Sydney. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: Sydney",
+              "url": "https://example.com/r2?q=Sydney",
+              "snippet": "Mock snippet 2 discussing Sydney. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: Sydney",
+              "url": "https://example.com/r3?q=Sydney",
+              "snippet": "Mock snippet 3 discussing Sydney. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_c9e2ae33"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_44674",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_24136",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "London",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "carol@example.com",
+            "subject": "Report for London",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: London', 'url': 'https://example.com/r1?q=London', 'snippet': 'Mock snippet 1 discussing London. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: London",
+              "url": "https://example.com/r1?q=London",
+              "snippet": "Mock snippet 1 discussing London. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: London",
+              "url": "https://example.com/r2?q=London",
+              "snippet": "Mock snippet 2 discussing London. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: London",
+              "url": "https://example.com/r3?q=London",
+              "snippet": "Mock snippet 3 discussing London. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_d150b150"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_31808",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "New York",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "carol@example.com",
+            "subject": "Report for New York",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: New York', 'url': 'https://example.com/r1?q=New+York', 'snippet': 'Mock snippet 1 discussing New York. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: New York",
+              "url": "https://example.com/r1?q=New+York",
+              "snippet": "Mock snippet 1 discussing New York. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: New York",
+              "url": "https://example.com/r2?q=New+York",
+              "snippet": "Mock snippet 2 discussing New York. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: New York",
+              "url": "https://example.com/r3?q=New+York",
+              "snippet": "Mock snippet 3 discussing New York. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_900af4d1"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_27025",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_32553",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "New York",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "alice@example.com",
+            "subject": "Report for New York",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: New York', 'url': 'https://example.com/r1?q=New+York', 'snippet': 'Mock snippet 1 discussing New York. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: New York",
+              "url": "https://example.com/r1?q=New+York",
+              "snippet": "Mock snippet 1 discussing New York. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: New York",
+              "url": "https://example.com/r2?q=New+York",
+              "snippet": "Mock snippet 2 discussing New York. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: New York",
+              "url": "https://example.com/r3?q=New+York",
+              "snippet": "Mock snippet 3 discussing New York. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_2c0a834a"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_34195",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_75806",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_15222",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "Berlin",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "Report for Berlin",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: Berlin', 'url': 'https://example.com/r1?q=Berlin', 'snippet': 'Mock snippet 1 discussing Berlin. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: Berlin",
+              "url": "https://example.com/r1?q=Berlin",
+              "snippet": "Mock snippet 1 discussing Berlin. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: Berlin",
+              "url": "https://example.com/r2?q=Berlin",
+              "snippet": "Mock snippet 2 discussing Berlin. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: Berlin",
+              "url": "https://example.com/r3?q=Berlin",
+              "snippet": "Mock snippet 3 discussing Berlin. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_e31f7191"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_33426",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_12296",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_12933",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_16400",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_12453",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "Mumbai",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "alice@example.com",
+            "subject": "Report for Mumbai",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: Mumbai', 'url': 'https://example.com/r1?q=Mumbai', 'snippet': 'Mock snippet 1 discussing Mumbai. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: Mumbai",
+              "url": "https://example.com/r1?q=Mumbai",
+              "snippet": "Mock snippet 1 discussing Mumbai. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: Mumbai",
+              "url": "https://example.com/r2?q=Mumbai",
+              "snippet": "Mock snippet 2 discussing Mumbai. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: Mumbai",
+              "url": "https://example.com/r3?q=Mumbai",
+              "snippet": "Mock snippet 3 discussing Mumbai. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_443c7cbd"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_62575",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_70820",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_89915",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "London",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "alice@example.com",
+            "subject": "Report for London",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: London', 'url': 'https://example.com/r1?q=London', 'snippet': 'Mock snippet 1 discussing London. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: London",
+              "url": "https://example.com/r1?q=London",
+              "snippet": "Mock snippet 1 discussing London. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: London",
+              "url": "https://example.com/r2?q=London",
+              "snippet": "Mock snippet 2 discussing London. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: London",
+              "url": "https://example.com/r3?q=London",
+              "snippet": "Mock snippet 3 discussing London. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_fd271bcb"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_57628",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_94152",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_68284",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_29401",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_29205",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_76662",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "Sydney",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "Report for Sydney",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: Sydney', 'url': 'https://example.com/r1?q=Sydney', 'snippet': 'Mock snippet 1 discussing Sydney. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: Sydney",
+              "url": "https://example.com/r1?q=Sydney",
+              "snippet": "Mock snippet 1 discussing Sydney. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: Sydney",
+              "url": "https://example.com/r2?q=Sydney",
+              "snippet": "Mock snippet 2 discussing Sydney. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: Sydney",
+              "url": "https://example.com/r3?q=Sydney",
+              "snippet": "Mock snippet 3 discussing Sydney. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_c9e2ae33"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_46369",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "Sydney",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "carol@example.com",
+            "subject": "Report for Sydney",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: Sydney', 'url': 'https://example.com/r1?q=Sydney', 'snippet': 'Mock snippet 1 discussing Sydney. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: Sydney",
+              "url": "https://example.com/r1?q=Sydney",
+              "snippet": "Mock snippet 1 discussing Sydney. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: Sydney",
+              "url": "https://example.com/r2?q=Sydney",
+              "snippet": "Mock snippet 2 discussing Sydney. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: Sydney",
+              "url": "https://example.com/r3?q=Sydney",
+              "snippet": "Mock snippet 3 discussing Sydney. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_a01681b4"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_74566",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_79755",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_54883",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_37342",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_13103",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_94179",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "New York",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "alice@example.com",
+            "subject": "Report for New York",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: New York', 'url': 'https://example.com/r1?q=New+York', 'snippet': 'Mock snippet 1 discussing New York. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: New York",
+              "url": "https://example.com/r1?q=New+York",
+              "snippet": "Mock snippet 1 discussing New York. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: New York",
+              "url": "https://example.com/r2?q=New+York",
+              "snippet": "Mock snippet 2 discussing New York. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: New York",
+              "url": "https://example.com/r3?q=New+York",
+              "snippet": "Mock snippet 3 discussing New York. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_2c0a834a"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_12473",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_65987",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "London",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "Report for London",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: London', 'url': 'https://example.com/r1?q=London', 'snippet': 'Mock snippet 1 discussing London. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: London",
+              "url": "https://example.com/r1?q=London",
+              "snippet": "Mock snippet 1 discussing London. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: London",
+              "url": "https://example.com/r2?q=London",
+              "snippet": "Mock snippet 2 discussing London. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: London",
+              "url": "https://example.com/r3?q=London",
+              "snippet": "Mock snippet 3 discussing London. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_b904bcd5"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_13437",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_45530",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_95253",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_30641",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_71536",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "Sydney",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "Report for Sydney",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: Sydney', 'url': 'https://example.com/r1?q=Sydney', 'snippet': 'Mock snippet 1 discussing Sydney. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: Sydney",
+              "url": "https://example.com/r1?q=Sydney",
+              "snippet": "Mock snippet 1 discussing Sydney. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: Sydney",
+              "url": "https://example.com/r2?q=Sydney",
+              "snippet": "Mock snippet 2 discussing Sydney. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: Sydney",
+              "url": "https://example.com/r3?q=Sydney",
+              "snippet": "Mock snippet 3 discussing Sydney. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_c9e2ae33"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_96032",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_39651",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_53073",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-01T10:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_b5dd4e4c",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_11877",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "London",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "alice@example.com",
+            "subject": "Report for London",
+            "body": "Search results: 3 items found. First: {'title': 'Result 1 for: London', 'url': 'https://example.com/r1?q=London', 'snippet': 'Mock snippet 1 discussing London. Contains numbers: 42, 17, 88.'}"
+          }
+        },
+        {
+          "tool": "calculator",
+          "args": {
+            "expression": "100"
+          }
+        },
+        {
+          "tool": "write_file",
+          "args": {
+            "path": "/tmp/result.txt",
+            "content": "100.0"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: London",
+              "url": "https://example.com/r1?q=London",
+              "snippet": "Mock snippet 1 discussing London. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: London",
+              "url": "https://example.com/r2?q=London",
+              "snippet": "Mock snippet 2 discussing London. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: London",
+              "url": "https://example.com/r3?q=London",
+              "snippet": "Mock snippet 3 discussing London. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_fd271bcb"
+          }
+        },
+        {
+          "success": true,
+          "output": 100.0
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "written",
+            "bytes_written": 5
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_65003",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_11694",
+      "calls": [
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "test@example.com",
+            "subject": "Report for task",
+            "body": "Report attached."
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Reminder",
+            "start_time": "2026-08-02T14:00:00Z",
+            "duration_minutes": 60
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9538a811"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fe452b3a",
+            "conflicts": []
           }
         }
       ],

@@ -40,6 +40,9 @@ def load_split(file_path: Path) -> list[Task]:
 def run_task(agent: Agent, simulator: ToolSimulator, task: Task) -> tuple[ExecutionTrace, int]:
     """Run one task through the agent loop. Returns (trace, total_steps)."""
     simulator.reset_state()
+    # Reset any agent-level state (e.g., Reflexion memory, Plan-Execute plan)
+    if hasattr(agent, "reset"):
+        agent.reset()
     trace = ExecutionTrace(task_id=task.task_id)
     total_steps = 0
 

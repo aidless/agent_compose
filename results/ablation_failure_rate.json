@@ -1,0 +1,26 @@
+[
+  {
+    "failure_rate": 0.0,
+    "tsr_val": 1.0,
+    "tsr_productivity": 0.06,
+    "cgg_productivity": 0.94
+  },
+  {
+    "failure_rate": 0.1,
+    "tsr_val": 1.0,
+    "tsr_productivity": 0.06,
+    "cgg_productivity": 0.94
+  },
+  {
+    "failure_rate": 0.2,
+    "tsr_val": 1.0,
+    "tsr_productivity": 0.06,
+    "cgg_productivity": 0.94
+  },
+  {
+    "failure_rate": 0.3,
+    "tsr_val": 1.0,
+    "tsr_productivity": 0.06,
+    "cgg_productivity": 0.94
+  }
+]

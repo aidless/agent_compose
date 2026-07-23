@@ -1,0 +1,196 @@
+{
+  "react": {
+    "rates": {
+      "val": {
+        "wrong_tool": 1.0
+      },
+      "test_systematicity": {
+        "wrong_tool": 1.0
+      },
+      "test_productivity": {
+        "wrong_tool": 1.0
+      },
+      "test_substitutability": {
+        "missing_tool": 0.39,
+        "wrong_tool": 0.61
+      }
+    },
+    "totals": {
+      "test_productivity": {
+        "none": 0,
+        "wrong_tool": 200,
+        "wrong_order": 0,
+        "missing_tool": 0,
+        "bad_argument": 0
+      },
+      "val": {
+        "none": 0,
+        "wrong_tool": 100,
+        "wrong_order": 0,
+        "missing_tool": 0,
+        "bad_argument": 0
+      },
+      "test_systematicity": {
+        "none": 0,
+        "wrong_tool": 200,
+        "wrong_order": 0,
+        "missing_tool": 0,
+        "bad_argument": 0
+      },
+      "test_substitutability": {
+        "none": 0,
+        "wrong_tool": 61,
+        "wrong_order": 0,
+        "missing_tool": 39,
+        "bad_argument": 0
+      }
+    }
+  },
+  "native_fc": {
+    "rates": {
+      "val": {
+        "wrong_tool": 0.39,
+        "wrong_order": 0.61
+      },
+      "test_systematicity": {
+        "wrong_tool": 0.185,
+        "missing_tool": 0.645,
+        "wrong_order": 0.17
+      },
+      "test_productivity": {
+        "missing_tool": 0.94,
+        "wrong_order": 0.06
+      },
+      "test_substitutability": {
+        "missing_tool": 1.0
+      }
+    },
+    "totals": {
+      "test_productivity": {
+        "none": 0,
+        "wrong_tool": 0,
+        "wrong_order": 12,
+        "missing_tool": 188,
+        "bad_argument": 0
+      },
+      "val": {
+        "none": 0,
+        "wrong_tool": 39,
+        "wrong_order": 61,
+        "missing_tool": 0,
+        "bad_argument": 0
+      },
+      "test_systematicity": {
+        "none": 0,
+        "wrong_tool": 37,
+        "wrong_order": 34,
+        "missing_tool": 129,
+        "bad_argument": 0
+      },
+      "test_substitutability": {
+        "none": 0,
+        "wrong_tool": 0,
+        "wrong_order": 0,
+        "missing_tool": 100,
+        "bad_argument": 0
+      }
+    }
+  },
+  "reflexion": {
+    "rates": {
+      "val": {
+        "wrong_tool": 1.0
+      },
+      "test_systematicity": {
+        "wrong_tool": 1.0
+      },
+      "test_productivity": {
+        "wrong_tool": 1.0
+      },
+      "test_substitutability": {
+        "missing_tool": 0.39,
+        "wrong_tool": 0.61
+      }
+    },
+    "totals": {
+      "test_productivity": {
+        "none": 0,
+        "wrong_tool": 200,
+        "wrong_order": 0,
+        "missing_tool": 0,
+        "bad_argument": 0
+      },
+      "val": {
+        "none": 0,
+        "wrong_tool": 100,
+        "wrong_order": 0,
+        "missing_tool": 0,
+        "bad_argument": 0
+      },
+      "test_systematicity": {
+        "none": 0,
+        "wrong_tool": 200,
+        "wrong_order": 0,
+        "missing_tool": 0,
+        "bad_argument": 0
+      },
+      "test_substitutability": {
+        "none": 0,
+        "wrong_tool": 61,
+        "wrong_order": 0,
+        "missing_tool": 39,
+        "bad_argument": 0
+      }
+    }
+  },
+  "plan_execute": {
+    "rates": {
+      "val": {
+        "wrong_tool": 0.39,
+        "wrong_order": 0.61
+      },
+      "test_systematicity": {
+        "wrong_tool": 0.185,
+        "missing_tool": 0.645,
+        "wrong_order": 0.17
+      },
+      "test_productivity": {
+        "missing_tool": 0.94,
+        "wrong_order": 0.06
+      },
+      "test_substitutability": {
+        "missing_tool": 1.0
+      }
+    },
+    "totals": {
+      "test_productivity": {
+        "none": 0,
+        "wrong_tool": 0,
+        "wrong_order": 12,
+        "missing_tool": 188,
+        "bad_argument": 0
+      },
+      "val": {
+        "none": 0,
+        "wrong_tool": 39,
+        "wrong_order": 61,
+        "missing_tool": 0,
+        "bad_argument": 0
+      },
+      "test_systematicity": {
+        "none": 0,
+        "wrong_tool": 37,
+        "wrong_order": 34,
+        "missing_tool": 129,
+        "bad_argument": 0
+      },
+      "test_substitutability": {
+        "none": 0,
+        "wrong_tool": 0,
+        "wrong_order": 0,
+        "missing_tool": 100,
+        "bad_argument": 0
+      }
+    }
+  }
+}

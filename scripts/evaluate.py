@@ -11,8 +11,11 @@ import argparse
 import json
 from pathlib import Path
 
+from agent_compose.agents.chain_aware import ChainAwareAgent
 from agent_compose.agents.native_fc import NativeFCAgent
+from agent_compose.agents.plan_execute import PlanExecuteAgent
 from agent_compose.agents.react import ReActAgent
+from agent_compose.agents.reflexion import ReflexionAgent
 from agent_compose.env.simulator import ToolSimulator
 from agent_compose.eval.metrics import Evaluator
 from agent_compose.eval.runner import evaluate_split, load_split, save_results
@@ -22,7 +25,15 @@ from agent_compose.tools import ToolLibrary
 AGENT_REGISTRY = {
     "react": ReActAgent,
     "native_fc": NativeFCAgent,
+    "reflexion": ReflexionAgent,
+    "plan_execute": PlanExecuteAgent,
+    "chain_aware": ChainAwareAgent,
 }
+
+
+def make_chain_aware(tasks: list, agent_cls):
+    """Special factory: ChainAware needs training data."""
+    return agent_cls
 
 
 def main() -> None:
@@ -54,6 +65,14 @@ def main() -> None:
     agent_cls = AGENT_REGISTRY[args.agent]
     agent = agent_cls(library, max_steps=10, use_oracle=args.use_oracle)
     simulator = ToolSimulator(library, failure_rate=args.failure_rate, seed=args.seed)
+
+    # Special: ChainAware needs training first
+    if args.agent == "chain_aware":
+        train_file = args.data_dir / "train.jsonl"
+        if train_file.exists():
+            train_tasks = load_split(train_file)
+            agent.train_on(train_tasks)
+            print(f"✓ ChainAware: trained on {len(train_tasks)} tasks (+synthetic chains)")
 
     # Determine splits to run
     if args.split == "all":
