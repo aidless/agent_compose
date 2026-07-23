@@ -1,0 +1,19 @@
+{
+  "name": "sort",
+  "domain": "computation",
+  "description": "Sort a list of items by a numeric or string key. Returns the sorted list.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "items": {"type": "array", "items": {"type": "object"}},
+      "key": {"type": "string", "description": "Field name to sort by"},
+      "order": {"type": "string", "enum": ["asc", "desc"], "default": "asc"}
+    },
+    "required": ["items", "key"]
+  },
+  "returns": {"type": "array"},
+  "side_effects": [],
+  "failure_modes": ["missing_key"],
+  "example_call": {"items": [{"name": "B", "score": 80}, {"name": "A", "score": 90}], "key": "score", "order": "desc"},
+  "example_output": [{"name": "A", "score": 90}, {"name": "B", "score": 80}]
+}

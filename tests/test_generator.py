@@ -17,7 +17,7 @@ def generator() -> TaskGenerator:
 
 
 def test_generator_loads_templates(generator: TaskGenerator) -> None:
-    assert len(generator._templates) == 10, "Expected 10 task templates"
+    assert len(generator._templates) == 25, "Expected 25 task templates (Phase 4 expanded)"
 
 
 def test_generate_all_splits(generator: TaskGenerator) -> None:
@@ -33,11 +33,11 @@ def test_generate_all_splits(generator: TaskGenerator) -> None:
 
 def test_split_sizes(generator: TaskGenerator) -> None:
     splits = generator.generate_all()
-    assert len(splits["train"]) == 250
-    assert len(splits["val"]) == 100
-    assert len(splits["test_systematicity"]) == 200
-    assert len(splits["test_productivity"]) == 200
-    assert len(splits["test_substitutability"]) == 100
+    assert len(splits["train"]) == 1200
+    assert len(splits["val"]) == 400
+    assert len(splits["test_systematicity"]) == 600
+    assert len(splits["test_productivity"]) == 600
+    assert len(splits["test_substitutability"]) == 200
 
 
 def test_train_chains_are_short(generator: TaskGenerator) -> None:
@@ -73,4 +73,4 @@ def test_save_and_load_roundtrip(generator: TaskGenerator, tmp_path: Path) -> No
     # Spot-check one file
     sample = tmp_path / "train.jsonl"
     lines = sample.read_text(encoding="utf-8").strip().split("\n")
-    assert len(lines) == 250
+    assert len(lines) == 1200

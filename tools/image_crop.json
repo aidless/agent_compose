@@ -1,0 +1,22 @@
+{
+  "name": "image_crop",
+  "domain": "image_vision",
+  "description": "Crop a rectangular region from an image. Returns the cropped image path.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "source_path": {"type": "string"},
+      "x": {"type": "integer", "minimum": 0},
+      "y": {"type": "integer", "minimum": 0},
+      "width": {"type": "integer", "minimum": 1},
+      "height": {"type": "integer", "minimum": 1},
+      "output_path": {"type": "string"}
+    },
+    "required": ["source_path", "x", "y", "width", "height", "output_path"]
+  },
+  "returns": {"type": "object", "properties": {"output_path": {"type": "string"}}},
+  "side_effects": ["filesystem_write"],
+  "failure_modes": ["out_of_bounds"],
+  "example_call": {"source_path": "/img/in.jpg", "x": 100, "y": 100, "width": 400, "height": 300, "output_path": "/img/crop.jpg"},
+  "example_output": {"output_path": "/img/crop.jpg"}
+}

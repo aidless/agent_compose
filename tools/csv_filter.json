@@ -1,0 +1,20 @@
+{
+  "name": "csv_filter",
+  "domain": "data_database",
+  "description": "Filter rows of a CSV file by a column condition. Returns matching rows as list of dicts.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "path": {"type": "string", "description": "CSV file path"},
+      "column": {"type": "string", "description": "Column name to filter on"},
+      "operator": {"type": "string", "enum": ["==", "!=", ">", "<", ">=", "<=", "contains"], "default": "=="},
+      "value": {"type": "string"}
+    },
+    "required": ["path", "column", "value"]
+  },
+  "returns": {"type": "array", "items": {"type": "object"}},
+  "side_effects": [],
+  "failure_modes": ["file_not_found", "missing_column"],
+  "example_call": {"path": "/data/users.csv", "column": "active", "operator": "==", "value": "1"},
+  "example_output": [{"name": "Alice", "active": "1"}, {"name": "Bob", "active": "1"}]
+}

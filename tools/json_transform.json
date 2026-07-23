@@ -1,0 +1,19 @@
+{
+  "name": "json_transform",
+  "domain": "data_database",
+  "description": "Apply a simple JSON transformation: pick/rename keys, flatten nested objects. Returns new JSON.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "input": {"type": "object"},
+      "pick_keys": {"type": "array", "items": {"type": "string"}, "description": "Keys to keep (omit to keep all)"},
+      "rename": {"type": "object", "description": "Old key -> new key mapping"}
+    },
+    "required": ["input"]
+  },
+  "returns": {"type": "object"},
+  "side_effects": [],
+  "failure_modes": ["missing_key"],
+  "example_call": {"input": {"id": 1, "name": "Alice", "extra": "x"}, "pick_keys": ["id", "name"]},
+  "example_output": {"id": 1, "name": "Alice"}
+}

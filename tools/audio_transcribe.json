@@ -1,0 +1,18 @@
+{
+  "name": "audio_transcribe",
+  "domain": "audio_speech",
+  "description": "Transcribe speech from an audio file to text using ASR. Returns the transcript.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "audio_path": {"type": "string"},
+      "language": {"type": "string", "default": "en"}
+    },
+    "required": ["audio_path"]
+  },
+  "returns": {"type": "string"},
+  "side_effects": [],
+  "failure_modes": ["file_not_found", "no_speech_detected"],
+  "example_call": {"audio_path": "/audio/voice.mp3", "language": "en"},
+  "example_output": "Hello, the meeting is at 3 PM today."
+}

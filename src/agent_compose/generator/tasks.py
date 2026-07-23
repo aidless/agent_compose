@@ -59,11 +59,11 @@ class TaskGenerator:
         # Splits sizes. Train/Val are constrained to 2-tool chains (only T1 and T5
         # templates have such chains; other templates' 3-4 tool chains are reserved
         # for compositional test splits).
-        n_train: int = 250,
-        n_val: int = 100,
-        n_test_systematicity: int = 200,
-        n_test_productivity: int = 200,
-        n_test_substitutability: int = 100,
+        n_train: int = 1200,
+        n_val: int = 400,
+        n_test_systematicity: int = 600,
+        n_test_productivity: int = 600,
+        n_test_substitutability: int = 200,
         # Substitutability: fraction of tasks where search_web -> search_news
         sub_substitution_rate: float = 0.5,
     ) -> None:
@@ -239,7 +239,11 @@ class TaskGenerator:
             # Apply substitution to first occurrence of a substitutable tool
             substitution_map = {
                 "search_web": "search_news",
-                "send_email": "send_sms",  # Only for short messages
+                "send_email": "send_sms",
+                "sql_query": "csv_filter",
+                "image_classify": "ocr_extract",
+                "send_slack": "send_push",
+                "calendar_add": "calendar_list",
             }
             new_chain = []
             substituted = False

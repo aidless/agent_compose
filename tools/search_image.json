@@ -1,0 +1,28 @@
+{
+  "name": "search_image",
+  "domain": "information_retrieval",
+  "description": "Search for images by keyword or topic. Returns a list of image URLs and metadata.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": {"type": "string", "description": "Image search query"},
+      "max_results": {"type": "integer", "default": 5, "minimum": 1, "maximum": 20}
+    },
+    "required": ["query"]
+  },
+  "returns": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "title": {"type": "string"},
+        "url": {"type": "string"},
+        "thumbnail_url": {"type": "string"}
+      }
+    }
+  },
+  "side_effects": [],
+  "failure_modes": ["network_error", "empty_results"],
+  "example_call": {"query": "Tokyo skyline", "max_results": 3},
+  "example_output": [{"title": "Tokyo Skyline at Dusk", "url": "https://img.example.com/tokyo1.jpg", "thumbnail_url": "https://img.example.com/tokyo1_thumb.jpg"}]
+}

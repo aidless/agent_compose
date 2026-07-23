@@ -1,0 +1,18 @@
+{
+  "name": "format_date",
+  "domain": "scheduling",
+  "description": "Format a datetime into a target format string.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "datetime": {"type": "string", "description": "ISO 8601 datetime"},
+      "format": {"type": "string", "description": "strftime format, e.g., '%Y-%m-%d %H:%M'"}
+    },
+    "required": ["datetime", "format"]
+  },
+  "returns": {"type": "string"},
+  "side_effects": [],
+  "failure_modes": ["invalid_format"],
+  "example_call": {"datetime": "2026-08-02T10:00:00Z", "format": "%Y-%m-%d"},
+  "example_output": "2026-08-02"
+}

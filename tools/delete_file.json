@@ -1,0 +1,17 @@
+{
+  "name": "delete_file",
+  "domain": "file_io",
+  "description": "Delete a file from the filesystem.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "path": {"type": "string"}
+    },
+    "required": ["path"]
+  },
+  "returns": {"type": "object", "properties": {"success": {"type": "boolean"}}},
+  "side_effects": ["filesystem_delete"],
+  "failure_modes": ["file_not_found", "permission_denied"],
+  "example_call": {"path": "/tmp/old.txt"},
+  "example_output": {"success": true}
+}

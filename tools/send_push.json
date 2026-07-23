@@ -1,0 +1,19 @@
+{
+  "name": "send_push",
+  "domain": "communication",
+  "description": "Send a push notification to a mobile device by user ID. Returns delivery status.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "user_id": {"type": "string"},
+      "title": {"type": "string"},
+      "body": {"type": "string"}
+    },
+    "required": ["user_id", "title", "body"]
+  },
+  "returns": {"type": "object", "properties": {"delivered": {"type": "boolean"}, "notification_id": {"type": "string"}}},
+  "side_effects": ["external_notification"],
+  "failure_modes": ["invalid_user_id", "device_offline"],
+  "example_call": {"user_id": "user_123", "title": "Price Alert", "body": "AAPL crossed $200"},
+  "example_output": {"delivered": true, "notification_id": "notif_abc123"}
+}

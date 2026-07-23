@@ -1,0 +1,18 @@
+{
+  "name": "summarize",
+  "domain": "information_retrieval",
+  "description": "Summarize a long text into a shorter version. Returns the summary string.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "text": {"type": "string", "description": "The text to summarize"},
+      "max_words": {"type": "integer", "default": 100, "minimum": 10, "maximum": 500}
+    },
+    "required": ["text"]
+  },
+  "returns": {"type": "string", "description": "Concise summary of the input"},
+  "side_effects": [],
+  "failure_modes": ["too_short", "language_unsupported"],
+  "example_call": {"text": "Long article about Tokyo weather patterns...", "max_words": 50},
+  "example_output": "Tokyo has a humid subtropical climate with hot summers and mild winters."
+}

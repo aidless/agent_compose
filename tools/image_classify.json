@@ -1,0 +1,18 @@
+{
+  "name": "image_classify",
+  "domain": "image_vision",
+  "description": "Classify an image into one of the given categories using a vision model. Returns the predicted category and confidence.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "image_path": {"type": "string"},
+      "categories": {"type": "array", "items": {"type": "string"}, "description": "Candidate labels"}
+    },
+    "required": ["image_path", "categories"]
+  },
+  "returns": {"type": "object", "properties": {"label": {"type": "string"}, "confidence": {"type": "number"}}},
+  "side_effects": [],
+  "failure_modes": ["file_not_found", "low_confidence"],
+  "example_call": {"image_path": "/img/dog.jpg", "categories": ["dog", "cat", "bird"]},
+  "example_output": {"label": "dog", "confidence": 0.95}
+}

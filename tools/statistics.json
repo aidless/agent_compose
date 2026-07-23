@@ -1,0 +1,18 @@
+{
+  "name": "statistics",
+  "domain": "computation",
+  "description": "Compute descriptive statistics over a list of numbers (mean, median, std, min, max).",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "values": {"type": "array", "items": {"type": "number"}},
+      "stat": {"type": "string", "enum": ["mean", "median", "std", "min", "max"], "default": "mean"}
+    },
+    "required": ["values", "stat"]
+  },
+  "returns": {"type": "number"},
+  "side_effects": [],
+  "failure_modes": ["empty_list"],
+  "example_call": {"values": [1, 2, 3, 4, 5], "stat": "mean"},
+  "example_output": 3.0
+}

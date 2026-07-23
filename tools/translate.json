@@ -1,0 +1,19 @@
+{
+  "name": "translate",
+  "domain": "information_retrieval",
+  "description": "Translate text from source language to target language.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "text": {"type": "string"},
+      "target_language": {"type": "string", "description": "ISO 639-1 code, e.g., 'en', 'fr', 'zh'"},
+      "source_language": {"type": "string", "default": "auto"}
+    },
+    "required": ["text", "target_language"]
+  },
+  "returns": {"type": "string"},
+  "side_effects": [],
+  "failure_modes": ["unsupported_language"],
+  "example_call": {"text": "Hello world", "target_language": "fr"},
+  "example_output": "Bonjour le monde"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "ocr_extract",
+  "domain": "image_vision",
+  "description": "Extract text content from an image using OCR. Returns the recognized text.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "image_path": {"type": "string"},
+      "language": {"type": "string", "default": "en"}
+    },
+    "required": ["image_path"]
+  },
+  "returns": {"type": "string"},
+  "side_effects": [],
+  "failure_modes": ["file_not_found", "no_text_detected", "unsupported_language"],
+  "example_call": {"image_path": "/img/receipt.jpg", "language": "en"},
+  "example_output": "Total: $42.00\\nDate: 2026-08-01"
+}

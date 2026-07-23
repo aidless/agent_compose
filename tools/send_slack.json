@@ -1,0 +1,18 @@
+{
+  "name": "send_slack",
+  "domain": "communication",
+  "description": "Post a message to a Slack channel.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "channel": {"type": "string", "description": "Slack channel ID, e.g., '#general' or 'C123'"},
+      "message": {"type": "string"}
+    },
+    "required": ["channel", "message"]
+  },
+  "returns": {"type": "object", "properties": {"posted": {"type": "boolean"}, "ts": {"type": "string"}}},
+  "side_effects": ["external_message"],
+  "failure_modes": ["invalid_channel", "rate_limit"],
+  "example_call": {"channel": "#alerts", "message": "Deployment completed."},
+  "example_output": {"posted": true, "ts": "1700000000.000100"}
+}

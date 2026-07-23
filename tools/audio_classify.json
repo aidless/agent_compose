@@ -1,0 +1,18 @@
+{
+  "name": "audio_classify",
+  "domain": "audio_speech",
+  "description": "Classify an audio clip by acoustic content (e.g., music, speech, silence, alarm). Returns the predicted class and confidence.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "audio_path": {"type": "string"},
+      "categories": {"type": "array", "items": {"type": "string"}}
+    },
+    "required": ["audio_path", "categories"]
+  },
+  "returns": {"type": "object", "properties": {"label": {"type": "string"}, "confidence": {"type": "number"}}},
+  "side_effects": [],
+  "failure_modes": ["file_not_found"],
+  "example_call": {"audio_path": "/audio/clip.mp3", "categories": ["speech", "music", "alarm", "silence"]},
+  "example_output": {"label": "speech", "confidence": 0.92}
+}

@@ -1,0 +1,18 @@
+{
+  "name": "db_insert",
+  "domain": "data_database",
+  "description": "Insert a row into a database table.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "table": {"type": "string"},
+      "values": {"type": "object", "description": "Column-to-value mapping"}
+    },
+    "required": ["table", "values"]
+  },
+  "returns": {"type": "object", "properties": {"success": {"type": "boolean"}, "row_id": {"type": "integer"}}},
+  "side_effects": ["database_write"],
+  "failure_modes": ["constraint_violation", "table_not_found"],
+  "example_call": {"table": "users", "values": {"name": "Alice", "active": 1}},
+  "example_output": {"success": true, "row_id": 42}
+}

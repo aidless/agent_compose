@@ -1,0 +1,19 @@
+{
+  "name": "text_to_speech",
+  "domain": "audio_speech",
+  "description": "Synthesize speech from text. Returns the audio file path.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "text": {"type": "string"},
+      "voice": {"type": "string", "default": "en-US-neutral", "description": "Voice ID"},
+      "output_path": {"type": "string"}
+    },
+    "required": ["text", "output_path"]
+  },
+  "returns": {"type": "object", "properties": {"output_path": {"type": "string"}, "duration_seconds": {"type": "number"}}},
+  "side_effects": ["filesystem_write"],
+  "failure_modes": ["unsupported_voice"],
+  "example_call": {"text": "Reminder: meeting at 3 PM", "voice": "en-US-female", "output_path": "/audio/reminder.mp3"},
+  "example_output": {"output_path": "/audio/reminder.mp3", "duration_seconds": 2.5}
+}
