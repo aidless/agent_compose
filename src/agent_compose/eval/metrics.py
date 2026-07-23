@@ -103,13 +103,18 @@ class CompositionalGap:
 class Evaluator:
     """Compute evaluation metrics from agent execution traces."""
 
+    def __init__(self, library=None) -> None:
+        # Optional reference to ToolLibrary for substitutability-aware TSR.
+        # Pass it via constructor or set as attribute before calling evaluate_task().
+        self.library = library
+
     def evaluate_task(self, task: Task, trace: ExecutionTrace) -> TaskMetrics:
         """Compute metrics for a single task execution."""
         expected_chain = task.expected_chain
         actual_chain = [c.tool_name for c in trace.calls]
 
         # TSR: check side effects match success criteria (substitutability-aware)
-        tsr = 1.0 if _trace_satisfies_task(task, trace) else 0.0
+        tsr = 1.0 if _trace_satisfies_task(task, trace, library=self.library) else 0.0
 
         # TCA: fraction of calls matching expected tools (set comparison)
         expected_set = set(expected_chain)

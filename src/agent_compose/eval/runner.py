@@ -92,9 +92,10 @@ def evaluate_split(
     tasks: list[Task],
     split_name: str,
     max_tasks: int | None = None,
+    library: Any = None,
 ) -> tuple[list[TaskMetrics], list[ExecutionTrace]]:
     """Run an agent on a split and return metrics + traces."""
-    evaluator = Evaluator()
+    evaluator = Evaluator(library=library)
     task_metrics_list: list[TaskMetrics] = []
     traces: list[ExecutionTrace] = []
 

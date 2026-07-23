@@ -92,7 +92,8 @@ def main() -> None:
 
         tasks = load_split(file_path)
         task_metrics, traces = evaluate_split(
-            agent, simulator, tasks, split_name, max_tasks=args.max_tasks
+            agent, simulator, tasks, split_name,
+            max_tasks=args.max_tasks, library=library,
         )
         split_metrics = evaluator.aggregate(task_metrics)
 

@@ -100,16 +100,42 @@ class ChainAwareAgent(Agent):
     def _extract_keywords(self, nl: str) -> set[str]:
         """Extract tool-relevant keywords from natural language."""
         keyword_patterns = {
-            "search_web": ["weather", "stock", "price", "search", "look up", "find"],
-            "send_email": ["email", "send to", "mail"],
-            "send_sms": ["sms", "text", "phone"],
+            "search_web": ["weather", "stock", "price", "search", "look up", "find", "search_web", "search_news", "search_academic"],
+            "search_news": ["news", "headline", "search_news"],
+            "search_academic": ["paper", "research", "arxiv", "search_academic"],
+            "search_image": ["image", "photo", "picture"],
+            "send_email": ["email", "send to", "mail", "send_email"],
+            "send_sms": ["sms", "text", "phone", "send_sms"],
+            "send_push": ["push", "notification", "send_push"],
+            "send_slack": ["slack", "channel", "send_slack"],
             "unit_convert": ["convert", "usd", "eur", "exchange", "currency"],
             "calculator": ["calculate", "compute", "sum", "average", "max"],
+            "statistics": ["statistic", "mean", "median", "std"],
+            "round": ["round"],
+            "sort": ["sort"],
             "read_file": ["read", "file"],
             "write_file": ["write", "save", "report"],
+            "append_file": ["append", "add to file"],
+            "list_files": ["list", "directory", "glob"],
+            "delete_file": ["delete", "remove"],
             "get_datetime": ["date", "time", "today"],
-            "calendar_add": ["calendar", "schedule", "event", "reminder"],
+            "format_date": ["format", "strftime"],
+            "calendar_add": ["calendar", "schedule", "event", "reminder", "calendar_add"],
+            "calendar_list": ["list events", "calendar_list"],
             "fetch_url": ["fetch", "url", "page"],
+            "summarize": ["summarize", "summary"],
+            "translate": ["translate", "translation"],
+            "sql_query": ["sql", "query", "database", "select"],
+            "csv_filter": ["csv", "filter rows", "csv_filter"],
+            "db_insert": ["insert", "db_insert"],
+            "json_transform": ["json", "transform", "pick keys"],
+            "image_resize": ["resize", "image_resize"],
+            "image_crop": ["crop", "image_crop"],
+            "image_classify": ["classify image", "image_classify", "vision"],
+            "ocr_extract": ["ocr", "extract text", "ocr_extract"],
+            "audio_transcribe": ["transcribe", "audio_transcribe", "speech to text"],
+            "text_to_speech": ["text to speech", "synthesize", "tts"],
+            "audio_classify": ["audio classify", "audio_classify"],
         }
         nl_lower = nl.lower()
         keywords: set[str] = set()
@@ -137,6 +163,12 @@ class ChainAwareAgent(Agent):
 
         # If we have a committed chain from memory, follow it
         if self._committed_chain:
+            # EquivAware: detect variant mentioned in task NL and substitute
+            # into the committed chain (only on first step).
+            if len(trace.calls) == 0:
+                self._committed_chain = self._apply_equiv_substitution(
+                    task, self._committed_chain
+                )
             step_num = len(trace.calls)
             if step_num < len(self._committed_chain):
                 tool = self._committed_chain[step_num]
@@ -150,6 +182,31 @@ class ChainAwareAgent(Agent):
 
         # Fall back to inner NativeFC
         return self.inner.act(task, trace)
+
+    def _apply_equiv_substitution(
+        self, task: Task, chain: list[str]
+    ) -> list[str]:
+        """For each tool in chain, if task NL mentions a functionally-equivalent
+        variant, substitute it in. Returns a new chain list.
+        """
+        nl_lower = task.natural_language.lower()
+        new_chain = []
+        for tool in chain:
+            # Get all variants of this canonical tool
+            variants = self.library.variant_of(tool)
+            # Also: if `tool` itself is a variant in some other group's canonical,
+            # keep it (no-op).
+            chosen = tool
+            for variant in variants:
+                # Detect variant mention in NL (case-insensitive, word boundary)
+                v_lower = variant.lower()
+                # Use simple substring check; works because tool names are
+                # uniquely identifying tokens (e.g., "search_news", "send_sms").
+                if v_lower in nl_lower and v_lower != tool.lower():
+                    chosen = variant
+                    break
+            new_chain.append(chosen)
+        return new_chain
 
     def _build_args_for_tool(self, tool: str, task: Task, trace: ExecutionTrace) -> dict[str, Any]:
         """Same arg-construction logic as NativeFC."""

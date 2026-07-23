@@ -71,7 +71,7 @@ def main() -> None:
 
         print(f"\n▶ Running {args.agent} on {split_name} ({len(tasks)} tasks)...")
         t0 = time.time()
-        task_metrics, traces = evaluate_split(agent, simulator, tasks, split_name)
+        task_metrics, traces = evaluate_split(agent, simulator, tasks, split_name, library=library)
         elapsed = time.time() - t0
 
         eval_ = Evaluator()
