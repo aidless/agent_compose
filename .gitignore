@@ -88,3 +88,6 @@ paper/*.blg
 paper/*.synctex.gz
 paper/*.fls
 paper/*.fdb_latexmk
+paper/code_archive.zip
+paper/code_archive.tar.gz
+paper/submission.zip

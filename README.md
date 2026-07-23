@@ -4,7 +4,8 @@
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/python-3)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Tests](https://img.shields.io/badge/tests-35%2F35_passing-brightgreen)](tests/)
+[![CI](https://img.shields.io/badge/CI-pytest%20%2B%20ruff-blue)](.github/workflows/)
+[![Tests](https://img.shields.io/badge/tests-41%2F41_passing-brightgreen)](tests/)
 [![Tasks](https://img.shields.io/badge/tasks-3000-blue.svg)](data/generated/)
 [![Tools](https://img.shields.io/badge/tools-30-blue.svg)](tools/)
 
@@ -195,6 +196,39 @@ Reviewer metadata + double-blind checklist live in:
 ## 📜 引用
 
 TBD（论文发表后补）
+
+## 🧪 Development
+
+### 跑测试
+
+```bash
+pytest                    # 全部 41 个测试
+pytest tests/test_smoke.py # 仅 smoke test
+```
+
+### Pre-commit（推荐）
+
+```bash
+pip install pre-commit
+pre-commit install        # 装 hook（之后 git commit 自动跑）
+pre-commit run --all-files  # 手动跑全部
+```
+
+包含的 hooks：
+- **ruff** (lint + format) — `src/`、`scripts/`、`tests/`
+- **black** — 兜底格式化
+- **pre-commit-hooks** — 尾空格 / EOF / YAML/TOML / 大文件检测
+
+### CI（GitHub Actions）
+
+`.github/workflows/` 提供两条 workflow：
+
+| Workflow | 触发 | 内容 |
+|---|---|---|
+| `test.yml` | push / PR 到 `main` | Python 3.9/3.10/3.11 矩阵跑 pytest + `scripts/run_all.py --skip-llm` 烟测 |
+| `lint.yml` | push / PR 到 `main` | ruff check + ruff format --check + black --check |
+
+无需 secret；DeepSeek API key 仅本地 `.env` 用，CI 全程跳过 LLM 步骤。
 
 ## 📄 License
 
