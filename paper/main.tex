@@ -1,7 +1,6 @@
 \documentclass[10pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{colormgr}
 \usepackage{times}
 \usepackage{latexsym}
 \usepackage{url}
@@ -10,9 +9,11 @@
 \usepackage{amssymb}
 \usepackage{booktabs}
 \usepackage{multirow}
+\usepackage{array}
 \usepackage{xcolor}
 \usepackage{microtype}
 \usepackage{hyperref}
+\usepackage{natbib}
 
 % COLM style: 8-page main, single column preferred but double allowed
 \usepackage[paperwidth=5.5in, paperheight=8.5in, margin=0.75in]{geometry}
@@ -91,8 +92,8 @@ We design a tool library of 30 tools spanning eight domains (Table~\ref{tab:tool
 
 \begin{table}[t]
     \centering
-    \small
-    \begin{tabular}{lll}
+    \footnotesize
+    \begin{tabular}{p{1.6in}p{2.4in}p{1.0in}}
         \toprule
         Domain & Tools & Example Use \\
         \midrule
@@ -375,6 +376,11 @@ Shinn, N., et al. (2023).
 Wei, J., et al. (2022).
 \newblock Chain-of-thought prompting elicits reasoning in large language models.
 \newblock In {\em NeurIPS}.
+
+\bibitem[{DeepSeek-AI(2024)}]{deepseek2024v3}
+DeepSeek-AI (2024).
+\newblock DeepSeek-V3 Technical Report.
+\newblock arXiv preprint arXiv:2412.19437.
 
 \end{thebibliography}
 

@@ -77,3 +77,14 @@ nul
 # Generated figures (uncomment if repo-locked)
 # figures/*.pdf
 # figures/*.png
+
+# LaTeX build artefacts (rebuilt by `bash scripts/build_submission.sh`)
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.bbl
+paper/*.blg
+paper/*.synctex.gz
+paper/*.fls
+paper/*.fdb_latexmk

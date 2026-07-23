@@ -161,7 +161,26 @@ python scripts/run_all.py --skip-llm
 | ICLR 2027 | ~2026-10 | 🎯 备选 |
 | TMLR | 滚动 | 🎯 长线 |
 
-投稿包（main.pdf + supp.pdf + checklist）通过 `scripts/build_submission.sh` 一键生成。
+### COLM 2026 submission package
+
+```bash
+# Compiles main.tex + supp.tex, archives source code, bundles submission.zip.
+# Requires TeX Live (tested with TeX Live 2026).
+bash scripts/build_submission.sh
+```
+
+Output:
+
+| File | Pages | Size |
+|---|---|---|
+| `paper/main.pdf` | 15 | ~290 KB |
+| `paper/supp.pdf` | 6 | ~145 KB |
+| `paper/submission.zip` | (bundle) | ~484 KB |
+
+Reviewer metadata + double-blind checklist live in:
+
+- `paper/double_blind_checklist.md` (anonymization audit)
+- `paper/openreview_metadata.md` (submission form values)
 
 ## 📜 引用
 
