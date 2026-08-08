@@ -36,9 +36,9 @@ Anonymous Institution \\
 \begin{abstract}
 Large Language Model (LLM) agents are increasingly deployed to solve real-world tasks by orchestrating tool calls. Yet a critical question remains unanswered: \emph{can these agents generalize to tool combinations they have never encountered during training?} Existing benchmarks---ToolBench, AgentBench, BFCL, AppWorld, and others---do not isolate \emph{compositional generalization} as a measurable dimension, making it impossible to diagnose whether a failure is due to a missing tool, a wrong chain order, or an unseen combination.
 
-We formalize three axes of agent compositional generalization---{\bf systematicity} (recombining familiar tools into new chains), {\bf productivity} (producing completely unseen chains), and {\bf substitutability} (swapping functionally equivalent tools)---and introduce {\bf AgentCompose}, a controlled benchmark of 3{,}000 tasks over 30 tools with three orthogonal test splits. We evaluate five state-of-the-art agent paradigms (ReAct, Native Function Calling, Reflexion, Plan-Execute, and Chain-Aware Fine-Tuning) plus two large-LLM agents (DeepSeek-ReAct, DeepSeek-Function-Calling) and find a striking {\bf Compositional Generalization Gap (CGG)}: across all agents, the success rate on compositional splits is at or below the in-distribution baseline, with a maximum of 0.452 on productivity (ChainAware) and 1.000 on substitutability only after our equivalence-aware extension. Error analysis reveals that the dominant failure mode is \emph{tool omission} (the majority of productivity failures; 100\% of substitutability failures for non-equivalence-aware agents), not wrong tool selection or wrong ordering---suggesting agents can \emph{execute} tool chains but cannot \emph{discover} novel compositions.
+We formalize three axes of agent compositional generalization---{\bf systematicity} (recombining familiar tools into new chains), {\bf productivity} (producing completely unseen chains), and {\bf substitutability} (swapping functionally equivalent tools)---and introduce {\bf AgentCompose}, a controlled benchmark of 3{,}000 tasks over 30 tools with three orthogonal test splits. We evaluate five state-of-the-art agent paradigms (ReAct, Native Function Calling, Reflexion, Plan-Execute, and Chain-Aware Fine-Tuning) plus two large-LLM agents (DeepSeek-ReAct, DeepSeek-Function-Calling) and find a striking {\bf Compositional Generalization Gap (CGG)}: across all agents, the success rate on compositional splits is at or below the in-distribution baseline, with a maximum of 0.385 on productivity (ChainAware, 5-seed mean; single-seed max 0.452) and 1.000 on substitutability under equivalence-aware evaluation. Error analysis reveals that the dominant failure mode is \emph{tool omission} (the majority of productivity failures; 100\% of substitutability failures for non-equivalence-aware agents), not wrong tool selection or wrong ordering---suggesting agents can \emph{execute} tool chains but cannot \emph{discover} novel compositions.
 
-Our chain-aware training method, which augments training with synthetic compositional chains and overlays an {\bf equivalence-aware} variant detector, lifts substitutability from 0.250 (baseline) to 1.000 and recovers substantial productivity gains. A Friedman test across the five template agents confirms the ranking is statistically significant ($p < 0.001$); a Critical Difference diagram visualizes the post-hoc grouping. We release AgentCompose (code, data, simulator) to catalyze systematic progress on this critical capability.
+Our chain-aware training method, which augments training with synthetic compositional chains and overlays an {\bf equivalence-aware} variant detector, lifts substitutability from 0.250 (baseline) to 1.000 under equivalence-aware evaluation (a call to the expected tool or any functional equivalent counts as correct) and recovers substantial productivity gains. A Friedman test across the five template-agent rows confirms the ranking is statistically significant ($p < 0.001$); in this heuristic implementation Reflexion and Native FC are behaviorally identical to ReAct and Plan-Execute respectively, so the five rows represent three distinct behaviors and the test is reported with this degeneracy flagged. a Critical Difference diagram visualizes the post-hoc grouping. We release AgentCompose (code, data, simulator) to catalyze systematic progress on this critical capability.
 \end{abstract}
 
 \section{Introduction}
@@ -198,6 +198,8 @@ Table~\ref{tab:main} reports the headline results. Three observations:
 
 The lenient ``call-everything'' behavior that ReAct and Reflexion exhibit on in-distribution tasks backfires on systematicity and productivity: they call the wrong number of tools in the wrong order, failing the strict success criteria.
 
+Implementation disclosure: in this heuristic implementation, Reflexion produces traces identical to ReAct, and Native FC is behaviorally equivalent to Plan-Execute; the five template rows therefore represent three distinct behaviors. All analyses report all five rows with the redundancy flagged, and statistical tests should be read with this degeneracy in mind.
+
 \begin{table}[t]
     \centering
     \small
@@ -218,7 +220,7 @@ The lenient ``call-everything'' behavior that ReAct and Reflexion exhibit on in-
     \label{tab:sub_decomp}
 \end{table}
 
-Table~\ref{tab:sub_decomp} decomposes substitutability into true substitutions and controls: the 41 control templates are not solved by baseline agents even without substitution, so the substituted subset (159 tasks) carries the headroom that equivalence awareness exploits (0.31 $\rightarrow$ 1.00). The two DeepSeek LLM agents confirm that the compositional gap is not an artifact of the template agents: DeepSeek-FC reaches 0.24 in-distribution but drops to 0.08/0.07 on systematicity/productivity and 0.21 on substitutability without equivalence awareness.
+Table~\ref{tab:sub_decomp} decomposes substitutability into true substitutions and controls: the 41 control templates are not solved by baseline agents even without substitution, so the substituted subset (159 tasks) carries the headroom that equivalence awareness exploits (0.31 $\rightarrow$ 1.00). Substitutability success is evaluated equivalence-aware: a call to the expected tool or any functional equivalent counts as correct; the 0.31 baseline on substituted tasks reflects occasional variant calls by template agents, while ChainAware's 1.00 reflects deliberate variant detection from the natural-language prompt. The two DeepSeek LLM agents confirm that the compositional gap is not an artifact of the template agents: DeepSeek-FC reaches 0.24 in-distribution but drops to 0.08/0.07 on systematicity/productivity and 0.21 on substitutability without equivalence awareness.
 
 \subsection{Error Analysis}
 
@@ -262,7 +264,7 @@ To confirm that the differences above are not noise, we run per-task paired comp
         Substitutability & 246.0 & $< 0.001$ & Yes \\
         \bottomrule
     \end{tabular}
-    \caption{Friedman test across 5 template agents. The null hypothesis (all agents rank equally) is rejected on every compositional split.}
+    \caption{Friedman test across the five template-agent rows (three distinct behaviors; see text). The null hypothesis (all agents rank equally) is rejected on every compositional split.}
     \label{tab:friedman}
 \end{table}
 
