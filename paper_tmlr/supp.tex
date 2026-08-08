@@ -262,7 +262,38 @@ YAML in \texttt{templates/task\_templates.yaml}. Examples:
 \end{itemize}
 
 
-\section{Seed-Level Variance (5 independent seeds)}
+
+\section{Chain-Length-Stratified TSR}
+
+Raw TSR is chain-length-confounded under the lenient evaluator: template
+agents call more tools on longer chains and are rewarded for it. The table
+below stratifies the seed-42 runs by expected chain length (n per cell in
+parentheses).
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{llcccc}
+\toprule
+Split & Chain len & ReAct & Native FC & Plan-Execute & ChainAware \\
+\midrule
+Sys. & 3 & 0.21 (328) & 0.21 (328) & 0.21 (328) & \textbf{0.75} (328) \\
+Sys. & 4 & 0.61 (216) & 0.00 (216) & 0.00 (216) & 0.00 (216) \\
+Sys. & 5 & 1.00 (56) & 0.32 (56) & 0.32 (56) & 0.32 (56) \\
+Prod. & 4 & \textbf{0.50} (553) & 0.18 (553) & 0.08 (553) & 0.46 (553) \\
+Prod. & 5 & 1.00 (47) & 0.40 (47) & 0.40 (47) & 0.40 (47) \\
+\bottomrule
+\end{tabular}
+\caption{TSR by expected chain length (Reflexion omitted: identical to ReAct).
+ChainAware's matched-length advantage appears at 3-tool systematicity and in
+substitutability, not in 4-tool productivity, where ReAct's lenient
+call-everything behavior scores higher.}
+\label{tab:chain_strata}
+\end{table}
+
+Interpretation: the in-sample ``CGG'' reading must control for chain depth;
+the paper's claims are limited to the matched-length comparisons highlighted
+above.\section{Seed-Level Variance (5 independent seeds)}
 
 Template agents are deterministic given the task seed; across seeds {42, 1, 2, 3, 4}
 the task instances differ, yielding genuine variance. Ranges are min--max over the
