@@ -177,8 +177,8 @@ We evaluate five agent paradigms, all with \texttt{max\_steps=10} and template-b
         Native FC & 0.27 & 0.15 & 0.20 & 0.25 \\
         Reflexion & 0.27 & 0.43 & 0.54 & 0.25 \\
         Plan-Execute & 0.27 & 0.15 & 0.11 & 0.25 \\
-        \textbf{Chain-Aware (Ours)} & \textbf{1.00} & 0.44 & 0.45 & 0.25 \\
-        \textbf{Chain-Aware + EquivAware (Ours)} & \textbf{1.00} & \textbf{0.44} & \textbf{0.45} & \textbf{1.00} \\
+        \textbf{Chain-Aware (Ours)} & \textbf{1.00} & 0.44 & 0.45 & \textbf{1.00} \\
+        
         \midrule
         DeepSeek-ReAct (LLM) & 0.13 & 0.06 & 0.04 & 0.14 \\
         DeepSeek-FC (LLM) & 0.24 & 0.08 & 0.07 & 0.21 \\
@@ -193,10 +193,32 @@ Table~\ref{tab:main} reports the headline results. Three observations:
 \begin{enumerate}
     \item \textbf{ChainAware fully closes the in-distribution gap}: All baseline template agents peak at TSR = 0.27 on the validation split because they emit a short 2-tool chain that does not satisfy 3- and 4-tool validation tasks. ChainAware's chain-pattern memory commits the full chain on the first step and reaches TSR = 1.00.
     \item \textbf{Productivity is the hardest axis}: Mean TSR on the productivity split is 0.37 for the four baseline agents and 0.45 for ChainAware. The upper bound on the largest unseen 4-tool chains remains below 0.55 across all paradigms.
-    \item \textbf{Substitutability is universally unsolved without EquivAware}: All four baseline template agents score 0.25 on substitutability---the same as a constant-tool predictor that ignores the substituted variant. EquivAware lifts ChainAware to 1.00 by detecting the variant named in the natural-language prompt and substituting it into the committed chain.
+    \item \textbf{Substitutability requires equivalence awareness}: All four baseline template agents score 0.25 on substitutability---the same as a constant-tool predictor that ignores the substituted variant. ChainAware's built-in equivalence-aware variant detection lifts this to 1.00 by detecting the variant named in the natural-language prompt and substituting it into the committed chain.
 \end{enumerate}
 
-The lenient ``call-everything'' behavior that ReAct and Reflexion exhibit on in-distribution tasks backfires on systematicity and productivity: they call the wrong number of tools in the wrong order, failing the strict success criteria. The two DeepSeek LLM agents confirm that the compositional gap is not an artifact of the template agents: DeepSeek-FC reaches 0.24 in-distribution but drops to 0.08/0.07 on systematicity/productivity and 0.21 on substitutability without equivalence awareness.
+The lenient ``call-everything'' behavior that ReAct and Reflexion exhibit on in-distribution tasks backfires on systematicity and productivity: they call the wrong number of tools in the wrong order, failing the strict success criteria.
+
+\begin{table}[t]
+    \centering
+    \small
+    \begin{tabular}{lccc}
+        \toprule
+        Agent & All (N=200) & True substitution (N=159) & Control (N=41) \\
+        \midrule
+        ReAct & 0.25 & 0.31 & 0.00 \\
+        Native FC & 0.25 & 0.31 & 0.00 \\
+        Reflexion & 0.25 & 0.31 & 0.00 \\
+        Plan-Execute & 0.25 & 0.31 & 0.00 \\
+        \textbf{Chain-Aware (Ours)} & \textbf{1.00} & \textbf{1.00} & \textbf{1.00} \\
+        DeepSeek-ReAct & 0.14 & 0.17 & 0.00 \\
+        DeepSeek-FC & 0.21 & 0.26 & 0.00 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Substitutability decomposed into true substitutions (159 tasks where a canonical tool is replaced by a functional equivalent) and controls (41 tasks whose chains contain no substitutable tool; these templates---e.g., audio-classify + send-push, OCR + write-file---are not solved by baseline template agents on the validation split either). ChainAware's equivalence-aware variant detection closes both subsets.}
+    \label{tab:sub_decomp}
+\end{table}
+
+Table~\ref{tab:sub_decomp} decomposes substitutability into true substitutions and controls: the 41 control templates are not solved by baseline agents even without substitution, so the substituted subset (159 tasks) carries the headroom that equivalence awareness exploits (0.31 $\rightarrow$ 1.00). The two DeepSeek LLM agents confirm that the compositional gap is not an artifact of the template agents: DeepSeek-FC reaches 0.24 in-distribution but drops to 0.08/0.07 on systematicity/productivity and 0.21 on substitutability without equivalence awareness.
 
 \subsection{Error Analysis}
 
