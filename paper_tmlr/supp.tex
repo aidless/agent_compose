@@ -261,7 +261,30 @@ YAML in \texttt{templates/task\_templates.yaml}. Examples:
           and email them to the team."
 \end{itemize}
 
-\section{Hyperparameters and Configuration}
+
+\section{Seed-Level Variance (5 independent seeds)}
+
+Template agents are deterministic given the task seed; across seeds {42, 1, 2, 3, 4}
+the task instances differ, yielding genuine variance. Ranges are min--max over the
+5 seeds; full per-seed values in \texttt{results/seed\_variance.json}.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+Agent & Val & Systematicity & Productivity & Substitutability \\
+\midrule
+ReAct & 0.248 [0.218, 0.268] & 0.429 [0.412, 0.445] & 0.513 [0.472, 0.542] & 0.251 [0.210, 0.295] \\
+Native FC & 0.248 [0.218, 0.268] & 0.162 [0.145, 0.180] & 0.184 [0.175, 0.200] & 0.251 [0.210, 0.295] \\
+Reflexion & 0.248 [0.218, 0.268] & 0.429 [0.412, 0.445] & 0.513 [0.472, 0.542] & 0.251 [0.210, 0.295] \\
+Plan-Execute & 0.248 [0.218, 0.268] & 0.162 [0.145, 0.180] & 0.104 [0.097, 0.112] & 0.251 [0.210, 0.295] \\
+\textbf{Chain-Aware} & \textbf{1.000} & 0.476 [0.438, 0.520] & 0.385 [0.293, 0.452] & \textbf{1.000} \\
+\bottomrule
+\end{tabular}
+\caption{TSR mean and min--max range over 5 independent task seeds (N per split as in Table~\ref{tab:main}). Chain-Aware shows the largest productivity variance (0.293--0.452), so single-seed comparisons should use its 5-seed mean.}
+\label{tab:seed_variance}
+\end{table}\section{Hyperparameters and Configuration}
 
 \begin{itemize}
     \item Random seed: 42 (default in all scripts)
