@@ -30,12 +30,15 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=42, help="Random seed for reproducibility")
     parser.add_argument("--tail-tools", default=None, help="Comma-separated tail tools for systematicity extension (external libraries)")
     parser.add_argument("--head-tools", default=None, help="Comma-separated head tools for productivity extension (external libraries)")
+    parser.add_argument("--train-templates", default=None, help="Comma-separated template ids allowed in train/val (external libraries)")
     args = parser.parse_args()
 
     print(f"Generating tasks with seed={args.seed}...")
     gen_kwargs = {"templates_path": args.templates, "seed": args.seed}
     if args.tail_tools:
         gen_kwargs["tail_tools"] = [t.strip() for t in args.tail_tools.split(",")]
+    if args.train_templates:
+        gen_kwargs["train_template_ids"] = [x.strip() for x in args.train_templates.split(",")]
     if args.head_tools:
         gen_kwargs["candidate_heads_pool"] = [t.strip() for t in args.head_tools.split(",")]
     gen = TaskGenerator(**gen_kwargs)

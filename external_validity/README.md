@@ -67,3 +67,21 @@ With generic inference on the second library:
    so productivity is constructible.
 2. Improve generic argument binding (parameter-name synonyms + NL value extraction).
 3. Recompute main-vs-external CGG correlation once both use generic inference.
+---
+
+## Update (2026-08-09): train/test template split attempted; final verdict
+
+- Added generator support for train/test template splits (`--train-templates`):
+  external templates X1-X6 train, X7-X12 test-only. This makes the
+  productivity split constructible (previously empty).
+- Re-ran with library-agnostic inference: systematicity and productivity now
+  produce numbers, but the validation split remains at TSR ~0.0 for the
+  generic agents, and CGG-ordering correlations are negative/NaN.
+- **Final honest verdict**: this second-library mini-benchmark is still not a
+  valid external-validity comparison. The validation floor (generic argument
+  binding cannot yet solve the external 2-tool tasks) invalidates the
+  baseline against which the compositional gap is measured. A valid run
+  requires: (1) a generic parameter→schema binding pass with NL value
+  extraction, and (2) a larger, carefully matched second library.
+- Infrastructure (tools_ext, templates_ext, generator split, drivers) is
+  complete and committed; the comparison itself is **not claimable**.

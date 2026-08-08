@@ -46,7 +46,8 @@ def main() -> int:
                 "--templates", "templates_ext/task_templates.yaml",
                 "--output", "data/generated_ext", "--seed", "42",
                 "--tail-tools", "send_invoice,send_alert,print_label,book_courier",
-                "--head-tools", "send_invoice,send_alert,toggle_light,set_thermostat,play_announcement,book_courier,transfer_funds,generate_report"]
+                "--head-tools", "send_invoice,send_alert,toggle_light,set_thermostat,play_announcement,book_courier,transfer_funds,generate_report",
+                "--train-templates", "X1_quote_invoice,X2_convert_reconcile,X3_sensor_thermostat,X4_quote_convert,X5_sensor_alert,X6_lock_alert"]
     if args.smoke:
         gen_args += []
     run(" ".join(gen_args))

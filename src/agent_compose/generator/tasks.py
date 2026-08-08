@@ -70,11 +70,15 @@ class TaskGenerator:
         # Override these for alternate tool libraries (external validity).
         tail_tools: Optional[Sequence[str]] = None,
         candidate_heads_pool: Optional[Sequence[str]] = None,
+        # Templates allowed to enter the train/val pools (test-only templates
+        # keep productivity constructible in external libraries).
+        train_template_ids: Optional[Sequence[str]] = None,
     ) -> None:
         self.rng = random.Random(seed)
         self.templates_path = Path(templates_path)
         self.seed = seed
         self.tail_tools = list(tail_tools) if tail_tools else ["send_email", "send_sms", "write_file", "calendar_add"]
+        self.train_template_ids = set(train_template_ids) if train_template_ids else None
         self.candidate_heads_pool = list(candidate_heads_pool) if candidate_heads_pool else ["send_email", "send_sms", "write_file", "calendar_add", "read_file", "calculator", "unit_convert"]
         self.n_train = n_train
         self.n_val = n_val
@@ -152,6 +156,9 @@ class TaskGenerator:
         # Sampling uniformly gives ~20% of pool as 2-tool. We oversample 10x.
         train_candidates = self._generate_base_pool(self.n_train * 10)
         val_candidates = self._generate_base_pool(self.n_val * 10)
+        if self.train_template_ids is not None:
+            train_candidates = [t for t in train_candidates if t.template_id in self.train_template_ids]
+            val_candidates = [t for t in val_candidates if t.template_id in self.train_template_ids]
 
         # Train: 2-tool minimal chains only. Longer chains in train would leak test info.
         train_tasks = [t for t in train_candidates if len(t.expected_chain) == 2][: self.n_train]
