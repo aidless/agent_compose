@@ -1,0 +1,62 @@
+{
+  "n_tasks": {
+    "train": 1200,
+    "val": 400,
+    "test_systematicity": 600,
+    "test_productivity": 600,
+    "test_substitutability": 200
+  },
+  "chain_length": {
+    "train": {
+      "min": 2,
+      "max": 2,
+      "n_not_length2": 0
+    },
+    "val": {
+      "min": 2,
+      "max": 2,
+      "n_not_length2": 0
+    },
+    "test_systematicity": {
+      "min": 3,
+      "max": 5,
+      "n_not_length2": 600
+    },
+    "test_productivity": {
+      "min": 4,
+      "max": 5,
+      "n_not_length2": 600
+    },
+    "test_substitutability": {
+      "min": 2,
+      "max": 2,
+      "n_not_length2": 0
+    }
+  },
+  "checks": {
+    "length2_train_val": true,
+    "systematicity_contains_trained_pair": true,
+    "productivity_zero_trained_pair": true,
+    "substitutability_from_val_templates": true,
+    "substitution_complete_and_consistent": true
+  },
+  "train_ordered_pairs": 8,
+  "systematicity": {
+    "with_trained_pair": 600,
+    "fraction": 1.0
+  },
+  "productivity": {
+    "with_trained_pair": 0,
+    "fraction_leaked": 0.0
+  },
+  "substitutability": {
+    "val_template_overlap": 200,
+    "overlap_fraction": 1.0,
+    "chain_changed_via_substitution": 159,
+    "with_substitutable_tool": 159,
+    "changed_given_substitutable": 159,
+    "substitution_fraction": 0.795,
+    "chain_change_consistent_with_metadata": true
+  },
+  "all_checks_pass": true
+}

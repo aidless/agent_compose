@@ -122,18 +122,20 @@ We define 25 task templates (e.g., ``query weather and email it'') parameterized
         \toprule
         Split & N & Avg. Chain & Tools & Purpose \\
         \midrule
-        Train & 1200 & 2.4 & 18 & Learn atomic 2-tool chains \\
-        Val & 400 & 2.4 & 18 & In-distribution test \\
-        Systematicity & 600 & 3.8 & 24 & Recombine seen pairs \\
-        Productivity & 600 & 4.2 & 30 & Produce unseen chains \\
-        Substitutability & 200 & 2.4 & 12 & Swap equivalent tools \\
+        Train & 1200 & 2.0 & 11 & Learn atomic 2-tool chains \\
+        Val & 400 & 2.0 & 11 & In-distribution test \\
+        Systematicity & 600 & 3.55 & 18 & Recombine seen pairs \\
+        Productivity & 600 & 4.08 & 21 & Produce unseen chains \\
+        Substitutability & 200 & 2.0 & 11 & Swap equivalent tools \\
         \bottomrule
     \end{tabular}
-    \caption{AgentCompose splits (3{,}000 tasks total). Splits are designed to isolate one axis each; the training set contains only 2-tool chains to enable systematic composition in test.}
+    \caption{AgentCompose splits (3{,}000 tasks total). Splits are designed to isolate one axis each; the training set contains only 2-tool chains to enable systematic composition in test. Construction guarantees are verified programmatically (\texttt{scripts/audit\_split\_leakage.py}; \texttt{results/split\_leakage\_audit.json}).}
     \label{tab:splits}
 \end{table}
 
 The systematicity split extends training chains with a common tail tool such that the resulting 3-tool chain shares $\geq 1$ pair with training. The productivity split glues two disjoint training chains via a bridge tool, ensuring \emph{no} 2-sub-chain appears in training. The substitutability split applies a one-to-one tool substitution to validation tasks; six equivalence groups span the 30-tool library.
+
+The audit confirms: (i) train and val contain only 2-tool chains; (ii) 100\% of systematicity tasks share at least one ordered 2-sub-chain with training; (iii) 0\% of productivity tasks share any ordered 2-sub-chain with training; (iv) all substitutability tasks reuse val templates, 159/200 chains are changed by one-to-one tool substitution, and the remaining 41 chains contain no substitutable tool (control tasks).
 
 \subsection{Simulator and Evaluation}
 
