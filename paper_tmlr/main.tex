@@ -268,12 +268,12 @@ To confirm that the differences above are not noise, we run per-task paired comp
     \label{tab:friedman}
 \end{table}
 
-A pairwise Wilcoxon comparison of ChainAware+EquivAware vs.\ the strongest baseline (ChainAware) on the substitutability split yields $p < 0.001$ with Cohen's $d = -2.44$ in favour of EquivAware. The Critical Difference diagram in Figure~\ref{fig:cd} visualizes the mean ranks and post-hoc grouping.
+A pairwise Wilcoxon comparison of ChainAware vs.\ the best template baseline (Reflexion) on the substitutability split yields $p < 0.001$ with Cohen's $d = -2.44$ in favour of ChainAware (whose built-in detector performs the substitution). The Critical Difference diagram in Figure~\ref{fig:cd} visualizes the mean ranks and post-hoc grouping.
 
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/fig6_cd_diagram.pdf}
-    \caption{Critical Difference (Demsar, 2006) diagram across the 5 template agents on \texttt{test\_productivity}. Lower ranks are better. ChainAware is statistically indistinguishable from the strongest baseline (Reflexion) at $CD = 0.25$; all agents are significantly better than Plan-Execute and Native FC.}
+    \caption{Critical Difference (Demsar, 2006) diagram across the five template-agent rows on \texttt{test\_productivity} (Reflexion$\equiv$ReAct and NativeFC$\equiv$PlanExecute in this heuristic implementation; see degeneracy note). Lower ranks are better. ChainAware is statistically indistinguishable from the strongest baseline at $CD = 0.25$; all agents are significantly better than Plan-Execute and Native FC.}
     \label{fig:cd}
 \end{figure}
 
@@ -283,6 +283,8 @@ A pairwise Wilcoxon comparison of ChainAware+EquivAware vs.\ the strongest basel
 A subtler compositional challenge is {\bf substitutability}: the user replaces a familiar tool with a functionally equivalent variant (e.g., \texttt{search\_web} $\to$ \texttt{search\_news}). The committed chain contains the canonical tool, but the natural-language prompt now names the variant. Without intervention, the agent calls the canonical tool and the trace diverges from the substituted expected chain, producing TSR = 0.25 (the rate at which the canonical tool coincidentally appears elsewhere in the chain).
 
 We extend ChainAware with an {\bf EquivAware} detector: on the first step, after committing a chain from memory, scan the natural-language prompt for any tool variant named in the tool library's equivalence groups. If a match is found, substitute that step's tool with the variant before executing. The substitution is local to one step; the surrounding chain order is unchanged.
+
+\paragraph{Equivalence protocol (complete).} (1) \emph{Equivalence relation}: two tools $t_1 \equiv t_2$ iff they belong to the same group in \texttt{tools/\_equivalence.json}, released with the benchmark; groups are hand-curated from schema semantics and disclosed in the supplement. (2) \emph{Judgment subject}: equivalence is applied by the \emph{evaluator}---a call to the expected tool or any member of its equivalence group counts as correct---and agents receive the same groups via the library, which ChainAware's detector uses for substitution. (3) \emph{Boundary cases}: equivalence is strict within a group and does not compose transitively across groups; variant detection is lexical (word-boundary match of the variant name in the prompt); if multiple variants match, the first in group order is used; if a variant appears for a tool outside the group, no substitution occurs. (4) \emph{Disclosure}: because the evaluator is equivalence-aware, template agents' substitutability TSR (0.25--0.31) already includes occasional calls to variants; ChainAware's 1.00 reflects deliberate detection rather than a scoring difference between conditions. (5) \emph{Ablation status}: a full three-way ablation (chain training $\times$ detector $\times$ scoring) is not computable from the released aggregate results; the released evaluator supports strict vs.\ equivalence-aware scoring, and the detector can be disabled via the ChainAware constructor, so such an ablation is runnable future work.
 
 \begin{table}[t]
     \centering
