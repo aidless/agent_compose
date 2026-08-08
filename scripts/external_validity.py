@@ -64,7 +64,7 @@ def main() -> int:
     for agent in AGENTS:
         run(f"python scripts/evaluate.py --agent {agent} --split val "
             f"--data-dir data/generated_ext --tools-dir tools_ext "
-            f"--output-dir results/external --max-tasks {MAX_TASKS['val']} --seed 42")
+            f"--output-dir results/external --max-tasks {MAX_TASKS['val']} --seed 42 --use-generic-inference")
 
     # Aggregate
     report: dict = {"agents": {}}

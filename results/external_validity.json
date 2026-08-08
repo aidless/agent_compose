@@ -1,58 +1,58 @@
 {
   "agents": {
     "react": {
-      "val": 0.0,
+      "val": 1.0,
       "test_systematicity": 0.4333,
       "test_productivity": 0.0,
       "test_substitutability": 1.0,
       "cgg": {
-        "test_systematicity": -0.4333,
-        "test_productivity": 0.0,
-        "test_substitutability": -1.0
+        "test_systematicity": 0.5667,
+        "test_productivity": 1.0,
+        "test_substitutability": 0.0
       }
     },
     "native_fc": {
-      "val": 0.0,
+      "val": 1.0,
       "test_systematicity": 0.4333,
       "test_productivity": 0.0,
       "test_substitutability": 1.0,
       "cgg": {
-        "test_systematicity": -0.4333,
-        "test_productivity": 0.0,
-        "test_substitutability": -1.0
+        "test_systematicity": 0.5667,
+        "test_productivity": 1.0,
+        "test_substitutability": 0.0
       }
     },
     "reflexion": {
-      "val": 0.0,
+      "val": 1.0,
       "test_systematicity": 0.4333,
       "test_productivity": 0.0,
       "test_substitutability": 1.0,
       "cgg": {
-        "test_systematicity": -0.4333,
-        "test_productivity": 0.0,
-        "test_substitutability": -1.0
+        "test_systematicity": 0.5667,
+        "test_productivity": 1.0,
+        "test_substitutability": 0.0
       }
     },
     "plan_execute": {
-      "val": 0.0,
+      "val": 1.0,
       "test_systematicity": 0.4333,
       "test_productivity": 0.0,
       "test_substitutability": 1.0,
       "cgg": {
-        "test_systematicity": -0.4333,
-        "test_productivity": 0.0,
-        "test_substitutability": -1.0
+        "test_systematicity": 0.5667,
+        "test_productivity": 1.0,
+        "test_substitutability": 0.0
       }
     },
     "chain_aware": {
-      "val": 0.0,
-      "test_systematicity": 1.0,
-      "test_productivity": 1.0,
+      "val": 1.0,
+      "test_systematicity": 0.6333,
+      "test_productivity": 0.5667,
       "test_substitutability": 1.0,
       "cgg": {
-        "test_systematicity": -1.0,
-        "test_productivity": -1.0,
-        "test_substitutability": -1.0
+        "test_systematicity": 0.3667,
+        "test_productivity": 0.4333,
+        "test_substitutability": 0.0
       }
     }
   },
@@ -99,5 +99,6 @@
       "p": NaN,
       "n": 5
     }
-  }
+  },
+  "verdict": "Directional support: on the second tool library all agents drop from val 1.0 to systematicity 0.43 (ChainAware 0.63) and productivity 0.0 (ChainAware 0.57), confirming that compositional splits are harder than i.i.d. The ext validation split is saturated (1.0 for all agents), so quantitative CGG-ordering correlations are not interpretable; the comparison is directional only."
 }

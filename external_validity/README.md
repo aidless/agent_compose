@@ -85,3 +85,24 @@ With generic inference on the second library:
   extraction, and (2) a larger, carefully matched second library.
 - Infrastructure (tools_ext, templates_ext, generator split, drivers) is
   complete and committed; the comparison itself is **not claimable**.
+---
+
+## Update (2026-08-09, final): val bug fixed - directional support
+
+A driver bug (the val re-run omitted `--use-generic-inference` and overwrote
+the generic results) suppressed the validation scores. After fixing it:
+
+| Agent | Val | Systematicity | Productivity | Substitutability |
+|---|---|---|---|---|
+| ReAct / NativeFC / Reflexion / Plan-Execute | 1.00 | 0.43 | 0.00 | 1.00 |
+| ChainAware | 1.00 | 0.63 | 0.57 | 1.00 |
+
+**Verdict**: directional external-validity support. On the second tool
+library, every agent drops from i.i.d. (1.00) to systematicity (0.43) and
+productivity (0.0 for template agents; 0.57 for ChainAware), and ChainAware
+is best on both compositional axes---qualitatively consistent with the main
+benchmark's claim that compositional splits are harder. Quantitative
+CGG-ordering correlation is not interpretable because the external
+validation split is saturated (1.00 for all agents); the comparison is
+directional only. The parameter-binding enhancement and a larger matched
+library remain the path to a quantitative second-family comparison.
