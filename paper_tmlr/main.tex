@@ -137,7 +137,7 @@ We define 25 task templates (e.g., ``query weather and email it'') parameterized
 
 The systematicity split extends training chains with a common tail tool such that the resulting 3-tool chain shares $\geq 1$ pair with training. The productivity split glues two disjoint training chains via a bridge tool, ensuring \emph{no} 2-sub-chain appears in training. The substitutability split applies a one-to-one tool substitution to validation tasks; six equivalence groups span the 30-tool library.
 
-The audit confirms: (i) train and val contain only 2-tool chains; (ii) 100\% of systematicity tasks share at least one ordered 2-sub-chain with training; (iii) 0\% of productivity tasks share any ordered 2-sub-chain with training; (iv) all substitutability tasks reuse val templates, 159/200 chains are changed by one-to-one tool substitution, and the remaining 41 chains contain no substitutable tool (control tasks).
+The audit confirms: (i) train and val contain only 2-tool chains; (ii) 100\% of systematicity tasks share at least one ordered 2-sub-chain with training; (iii) 0\% of productivity tasks share any ordered 2-sub-chain with training; (iv) all substitutability tasks reuse val templates, 159/200 chains are changed by one-to-one tool substitution, and the remaining 41 chains contain no substitutable tool (control tasks). Validation is the in-distribution i.i.d. baseline (2-tool chains drawn from the same template pool as training). Productivity measures zero-shot generalization: no ordered 2-sub-chain of any productivity task appears in training. Substitutability distinguishes true substitutions (159/200 tasks, where a canonical tool is replaced by a functional equivalent) from controls (41/200 tasks whose chains contain no substitutable tool, kept to measure baseline sensitivity).
 
 \subsection{Simulator and Evaluation}
 
@@ -154,7 +154,7 @@ We provide a deterministic JSON-API simulator with $0$--$20\%$ failure injection
 \section{Experiments}
 \label{sec:experiments}
 
-We evaluate five agent paradigms, all with \texttt{max\_steps=10} and template-based reasoning (no API calls):
+We evaluate five agent paradigms, all with \texttt{max\_steps=10} and template-based reasoning (no API calls): All template agents are deterministic under the fixed seed 42; bootstrap CIs quantify task-sampling variance.
 
 \begin{itemize}
     \item \textbf{ReAct}~\citep{yao2023react}: Interleaved reasoning and acting.
