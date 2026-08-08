@@ -28,3 +28,42 @@
 ```
 python scripts/external_validity.py
 ```
+---
+
+## Update (2026-08-08, phase 2): library-agnostic inference
+
+Root cause of the phase-1 floor effect: all template agents used hardcoded
+main-library keyword maps for tool selection. We added a flag-gated,
+library-agnostic inference path (`agents/inference.py`,
+`--use-generic-inference`; default OFF, so main-benchmark results are
+unchanged).
+
+With generic inference on the second library:
+
+| Agent | Val | Systematicity | Substitutability |
+|---|---|---|---|
+| ReAct / Reflexion | 0.00 | 0.19-0.20 | 0.92-0.95 |
+| Native FC | 0.00 | 0.19 | 0.95 |
+| Plan-Execute | 0.00 | 0.19 | 0.92 |
+| ChainAware | 0.10 | 0.54 | 1.00 |
+
+- Systematicity and substitutability are now non-degenerate and
+  ChainAware remains best on both — qualitatively consistent with the main
+  benchmark's ranking.
+- **Productivity remains structurally empty** on the second library: all 12
+  external templates supply 2-tool minimal chains that enter the training
+  set, so no productivity chain can avoid training pairs (generator
+  constraint). A valid productivity split needs a template pool partitioned
+  into train vs non-train families.
+- Val stays near zero: generic argument binding is imperfect; agents need a
+  task-parameter→schema binding pass (open item).
+- A fair main-benchmark comparison under the same generic inference is
+  running (`scripts/run_generic_main.py` → `results/generic_main/`); CGG
+  ordering correlation should be recomputed from it, not from the original
+  hardcoded-heuristic numbers.
+
+## Next steps (precise)
+1. Split external templates into train (subset) vs test (superset) families
+   so productivity is constructible.
+2. Improve generic argument binding (parameter-name synonyms + NL value extraction).
+3. Recompute main-vs-external CGG correlation once both use generic inference.

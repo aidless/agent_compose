@@ -57,7 +57,7 @@ def main() -> int:
         for split in SPLITS:
             cmd = (f"python scripts/evaluate.py --agent {agent} --split {split} "
                    f"--data-dir data/generated_ext --tools-dir tools_ext "
-                   f"--output-dir results/external --max-tasks {MAX_TASKS[split]} --seed 42")
+                   f"--output-dir results/external --max-tasks {MAX_TASKS[split]} --seed 42 --use-generic-inference")
             run(cmd)
     # val summary per agent (evaluate.py writes summary only for --split all)
     for agent in AGENTS:

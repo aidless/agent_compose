@@ -30,9 +30,11 @@ class PlanExecuteAgent(Agent):
         tool_library: ToolLibrary,
         max_steps: int = 8,
         use_oracle: bool = False,
+        use_generic_inference: bool = False,
     ) -> None:
         super().__init__(tool_library, max_steps)
         self.use_oracle = use_oracle
+        self.use_generic_inference = use_generic_inference
         self._plan: list[str] = []
         self._planned = False
 
@@ -66,6 +68,16 @@ class PlanExecuteAgent(Agent):
         nl = task.natural_language.lower()
         plan: list[str] = []
 
+        if self.use_generic_inference:
+            from agent_compose.agents.inference import infer_tool_generic
+            first = infer_tool_generic(self.library, task.natural_language, [])
+            if first:
+                plan.append(first)
+            second = infer_tool_generic(self.library, task.natural_language, plan)
+            if second and second not in plan:
+                plan.append(second)
+            return plan
+
         # Common workflow patterns
         if any(kw in nl for kw in ["weather", "temperature", "forecast"]):
             plan.append("search_web")
@@ -93,10 +105,24 @@ class PlanExecuteAgent(Agent):
         if not plan:
             plan.append("search_web")  # default fallback
 
+        if self.use_generic_inference:
+            from agent_compose.agents.inference import infer_tool_generic
+            generic = infer_tool_generic(self.library, task.natural_language, [])
+            if generic and generic not in plan:
+                plan.insert(0, generic)
+            second = infer_tool_generic(self.library, task.natural_language, plan)
+            if second and second not in plan:
+                plan.append(second)
+            if plan == ["search_web"]:
+                plan = []
+
         return plan
 
     def _build_args(self, tool: str, task: Task, trace: ExecutionTrace) -> dict[str, Any]:
         """Same heuristic argument construction as ReAct."""
+        if self.use_generic_inference:
+            from agent_compose.agents.inference import build_args_generic
+            return build_args_generic(self.library, tool, task, trace)
         params = task.parameters
         last_output = trace.results[-1].output if trace.results else None
 

@@ -41,9 +41,10 @@ class ReflexionAgent(Agent):
         max_steps: int = 8,
         max_reflections: int = 3,
         use_oracle: bool = False,
+        use_generic_inference: bool = False,
     ) -> None:
         super().__init__(tool_library, max_steps)
-        self.inner_agent = ReActAgent(tool_library, max_steps, use_oracle=use_oracle)
+        self.inner_agent = ReActAgent(tool_library, max_steps, use_oracle=use_oracle, use_generic_inference=use_generic_inference)
         self.max_reflections = max_reflections
         self.reflections: list[Reflection] = []
 

@@ -2,57 +2,57 @@
   "agents": {
     "react": {
       "val": 0.0,
-      "test_systematicity": 0.0,
+      "test_systematicity": 0.1867,
       "test_productivity": null,
-      "test_substitutability": 0.0,
+      "test_substitutability": 1.0,
       "cgg": {
-        "test_systematicity": 0.0,
+        "test_systematicity": -0.1867,
         "test_productivity": null,
-        "test_substitutability": 0.0
+        "test_substitutability": -1.0
       }
     },
     "native_fc": {
       "val": 0.0,
-      "test_systematicity": 0.0,
+      "test_systematicity": 0.1867,
       "test_productivity": null,
-      "test_substitutability": 0.0,
+      "test_substitutability": 1.0,
       "cgg": {
-        "test_systematicity": 0.0,
+        "test_systematicity": -0.1867,
         "test_productivity": null,
-        "test_substitutability": 0.0
+        "test_substitutability": -1.0
       }
     },
     "reflexion": {
       "val": 0.0,
-      "test_systematicity": 0.0,
+      "test_systematicity": 0.1867,
       "test_productivity": null,
-      "test_substitutability": 0.0,
+      "test_substitutability": 1.0,
       "cgg": {
-        "test_systematicity": 0.0,
+        "test_systematicity": -0.1867,
         "test_productivity": null,
-        "test_substitutability": 0.0
+        "test_substitutability": -1.0
       }
     },
     "plan_execute": {
       "val": 0.0,
-      "test_systematicity": 0.0,
+      "test_systematicity": 0.1867,
       "test_productivity": null,
-      "test_substitutability": 0.0,
+      "test_substitutability": 0.92,
       "cgg": {
-        "test_systematicity": 0.0,
+        "test_systematicity": -0.1867,
         "test_productivity": null,
-        "test_substitutability": 0.0
+        "test_substitutability": -0.92
       }
     },
     "chain_aware": {
       "val": 0.1,
-      "test_systematicity": 0.0,
+      "test_systematicity": 0.54,
       "test_productivity": null,
-      "test_substitutability": 0.08,
+      "test_substitutability": 1.0,
       "cgg": {
-        "test_systematicity": 0.1,
+        "test_systematicity": -0.44,
         "test_productivity": null,
-        "test_substitutability": 0.02
+        "test_substitutability": -0.9
       }
     }
   },
@@ -85,14 +85,14 @@
   },
   "cgg_ordering_correlation": {
     "test_systematicity": {
-      "spearman_r": 0.745,
+      "spearman_r": -0.745,
       "p": 0.1482,
       "n": 5
     },
     "test_productivity": null,
     "test_substitutability": {
-      "spearman_r": -1.0,
-      "p": 0.0,
+      "spearman_r": -0.791,
+      "p": 0.1114,
       "n": 5
     }
   }

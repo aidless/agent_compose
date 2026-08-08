@@ -33,8 +33,9 @@ class ReActAgent(Agent):
 
     name = "ReAct-template"
 
-    def __init__(self, tool_library: ToolLibrary, max_steps: int = 8, use_oracle: bool = False) -> None:
+    def __init__(self, tool_library: ToolLibrary, max_steps: int = 8, use_oracle: bool = False, use_generic_inference: bool = False) -> None:
         super().__init__(tool_library, max_steps)
+        self.use_generic_inference = use_generic_inference
         self.use_oracle = use_oracle
         # If use_oracle=True, agent sees the expected chain (ceiling performance)
         # If use_oracle=False, agent must infer tools from natural language only
@@ -65,6 +66,10 @@ class ReActAgent(Agent):
         called = {c.tool_name for c in trace.calls}
         nl = task.natural_language.lower()
 
+        if self.use_generic_inference:
+            from agent_compose.agents.inference import infer_tool_generic
+            return infer_tool_generic(self.library, task.natural_language, called)
+
         # Simple keyword matching
         keywords = {
             "search_web": ["search", "look up", "find", "query"],
@@ -87,11 +92,17 @@ class ReActAgent(Agent):
             scores[tool] = sum(1 for kw in kws if kw in nl)
 
         if not scores:
+            if self.use_generic_inference:
+                from agent_compose.agents.inference import infer_tool_generic
+                return infer_tool_generic(self.library, task.natural_language, called)
             return None
         return max(scores, key=scores.get)
 
     def _build_arguments(self, tool: str, task: Task, trace: ExecutionTrace) -> dict[str, Any]:
         """Build arguments for a tool call from task params and prior results."""
+        if self.use_generic_inference:
+            from agent_compose.agents.inference import build_args_generic
+            return build_args_generic(self.library, tool, task, trace)
         params = task.parameters
 
         if tool == "search_web":

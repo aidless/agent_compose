@@ -33,9 +33,11 @@ class NativeFCAgent(Agent):
         tool_library: ToolLibrary,
         max_steps: int = 8,
         use_oracle: bool = False,
+        use_generic_inference: bool = False,
     ) -> None:
         super().__init__(tool_library, max_steps)
         self.use_oracle = use_oracle
+        self.use_generic_inference = use_generic_inference
 
     def act(self, task: Task, trace: ExecutionTrace) -> AgentStep:
         step_num = len(trace.calls)
@@ -69,6 +71,10 @@ class NativeFCAgent(Agent):
         called = [c.tool_name for c in trace.calls]
         nl = task.natural_language.lower()
 
+        if self.use_generic_inference:
+            from agent_compose.agents.inference import infer_tool_generic
+            return infer_tool_generic(self.library, task.natural_language, called)
+
         # Priority tool patterns
         patterns = [
             (["weather", "temperature"], "search_web"),
@@ -91,10 +97,17 @@ class NativeFCAgent(Agent):
             if any(kw in nl for kw in keywords):
                 return tool
 
+        if self.use_generic_inference:
+            from agent_compose.agents.inference import infer_tool_generic
+            return infer_tool_generic(self.library, task.natural_language, called)
+
         return None
 
     def _build_args(self, tool: str, task: Task, trace: ExecutionTrace) -> dict[str, Any]:
         """Build args from task params + prior results (with proper binding)."""
+        if self.use_generic_inference:
+            from agent_compose.agents.inference import build_args_generic
+            return build_args_generic(self.library, tool, task, trace)
         params = task.parameters
 
         # Mimic real FC by binding previous outputs

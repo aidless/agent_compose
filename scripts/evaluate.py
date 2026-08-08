@@ -56,6 +56,7 @@ def main() -> None:
     parser.add_argument("--use-oracle", action="store_true", help="Use oracle chain (upper bound)")
     parser.add_argument("--failure-rate", type=float, default=0.0, help="Tool failure injection rate")
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--use-generic-inference", action="store_true", help="Use library-agnostic tool inference (external validity runs)")
     args = parser.parse_args()
 
     # Load tools
@@ -64,7 +65,7 @@ def main() -> None:
 
     # Build agent + simulator
     agent_cls = AGENT_REGISTRY[args.agent]
-    agent = agent_cls(library, max_steps=10, use_oracle=args.use_oracle)
+    agent = agent_cls(library, max_steps=10, use_oracle=args.use_oracle, use_generic_inference=args.use_generic_inference)
     simulator = ToolSimulator(library, failure_rate=args.failure_rate, seed=args.seed)
 
     # Special: ChainAware needs training first

@@ -35,10 +35,11 @@ class ChainAwareAgent(Agent):
         tool_library: ToolLibrary,
         max_steps: int = 8,
         use_oracle: bool = False,
+        use_generic_inference: bool = False,
         n_synthetic_chains: int = 50,
     ) -> None:
         super().__init__(tool_library, max_steps)
-        self.inner = NativeFCAgent(tool_library, max_steps, use_oracle=use_oracle)
+        self.inner = NativeFCAgent(tool_library, max_steps, use_oracle=use_oracle, use_generic_inference=use_generic_inference)
         # chain_patterns: maps keyword-set -> most common tool chain
         self.chain_patterns: dict[frozenset[str], list[str]] = {}
         self.chain_counter: Counter[tuple[str, ...]] = Counter()
