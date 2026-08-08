@@ -1,0 +1,11 @@
+{
+  "name": "read_sensor",
+  "domain": "iot",
+  "description": "Execute read_sensor with the provided parameters.",
+  "parameters": { "type": "object", "properties": {"sensor":{"type":"string"},"room":{"type":"string"}}, "required": ["sensor", "room"] },
+  "returns": { "type": "object", "description": "Result of read_sensor" },
+  "side_effects": [],
+  "failure_modes": ["invalid_input", "unavailable"],
+  "example_call": { },
+  "example_output": { "ok": true }
+}

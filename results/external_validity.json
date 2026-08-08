@@ -1,0 +1,99 @@
+{
+  "agents": {
+    "react": {
+      "val": 0.0,
+      "test_systematicity": 0.0,
+      "test_productivity": null,
+      "test_substitutability": 0.0,
+      "cgg": {
+        "test_systematicity": 0.0,
+        "test_productivity": null,
+        "test_substitutability": 0.0
+      }
+    },
+    "native_fc": {
+      "val": 0.0,
+      "test_systematicity": 0.0,
+      "test_productivity": null,
+      "test_substitutability": 0.0,
+      "cgg": {
+        "test_systematicity": 0.0,
+        "test_productivity": null,
+        "test_substitutability": 0.0
+      }
+    },
+    "reflexion": {
+      "val": 0.0,
+      "test_systematicity": 0.0,
+      "test_productivity": null,
+      "test_substitutability": 0.0,
+      "cgg": {
+        "test_systematicity": 0.0,
+        "test_productivity": null,
+        "test_substitutability": 0.0
+      }
+    },
+    "plan_execute": {
+      "val": 0.0,
+      "test_systematicity": 0.0,
+      "test_productivity": null,
+      "test_substitutability": 0.0,
+      "cgg": {
+        "test_systematicity": 0.0,
+        "test_productivity": null,
+        "test_substitutability": 0.0
+      }
+    },
+    "chain_aware": {
+      "val": 0.1,
+      "test_systematicity": 0.0,
+      "test_productivity": null,
+      "test_substitutability": 0.08,
+      "cgg": {
+        "test_systematicity": 0.1,
+        "test_productivity": null,
+        "test_substitutability": 0.02
+      }
+    }
+  },
+  "main_benchmark_cgg": {
+    "react": {
+      "test_systematicity": -0.1608,
+      "test_productivity": -0.2742,
+      "test_substitutability": 0.0175
+    },
+    "native_fc": {
+      "test_systematicity": 0.1225,
+      "test_productivity": 0.0675,
+      "test_substitutability": 0.0175
+    },
+    "reflexion": {
+      "test_systematicity": -0.1608,
+      "test_productivity": -0.2742,
+      "test_substitutability": 0.0175
+    },
+    "plan_execute": {
+      "test_systematicity": 0.1225,
+      "test_productivity": 0.1608,
+      "test_substitutability": 0.0175
+    },
+    "chain_aware": {
+      "test_systematicity": 0.5617,
+      "test_productivity": 0.5483,
+      "test_substitutability": 0.0
+    }
+  },
+  "cgg_ordering_correlation": {
+    "test_systematicity": {
+      "spearman_r": 0.745,
+      "p": 0.1482,
+      "n": 5
+    },
+    "test_productivity": null,
+    "test_substitutability": {
+      "spearman_r": -1.0,
+      "p": 0.0,
+      "n": 5
+    }
+  }
+}

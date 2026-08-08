@@ -1,0 +1,11 @@
+{
+  "name": "forecast_revenue",
+  "domain": "finance",
+  "description": "Execute forecast_revenue with the provided parameters.",
+  "parameters": { "type": "object", "properties": {"quarter":{"type":"string"}}, "required": ["quarter"] },
+  "returns": { "type": "object", "description": "Result of forecast_revenue" },
+  "side_effects": [],
+  "failure_modes": ["invalid_input", "unavailable"],
+  "example_call": { },
+  "example_output": { "ok": true }
+}

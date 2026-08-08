@@ -1,0 +1,10 @@
+{
+  "_meta": { "description": "External validity tool library (second tool set, expanded)", "version": "0.2.0", "total_tools": 20, "equivalent_tools": 6 },
+  "domains": { "finance": "Financial operations", "iot": "Smart-device operations", "logistics": "Shipping and logistics" },
+  "tools_by_domain": { "finance": ["get_stock_quote", "get_commodity_quote", "convert_currency", "reconcile_ledger", "send_invoice", "get_balance", "transfer_funds", "generate_report", "forecast_revenue"], "iot": ["read_sensor", "set_thermostat", "lock_smart_door", "send_alert", "get_device_status", "toggle_light", "schedule_automation", "play_announcement"], "logistics": ["track_shipment", "book_courier", "print_label"] },
+  "equivalence_groups": [
+    { "group_id": "X1_quote", "canonical": "get_stock_quote", "variants": ["get_commodity_quote"], "rationale": "Both return a current market quote." },
+    { "group_id": "X2_notify", "canonical": "send_invoice", "variants": ["send_alert"], "rationale": "Both transmit a formatted message to a recipient." },
+    { "group_id": "X3_status", "canonical": "read_sensor", "variants": ["get_device_status"], "rationale": "Both read device state." }
+  ]
+}

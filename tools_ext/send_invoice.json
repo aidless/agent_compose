@@ -1,0 +1,11 @@
+{
+  "name": "send_invoice",
+  "domain": "finance",
+  "description": "Execute send_invoice with the provided parameters.",
+  "parameters": { "type": "object", "properties": {"subject":{"type":"string"},"to":{"type":"string"},"body":{"type":"string"}}, "required": ["subject", "to", "body"] },
+  "returns": { "type": "object", "description": "Result of send_invoice" },
+  "side_effects": [],
+  "failure_modes": ["invalid_input", "unavailable"],
+  "example_call": { },
+  "example_output": { "ok": true }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "get_stock_quote",
+  "domain": "finance",
+  "description": "Execute get_stock_quote with the provided parameters.",
+  "parameters": { "type": "object", "properties": {"ticker":{"type":"string"}}, "required": ["ticker"] },
+  "returns": { "type": "object", "description": "Result of get_stock_quote" },
+  "side_effects": [],
+  "failure_modes": ["invalid_input", "unavailable"],
+  "example_call": { },
+  "example_output": { "ok": true }
+}

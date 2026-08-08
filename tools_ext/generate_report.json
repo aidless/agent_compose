@@ -1,0 +1,11 @@
+{
+  "name": "generate_report",
+  "domain": "finance",
+  "description": "Execute generate_report with the provided parameters.",
+  "parameters": { "type": "object", "properties": {"quarter":{"type":"string"},"team":{"type":"string"}}, "required": ["quarter", "team"] },
+  "returns": { "type": "object", "description": "Result of generate_report" },
+  "side_effects": [],
+  "failure_modes": ["invalid_input", "unavailable"],
+  "example_call": { },
+  "example_output": { "ok": true }
+}

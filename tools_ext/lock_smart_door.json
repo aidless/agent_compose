@@ -1,0 +1,11 @@
+{
+  "name": "lock_smart_door",
+  "domain": "iot",
+  "description": "Execute lock_smart_door with the provided parameters.",
+  "parameters": { "type": "object", "properties": {"location":{"type":"string"}}, "required": ["location"] },
+  "returns": { "type": "object", "description": "Result of lock_smart_door" },
+  "side_effects": [],
+  "failure_modes": ["invalid_input", "unavailable"],
+  "example_call": { },
+  "example_output": { "ok": true }
+}

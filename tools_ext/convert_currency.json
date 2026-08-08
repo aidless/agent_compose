@@ -1,0 +1,11 @@
+{
+  "name": "convert_currency",
+  "domain": "finance",
+  "description": "Execute convert_currency with the provided parameters.",
+  "parameters": { "type": "object", "properties": {"amount":{"type":"number"},"from":{"type":"string"},"to":{"type":"string"}}, "required": ["amount", "from", "to"] },
+  "returns": { "type": "object", "description": "Result of convert_currency" },
+  "side_effects": [],
+  "failure_modes": ["invalid_input", "unavailable"],
+  "example_call": { },
+  "example_output": { "ok": true }
+}

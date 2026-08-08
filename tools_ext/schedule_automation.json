@@ -1,0 +1,11 @@
+{
+  "name": "schedule_automation",
+  "domain": "iot",
+  "description": "Execute schedule_automation with the provided parameters.",
+  "parameters": { "type": "object", "properties": {"rule":{"type":"string"},"time":{"type":"string"}}, "required": ["rule", "time"] },
+  "returns": { "type": "object", "description": "Result of schedule_automation" },
+  "side_effects": [],
+  "failure_modes": ["invalid_input", "unavailable"],
+  "example_call": { },
+  "example_output": { "ok": true }
+}

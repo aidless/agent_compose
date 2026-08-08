@@ -50,6 +50,7 @@ def main() -> None:
         default="all",
     )
     parser.add_argument("--data-dir", type=Path, default=Path(__file__).parent.parent / "data" / "generated")
+    parser.add_argument("--tools-dir", type=Path, default=Path(__file__).parent.parent / "tools")
     parser.add_argument("--output-dir", type=Path, default=Path(__file__).parent.parent / "results")
     parser.add_argument("--max-tasks", type=int, default=None, help="Limit tasks per split (for testing)")
     parser.add_argument("--use-oracle", action="store_true", help="Use oracle chain (upper bound)")
@@ -58,7 +59,7 @@ def main() -> None:
     args = parser.parse_args()
 
     # Load tools
-    tools_dir = Path(__file__).parent.parent / "tools"
+    tools_dir = args.tools_dir
     library = ToolLibrary(tools_dir)
 
     # Build agent + simulator

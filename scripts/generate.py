@@ -28,10 +28,17 @@ def main() -> None:
         help="Output directory for generated JSONL files",
     )
     parser.add_argument("--seed", type=int, default=42, help="Random seed for reproducibility")
+    parser.add_argument("--tail-tools", default=None, help="Comma-separated tail tools for systematicity extension (external libraries)")
+    parser.add_argument("--head-tools", default=None, help="Comma-separated head tools for productivity extension (external libraries)")
     args = parser.parse_args()
 
     print(f"Generating tasks with seed={args.seed}...")
-    gen = TaskGenerator(templates_path=args.templates, seed=args.seed)
+    gen_kwargs = {"templates_path": args.templates, "seed": args.seed}
+    if args.tail_tools:
+        gen_kwargs["tail_tools"] = [t.strip() for t in args.tail_tools.split(",")]
+    if args.head_tools:
+        gen_kwargs["candidate_heads_pool"] = [t.strip() for t in args.head_tools.split(",")]
+    gen = TaskGenerator(**gen_kwargs)
     splits = gen.generate_all()
     paths = gen.save_splits(splits, args.output)
 

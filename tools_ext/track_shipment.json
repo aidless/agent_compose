@@ -1,0 +1,11 @@
+{
+  "name": "track_shipment",
+  "domain": "logistics",
+  "description": "Execute track_shipment with the provided parameters.",
+  "parameters": { "type": "object", "properties": {"tracking":{"type":"string"}}, "required": ["tracking"] },
+  "returns": { "type": "object", "description": "Result of track_shipment" },
+  "side_effects": [],
+  "failure_modes": ["invalid_input", "unavailable"],
+  "example_call": { },
+  "example_output": { "ok": true }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "play_announcement",
+  "domain": "iot",
+  "description": "Execute play_announcement with the provided parameters.",
+  "parameters": { "type": "object", "properties": {"message":{"type":"string"},"audience":{"type":"string"}}, "required": ["message", "audience"] },
+  "returns": { "type": "object", "description": "Result of play_announcement" },
+  "side_effects": [],
+  "failure_modes": ["invalid_input", "unavailable"],
+  "example_call": { },
+  "example_output": { "ok": true }
+}

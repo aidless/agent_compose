@@ -66,10 +66,16 @@ class TaskGenerator:
         n_test_substitutability: int = 200,
         # Substitutability: fraction of tasks where search_web -> search_news
         sub_substitution_rate: float = 0.5,
+        # Extension tool pools (must be tools present in the tool library).
+        # Override these for alternate tool libraries (external validity).
+        tail_tools: Optional[Sequence[str]] = None,
+        candidate_heads_pool: Optional[Sequence[str]] = None,
     ) -> None:
         self.rng = random.Random(seed)
         self.templates_path = Path(templates_path)
         self.seed = seed
+        self.tail_tools = list(tail_tools) if tail_tools else ["send_email", "send_sms", "write_file", "calendar_add"]
+        self.candidate_heads_pool = list(candidate_heads_pool) if candidate_heads_pool else ["send_email", "send_sms", "write_file", "calendar_add", "read_file", "calculator", "unit_convert"]
         self.n_train = n_train
         self.n_val = n_val
         self.n_test_systematicity = n_test_systematicity
@@ -166,7 +172,7 @@ class TaskGenerator:
         sys_candidates = self._generate_base_pool(self.n_test_systematicity * 3)
         sys_test: list[Task] = []
         # Common tail tools to extend chains (in train_pairs via training extensions)
-        tail_tools = ["send_email", "send_sms", "write_file", "calendar_add"]
+        tail_tools = self.tail_tools
         for task in sys_candidates:
             # Pick a tail tool that, when appended, keeps at least one sub-pair in train_pairs
             base_chain = list(task.expected_chain)
@@ -193,15 +199,7 @@ class TaskGenerator:
         prod_candidates = self._generate_base_pool(self.n_test_productivity * 10)
         prod_test: list[Task] = []
         # All tools available for head-position (must not duplicate last_tool)
-        candidate_heads_pool = [
-            "send_email",
-            "send_sms",
-            "write_file",
-            "calendar_add",
-            "read_file",
-            "calculator",
-            "unit_convert",
-        ]
+        candidate_heads_pool = self.candidate_heads_pool
         for task in prod_candidates:
             base_chain = list(task.expected_chain)
             last_tool = base_chain[-1]

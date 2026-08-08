@@ -1,0 +1,11 @@
+{
+  "name": "get_balance",
+  "domain": "finance",
+  "description": "Execute get_balance with the provided parameters.",
+  "parameters": { "type": "object", "properties": {"account":{"type":"string"}}, "required": ["account"] },
+  "returns": { "type": "object", "description": "Result of get_balance" },
+  "side_effects": [],
+  "failure_modes": ["invalid_input", "unavailable"],
+  "example_call": { },
+  "example_output": { "ok": true }
+}

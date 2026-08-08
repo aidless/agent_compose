@@ -1,0 +1,11 @@
+{
+  "name": "reconcile_ledger",
+  "domain": "finance",
+  "description": "Execute reconcile_ledger with the provided parameters.",
+  "parameters": { "type": "object", "properties": {"account":{"type":"string"}}, "required": ["account"] },
+  "returns": { "type": "object", "description": "Result of reconcile_ledger" },
+  "side_effects": [],
+  "failure_modes": ["invalid_input", "unavailable"],
+  "example_call": { },
+  "example_output": { "ok": true }
+}

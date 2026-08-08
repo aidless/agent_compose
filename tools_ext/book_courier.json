@@ -1,0 +1,11 @@
+{
+  "name": "book_courier",
+  "domain": "logistics",
+  "description": "Execute book_courier with the provided parameters.",
+  "parameters": { "type": "object", "properties": {"address":{"type":"string"},"date":{"type":"string"}}, "required": ["address", "date"] },
+  "returns": { "type": "object", "description": "Result of book_courier" },
+  "side_effects": [],
+  "failure_modes": ["invalid_input", "unavailable"],
+  "example_call": { },
+  "example_output": { "ok": true }
+}

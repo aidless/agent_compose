@@ -1,0 +1,170 @@
+# External validity task templates (second tool library)
+templates:
+
+  - id: X1_quote_invoice
+    description: "Fetch a market quote and send an invoice"
+    natural_language: |
+      Fetch the current market quote for {ticker} and send an invoice for
+      {amount} to {email} with subject "Invoice".
+    required_tools: [get_stock_quote, send_invoice]
+    minimal_chain: [get_stock_quote, send_invoice]
+    extended_chain: [get_stock_quote, convert_currency, send_invoice]
+    parameters:
+      ticker: [AAPL, MSFT, GOOG, AMZN]
+      amount: [100, 250, 500, 1000]
+      email: ["a@example.com", "b@example.com"]
+    success_criteria:
+      - "send_invoice.to == {email}"
+      - "send_invoice.subject contains 'Invoice'"
+
+  - id: X2_convert_reconcile
+    description: "Convert currency then reconcile the ledger"
+    natural_language: |
+      Convert {amount} {from_ccy} to {to_ccy}, then reconcile the ledger
+      for account {account}.
+    required_tools: [convert_currency, reconcile_ledger]
+    minimal_chain: [convert_currency, reconcile_ledger]
+    extended_chain: [get_stock_quote, convert_currency, reconcile_ledger]
+    parameters:
+      amount: [50, 200, 800]
+      from_ccy: [USD, EUR, JPY]
+      to_ccy: [CNY, GBP]
+      account: [A1, A2]
+    success_criteria:
+      - "reconcile_ledger.account == {account}"
+
+  - id: X3_sensor_thermostat
+    description: "Read a sensor and set the thermostat"
+    natural_language: |
+      Read the {sensor} sensor in room {room} and set the thermostat to
+      {temp} degrees.
+    required_tools: [read_sensor, set_thermostat]
+    minimal_chain: [read_sensor, set_thermostat]
+    extended_chain: [read_sensor, convert_currency, set_thermostat]
+    parameters:
+      sensor: [temperature, humidity, co2]
+      room: [living, kitchen, bedroom]
+      temp: [20, 22, 24]
+    success_criteria:
+      - "set_thermostat.temp == {temp}"
+
+  - id: X4_quote_convert
+    description: "Fetch a quote and convert currency"
+    natural_language: |
+      Fetch the current quote for {ticker} and convert it to {to_ccy}.
+    required_tools: [get_stock_quote, convert_currency]
+    minimal_chain: [get_stock_quote, convert_currency]
+    extended_chain: [get_stock_quote, convert_currency, send_invoice]
+    parameters:
+      ticker: [AAPL, TSLA, NVDA]
+      to_ccy: [USD, EUR, CNY]
+    success_criteria:
+      - "convert_currency.to == {to_ccy}"
+
+  - id: X5_sensor_alert
+    description: "Read a sensor and send an alert"
+    natural_language: |
+      Read the {sensor} sensor and send an alert about {level} readings
+      to {email}.
+    required_tools: [read_sensor, send_alert]
+    minimal_chain: [read_sensor, send_alert]
+    extended_chain: [read_sensor, set_thermostat, send_alert]
+    parameters:
+      sensor: [temperature, humidity]
+      level: [high, low]
+      email: ["a@example.com", "b@example.com"]
+    success_criteria:
+      - "send_alert.to == {email}"
+
+  - id: X6_lock_alert
+    description: "Lock the door and send an alert"
+    natural_language: |
+      Lock the smart door at {location} and send an alert to {email}.
+    required_tools: [lock_smart_door, send_alert]
+    minimal_chain: [lock_smart_door, send_alert]
+    extended_chain: [lock_smart_door, read_sensor, send_alert]
+    parameters:
+      location: [front, back, garage]
+      email: ["a@example.com", "b@example.com"]
+    success_criteria:
+      - "lock_smart_door.location == {location}"
+      - "send_alert.to == {email}"
+  - id: X7_balance_transfer
+    description: "Get balance then transfer funds"
+    natural_language: |
+      Get the balance of account {account} and transfer {amount} to
+      {to_account}.
+    required_tools: [get_balance, transfer_funds]
+    minimal_chain: [get_balance, transfer_funds]
+    extended_chain: [get_balance, convert_currency, transfer_funds]
+    parameters:
+      account: [A1, A2, A3]
+      amount: [50, 200, 500]
+      to_account: [B1, B2]
+    success_criteria:
+      - "transfer_funds.to == {to_account}"
+
+  - id: X8_forecast_report
+    description: "Forecast revenue and generate a report"
+    natural_language: |
+      Forecast revenue for {quarter} and generate a report for {team}.
+    required_tools: [forecast_revenue, generate_report]
+    minimal_chain: [forecast_revenue, generate_report]
+    extended_chain: [forecast_revenue, convert_currency, generate_report]
+    parameters:
+      quarter: [Q1, Q2, Q3, Q4]
+      team: [sales, ops, eng]
+    success_criteria:
+      - "generate_report.team == {team}"
+
+  - id: X9_status_light
+    description: "Get device status and toggle the light"
+    natural_language: |
+      Get the status of device {device} and toggle the light in {room}.
+    required_tools: [get_device_status, toggle_light]
+    minimal_chain: [get_device_status, toggle_light]
+    extended_chain: [get_device_status, read_sensor, toggle_light]
+    parameters:
+      device: [cam1, cam2, hub]
+      room: [living, kitchen]
+    success_criteria:
+      - "toggle_light.room == {room}"
+
+  - id: X10_schedule_play
+    description: "Schedule automation and play an announcement"
+    natural_language: |
+      Schedule automation {rule} and play an announcement for {audience}.
+    required_tools: [schedule_automation, play_announcement]
+    minimal_chain: [schedule_automation, play_announcement]
+    extended_chain: [schedule_automation, get_device_status, play_announcement]
+    parameters:
+      rule: [r1, r2, r3]
+      audience: [all, staff, guests]
+    success_criteria:
+      - "play_announcement.audience == {audience}"
+
+  - id: X11_track_book
+    description: "Track a shipment and book a courier"
+    natural_language: |
+      Track shipment {tracking} and book a courier for {date}.
+    required_tools: [track_shipment, book_courier]
+    minimal_chain: [track_shipment, book_courier]
+    extended_chain: [track_shipment, print_label, book_courier]
+    parameters:
+      tracking: [T1, T2, T3]
+      date: [monday, tuesday, friday]
+    success_criteria:
+      - "book_courier.date == {date}"
+
+  - id: X12_print_report
+    description: "Generate a report and print a label"
+    natural_language: |
+      Generate a report for {team} and print a label for {order}.
+    required_tools: [generate_report, print_label]
+    minimal_chain: [generate_report, print_label]
+    extended_chain: [generate_report, track_shipment, print_label]
+    parameters:
+      team: [sales, ops]
+      order: [O1, O2, O3]
+    success_criteria:
+      - "print_label.order == {order}"

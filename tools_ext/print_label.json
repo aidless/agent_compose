@@ -1,0 +1,11 @@
+{
+  "name": "print_label",
+  "domain": "logistics",
+  "description": "Execute print_label with the provided parameters.",
+  "parameters": { "type": "object", "properties": {"order":{"type":"string"},"address":{"type":"string"}}, "required": ["order", "address"] },
+  "returns": { "type": "object", "description": "Result of print_label" },
+  "side_effects": [],
+  "failure_modes": ["invalid_input", "unavailable"],
+  "example_call": { },
+  "example_output": { "ok": true }
+}

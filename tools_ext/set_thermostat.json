@@ -1,0 +1,11 @@
+{
+  "name": "set_thermostat",
+  "domain": "iot",
+  "description": "Execute set_thermostat with the provided parameters.",
+  "parameters": { "type": "object", "properties": {"room":{"type":"string"},"temp":{"type":"number"}}, "required": ["room", "temp"] },
+  "returns": { "type": "object", "description": "Result of set_thermostat" },
+  "side_effects": [],
+  "failure_modes": ["invalid_input", "unavailable"],
+  "example_call": { },
+  "example_output": { "ok": true }
+}

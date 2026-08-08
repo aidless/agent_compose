@@ -1,0 +1,11 @@
+{
+  "name": "get_device_status",
+  "domain": "iot",
+  "description": "Execute get_device_status with the provided parameters.",
+  "parameters": { "type": "object", "properties": {"device":{"type":"string"}}, "required": ["device"] },
+  "returns": { "type": "object", "description": "Result of get_device_status" },
+  "side_effects": [],
+  "failure_modes": ["invalid_input", "unavailable"],
+  "example_call": { },
+  "example_output": { "ok": true }
+}

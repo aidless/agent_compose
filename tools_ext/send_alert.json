@@ -1,0 +1,11 @@
+{
+  "name": "send_alert",
+  "domain": "iot",
+  "description": "Execute send_alert with the provided parameters.",
+  "parameters": { "type": "object", "properties": {"body":{"type":"string"},"to":{"type":"string"}}, "required": ["body", "to"] },
+  "returns": { "type": "object", "description": "Result of send_alert" },
+  "side_effects": [],
+  "failure_modes": ["invalid_input", "unavailable"],
+  "example_call": { },
+  "example_output": { "ok": true }
+}

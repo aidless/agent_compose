@@ -1,0 +1,11 @@
+{
+  "name": "get_commodity_quote",
+  "domain": "finance",
+  "description": "Execute get_commodity_quote with the provided parameters.",
+  "parameters": { "type": "object", "properties": {"commodity":{"type":"string"}}, "required": ["commodity"] },
+  "returns": { "type": "object", "description": "Result of get_commodity_quote" },
+  "side_effects": [],
+  "failure_modes": ["invalid_input", "unavailable"],
+  "example_call": { },
+  "example_output": { "ok": true }
+}

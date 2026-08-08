@@ -1,0 +1,11 @@
+{
+  "name": "toggle_light",
+  "domain": "iot",
+  "description": "Execute toggle_light with the provided parameters.",
+  "parameters": { "type": "object", "properties": {"state":{"type":"string"},"room":{"type":"string"}}, "required": ["state", "room"] },
+  "returns": { "type": "object", "description": "Result of toggle_light" },
+  "side_effects": [],
+  "failure_modes": ["invalid_input", "unavailable"],
+  "example_call": { },
+  "example_output": { "ok": true }
+}
