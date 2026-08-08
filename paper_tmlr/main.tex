@@ -179,9 +179,12 @@ We evaluate five agent paradigms, all with \texttt{max\_steps=10} and template-b
         Plan-Execute & 0.27 & 0.15 & 0.11 & 0.25 \\
         \textbf{Chain-Aware (Ours)} & \textbf{1.00} & 0.44 & 0.45 & 0.25 \\
         \textbf{Chain-Aware + EquivAware (Ours)} & \textbf{1.00} & \textbf{0.44} & \textbf{0.45} & \textbf{1.00} \\
+        \midrule
+        DeepSeek-ReAct (LLM) & 0.13 & 0.06 & 0.04 & 0.14 \\
+        DeepSeek-FC (LLM) & 0.24 & 0.08 & 0.07 & 0.21 \\
         \bottomrule
     \end{tabular}
-    \caption{Task Success Rate (TSR) on the 30-tool / 3{,}000-task AgentCompose benchmark (Val: N=400, Systematicity: N=600, Productivity: N=600, Substitutability: N=200). EquivAware extends ChainAware with equivalence-group detection; see Section~\ref{sec:equiv}.}
+    \caption{Task Success Rate (TSR) on the 30-tool / 3{,}000-task AgentCompose benchmark (Val: N=400, Systematicity: N=600, Productivity: N=600, Substitutability: N=200). EquivAware extends ChainAware with equivalence-group detection; see Section~\ref{sec:equiv}. The two DeepSeek rows use N=100 per split (LLM API budget); bootstrap 95\% CIs for all agents are in the supplementary material (Section~\ref{sec:supp_ci}).}
     \label{tab:main}
 \end{table}
 
@@ -193,7 +196,7 @@ Table~\ref{tab:main} reports the headline results. Three observations:
     \item \textbf{Substitutability is universally unsolved without EquivAware}: All four baseline template agents score 0.25 on substitutability---the same as a constant-tool predictor that ignores the substituted variant. EquivAware lifts ChainAware to 1.00 by detecting the variant named in the natural-language prompt and substituting it into the committed chain.
 \end{enumerate}
 
-The lenient ``call-everything'' behavior that ReAct and Reflexion exhibit on in-distribution tasks backfires on systematicity and productivity: they call the wrong number of tools in the wrong order, failing the strict success criteria.
+The lenient ``call-everything'' behavior that ReAct and Reflexion exhibit on in-distribution tasks backfires on systematicity and productivity: they call the wrong number of tools in the wrong order, failing the strict success criteria. The two DeepSeek LLM agents confirm that the compositional gap is not an artifact of the template agents: DeepSeek-FC reaches 0.24 in-distribution but drops to 0.08/0.07 on systematicity/productivity and 0.21 on substitutability without equivalence awareness.
 
 \subsection{Error Analysis}
 
