@@ -293,7 +293,33 @@ call-everything behavior scores higher.}
 
 Interpretation: the in-sample ``CGG'' reading must control for chain depth;
 the paper's claims are limited to the matched-length comparisons highlighted
-above.\section{Seed-Level Variance (5 independent seeds)}
+above.
+\section{Three-Way Ablation (Training $\times$ Detector $\times$ Scoring)}
+
+Seed-42 runs on the substitutability (N=200) and productivity (N=600) splits.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lcc}
+\toprule
+Cell & Substitutability TSR & Productivity TSR \\
+\midrule
+ChainAware full (trained, detector on, equiv-aware scoring) & \textbf{1.00} & 0.45 \\
+ChainAware no training & 0.25 & 0.20 \\
+ChainAware no detector & 1.00 & 0.45 \\
+ChainAware strict scoring & 0.205 & 0.20 \\
+ReAct strict scoring & 0.00 & 0.54 \\
+\bottomrule
+\end{tabular}
+\caption{Three-way ablation. Training is necessary for substitutability under
+equivalence-aware scoring (0.25 $\rightarrow$ 1.00); the variant detector is
+inert on the metric (1.00 with or without it); and the equivalence-aware
+evaluator supplies the remaining credit---under strict scoring ChainAware
+drops to 0.205. On productivity, ReAct's lenient call-everything behavior
+scores higher than ChainAware under both scoring regimes.}
+\label{tab:ablation_threeway}
+\end{table}\section{Seed-Level Variance (5 independent seeds)}
 
 Template agents are deterministic given the task seed; across seeds {42, 1, 2, 3, 4}
 the task instances differ, yielding genuine variance. Ranges are min--max over the

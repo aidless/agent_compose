@@ -1,0 +1,22 @@
+{
+  "full": {
+    "test_substitutability": 1.0,
+    "test_productivity": 0.4517
+  },
+  "no_training": {
+    "test_substitutability": 0.25,
+    "test_productivity": 0.2
+  },
+  "no_detector": {
+    "test_substitutability": 1.0,
+    "test_productivity": 0.4517
+  },
+  "strict_scoring": {
+    "test_substitutability": 0.205,
+    "test_productivity": 0.2
+  },
+  "react_strict": {
+    "test_substitutability": 0.0,
+    "test_productivity": 0.5417
+  }
+}

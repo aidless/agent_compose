@@ -57,6 +57,9 @@ def main() -> None:
     parser.add_argument("--failure-rate", type=float, default=0.0, help="Tool failure injection rate")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--use-generic-inference", action="store_true", help="Use library-agnostic tool inference (external validity runs)")
+    parser.add_argument("--no-equiv-eval", action="store_true", help="Strict scoring: equivalence groups disabled in the evaluator")
+    parser.add_argument("--no-chain-training", action="store_true", help="ChainAware: skip training on train chains (ablation)")
+    parser.add_argument("--no-equiv-detector", action="store_true", help="ChainAware: disable equivalence variant detection (ablation)")
     args = parser.parse_args()
 
     # Load tools
@@ -65,11 +68,14 @@ def main() -> None:
 
     # Build agent + simulator
     agent_cls = AGENT_REGISTRY[args.agent]
-    agent = agent_cls(library, max_steps=10, use_oracle=args.use_oracle, use_generic_inference=args.use_generic_inference)
+    _kwargs = {"use_generic_inference": args.use_generic_inference}
+    if args.agent == "chain_aware":
+        _kwargs["use_equiv_detector"] = not args.no_equiv_detector
+    agent = agent_cls(library, max_steps=10, use_oracle=args.use_oracle, **_kwargs)
     simulator = ToolSimulator(library, failure_rate=args.failure_rate, seed=args.seed)
 
     # Special: ChainAware needs training first
-    if args.agent == "chain_aware":
+    if args.agent == "chain_aware" and not args.no_chain_training:
         train_file = args.data_dir / "train.jsonl"
         if train_file.exists():
             train_tasks = load_split(train_file)
@@ -95,7 +101,7 @@ def main() -> None:
         tasks = load_split(file_path)
         task_metrics, traces = evaluate_split(
             agent, simulator, tasks, split_name,
-            max_tasks=args.max_tasks, library=library,
+            max_tasks=args.max_tasks, library=None if args.no_equiv_eval else library,
         )
         split_metrics = evaluator.aggregate(task_metrics)
 

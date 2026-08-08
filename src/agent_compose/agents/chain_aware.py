@@ -36,9 +36,12 @@ class ChainAwareAgent(Agent):
         max_steps: int = 8,
         use_oracle: bool = False,
         use_generic_inference: bool = False,
+        use_equiv_detector: bool = True,
         n_synthetic_chains: int = 50,
     ) -> None:
         super().__init__(tool_library, max_steps)
+        self.use_generic_inference = use_generic_inference
+        self.use_equiv_detector = use_equiv_detector
         self.inner = NativeFCAgent(tool_library, max_steps, use_oracle=use_oracle, use_generic_inference=use_generic_inference)
         # chain_patterns: maps keyword-set -> most common tool chain
         self.chain_patterns: dict[frozenset[str], list[str]] = {}
@@ -166,7 +169,7 @@ class ChainAwareAgent(Agent):
         if self._committed_chain:
             # EquivAware: detect variant mentioned in task NL and substitute
             # into the committed chain (only on first step).
-            if len(trace.calls) == 0:
+            if len(trace.calls) == 0 and self.use_equiv_detector:
                 self._committed_chain = self._apply_equiv_substitution(
                     task, self._committed_chain
                 )
