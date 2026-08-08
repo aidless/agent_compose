@@ -5,6 +5,7 @@
 \usepackage{latexsym}
 \usepackage{url}
 \usepackage{graphicx}
+\graphicspath{{figures/}}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{booktabs}
@@ -62,7 +63,7 @@ Our central finding is striking: across all five agents, the average CGG is larg
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=0.48\textwidth]{../figures/fig1_cgg_bar.pdf}
+    \includegraphics[width=0.48\textwidth]{figures/fig1_cgg_bar.pdf}
     \caption{Compositional Generalization Gap across five agent paradigms. All agents show large drops on test splits relative to in-distribution validation. Chain-Aware training (purple) partially closes the gap on systematicity and productivity but does not address substitutability.}
     \label{fig:cgg}
 \end{figure}
@@ -200,7 +201,7 @@ We categorize each failed task into one of four error types: \emph{missing\_tool
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=0.45\textwidth]{../figures/fig3_error_breakdown.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/fig3_error_breakdown.pdf}
     \caption{Error-type breakdown for Native FC. Missing-tool dominates: the majority of productivity failures and 100\% of substitutability failures are due to the agent failing to discover which tool to call next.}
     \label{fig:errors}
 \end{figure}
@@ -244,7 +245,7 @@ A pairwise Wilcoxon comparison of ChainAware+EquivAware vs.\ the strongest basel
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=0.45\textwidth]{../figures/fig6_cd_diagram.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/fig6_cd_diagram.pdf}
     \caption{Critical Difference (Demsar, 2006) diagram across the 5 template agents on \texttt{test\_productivity}. Lower ranks are better. ChainAware is statistically indistinguishable from the strongest baseline (Reflexion) at $CD = 0.25$; all agents are significantly better than Plan-Execute and Native FC.}
     \label{fig:cd}
 \end{figure}
@@ -281,7 +282,7 @@ EquivAware lifts ChainAware's substitutability TSR from 0.25 to 1.00 (Cohen's $d
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=0.42\textwidth]{../figures/fig4_ablation.pdf}
+    \includegraphics[width=0.42\textwidth]{figures/fig4_ablation.pdf}
     \caption{Effect of synthetic chain augmentation. Productivity TSR improves from 0.145 to 0.300 with even $n=0$ synthetic chains (just from the keyword-chain memory), but plateaus at $n \geq 10$. Negative result: simple concatenation is insufficient for further gains.}
     \label{fig:ablation}
 \end{figure}
@@ -404,7 +405,7 @@ Figure~\ref{fig:heatmap} shows TSR, COC, and ABA metrics for all 5 agents across
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.48\textwidth]{../figures/fig2_metrics_heatmap.pdf}
+    \includegraphics[width=0.48\textwidth]{figures/fig2_metrics_heatmap.pdf}
     \caption{Per-agent per-split metric heatmap. TSR, COC, ABA for each (agent, split) cell.}
     \label{fig:heatmap}
 \end{figure}
@@ -413,7 +414,7 @@ Figure~\ref{fig:heatmap} shows TSR, COC, and ABA metrics for all 5 agents across
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.45\textwidth]{../figures/fig5_chain_length_dist.pdf}
+    \includegraphics[width=0.45\textwidth]{figures/fig5_chain_length_dist.pdf}
     \caption{Distribution of chain lengths per split. Test splits have longer chains than training.}
     \label{fig:chain_dist}
 \end{figure}
