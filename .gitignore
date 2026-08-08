@@ -94,3 +94,7 @@ paper/submission.zip
 
 # Multi-seed per-run records (regenerable via run_multiseed.py)
 results/seed*/
+
+# External validity regenerables
+data/generated_ext/
+results/external/
