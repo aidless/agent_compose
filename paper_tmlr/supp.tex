@@ -294,7 +294,53 @@ call-everything behavior scores higher.}
 Interpretation: the in-sample ``CGG'' reading must control for chain depth;
 the paper's claims are limited to the matched-length comparisons highlighted
 above.
-\section{Three-Way Ablation (Training $\times$ Detector $\times$ Scoring)}
+
+\section{External Validity (Second Tool Library)}
+
+We constructed a second, disjoint tool library (20 tools: finance / iot /
+logistics, three equivalence groups; \texttt{tools\_ext/}) with 12 task
+templates (\texttt{templates\_ext/}), re-ran the five template agents plus
+ChainAware with library-agnostic inference
+(\texttt{--use-generic-inference}), and evaluated the same four splits at a
+reduced scale (Val N=100, Systematicity N=150, Productivity N=150,
+Substitutability N=50 of the generated sets).
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+Agent & Val & Systematicity & Productivity & Substitutability \\
+\midrule
+ReAct / NativeFC / Reflexion / Plan-Execute & 1.00 & 0.43 & 0.00 & 1.00 \\
+ChainAware & 1.00 & 0.63 & 0.57 & 1.00 \\
+\bottomrule
+\end{tabular}
+\caption{TSR on the second tool library (generic inference). Every agent drops
+from the i.i.d. validation split (1.00) to systematicity (0.43) and
+productivity (0.00 for template agents; 0.57 for ChainAware), and ChainAware
+is best on both compositional axes. Full per-agent values and the verdict are
+in \texttt{results/external\_validity.json}.}
+\label{tab:ext_validity}
+\end{table}
+
+\paragraph{Verdict and limitations.} This is \emph{directional} external
+validity support: the qualitative claim that compositional splits are harder
+than i.i.d. holds on a second tool library, and ChainAware remains best on
+the compositional axes. Three limitations prevent a quantitative
+CGG-ordering comparison: (i) the external validation split is saturated
+(1.00 for all agents), so gap magnitudes are compressed; (ii) substitutability
+is also saturated (1.00 for all agents) because generic inference matches
+variant names in the natural-language prompt and the equivalence-aware
+evaluator credits equivalent calls---the same mechanism that separates
+ChainAware on the main benchmark is here available to every agent; and
+(iii) the template-agent degeneracy (Reflexion$\equiv$ReAct,
+NativeFC$\equiv$PlanExecute) carries over to the external runs. The main
+benchmark's validation TSR (0.268) is unaffected by the external-validity
+driver bug that suppressed validation scores in an earlier external run:
+main results are produced by the original pipeline into
+\texttt{results/*\_summary.json}, while external runs write only to
+\texttt{results/external/}.\section{Three-Way Ablation (Training $\times$ Detector $\times$ Scoring)}
 
 Seed-42 runs on the substitutability (N=200) and productivity (N=600) splits.
 
