@@ -323,7 +323,7 @@ Figure~\ref{fig:ablation} shows that Chain-Aware's productivity TSR jumps from 0
 
 \paragraph{Agent benchmarks.} ToolBench~\citep{qin2023toolllm}, AgentBench~\citep{liu2024agentbench}, AppWorld~\citep{trivedi2024appworld}, $\tau$-bench~\citep{yao2024tau}, BFCL~\citep{patil2024bfcl}, and SWE-bench~\citep{jimenez2024swe} evaluate agents on diverse tasks but do not isolate the compositional dimension.
 
-\paragraph{Compositional generalization in NLP.} SCAN~\citep{lake2018generalization} and COGS~\citep{kim2020cogs} introduced systematicity/productivity protocols for semantic parsing. Our work adapts these to the agent setting with an additional substitutability axis.
+\paragraph{Compositional generalization in NLP.} SCAN~\citep{lake2018generalization} and COGS~\citep{kim2020cogs} introduced systematicity/productivity protocols for semantic parsing, and Hupkes et al.~\citep{hupkes2020} formalized systematicity, productivity, and substitutability as distinct axes precisely to make such evaluations comparable across models. Our three axes are a direct operationalization of that taxonomy for tool use: a tool chain plays the role of the expression, tool identity the lexical primitive, and functional equivalence classes define substitutability. The chain-length confounding we report (Section~4) is the agent analogue of the length-bias artifacts documented in the original systematicity debate~\citep{lake2018generalization}: matched-length comparisons are required before attributing a compositional gain.
 
 \paragraph{Agent methods.} ReAct~\citep{yao2023react}, Toolformer~\citep{schick2023toolformer}, Reflexion~\citep{shinn2023reflexion}, and Chain-of-Thought~\citep{wei2022chain} are the dominant paradigms. Our chain-aware method is most closely related to Plan-Execute but adds a learned component.
 
@@ -361,6 +361,11 @@ Lake, B. M., \& Baroni, M. (2018).
 Kim, N., \& Linzen, T. (2020).
 \newblock COGS: A compositional generalization challenge based on semantic interpretation.
 \newblock In {\em EMNLP}.
+
+\bibitem[{Hupkes et al.(2020)}]{hupkes2020}
+Hupkes, D., Dankers, V., Mul, M., \& Bruni, E. (2020).
+\newblock Compositionality decomposed: How do neural networks generalise?
+\newblock {\em JAIR}, 67, 757--795.
 
 \bibitem[{Yao et al.(2023a)}]{yao2023react}
 Yao, S., et al. (2023).
