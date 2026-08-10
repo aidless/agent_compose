@@ -6,7 +6,7 @@
 
 ## Contents
 - `main.tex` — TMLR-templated paper (anonymous author block; inline natbib bibliography)
-- `tmlr.sty` / `tmlr.bst` — official TMLR style (from `F:\Research\arxiv`)
+- `tmlr.sty` / `tmlr.bst` — official TMLR style (from `[TMLR style sources]`)
 - `main.pdf` — compiled preprint version
 - `agentcompose_tmlr_submission_2026-08-08.zip` — OpenReview submission package (tex + sty + bst + pdf)
 

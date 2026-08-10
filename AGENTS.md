@@ -1,7 +1,7 @@
-# AGENTS.md — F:\Research\agent_compose
+# AGENTS.md — [anonymized repository]
 
-> **本文件用途**：ZCode Agent 在 `agent_compose/` 工作时的单一来源项目 manifest。
-> **优先级**：本文件 < 用户级 AGENTS.md (`C:\Users\Administrator\.zcode\AGENTS.md`)。冲突时遵循上级。
+> **本文件用途**：Agent Agent 在 `agent_compose/` 工作时的单一来源项目 manifest。
+> **优先级**：本文件 < 用户级 AGENTS.md (`[user]/.zcode/AGENTS.md`)。冲突时遵循上级。
 > **维护者**：项目作者。修改前先告知用户。
 
 ---
@@ -66,10 +66,10 @@ agent_compose/
 - **正式实验**：用 GPT-4 / Claude API，跑预算 $50 上限
 - 每次 LLM 调用记录 token 数 + cost
 
-## 3. ZCode 行为规则
+## 3. Agent 行为规则
 
 ### 3.1 子 agent 限制
-- **已知问题**：ZCode 子 agent (`Agent` 工具) 在本环境下 model provider 不可用
+- **已知问题**：Agent 子 agent (`Agent` 工具) 在本环境下 model provider 不可用
 - **应对**：所有任务由主 agent 直接执行，或拆成独立小任务用 `Bash`/`WebFetch` 串行做
 - **不要**：等待子 agent 自动完成（会一直失败）
 
@@ -132,5 +132,5 @@ agent_compose/
 
 - 文件版本：v0.1
 - 编制日期：2026-07-23
-- 编制人：ZCode（基于用户级 AGENTS.md 派生）
+- 编制人：Agent（基于用户级 AGENTS.md 派生）
 - 反馈：发现冲突或补充，请告知用户更新本文件
