@@ -36,7 +36,7 @@ Anonymous Institution \\
 \begin{abstract}
 Large Language Model (LLM) agents are increasingly deployed to solve real-world tasks by orchestrating tool calls. Yet a critical question remains unanswered: \emph{can these agents generalize to tool combinations they have never encountered during training?} Existing benchmarks---ToolBench, AgentBench, BFCL, AppWorld, and others---do not isolate \emph{compositional generalization} as a measurable dimension, making it impossible to diagnose whether a failure is due to a missing tool, a wrong chain order, or an unseen combination.
 
-We formalize three axes of agent compositional generalization---{\bf systematicity} (recombining familiar tools into new chains), {\bf productivity} (producing completely unseen chains), and {\bf substitutability} (swapping functionally equivalent tools)---and introduce {\bf AgentCompose}, a controlled benchmark of 3{,}000 tasks over 30 tools with three orthogonal test splits. We evaluate five state-of-the-art agent paradigms (ReAct, Native Function Calling, Reflexion, Plan-Execute, and Chain-Aware Fine-Tuning) plus two large-LLM agents (DeepSeek-ReAct, DeepSeek-Function-Calling) and find that raw TSR comparisons are confounded by chain length: lenient template agents' TSR rises with chain depth (e.g., ReAct 4-tool productivity 5-seed mean 0.51 vs 0.25 on 2-tool in-distribution tasks), while ChainAware's advantages concentrate in in-distribution completion (1.00), matched-length systematicity (3-tool: 0.75 vs 0.21 for template agents), and equivalence-aware substitutability (1.00 vs 0.25--0.31 baselines). Second-library external validity (directional support) is reported in the Supplementary (Section~\ref{tab:ext_validity}). A three-way ablation (Supplementary) shows this substitutability gain is driven by evaluator-side equivalence credit plus chain-pattern training, not by the variant detector---which is inert on the metric (1.00 with and without it)---and under strict (non-equivalence) scoring no agent exceeds 0.205 on substitution. We therefore report all comparisons chain-depth-stratified and scoring-transparent. Error analysis reveals that the dominant failure mode is \emph{tool omission} (the majority of productivity failures; 100\% of substitutability failures for non-equivalence-aware agents), not wrong tool selection or wrong ordering---suggesting agents can \emph{execute} tool chains but cannot \emph{discover} novel compositions.
+We formalize three axes of agent compositional generalization---{\bf systematicity} (recombining familiar tools into new chains), {\bf productivity} (producing completely unseen chains), and {\bf substitutability} (swapping functionally equivalent tools)---and introduce {\bf AgentCompose}, a controlled benchmark of 3{,}000 tasks over 30 tools with three orthogonal test splits. We evaluate five template agent paradigms (ReAct, Native Function Calling, Reflexion, Plan-Execute, Chain-Aware Fine-Tuning) plus two large-LLM agents (DeepSeek-ReAct, DeepSeek-Function-Calling). Raw TSR comparisons are confounded by chain length: lenient template agents' TSR rises with chain depth (e.g., ReAct 4-tool productivity 5-seed mean 0.51 vs 0.25 on 2-tool in-distribution tasks), while ChainAware's advantages concentrate in in-distribution completion (1.00), matched-length systematicity (3-tool: 0.75 vs 0.21), and equivalence-aware substitutability (1.00 vs 0.25--0.31 baselines). Second-library external validity (directional support) is reported in the Supplementary (Section~\ref{tab:ext_validity}). A three-way ablation (Supplementary) shows the substitutability gain is driven by evaluator-side equivalence credit plus chain-pattern training, not by the variant detector (inert: 1.00 with and without it); under strict scoring no agent exceeds 0.205 on substitution. We therefore report all comparisons chain-depth-stratified and scoring-transparent. Error analysis shows the dominant failure mode is tool omission---agents can \emph{execute} tool chains but cannot \emph{discover} novel compositions.
 
 Our chain-aware training method, which augments training with synthetic compositional chains and overlays an {\bf equivalence-aware} variant detector, lifts substitutability from 0.250 (baseline) to 1.000 under equivalence-aware evaluation (a call to the expected tool or any functional equivalent counts as correct) and improves matched-length systematicity (3-tool: 0.75 vs 0.21 over template agents). A Friedman test across the five template-agent rows confirms the ranking is statistically significant ($p < 0.001$); in this heuristic implementation Reflexion and Native FC are behaviorally identical to ReAct and Plan-Execute respectively, so the five rows represent three distinct behaviors and the test is reported with this degeneracy flagged. a Critical Difference diagram visualizes the post-hoc grouping. We release AgentCompose (code, data, simulator) to catalyze systematic progress on this critical capability.
 \end{abstract}
@@ -64,7 +64,7 @@ Our central finding is striking: across all five agents, the average CGG is larg
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.48\textwidth]{figures/fig1_cgg_bar.pdf}
-    \caption{Compositional Generalization Gap across five agent paradigms. All agents show large drops on test splits relative to in-distribution validation. Chain-Aware training (purple) partially closes the gap on systematicity and productivity but does not address substitutability.}
+    \caption{Compositional Generalization Gap across five agent paradigms. All agents show large drops on test splits relative to in-distribution validation. ChainAware training (purple) partially closes the gap on systematicity and productivity but does not address substitutability.}
     \label{fig:cgg}
 \end{figure}
 
@@ -161,7 +161,7 @@ We evaluate five agent paradigms, all with \texttt{max\_steps=10} and template-b
     \item \textbf{Native FC}: Structured function calling (GPT-4 style).
     \item \textbf{Reflexion}~\citep{shinn2023reflexion}: ReAct + verbal self-reflection on failure.
     \item \textbf{Plan-Execute}: Upfront planning, then mechanical execution.
-    \item \textbf{Chain-Aware (Ours)}: Native FC + chain-pattern memory trained from synthetic chains.
+    \item \textbf{ChainAware (Ours)}: Native FC + chain-pattern memory trained from synthetic chains.
 \end{itemize}
 
 \subsection{Main Results}
@@ -177,14 +177,15 @@ We evaluate five agent paradigms, all with \texttt{max\_steps=10} and template-b
         Native FC & 0.25 [0.22, 0.27] & 0.16 [0.15, 0.18] & 0.18 [0.18, 0.20] & 0.25 [0.21, 0.30] \\
         Reflexion & 0.25 [0.22, 0.27] & 0.43 [0.41, 0.45] & 0.51 [0.47, 0.54] & 0.25 [0.21, 0.30] \\
         Plan-Execute & 0.25 [0.22, 0.27] & 0.16 [0.15, 0.18] & 0.10 [0.10, 0.11] & 0.25 [0.21, 0.30] \\
-        \textbf{Chain-Aware (Ours)} & \textbf{1.00} & 0.48 [0.44, 0.52] & 0.39 [0.29, 0.45] & \textbf{1.00} \\
+        \textbf{ChainAware (Ours)} & \textbf{1.00} & 0.48 [0.44, 0.52] & 0.39 [0.29, 0.45] & \textbf{1.00} \\
         
         \midrule
+        % NOTE: DeepSeek rows duplicated in tab:llm and supp tables; keep in sync.
         DeepSeek-ReAct (LLM) & 0.125 [0.080, 0.175] & 0.055 [0.025, 0.090] & 0.010 [0.000, 0.025] & 0.125 [0.080, 0.175] \\
         DeepSeek-FC (LLM) & 0.155 [0.110, 0.205] & 0.070 [0.040, 0.105] & 0.020 [0.005, 0.040] & 0.160 [0.110, 0.210] \\
         \bottomrule
     \end{tabular}
-    \caption{Task Success Rate (TSR) on the 30-tool / 3{,}000-task AgentCompose benchmark (Val: N=400, Systematicity: N=600, Productivity: N=600, Substitutability: N=200). Template-agent rows report 5-seed means with min--max ranges (seed set 42, 1--4); Both DeepSeek rows are N=200 per split (1{,}600 tasks total) with bootstrap 95\% CIs (Supplementary, Section~\ref{sec:supp_ci}). EquivAware extends ChainAware with equivalence-group detection; see Section~\ref{sec:equiv}. Template-agent rows report 5-seed means with min--max ranges; bootstrap CIs and 5-seed variance (Supplementary, Sections~\ref{sec:supp_ci} and~\ref{tab:seed_variance}) accompany all rows.}
+    \caption{Task Success Rate (TSR) on the 30-tool / 3{,}000-task AgentCompose benchmark (Val: N=400, Systematicity: N=600, Productivity: N=600, Substitutability: N=200). Template-agent rows report 5-seed means with min--max ranges (seed set 42, 1--4); both DeepSeek rows are N=200 per split (1{,}600 tasks total) with bootstrap 95\% CIs. EquivAware extends ChainAware with equivalence-group detection; see Section~\ref{sec:equiv}. Bootstrap CIs and 5-seed variance accompany all rows (Supplementary, Sections~\ref{sec:supp_ci} and~\ref{tab:seed_variance}).}
     \label{tab:main}
 \end{table}
 
@@ -211,7 +212,7 @@ Implementation disclosure: in this heuristic implementation, Reflexion produces 
         Native FC & 0.25 & 0.31 & 0.00 \\
         Reflexion & 0.25 & 0.31 & 0.00 \\
         Plan-Execute & 0.25 & 0.31 & 0.00 \\
-        \textbf{Chain-Aware (Ours)} & \textbf{1.00} & \textbf{1.00} & \textbf{1.00} \\
+        \textbf{ChainAware (Ours)} & \textbf{1.00} & \textbf{1.00} & \textbf{1.00} \\
         DeepSeek-ReAct & 0.14 & 0.17 & 0.00 \\
         DeepSeek-FC & 0.21 & 0.26 & 0.00 \\
         \bottomrule
@@ -316,7 +317,7 @@ EquivAware lifts ChainAware's substitutability TSR from 0.25 to 1.00 (Cohen's $d
     \label{fig:ablation}
 \end{figure}
 
-Figure~\ref{fig:ablation} shows that Chain-Aware's productivity TSR jumps from 0.06 (Native FC baseline) to 0.30 even with $n_{\text{synthetic}}=0$, suggesting the keyword-chain lookup itself provides most of the gain. Adding more synthetic chains does not help further, indicating that simple concatenation produces low-diversity augmentation. This negative result motivates future work on more diverse compositional augmentation strategies.
+Figure~\ref{fig:ablation} shows that ChainAware's productivity TSR jumps from 0.06 (Native FC baseline) to 0.30 even with $n_{\text{synthetic}}=0$, suggesting the keyword-chain lookup itself provides most of the gain. Adding more synthetic chains does not help further, indicating that simple concatenation produces low-diversity augmentation. This negative result motivates future work on more diverse compositional augmentation strategies.
 
 \section{Related Work}
 \label{sec:related}
@@ -330,7 +331,7 @@ Figure~\ref{fig:ablation} shows that Chain-Aware's productivity TSR jumps from 0
 \section{Discussion and Limitations}
 \label{sec:discussion}
 
-\paragraph{Real LLM validation.} To address the template-based limitation, we additionally evaluate DeepSeek-V4-Flash on AgentCompose using both ReAct prompting and Native Function Calling, at N=100 tasks per split. Across all four splits the LLM agents achieve a comparable \emph{qualitative} CGG (see Appendix~\ref{app:llm}), confirming that the gap is \emph{not} an artefact of our template agents---real LLMs also exhibit compositional collapse. The LLM runs cost under \$0.001 per task, so the benchmark remains economical for large-scale validation.
+\paragraph{Real LLM validation.} To address the template-based limitation, we additionally evaluate DeepSeek-V4-Flash on AgentCompose using both ReAct prompting and Native Function Calling, at N=100 tasks per split. Across all four splits the LLM agents achieve a comparable \emph{qualitative} CGG (see Appendix~\ref{app:llm}), confirming that the gap is \emph{not} an artefact of our template agents---real LLMs also exhibit compositional collapse. The LLM runs cost under \$0.001 per task, so the benchmark remains economical for large-scale validation. We note the LLM evidence currently comes from a single model family (DeepSeek); extending the LLM rows to other vendors under identical prompts is future work (see \S Future work).
 
 \paragraph{Negative result on synthetic augmentation.} ChainAware recovers substantial gains on systematicity and productivity but plateaus. Solving the remaining gap likely requires architectural changes (e.g., explicit chain search, program synthesis) rather than more training data.
 

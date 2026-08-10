@@ -335,7 +335,12 @@ variant names in the natural-language prompt and the equivalence-aware
 evaluator credits equivalent calls---the same mechanism that separates
 ChainAware on the main benchmark is here available to every agent; and
 (iii) the template-agent degeneracy (Reflexion$\equiv$ReAct,
-NativeFC$\equiv$PlanExecute) carries over to the external runs. The main
+NativeFC$\equiv$PlanExecute) carries over to the external runs. The CGG-ordering
+Spearman correlations between main and external libraries are $-0.745$ (p=0.148) on
+systematicity and $-0.725$ (p=0.165) on productivity (n=5; bootstrap 95\% CIs extend to
+$-1.0$); at $n=5$ they are not statistically distinguishable from chance, so the
+external-validity claim rests on the systematic val-to-compositional drop (1.00 to
+0.43/0.00), not on ordering correlation. The main
 benchmark's validation TSR (0.268) is unaffected by the external-validity
 driver bug that suppressed validation scores in an earlier external run:
 main results are produced by the original pipeline into
