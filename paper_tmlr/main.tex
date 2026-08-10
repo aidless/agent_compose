@@ -181,10 +181,10 @@ We evaluate five agent paradigms, all with \texttt{max\_steps=10} and template-b
         
         \midrule
         DeepSeek-ReAct (LLM) & 0.125 [0.080, 0.175] & 0.055 [0.025, 0.090] & 0.010 [0.000, 0.025] & 0.125 [0.080, 0.175] \\
-        DeepSeek-FC (LLM) & 0.24 & 0.08 & 0.07 & 0.21 \\
+        DeepSeek-FC (LLM) & 0.155 [0.110, 0.205] & 0.070 [0.040, 0.105] & 0.020 [0.005, 0.040] & 0.160 [0.110, 0.210] \\
         \bottomrule
     \end{tabular}
-    \caption{Task Success Rate (TSR) on the 30-tool / 3{,}000-task AgentCompose benchmark (Val: N=400, Systematicity: N=600, Productivity: N=600, Substitutability: N=200). Template-agent rows report 5-seed means with min--max ranges (seed set 42, 1--4); DeepSeek-ReAct row is N=200 per split (800 tasks) with bootstrap 95\% CIs; DeepSeek-FC row is N=100 (LLM API budget; CIs in Supplementary, Section~\ref{sec:supp_ci}). EquivAware extends ChainAware with equivalence-group detection; see Section~\ref{sec:equiv}. Template-agent rows report 5-seed means with min--max ranges; bootstrap CIs and 5-seed variance (Supplementary, Sections~\ref{sec:supp_ci} and~\ref{tab:seed_variance}) accompany all rows.}
+    \caption{Task Success Rate (TSR) on the 30-tool / 3{,}000-task AgentCompose benchmark (Val: N=400, Systematicity: N=600, Productivity: N=600, Substitutability: N=200). Template-agent rows report 5-seed means with min--max ranges (seed set 42, 1--4); Both DeepSeek rows are N=200 per split (1{,}600 tasks total) with bootstrap 95\% CIs (Supplementary, Section~\ref{sec:supp_ci}). EquivAware extends ChainAware with equivalence-group detection; see Section~\ref{sec:equiv}. Template-agent rows report 5-seed means with min--max ranges; bootstrap CIs and 5-seed variance (Supplementary, Sections~\ref{sec:supp_ci} and~\ref{tab:seed_variance}) accompany all rows.}
     \label{tab:main}
 \end{table}
 
@@ -478,7 +478,7 @@ To validate that the CGG is not an artefact of our template agents, we evaluated
         Template Native FC   & 0.27 & 0.15 & 0.20 & 0.25 & 0.07 & 0.02 \\
         \midrule
         DeepSeek-ReAct (N=200)      & 0.125 & 0.055 & 0.010 & 0.125 & 0.115 & 0.000 \\
-        DeepSeek-FC (N=100)         & 0.240 & 0.080 & 0.070 & 0.210 & 0.170 & 0.030 \\
+        DeepSeek-FC (N=200)         & 0.155 & 0.070 & 0.020 & 0.160 & 0.135 & 0.000 \\
         \bottomrule
     \end{tabular}
     \caption{DeepSeek-V4-Flash validation (DeepSeek-ReAct at $N{=}200$ per split; DeepSeek-FC at $N{=}100$). 95\% bootstrap CIs (1000 iter) are reported in the supplementary. CGG$_{\text{prod}}$ = TSR$_{\text{val}} -$ TSR$_{\text{productivity}}$; CGG$_{\text{sub}}$ similarly.}
@@ -487,8 +487,8 @@ To validate that the CGG is not an artefact of our template agents, we evaluated
 
 \paragraph{Findings.}
 \begin{enumerate}
-    \item \textbf{The CGG is real, not a template artefact.} DeepSeek-V4-Flash, a 2026-era frontier model, exhibits the \emph{same qualitative pattern}: TSR drops from 0.125 (val, ReAct) to 0.010 (productivity) and from 0.24 (val, FC) to 0.07 (productivity). The compositional gap is not closed by richer LLM priors.
-    \item \textbf{LLMs underperform template heuristics on val.} DeepSeek-ReAct scored 0.125 on val vs.\ 0.27 for ReAct templates; DeepSeek-FC scored 0.24 vs.\ 0.27 for Native FC templates. The natural-language prompts are \emph{harder} for LLMs than keyword-matched templates. Despite the lower val baseline, both DeepSeek agents collapse on compositional splits.
+    \item \textbf{The CGG is real, not a template artefact.} DeepSeek-V4-Flash, a 2026-era frontier model, exhibits the \emph{same qualitative pattern}: TSR drops from 0.125 (val, ReAct) to 0.010 (productivity) and from 0.155 (val, FC) to 0.020 (productivity). The compositional gap is not closed by richer LLM priors.
+    \item \textbf{LLMs underperform template heuristics on val.} DeepSeek-ReAct scored 0.125 on val vs.\ 0.27 for ReAct templates; DeepSeek-FC scored 0.155 vs.\ 0.27 for Native FC templates. The natural-language prompts are \emph{harder} for LLMs than keyword-matched templates. Despite the lower val baseline, both DeepSeek agents collapse on compositional splits.
     \item \textbf{Economics.} DeepSeek-V4-Flash costs approximately \$0.0008 per task (4{,}000 tokens blended), so a full 3{,}000-task AgentCompose sweep costs under \$2.40.
 \end{enumerate}
 
