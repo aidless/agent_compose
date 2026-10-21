@@ -1,4 +1,4 @@
-\documentclass{article}
+﻿\documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[preprint]{tmlr}
@@ -22,11 +22,7 @@
 
 \title{AgentCompose: Quantifying Compositional Generalization \\ in LLM Tool Use}
 
-\author{
-Anonymous \\
-Anonymous Institution \\
-\texttt{anonymous@example.com}
-}
+\author{\name Zewen Liu\email liuzewen@qlnu.edu.cn\\\addr Qilu Institute of Technology}
 
 \date{}
 
@@ -36,7 +32,7 @@ Anonymous Institution \\
 \begin{abstract}
 Large Language Model (LLM) agents are increasingly deployed to solve real-world tasks by orchestrating tool calls. Yet a critical question remains unanswered: \emph{can these agents generalize to tool combinations they have never encountered during training?} Existing benchmarks---ToolBench, AgentBench, BFCL, AppWorld, and others---do not isolate \emph{compositional generalization} as a measurable dimension, making it impossible to diagnose whether a failure is due to a missing tool, a wrong chain order, or an unseen combination.
 
-We formalize three axes of agent compositional generalization---{\bf systematicity} (recombining familiar tools into new chains), {\bf productivity} (producing completely unseen chains), and {\bf substitutability} (swapping functionally equivalent tools)---and introduce {\bf AgentCompose}, a controlled benchmark of 3{,}000 tasks over 30 tools with three orthogonal test splits. We evaluate five template agent paradigms (ReAct, Native Function Calling, Reflexion, Plan-Execute, Chain-Aware Fine-Tuning) plus two large-LLM agents (DeepSeek-ReAct, DeepSeek-Function-Calling). Raw TSR comparisons are confounded by chain length: lenient template agents' TSR rises with chain depth (e.g., ReAct 4-tool productivity 5-seed mean 0.51 vs 0.25 on 2-tool in-distribution tasks), while ChainAware's advantages concentrate in in-distribution completion (1.00), matched-length systematicity (3-tool: 0.75 vs 0.21), and equivalence-aware substitutability (1.00 vs 0.25--0.31 baselines). Second-library external validity (directional support) is reported in the Supplementary (Section~\ref{tab:ext_validity}). A three-way ablation (Supplementary) shows the substitutability gain is driven by evaluator-side equivalence credit plus chain-pattern training, not by the variant detector (inert: 1.00 with and without it); under strict scoring no agent exceeds 0.205 on substitution. We therefore report all comparisons chain-depth-stratified and scoring-transparent. Error analysis shows the dominant failure mode is tool omission---agents can \emph{execute} tool chains but cannot \emph{discover} novel compositions.
+We formalize three axes of agent compositional generalization---{\bf systematicity} (recombining familiar tools into new chains), {\bf productivity} (producing completely unseen chains), and {\bf substitutability} (swapping functionally equivalent tools)---and introduce {\bf AgentCompose}, a controlled benchmark of 3{,}000 tasks over 30 tools with three orthogonal test splits. We evaluate five template agent paradigms (ReAct, Native Function Calling, Reflexion, Plan-Execute, Chain-Aware Fine-Tuning) plus two large-LLM agents (DeepSeek-ReAct, DeepSeek-Function-Calling). Raw TSR comparisons are confounded by chain length: lenient template agents' TSR rises with chain depth (e.g., ReAct 4-tool productivity 5-seed mean 0.51 vs 0.25 on 2-tool in-distribution tasks), while ChainAware's advantages concentrate in in-distribution completion (1.00), matched-length systematicity (3-tool: 0.75 vs 0.21), and equivalence-aware substitutability (1.00 vs 0.25--0.31 baselines). Second-library external validity (directional support) is reported in the Supplementary external-validity table. A three-way ablation (Supplementary) shows the substitutability gain is driven by evaluator-side equivalence credit plus chain-pattern training, not by the variant detector (inert: 1.00 with and without it); under strict scoring no agent exceeds 0.205 on substitution. We therefore report all comparisons chain-depth-stratified and scoring-transparent. Error analysis shows the dominant failure mode is tool omission---agents can \emph{execute} tool chains but cannot \emph{discover} novel compositions.
 
 Our chain-aware training method, which augments training with synthetic compositional chains and overlays an {\bf equivalence-aware} variant detector, lifts substitutability from 0.250 (baseline) to 1.000 under equivalence-aware evaluation (a call to the expected tool or any functional equivalent counts as correct) and improves matched-length systematicity (3-tool: 0.75 vs 0.21 over template agents). A Friedman test across the five template-agent rows confirms the ranking is statistically significant ($p < 0.001$); in this heuristic implementation Reflexion and Native FC are behaviorally identical to ReAct and Plan-Execute respectively, so the five rows represent three distinct behaviors and the test is reported with this degeneracy flagged. a Critical Difference diagram visualizes the post-hoc grouping. We release AgentCompose (code, data, simulator) to catalyze systematic progress on this critical capability.
 \end{abstract}
@@ -131,7 +127,7 @@ We define 25 task templates (e.g., ``query weather and email it'') parameterized
         Substitutability & 200 & 2.0 & 11 & Swap equivalent tools \\
         \bottomrule
     \end{tabular}
-    \caption{AgentCompose splits (3{,}000 tasks total). Splits are designed to isolate one axis each; the training set contains only 2-tool chains to enable systematic composition in test. Construction guarantees are verified programmatically (\texttt{scripts/audit\_split\_leakage.py}; \texttt{results/split\_leakage\_audit.json}).}
+    \caption{AgentCompose splits (3{,}000 tasks total). Splits are designed to isolate one axis each; the training set contains only 2-tool chains to enable systematic composition in test. Construction checks and their resulting manifest are provided in the accompanying source repository; the anonymous submission package does not claim to contain the full generation environment.}
     \label{tab:splits}
 \end{table}
 
@@ -185,7 +181,7 @@ We evaluate five agent paradigms, all with \texttt{max\_steps=10} and template-b
         DeepSeek-FC (LLM) & 0.155 [0.110, 0.205] & 0.070 [0.040, 0.105] & 0.020 [0.005, 0.040] & 0.160 [0.110, 0.210] \\
         \bottomrule
     \end{tabular}
-    \caption{Task Success Rate (TSR) on the 30-tool / 3{,}000-task AgentCompose benchmark (Val: N=400, Systematicity: N=600, Productivity: N=600, Substitutability: N=200). Template-agent rows report 5-seed means with min--max ranges (seed set 42, 1--4); both DeepSeek rows are N=200 per split (1{,}600 tasks total) with bootstrap 95\% CIs. EquivAware extends ChainAware with equivalence-group detection; see Section~\ref{sec:equiv}. Bootstrap CIs and 5-seed variance accompany all rows (Supplementary, Sections~\ref{sec:supp_ci} and~\ref{tab:seed_variance}).}
+    \caption{Task Success Rate (TSR) on the 30-tool / 3{,}000-task AgentCompose benchmark. The four splits contain 400, 600, 600, and 200 instances, respectively. Template-agent rows report 5-seed means with min--max ranges (seed set 42, 1--4); both DeepSeek rows use 200 instances per split (1{,}600 tasks total) with bootstrap 95\% CIs. EquivAware extends ChainAware with equivalence-group detection; see Section~\ref{sec:equiv}. Bootstrap CIs and 5-seed variance accompany all rows in the Supplementary bootstrap and seed-variance tables.}
     \label{tab:main}
 \end{table}
 
@@ -194,19 +190,19 @@ Table~\ref{tab:main} reports the headline results. Three observations:
 \begin{enumerate}
     \item \textbf{ChainAware fully closes the in-distribution gap}: All baseline template agents peak at TSR = 0.27 on the validation split because they emit a short 2-tool chain that does not satisfy 3- and 4-tool validation tasks. ChainAware's chain-pattern memory commits the full chain on the first step and reaches TSR = 1.00.
     \item \textbf{Productivity is the hardest axis}: Mean TSR on the productivity split is 0.37 for the four baseline agents and 0.45 for ChainAware. The upper bound on the largest unseen 4-tool chains remains below 0.55 across all paradigms.
-    \item \textbf{Substitutability is scoring- and training-driven, not detector-driven}: All four baseline template agents score 0.25--0.31 on substitutability under equivalence-aware evaluation. A three-way ablation (Supplementary Table~\ref{tab:ablation_threeway}) shows ChainAware's 1.00 decomposes as follows: chain-pattern training is necessary (without it: 0.25), the variant detector is inert on the metric (1.00 with or without it), and the equivalence-aware evaluator provides the credit that makes the remaining difference---under strict scoring ChainAware falls to 0.205 and template baselines to 0.00.
+    \item \textbf{Substitutability is scoring- and training-driven, not detector-driven}: All four baseline template agents score 0.25--0.31 on substitutability under equivalence-aware evaluation. The Supplementary three-way ablation shows ChainAware's 1.00 decomposes as follows: chain-pattern training is necessary (without it: 0.25), the variant detector is inert on the metric (1.00 with or without it), and the equivalence-aware evaluator provides the credit that makes the remaining difference---under strict scoring ChainAware falls to 0.205 and template baselines to 0.00.
 \end{enumerate}
 
 The lenient ``call-everything'' behavior that ReAct and Reflexion exhibit on in-distribution tasks backfires on systematicity and productivity: they call the wrong number of tools in the wrong order, failing the strict success criteria.
 
-Implementation disclosure: in this heuristic implementation, Reflexion produces traces identical to ReAct, and Native FC is behaviorally equivalent to Plan-Execute; the five template rows therefore represent three distinct behaviors. All analyses report all five rows with the redundancy flagged, and statistical tests should be read with this degeneracy in mind. Raw TSR is also chain-length-confounded (Supp. Table~\ref{tab:chain_strata}): template agents score higher on longer chains because the lenient evaluator rewards calling more tools (e.g., ReAct 4-tool productivity 0.50 vs 3-tool systematicity 0.21). ChainAware's matched-length advantage appears at 3-tool systematicity (0.75 vs 0.21) and in substitutability, but not in 4-tool productivity (0.46 vs 0.50 for ReAct).
+Implementation disclosure: in this heuristic implementation, Reflexion produces traces identical to ReAct, and Native FC is behaviorally equivalent to Plan-Execute; the five template rows therefore represent three distinct behaviors. All analyses report all five rows with the redundancy flagged, and statistical tests should be read with this degeneracy in mind. Raw TSR is also chain-length-confounded (Supplementary chain-strata table): template agents score higher on longer chains because the lenient evaluator rewards calling more tools (e.g., ReAct 4-tool productivity 0.50 vs 3-tool systematicity 0.21). ChainAware's matched-length advantage appears at 3-tool systematicity (0.75 vs 0.21) and in substitutability, but not in 4-tool productivity (0.46 vs 0.50 for ReAct).
 
 \begin{table}[t]
     \centering
     \small
     \begin{tabular}{lccc}
         \toprule
-        Agent & All (N=200) & True substitution (N=159) & Control (N=41) \\
+        Agent & All (200) & True substitution (159) & Control (41) \\
         \midrule
         ReAct & 0.25 & 0.31 & 0.00 \\
         Native FC & 0.25 & 0.31 & 0.00 \\
@@ -285,7 +281,7 @@ A subtler compositional challenge is {\bf substitutability}: the user replaces a
 
 We extend ChainAware with an {\bf EquivAware} detector: on the first step, after committing a chain from memory, scan the natural-language prompt for any tool variant named in the tool library's equivalence groups. If a match is found, substitute that step's tool with the variant before executing. The substitution is local to one step; the surrounding chain order is unchanged.
 
-\paragraph{Equivalence protocol (complete).} (1) \emph{Equivalence relation}: two tools $t_1 \equiv t_2$ iff they belong to the same group in \texttt{tools/\_equivalence.json}, released with the benchmark; groups are hand-curated from schema semantics and disclosed in the supplement. (2) \emph{Judgment subject}: equivalence is applied by the \emph{evaluator}---a call to the expected tool or any member of its equivalence group counts as correct---and agents receive the same groups via the library, which ChainAware's detector uses for substitution. (3) \emph{Boundary cases}: equivalence is strict within a group and does not compose transitively across groups; variant detection is lexical (word-boundary match of the variant name in the prompt); if multiple variants match, the first in group order is used; if a variant appears for a tool outside the group, no substitution occurs. (4) \emph{Disclosure (ablation, Table~\ref{tab:ablation_threeway})}: because the evaluator is equivalence-aware, template agents' substitutability TSR (0.25--0.31) already includes occasional calls to variants; ChainAware's 1.00 is produced by chain-pattern training plus evaluator-side equivalence credit---the variant detector is inert on this metric (1.00 with or without it)---and under strict scoring ChainAware drops to 0.205.
+\paragraph{Equivalence protocol (complete).} (1) \emph{Equivalence relation}: two tools $t_1 \equiv t_2$ iff they belong to the same group in \texttt{tools/\_equivalence.json}, released with the benchmark; groups are hand-curated from schema semantics and disclosed in the supplement. (2) \emph{Judgment subject}: equivalence is applied by the \emph{evaluator}---a call to the expected tool or any member of its equivalence group counts as correct---and agents receive the same groups via the library, which ChainAware's detector uses for substitution. (3) \emph{Boundary cases}: equivalence is strict within a group and does not compose transitively across groups; variant detection is lexical (word-boundary match of the variant name in the prompt); if multiple variants match, the first in group order is used; if a variant appears for a tool outside the group, no substitution occurs. (4) \emph{Disclosure (Supplementary three-way ablation)}: because the evaluator is equivalence-aware, template agents' substitutability TSR (0.25--0.31) already includes occasional calls to variants; ChainAware's 1.00 is produced by chain-pattern training plus evaluator-side equivalence credit---the variant detector is inert on this metric (1.00 with or without it)---and under strict scoring ChainAware drops to 0.205.
 
 \begin{table}[t]
     \centering
@@ -337,7 +333,10 @@ Figure~\ref{fig:ablation} shows that ChainAware's productivity TSR jumps from 0.
 
 \paragraph{Scale at 30 tools / 3{,}000 tasks.} The current benchmark covers 30 tools across 8 domains (information retrieval, computation, communication, file I/O, scheduling, data/database, image/vision, audio/speech). Compared to the 10-tool pilot this multiplies the search space by $3!$ for any single chain and increases the average chain length from 2.0 to 2.4 tools. Diagnostic power (isolated splits) is preserved.
 
-\paragraph{Reproducibility.} Code, data, and simulator are MIT-licensed at \texttt{[anonymized URL]}.
+\paragraph{Reproducibility.} Code, data, and simulator are MIT-licensed and will be released with the de-anonymized source repository. The anonymous package contains the frozen manuscript, figures, and evidence manifest; it does not claim that external repository paths are executable from the submission archive.
+
+\section{Broader Impact and Ethics}
+AgentCompose uses synthetic tasks, simulator outputs, and model-generated traces; it does not involve human subjects or personal data. Tool-use benchmarks can encourage unsafe automation if simulator scores are mistaken for deployment readiness. We therefore scope results to the released tool library, task templates, model prompts, and evaluation protocol, and recommend human approval for side-effecting tools. Cross-vendor replication and real-world safety audits are required before operational use.
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -348,82 +347,12 @@ We introduced AgentCompose, a controlled benchmark for compositional generalizat
 
 \section*{Acknowledgments}
 \addcontentsline{toc}{section}{Acknowledgments}
-% TODO (COLM double-blind): replace with non-anonymous acknowledgments after submission acceptance.
+% Acknowledgments withheld during double-blind review; added after acceptance.
 
-% TMLR: natbib inline bibliography (kept as-is)
-\begin{thebibliography}{20}
-
-\bibitem[{Lake \& Baroni(2018)}]{lake2018generalization}
-Lake, B. M., \& Baroni, M. (2018).
-\newblock Generalization without systematicity: On the compositional skills of sequence-to-sequence recurrent networks.
-\newblock In {\em ICML}.
-
-\bibitem[{Kim \& Linzen(2020)}]{kim2020cogs}
-Kim, N., \& Linzen, T. (2020).
-\newblock COGS: A compositional generalization challenge based on semantic interpretation.
-\newblock In {\em EMNLP}.
-
-\bibitem[{Hupkes et al.(2020)}]{hupkes2020}
-Hupkes, D., Dankers, V., Mul, M., \& Bruni, E. (2020).
-\newblock Compositionality decomposed: How do neural networks generalise?
-\newblock {\em JAIR}, 67, 757--795.
-
-\bibitem[{Yao et al.(2023a)}]{yao2023react}
-Yao, S., et al. (2023).
-\newblock ReAct: Synergizing reasoning and acting in language models.
-\newblock In {\em ICLR}.
-
-\bibitem[{Schick et al.(2023)}]{schick2023toolformer}
-Schick, T., et al. (2023).
-\newblock Toolformer: Language models can teach themselves to use tools.
-\newblock In {\em NeurIPS}.
-
-\bibitem[{Qin et al.(2023)}]{qin2023toolllm}
-Qin, Y., et al. (2023).
-\newblock ToolLLM: Facilitating large language models to master 16000+ real-world APIs.
-\newblock In {\em NeurIPS}.
-
-\bibitem[{Liu et al.(2024)}]{liu2024agentbench}
-Liu, X., et al. (2024).
-\newblock AgentBench: Evaluating LLMs as agents.
-\newblock In {\em ICLR}.
-
-\bibitem[{Patil et al.(2024)}]{patil2024bfcl}
-Patil, S., et al. (2024).
-\newblock Berkeley Function Calling Leaderboard.
-\newblock Technical Report, UC Berkeley.
-
-\bibitem[{Trivedi et al.(2024)}]{trivedi2024appworld}
-Trivedi, H., et al. (2024).
-\newblock AppWorld: A controllable world of apps and people for benchmarking interactive coding agents.
-\newblock In {\em ACL}.
-
-\bibitem[{Yao et al.(2024)}]{yao2024tau}
-Yao, S., et al. (2024).
-\newblock $\tau$-bench: A benchmark for tool-agent-user interaction in real-world domains.
-\newblock arXiv preprint.
-
-\bibitem[{Jimenez et al.(2024)}]{jimenez2024swe}
-Jimenez, C. E., et al. (2024).
-\newblock SWE-bench: Can language models resolve real-world GitHub issues?
-\newblock In {\em ICLR}.
-
-\bibitem[{Shinn et al.(2023)}]{shinn2023reflexion}
-Shinn, N., et al. (2023).
-\newblock Reflexion: Language agents with verbal reinforcement learning.
-\newblock In {\em NeurIPS}.
-
-\bibitem[{Wei et al.(2022)}]{wei2022chain}
-Wei, J., et al. (2022).
-\newblock Chain-of-thought prompting elicits reasoning in large language models.
-\newblock In {\em NeurIPS}.
-
-\bibitem[{DeepSeek-AI(2024)}]{deepseek2024v3}
-DeepSeek-AI (2024).
-\newblock DeepSeek-V3 Technical Report.
-\newblock arXiv preprint arXiv:2412.19437.
-
-\end{thebibliography}
+% TMLR: bibliography rendered with tmlr.bst
+% Bibliography (tmlr.bst)
+\bibliographystyle{tmlr}
+\bibliography{refs}
 
 \appendix
 \section{Appendix}
@@ -461,7 +390,7 @@ Figure~\ref{fig:heatmap} shows TSR, COC, and ABA metrics for all 5 agents across
     \item Data: 3{,}000 tasks deterministically generated from 25 templates; saved as \texttt{data/generated/\{split\}.jsonl}.
     \item Simulator: deterministic given seed and call IDs.
     \item Tests: 34/34 passing, runs in $<$30 seconds.
-    \item One-command reproduction: \texttt{python scripts/generate.py --seed 42 \&\& python scripts/run\_all.py}.
+    \item Reproduction: the de-anonymized source repository will provide the generation/evaluation scripts and pinned environment; the anonymous archive is evidence-complete only for the reported frozen artifacts.
 \end{itemize}
 
 \subsection{Real LLM Validation: DeepSeek-V4-Flash}

@@ -1,0 +1,5482 @@
+{
+  "agent": "DeepSeek-ReAct",
+  "split": "test_substitutability",
+  "n_tasks": 100,
+  "task_metrics": [
+    {
+      "task_id": "sub_T21_db_insert_email_11442",
+      "template_id": "T21_db_insert_email",
+      "split": "test_substitutability",
+      "tsr": 1.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T11_image_email_52013",
+      "template_id": "T11_image_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_96320",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "csv_filter",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_17401",
+      "template_id": "T21_db_insert_email",
+      "split": "test_substitutability",
+      "tsr": 1.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_78410",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_list",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_98003",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_list",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_82775",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_45755",
+      "template_id": "T20_audio_classify_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 2,
+      "expected_chain": [
+        "audio_classify",
+        "send_push"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_52712",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 3,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T11_image_email_46449",
+      "template_id": "T11_image_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_59218",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T12_ocr_write_53550",
+      "template_id": "T12_ocr_write",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "ocr_extract",
+        "write_file"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_92602",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.25,
+      "n_calls": 2,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_70848",
+      "template_id": "T21_db_insert_email",
+      "split": "test_substitutability",
+      "tsr": 1.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T11_image_email_94780",
+      "template_id": "T11_image_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_22119",
+      "template_id": "T20_audio_classify_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "audio_classify",
+        "send_push"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_52043",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_17653",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_list",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_28226",
+      "template_id": "T20_audio_classify_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "audio_classify",
+        "send_push"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_64846",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_list",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_56940",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "csv_filter",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_54010",
+      "template_id": "T21_db_insert_email",
+      "split": "test_substitutability",
+      "tsr": 1.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_66964",
+      "template_id": "T17_translate_search_summary",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "search_news",
+        "summarize"
+      ]
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_99661",
+      "template_id": "T21_db_insert_email",
+      "split": "test_substitutability",
+      "tsr": 1.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.8333333333333333,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T11_image_email_52434",
+      "template_id": "T11_image_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_35339",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "csv_filter",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_57689",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_list",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_60331",
+      "template_id": "T17_translate_search_summary",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "search_news",
+        "summarize"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_54068",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_list",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_86272",
+      "template_id": "T21_db_insert_email",
+      "split": "test_substitutability",
+      "tsr": 1.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_91090",
+      "template_id": "T21_db_insert_email",
+      "split": "test_substitutability",
+      "tsr": 1.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_19006",
+      "template_id": "T20_audio_classify_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "audio_classify",
+        "send_push"
+      ]
+    },
+    {
+      "task_id": "sub_T11_image_email_11142",
+      "template_id": "T11_image_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_66225",
+      "template_id": "T20_audio_classify_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "audio_classify",
+        "send_push"
+      ]
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_22246",
+      "template_id": "T21_db_insert_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 1,
+      "expected_chain": [
+        "db_insert",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_21658",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "csv_filter",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_88272",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 3,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T12_ocr_write_99868",
+      "template_id": "T12_ocr_write",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "write_file"
+      ]
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_85195",
+      "template_id": "T21_db_insert_email",
+      "split": "test_substitutability",
+      "tsr": 1.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T12_ocr_write_43595",
+      "template_id": "T12_ocr_write",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "write_file"
+      ]
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_96007",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "csv_filter",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_46495",
+      "template_id": "T21_db_insert_email",
+      "split": "test_substitutability",
+      "tsr": 1.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T11_image_email_25473",
+      "template_id": "T11_image_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_43649",
+      "template_id": "T21_db_insert_email",
+      "split": "test_substitutability",
+      "tsr": 1.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_72868",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_list",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_67855",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 3,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_83614",
+      "template_id": "T21_db_insert_email",
+      "split": "test_substitutability",
+      "tsr": 1.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_90198",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 3,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_91580",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 3,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_52184",
+      "template_id": "T17_translate_search_summary",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "search_news",
+        "summarize"
+      ]
+    },
+    {
+      "task_id": "sub_T11_image_email_61276",
+      "template_id": "T11_image_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_99743",
+      "template_id": "T17_translate_search_summary",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "search_news",
+        "summarize"
+      ]
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_63343",
+      "template_id": "T17_translate_search_summary",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "search_news",
+        "summarize"
+      ]
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_87695",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "csv_filter",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_14584",
+      "template_id": "T20_audio_classify_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "audio_classify",
+        "send_push"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_95909",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_90880",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_list",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_99088",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "csv_filter",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T12_ocr_write_25106",
+      "template_id": "T12_ocr_write",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "write_file"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_57742",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_list",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T11_image_email_31206",
+      "template_id": "T11_image_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T11_image_email_66577",
+      "template_id": "T11_image_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_19704",
+      "template_id": "T17_translate_search_summary",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.4444444444444444,
+      "n_calls": 3,
+      "expected_chain": [
+        "search_news",
+        "summarize"
+      ]
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_12465",
+      "template_id": "T20_audio_classify_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "audio_classify",
+        "send_push"
+      ]
+    },
+    {
+      "task_id": "sub_T12_ocr_write_39766",
+      "template_id": "T12_ocr_write",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "write_file"
+      ]
+    },
+    {
+      "task_id": "sub_T11_image_email_88091",
+      "template_id": "T11_image_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_36122",
+      "template_id": "T17_translate_search_summary",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "search_news",
+        "summarize"
+      ]
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_70359",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "csv_filter",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_13836",
+      "template_id": "T21_db_insert_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 1,
+      "expected_chain": [
+        "db_insert",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_83524",
+      "template_id": "T20_audio_classify_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "audio_classify",
+        "send_push"
+      ]
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_76560",
+      "template_id": "T17_translate_search_summary",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.41666666666666663,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_news",
+        "summarize"
+      ]
+    },
+    {
+      "task_id": "sub_T12_ocr_write_88324",
+      "template_id": "T12_ocr_write",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "write_file"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_32368",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.25,
+      "n_calls": 2,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_85547",
+      "template_id": "T17_translate_search_summary",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "search_news",
+        "summarize"
+      ]
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_82702",
+      "template_id": "T21_db_insert_email",
+      "split": "test_substitutability",
+      "tsr": 1.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_50390",
+      "template_id": "T17_translate_search_summary",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "search_news",
+        "summarize"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_94033",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_95782",
+      "template_id": "T20_audio_classify_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "audio_classify",
+        "send_push"
+      ]
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_46690",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "csv_filter",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_82851",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "csv_filter",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T11_image_email_23281",
+      "template_id": "T11_image_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_77885",
+      "template_id": "T21_db_insert_email",
+      "split": "test_substitutability",
+      "tsr": 1.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T12_ocr_write_50725",
+      "template_id": "T12_ocr_write",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "write_file"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_13548",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 5,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_83413",
+      "template_id": "T21_db_insert_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "db_insert",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_63703",
+      "template_id": "T21_db_insert_email",
+      "split": "test_substitutability",
+      "tsr": 1.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T11_image_email_63174",
+      "template_id": "T11_image_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_73411",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "csv_filter",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_49658",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "csv_filter",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_88011",
+      "template_id": "T17_translate_search_summary",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "search_news",
+        "summarize"
+      ]
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_49735",
+      "template_id": "T17_translate_search_summary",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "search_news",
+        "summarize"
+      ]
+    },
+    {
+      "task_id": "sub_T11_image_email_10624",
+      "template_id": "T11_image_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_25852",
+      "template_id": "T20_audio_classify_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "audio_classify",
+        "send_push"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_91714",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_list",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_80323",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 3,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_20575",
+      "template_id": "T21_db_insert_email",
+      "split": "test_substitutability",
+      "tsr": 1.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_sms"
+      ]
+    },
+    {
+      "task_id": "sub_T1_weather_email_77623",
+      "template_id": "T1_weather_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 3,
+      "expected_chain": [
+        "search_news",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_32951",
+      "template_id": "T20_audio_classify_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 2,
+      "expected_chain": [
+        "audio_classify",
+        "send_push"
+      ]
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_62449",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_list",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "sub_T11_image_email_42171",
+      "template_id": "T11_image_email",
+      "split": "test_substitutability",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "send_email"
+      ]
+    }
+  ],
+  "traces": [
+    {
+      "task_id": "sub_T21_db_insert_email_11442",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "users",
+            "values": {
+              "name": "Alice",
+              "active": 1
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "Confirmation",
+            "body": "Your record has been created successfully."
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "users",
+              "values": {
+                "name": "Alice",
+                "active": 1
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_f173adef"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T11_image_email_52013",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_c.jpg",
+            "categories": [
+              "electronics",
+              "clothing",
+              "food"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_c.jpg",
+              "categories": [
+                "electronics",
+                "clothing",
+                "food"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_96320",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT name FROM active_users",
+            "database": "analytics"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT name FROM active_users",
+              "database": "analytics"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_17401",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "events",
+            "values": {
+              "name": "Alice",
+              "active": 1
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "Order Confirmation",
+            "body": "Hi Alice, your order record has been successfully created. Thank you!"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "events",
+              "values": {
+                "name": "Alice",
+                "active": 1
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_404e4d9f"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_78410",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-01",
+            "end_date": "2026-08-01",
+            "max_events": 100
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-01",
+              "end_date": "2026-08-01",
+              "max_events": 100
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_98003",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-02T00:00:00Z",
+            "end_date": "2026-08-03T00:00:00Z",
+            "max_events": 50
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-02T00:00:00Z",
+              "end_date": "2026-08-03T00:00:00Z",
+              "max_events": 50
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_82775",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "Mumbai current weather",
+            "max_results": 5
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "Mumbai weather today temperature humidity",
+            "max_results": 5
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://wt tr.in/Mumbai?format=%C+%t+%h+%w",
+            "max_chars": 1000
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://wttr.in/Mumbai?format=%C+%t+%h+%w",
+            "max_chars": 1000
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: Mumbai current weather",
+              "url": "https://example.com/r1?q=Mumbai+current+weather",
+              "snippet": "Mock snippet 1 discussing Mumbai current weather. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: Mumbai current weather",
+              "url": "https://example.com/r2?q=Mumbai+current+weather",
+              "snippet": "Mock snippet 2 discussing Mumbai current weather. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: Mumbai current weather",
+              "url": "https://example.com/r3?q=Mumbai+current+weather",
+              "snippet": "Mock snippet 3 discussing Mumbai current weather. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: Mumbai weather today temperature humidity",
+              "url": "https://example.com/r1?q=Mumbai+weather+today+temperature+humidity",
+              "snippet": "Mock snippet 1 discussing Mumbai weather today temperature humidity. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: Mumbai weather today temperature humidity",
+              "url": "https://example.com/r2?q=Mumbai+weather+today+temperature+humidity",
+              "snippet": "Mock snippet 2 discussing Mumbai weather today temperature humidity. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: Mumbai weather today temperature humidity",
+              "url": "https://example.com/r3?q=Mumbai+weather+today+temperature+humidity",
+              "snippet": "Mock snippet 3 discussing Mumbai weather today temperature humidity. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://wt tr.in/Mumbai?format=%C+%t+%h+%w. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://wttr.in/Mumbai?format=%C+%t+%h+%w. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_45755",
+      "calls": [
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_a.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        },
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_a.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_a.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_a.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_52712",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "current weather in Mumbai",
+            "max_results": 5
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com/r1?q=current+weather+in+Mumbai",
+            "max_chars": 2000
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://wttr.in/Mumbai?format=3",
+            "max_chars": 1000
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: current weather in Mumbai",
+              "url": "https://example.com/r1?q=current+weather+in+Mumbai",
+              "snippet": "Mock snippet 1 discussing current weather in Mumbai. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: current weather in Mumbai",
+              "url": "https://example.com/r2?q=current+weather+in+Mumbai",
+              "snippet": "Mock snippet 2 discussing current weather in Mumbai. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: current weather in Mumbai",
+              "url": "https://example.com/r3?q=current+weather+in+Mumbai",
+              "snippet": "Mock snippet 3 discussing current weather in Mumbai. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com/r1?q=current+weather+in+Mumbai. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://wttr.in/Mumbai?format=3. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T11_image_email_46449",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_c.jpg",
+            "categories": [
+              "electronics",
+              "clothing",
+              "food"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_c.jpg",
+              "categories": [
+                "electronics",
+                "clothing",
+                "food"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_59218",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://wttr.in/Paris?format=3",
+            "max_chars": 500
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "current weather in Paris temperature conditions",
+            "max_results": 5
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from https://wttr.in/Paris?format=3. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: current weather in Paris temperature conditions",
+              "url": "https://example.com/r1?q=current+weather+in+Paris+temperature+conditions",
+              "snippet": "Mock snippet 1 discussing current weather in Paris temperature conditions. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: current weather in Paris temperature conditions",
+              "url": "https://example.com/r2?q=current+weather+in+Paris+temperature+conditions",
+              "snippet": "Mock snippet 2 discussing current weather in Paris temperature conditions. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: current weather in Paris temperature conditions",
+              "url": "https://example.com/r3?q=current+weather+in+Paris+temperature+conditions",
+              "snippet": "Mock snippet 3 discussing current weather in Paris temperature conditions. Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T12_ocr_write_53550",
+      "calls": [
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/img/receipt_b.jpg",
+            "language": "eng"
+          }
+        },
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/img/receipt_b.jpg",
+            "language": "eng"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/receipt_b.jpg",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/receipt_b.jpg",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_92602",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://wttr.in/Berlin?format=j1",
+            "max_chars": 4000
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true",
+            "max_chars": 2000
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from https://wttr.in/Berlin?format=j1. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_70848",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "users",
+            "values": {
+              "order_id": "O123",
+              "total": 99.99
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "alice@example.com",
+            "subject": "Order Confirmation O123",
+            "body": "Hi Alice, your order O123 has been confirmed. Total: $99.99."
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "users",
+              "values": {
+                "order_id": "O123",
+                "total": 99.99
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_50c27558"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T11_image_email_94780",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_c.jpg",
+            "categories": [
+              "electronics",
+              "clothing",
+              "food"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_c.jpg",
+              "categories": [
+                "electronics",
+                "clothing",
+                "food"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_22119",
+      "calls": [
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_b.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_b.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_52043",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://wttr.in/London?format=3",
+            "max_chars": 200
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://wttr.in/London?format=j1",
+            "max_chars": 3000
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://api.open-meteo.com/v1/forecast?latitude=51.5&longitude=-0.12&current_weather=true",
+            "max_chars": 3000
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "London weather current temperature conditions",
+            "max_results": 5
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from https://wttr.in/London?format=3. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://wttr.in/London?format=j1. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://api.open-meteo.com/v1/forecast?latitude=51.5&longitude=-0.12&current_weather=true. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: London weather current temperature conditions",
+              "url": "https://example.com/r1?q=London+weather+current+temperature+conditions",
+              "snippet": "Mock snippet 1 discussing London weather current temperature conditions. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: London weather current temperature conditions",
+              "url": "https://example.com/r2?q=London+weather+current+temperature+conditions",
+              "snippet": "Mock snippet 2 discussing London weather current temperature conditions. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: London weather current temperature conditions",
+              "url": "https://example.com/r3?q=London+weather+current+temperature+conditions",
+              "snippet": "Mock snippet 3 discussing London weather current temperature conditions. Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_17653",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-02",
+            "end_date": "2026-08-02",
+            "max_events": 100
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-02",
+              "end_date": "2026-08-02",
+              "max_events": 100
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_28226",
+      "calls": [
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_b.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_b.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_64846",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-02T00:00:00Z",
+            "end_date": "2026-08-03T00:00:00Z",
+            "max_events": 100
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-02T00:00:00Z",
+              "end_date": "2026-08-03T00:00:00Z",
+              "max_events": 100
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_56940",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT name FROM active_users",
+            "database": "main"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT name FROM active_users",
+              "database": "main"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_54010",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "users",
+            "values": {
+              "order_id": "O123",
+              "total": 99.99
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "Order Confirmation: O123",
+            "body": "Hi Bob, your order O123 has been confirmed. Total: $99.99. Thank you!"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "users",
+              "values": {
+                "order_id": "O123",
+                "total": 99.99
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_1a0304a6"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_66964",
+      "calls": [
+        {
+          "tool": "translate",
+          "args": {
+            "text": "bonjour le monde",
+            "target_language": "English",
+            "source_language": "fr"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "hello world",
+            "max_results": 3
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "text": "bonjour le monde",
+              "target_language": "English",
+              "source_language": "fr"
+            },
+            "tool": "translate"
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: hello world",
+              "url": "https://example.com/r1?q=hello+world",
+              "snippet": "Mock snippet 1 discussing hello world. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: hello world",
+              "url": "https://example.com/r2?q=hello+world",
+              "snippet": "Mock snippet 2 discussing hello world. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: hello world",
+              "url": "https://example.com/r3?q=hello+world",
+              "snippet": "Mock snippet 3 discussing hello world. Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_99661",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "users",
+            "values": {
+              "name": "Alice",
+              "active": 1
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "User created",
+            "body": "Alice has been successfully added to the users table."
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "users",
+              "values": {
+                "name": "Alice",
+                "active": 1
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_efe8483c"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T11_image_email_52434",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_b.jpg",
+            "categories": [
+              "car",
+              "truck",
+              "bike"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_b.jpg",
+              "categories": [
+                "car",
+                "truck",
+                "bike"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_35339",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT id, email FROM customers LIMIT 5",
+            "database": "main"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT id, email FROM customers LIMIT 5",
+              "database": "main"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_57689",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-02",
+            "end_date": "2026-08-02",
+            "max_events": 100
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-02",
+              "end_date": "2026-08-02",
+              "max_events": 100
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_60331",
+      "calls": [
+        {
+          "tool": "translate",
+          "args": {
+            "text": "konnichiwa",
+            "target_language": "en",
+            "source_language": "fr"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "text": "konnichiwa",
+              "target_language": "en",
+              "source_language": "fr"
+            },
+            "tool": "translate"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_54068",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-01T00:00:00Z",
+            "end_date": "2026-08-02T00:00:00Z",
+            "max_events": 50
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-01T00:00:00Z",
+              "end_date": "2026-08-02T00:00:00Z",
+              "max_events": 50
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_86272",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "orders",
+            "values": {
+              "order_id": "O123",
+              "total": 99.99
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "Order Confirmation O123",
+            "body": "Hi Bob,\\n\\nYour order O123 has been confirmed. Total: $99.99.\\n\\nThank you!"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "orders",
+              "values": {
+                "order_id": "O123",
+                "total": 99.99
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_9b8a5a81"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_91090",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "orders",
+            "values": {
+              "order_id": "O123",
+              "total": 99.99
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "Order Confirmation O123",
+            "body": "Your order O123 has been confirmed. Total: $99.99."
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "orders",
+              "values": {
+                "order_id": "O123",
+                "total": 99.99
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_b552debf"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_19006",
+      "calls": [
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_b.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_b.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T11_image_email_11142",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_a.jpg",
+            "categories": [
+              "electronics",
+              "clothing",
+              "food"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_a.jpg",
+              "categories": [
+                "electronics",
+                "clothing",
+                "food"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_66225",
+      "calls": [
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_a.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_a.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_22246",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "users",
+            "values": {
+              "name": "Alice",
+              "active": 1
+            }
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "users",
+              "values": {
+                "name": "Alice",
+                "active": 1
+              }
+            },
+            "tool": "db_insert"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_21658",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT id, email FROM customers LIMIT 5",
+            "database": "archive"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT id, email FROM customers LIMIT 5",
+              "database": "archive"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_88272",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://wttr.in/London?format=%C+%t+%w+%h",
+            "max_chars": 500
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://api.open-meteo.com/v1/forecast?latitude=51.5085&longitude=-0.1257&current_weather=true",
+            "max_chars": 1000
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "London current weather temperature conditions",
+            "max_results": 5
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from https://wttr.in/London?format=%C+%t+%w+%h. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://api.open-meteo.com/v1/forecast?latitude=51.5085&longitude=-0.1257&current_weather=true. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: London current weather temperature conditions",
+              "url": "https://example.com/r1?q=London+current+weather+temperature+conditions",
+              "snippet": "Mock snippet 1 discussing London current weather temperature conditions. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: London current weather temperature conditions",
+              "url": "https://example.com/r2?q=London+current+weather+temperature+conditions",
+              "snippet": "Mock snippet 2 discussing London current weather temperature conditions. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: London current weather temperature conditions",
+              "url": "https://example.com/r3?q=London+current+weather+temperature+conditions",
+              "snippet": "Mock snippet 3 discussing London current weather temperature conditions. Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T12_ocr_write_99868",
+      "calls": [
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/img/receipt_a.jpg",
+            "language": "eng"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/receipt_a.jpg",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_85195",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "users",
+            "values": {
+              "order_id": "O123",
+              "total": 99.99
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "alice@example.com",
+            "subject": "Your order O123 is confirmed",
+            "body": "Hi Alice, your order O123 has been received. Total: $99.99. Thank you!"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "users",
+              "values": {
+                "order_id": "O123",
+                "total": 99.99
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_a6ca6156"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T12_ocr_write_43595",
+      "calls": [
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/img/receipt_a.jpg",
+            "language": "eng"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/receipt_a.jpg",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_96007",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT name FROM active_users",
+            "database": "main"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT name FROM active_users",
+              "database": "main"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_46495",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "orders",
+            "values": {
+              "order_id": "O123",
+              "total": 99.99
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "Order Confirmation O123",
+            "body": "Your order O123 has been confirmed. Total: $99.99."
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "orders",
+              "values": {
+                "order_id": "O123",
+                "total": 99.99
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_b552debf"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T11_image_email_25473",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_a.jpg",
+            "categories": [
+              "car",
+              "truck",
+              "bike"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_a.jpg",
+              "categories": [
+                "car",
+                "truck",
+                "bike"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_43649",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "orders",
+            "values": {
+              "name": "Alice",
+              "active": 1
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "alice@example.com",
+            "subject": "Order Confirmation",
+            "body": "Hi Alice, your order has been confirmed. Thank you!"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "orders",
+              "values": {
+                "name": "Alice",
+                "active": 1
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_afb195f9"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_72868",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-02T00:00:00Z",
+            "end_date": "2026-08-02T23:59:59Z",
+            "max_events": 50
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-02T00:00:00Z",
+              "end_date": "2026-08-02T23:59:59Z",
+              "max_events": 50
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_67855",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "current weather in Mumbai",
+            "max_results": 5
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com/r1?q=current+weather+in+Mumbai",
+            "max_chars": 3000
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "Mumbai current temperature weather today",
+            "max_results": 5
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: current weather in Mumbai",
+              "url": "https://example.com/r1?q=current+weather+in+Mumbai",
+              "snippet": "Mock snippet 1 discussing current weather in Mumbai. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: current weather in Mumbai",
+              "url": "https://example.com/r2?q=current+weather+in+Mumbai",
+              "snippet": "Mock snippet 2 discussing current weather in Mumbai. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: current weather in Mumbai",
+              "url": "https://example.com/r3?q=current+weather+in+Mumbai",
+              "snippet": "Mock snippet 3 discussing current weather in Mumbai. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com/r1?q=current+weather+in+Mumbai. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: Mumbai current temperature weather today",
+              "url": "https://example.com/r1?q=Mumbai+current+temperature+weather+today",
+              "snippet": "Mock snippet 1 discussing Mumbai current temperature weather today. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: Mumbai current temperature weather today",
+              "url": "https://example.com/r2?q=Mumbai+current+temperature+weather+today",
+              "snippet": "Mock snippet 2 discussing Mumbai current temperature weather today. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: Mumbai current temperature weather today",
+              "url": "https://example.com/r3?q=Mumbai+current+temperature+weather+today",
+              "snippet": "Mock snippet 3 discussing Mumbai current temperature weather today. Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_83614",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "users",
+            "values": {
+              "name": "Alice",
+              "active": 1
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "Confirmation: Alice added to users",
+            "body": "Hello,\\n\\nThis is a confirmation that the following user record was inserted:\\n\\nName: Alice\\nActive: 1\\n\\nBest regards"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "users",
+              "values": {
+                "name": "Alice",
+                "active": 1
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_4a66f3f5"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_90198",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://wttr.in/London?format=3",
+            "max_chars": 1000
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://api.open-meteo.com/v1/forecast?latitude=51.5&longitude=-0.12&current_weather=true",
+            "max_chars": 2000
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "London current weather",
+            "max_results": 5
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from https://wttr.in/London?format=3. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://api.open-meteo.com/v1/forecast?latitude=51.5&longitude=-0.12&current_weather=true. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: London current weather",
+              "url": "https://example.com/r1?q=London+current+weather",
+              "snippet": "Mock snippet 1 discussing London current weather. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: London current weather",
+              "url": "https://example.com/r2?q=London+current+weather",
+              "snippet": "Mock snippet 2 discussing London current weather. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: London current weather",
+              "url": "https://example.com/r3?q=London+current+weather",
+              "snippet": "Mock snippet 3 discussing London current weather. Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_91580",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "current weather in Berlin",
+            "max_results": 5
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com/r1?q=current+weather+in+Berlin",
+            "max_chars": 3000
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://wttr.in/Berlin?format=3",
+            "max_chars": 1000
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: current weather in Berlin",
+              "url": "https://example.com/r1?q=current+weather+in+Berlin",
+              "snippet": "Mock snippet 1 discussing current weather in Berlin. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: current weather in Berlin",
+              "url": "https://example.com/r2?q=current+weather+in+Berlin",
+              "snippet": "Mock snippet 2 discussing current weather in Berlin. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: current weather in Berlin",
+              "url": "https://example.com/r3?q=current+weather+in+Berlin",
+              "snippet": "Mock snippet 3 discussing current weather in Berlin. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com/r1?q=current+weather+in+Berlin. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://wttr.in/Berlin?format=3. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_52184",
+      "calls": [
+        {
+          "tool": "translate",
+          "args": {
+            "text": "konnichiwa",
+            "target_language": "en",
+            "source_language": "zh"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "text": "konnichiwa",
+              "target_language": "en",
+              "source_language": "zh"
+            },
+            "tool": "translate"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T11_image_email_61276",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_a.jpg",
+            "categories": [
+              "car",
+              "truck",
+              "bike"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_a.jpg",
+              "categories": [
+                "car",
+                "truck",
+                "bike"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_99743",
+      "calls": [
+        {
+          "tool": "translate",
+          "args": {
+            "text": "bonjour le monde",
+            "target_language": "en",
+            "source_language": "ja"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "text": "bonjour le monde",
+              "target_language": "en",
+              "source_language": "ja"
+            },
+            "tool": "translate"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_63343",
+      "calls": [
+        {
+          "tool": "translate",
+          "args": {
+            "text": "konnichiwa",
+            "target_language": "English",
+            "source_language": "ja"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "Hello",
+            "max_results": 10
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "text": "konnichiwa",
+              "target_language": "English",
+              "source_language": "ja"
+            },
+            "tool": "translate"
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: Hello",
+              "url": "https://example.com/r1?q=Hello",
+              "snippet": "Mock snippet 1 discussing Hello. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: Hello",
+              "url": "https://example.com/r2?q=Hello",
+              "snippet": "Mock snippet 2 discussing Hello. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: Hello",
+              "url": "https://example.com/r3?q=Hello",
+              "snippet": "Mock snippet 3 discussing Hello. Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_87695",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT name FROM active_users",
+            "database": "analytics"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT name FROM active_users",
+              "database": "analytics"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_14584",
+      "calls": [
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_b.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_b.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_95909",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://wttr.in/Paris?format=3",
+            "max_chars": 500
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "current weather in Paris",
+            "max_results": 5
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from https://wttr.in/Paris?format=3. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: current weather in Paris",
+              "url": "https://example.com/r1?q=current+weather+in+Paris",
+              "snippet": "Mock snippet 1 discussing current weather in Paris. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: current weather in Paris",
+              "url": "https://example.com/r2?q=current+weather+in+Paris",
+              "snippet": "Mock snippet 2 discussing current weather in Paris. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: current weather in Paris",
+              "url": "https://example.com/r3?q=current+weather+in+Paris",
+              "snippet": "Mock snippet 3 discussing current weather in Paris. Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_90880",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-01T00:00:00Z",
+            "end_date": "2026-08-02T00:00:00Z",
+            "max_events": 100
+          }
+        },
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-01",
+            "end_date": "2026-08-02",
+            "max_events": 100
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-01T00:00:00Z",
+              "end_date": "2026-08-02T00:00:00Z",
+              "max_events": 100
+            },
+            "tool": "calendar_list"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-01",
+              "end_date": "2026-08-02",
+              "max_events": 100
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_99088",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT id, email FROM customers LIMIT 5",
+            "database": "archive"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT id, email FROM customers LIMIT 5",
+              "database": "archive"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T12_ocr_write_25106",
+      "calls": [
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/img/receipt_b.jpg",
+            "language": "eng"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/receipt_b.jpg",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_57742",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-01T00:00:00Z",
+            "end_date": "2026-08-01T23:59:59Z",
+            "max_events": 50
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-01T00:00:00Z",
+              "end_date": "2026-08-01T23:59:59Z",
+              "max_events": 50
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T11_image_email_31206",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_a.jpg",
+            "categories": [
+              "electronics",
+              "clothing",
+              "food"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_a.jpg",
+              "categories": [
+                "electronics",
+                "clothing",
+                "food"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T11_image_email_66577",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_a.jpg",
+            "categories": [
+              "car",
+              "truck",
+              "bike"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_a.jpg",
+              "categories": [
+                "car",
+                "truck",
+                "bike"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_19704",
+      "calls": [
+        {
+          "tool": "translate",
+          "args": {
+            "text": "bonjour le monde",
+            "target_language": "English",
+            "source_language": "fr"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "hello world",
+            "max_results": 3
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "hello world",
+            "max_results": 3
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "text": "bonjour le monde",
+              "target_language": "English",
+              "source_language": "fr"
+            },
+            "tool": "translate"
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: hello world",
+              "url": "https://example.com/r1?q=hello+world",
+              "snippet": "Mock snippet 1 discussing hello world. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: hello world",
+              "url": "https://example.com/r2?q=hello+world",
+              "snippet": "Mock snippet 2 discussing hello world. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: hello world",
+              "url": "https://example.com/r3?q=hello+world",
+              "snippet": "Mock snippet 3 discussing hello world. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: hello world",
+              "url": "https://example.com/r1?q=hello+world",
+              "snippet": "Mock snippet 1 discussing hello world. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: hello world",
+              "url": "https://example.com/r2?q=hello+world",
+              "snippet": "Mock snippet 2 discussing hello world. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: hello world",
+              "url": "https://example.com/r3?q=hello+world",
+              "snippet": "Mock snippet 3 discussing hello world. Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_12465",
+      "calls": [
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_b.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_b.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T12_ocr_write_39766",
+      "calls": [
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/img/receipt_b.jpg",
+            "language": "eng"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/receipt_b.jpg",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T11_image_email_88091",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_a.jpg",
+            "categories": [
+              "electronics",
+              "clothing",
+              "food"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_a.jpg",
+              "categories": [
+                "electronics",
+                "clothing",
+                "food"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_36122",
+      "calls": [
+        {
+          "tool": "translate",
+          "args": {
+            "text": "konnichiwa",
+            "target_language": "en",
+            "source_language": "zh"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "hello",
+            "max_results": 10
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "text": "konnichiwa",
+              "target_language": "en",
+              "source_language": "zh"
+            },
+            "tool": "translate"
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: hello",
+              "url": "https://example.com/r1?q=hello",
+              "snippet": "Mock snippet 1 discussing hello. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: hello",
+              "url": "https://example.com/r2?q=hello",
+              "snippet": "Mock snippet 2 discussing hello. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: hello",
+              "url": "https://example.com/r3?q=hello",
+              "snippet": "Mock snippet 3 discussing hello. Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_70359",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT id, email FROM customers LIMIT 5",
+            "database": "main"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT id, email FROM customers LIMIT 5",
+              "database": "main"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_13836",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "orders",
+            "values": {
+              "order_id": "O123",
+              "total": 99.99
+            }
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "orders",
+              "values": {
+                "order_id": "O123",
+                "total": 99.99
+              }
+            },
+            "tool": "db_insert"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_83524",
+      "calls": [
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_a.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_a.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_76560",
+      "calls": [
+        {
+          "tool": "translate",
+          "args": {
+            "text": "bonjour le monde",
+            "target_language": "English",
+            "source_language": "fr"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "hello world",
+            "max_results": 5
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "hello world",
+            "max_results": 5
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "hello world",
+            "max_results": 5
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "text": "bonjour le monde",
+              "target_language": "English",
+              "source_language": "fr"
+            },
+            "tool": "translate"
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: hello world",
+              "url": "https://example.com/r1?q=hello+world",
+              "snippet": "Mock snippet 1 discussing hello world. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: hello world",
+              "url": "https://example.com/r2?q=hello+world",
+              "snippet": "Mock snippet 2 discussing hello world. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: hello world",
+              "url": "https://example.com/r3?q=hello+world",
+              "snippet": "Mock snippet 3 discussing hello world. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: hello world",
+              "url": "https://example.com/r1?q=hello+world",
+              "snippet": "Mock snippet 1 discussing hello world. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: hello world",
+              "url": "https://example.com/r2?q=hello+world",
+              "snippet": "Mock snippet 2 discussing hello world. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: hello world",
+              "url": "https://example.com/r3?q=hello+world",
+              "snippet": "Mock snippet 3 discussing hello world. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: hello world",
+              "url": "https://example.com/r1?q=hello+world",
+              "snippet": "Mock snippet 1 discussing hello world. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: hello world",
+              "url": "https://example.com/r2?q=hello+world",
+              "snippet": "Mock snippet 2 discussing hello world. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: hello world",
+              "url": "https://example.com/r3?q=hello+world",
+              "snippet": "Mock snippet 3 discussing hello world. Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T12_ocr_write_88324",
+      "calls": [
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/img/receipt_a.jpg",
+            "language": "eng"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/receipt_a.jpg",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_32368",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "\"https://wttr.in/Beijing?format": "%C+%t\"",
+            "max_chars": 200
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "max_results": 5
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from . This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: ",
+              "url": "https://example.com/r1?q=",
+              "snippet": "Mock snippet 1 discussing . Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: ",
+              "url": "https://example.com/r2?q=",
+              "snippet": "Mock snippet 2 discussing . Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: ",
+              "url": "https://example.com/r3?q=",
+              "snippet": "Mock snippet 3 discussing . Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_85547",
+      "calls": [
+        {
+          "tool": "translate",
+          "args": {
+            "text": "tianqi yubao",
+            "target_language": "en",
+            "source_language": "ja"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "text": "tianqi yubao",
+              "target_language": "en",
+              "source_language": "ja"
+            },
+            "tool": "translate"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_82702",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "users",
+            "values": {
+              "name": "Alice",
+              "active": 1
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "User Created",
+            "body": "A new user record for Alice has been created successfully."
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "users",
+              "values": {
+                "name": "Alice",
+                "active": 1
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_77207e53"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_50390",
+      "calls": [
+        {
+          "tool": "translate",
+          "args": {
+            "text": "konnichiwa",
+            "target_language": "en",
+            "source_language": "zh"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "text": "konnichiwa",
+              "target_language": "en",
+              "source_language": "zh"
+            },
+            "tool": "translate"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_94033",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "current weather in Sydney",
+            "max_results": 5
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com/r1?q=current+weather+in+Sydney",
+            "max_chars": 2000
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: current weather in Sydney",
+              "url": "https://example.com/r1?q=current+weather+in+Sydney",
+              "snippet": "Mock snippet 1 discussing current weather in Sydney. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: current weather in Sydney",
+              "url": "https://example.com/r2?q=current+weather+in+Sydney",
+              "snippet": "Mock snippet 2 discussing current weather in Sydney. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: current weather in Sydney",
+              "url": "https://example.com/r3?q=current+weather+in+Sydney",
+              "snippet": "Mock snippet 3 discussing current weather in Sydney. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com/r1?q=current+weather+in+Sydney. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_95782",
+      "calls": [
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_a.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_a.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_46690",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT name FROM active_users",
+            "database": "analytics"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT name FROM active_users",
+              "database": "analytics"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_82851",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT id, email FROM customers LIMIT 5",
+            "database": "archive"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT id, email FROM customers LIMIT 5",
+              "database": "archive"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T11_image_email_23281",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_b.jpg",
+            "categories": [
+              "electronics",
+              "clothing",
+              "food"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_b.jpg",
+              "categories": [
+                "electronics",
+                "clothing",
+                "food"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_77885",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "users",
+            "values": {
+              "name": "Alice",
+              "active": 1
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "Confirmation: New user record created",
+            "body": "Hello, a new event record for Alice has been successfully inserted into the users table."
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "users",
+              "values": {
+                "name": "Alice",
+                "active": 1
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_da52cf56"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T12_ocr_write_50725",
+      "calls": [
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/img/receipt_b.jpg",
+            "language": "eng"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/receipt_b.jpg",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_13548",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://wttr.in/Paris?format=3",
+            "max_chars": 500
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://api.open-meteo.com/v1/forecast?latitude=48.8566&longitude=2.3522&current=temperature_2m,relative_humidity_2m,wind_speed_10m&timezone=Europe%2FParis&forecast_days=1",
+            "max_chars": 1000
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "current weather in Paris temperature conditions",
+            "max_results": 5
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "Paris weather today temperature Celsius",
+            "max_results": 10
+          }
+        },
+        {
+          "tool": "search_news",
+          "args": {
+            "headline_query": "Paris weather today",
+            "max_articles": 3,
+            "time_filter": "day"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from https://wttr.in/Paris?format=3. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://api.open-meteo.com/v1/forecast?latitude=48.8566&longitude=2.3522&current=temperature_2m,relative_humidity_2m,wind_speed_10m&timezone=Europe%2FParis&forecast_days=1. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: current weather in Paris temperature conditions",
+              "url": "https://example.com/r1?q=current+weather+in+Paris+temperature+conditions",
+              "snippet": "Mock snippet 1 discussing current weather in Paris temperature conditions. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: current weather in Paris temperature conditions",
+              "url": "https://example.com/r2?q=current+weather+in+Paris+temperature+conditions",
+              "snippet": "Mock snippet 2 discussing current weather in Paris temperature conditions. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: current weather in Paris temperature conditions",
+              "url": "https://example.com/r3?q=current+weather+in+Paris+temperature+conditions",
+              "snippet": "Mock snippet 3 discussing current weather in Paris temperature conditions. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: Paris weather today temperature Celsius",
+              "url": "https://example.com/r1?q=Paris+weather+today+temperature+Celsius",
+              "snippet": "Mock snippet 1 discussing Paris weather today temperature Celsius. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: Paris weather today temperature Celsius",
+              "url": "https://example.com/r2?q=Paris+weather+today+temperature+Celsius",
+              "snippet": "Mock snippet 2 discussing Paris weather today temperature Celsius. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: Paris weather today temperature Celsius",
+              "url": "https://example.com/r3?q=Paris+weather+today+temperature+Celsius",
+              "snippet": "Mock snippet 3 discussing Paris weather today temperature Celsius. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "headline": "News: Paris weather today update 1",
+              "source": "NYT",
+              "published_at": "2026-07-23T10:00:00Z",
+              "summary": "News summary about Paris weather today, mentioning 100, 200, 300."
+            },
+            {
+              "headline": "News: Paris weather today update 2",
+              "source": "NYT",
+              "published_at": "2026-07-23T10:00:00Z",
+              "summary": "News summary about Paris weather today, mentioning 100, 200, 300."
+            },
+            {
+              "headline": "News: Paris weather today update 3",
+              "source": "Reuters",
+              "published_at": "2026-07-23T10:00:00Z",
+              "summary": "News summary about Paris weather today, mentioning 100, 200, 300."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_83413",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "orders",
+            "values": {
+              "order_id": "O123",
+              "total": 99.99
+            }
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "orders",
+              "values": {
+                "order_id": "O123",
+                "total": 99.99
+              }
+            },
+            "tool": "db_insert"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_63703",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "orders",
+            "values": {
+              "order_id": "O123",
+              "total": 99.99
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "alice@example.com",
+            "subject": "Order Confirmation O123",
+            "body": "Your order O123 has been confirmed. Total: $99.99. Thank you!"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "orders",
+              "values": {
+                "order_id": "O123",
+                "total": 99.99
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_f8068aa8"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T11_image_email_63174",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_c.jpg",
+            "categories": "['car', 'truck', 'bike']"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_c.jpg",
+              "categories": "['car', 'truck', 'bike']"
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_73411",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT name FROM active_users",
+            "database": "archive"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT name FROM active_users",
+              "database": "archive"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T14_sql_filter_email_49658",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT name FROM active_users",
+            "database": "archive"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT name FROM active_users",
+              "database": "archive"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_88011",
+      "calls": [
+        {
+          "tool": "translate",
+          "args": {
+            "text": "tianqi yubao",
+            "target_language": "en",
+            "source_language": "ja"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "weather forecast",
+            "max_results": 5
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "text": "tianqi yubao",
+              "target_language": "en",
+              "source_language": "ja"
+            },
+            "tool": "translate"
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: weather forecast",
+              "url": "https://example.com/r1?q=weather+forecast",
+              "snippet": "Mock snippet 1 discussing weather forecast. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: weather forecast",
+              "url": "https://example.com/r2?q=weather+forecast",
+              "snippet": "Mock snippet 2 discussing weather forecast. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: weather forecast",
+              "url": "https://example.com/r3?q=weather+forecast",
+              "snippet": "Mock snippet 3 discussing weather forecast. Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T17_translate_search_summary_49735",
+      "calls": [
+        {
+          "tool": "translate",
+          "args": {
+            "text": "bonjour le monde",
+            "target_language": "en",
+            "source_language": "fr"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "hello world",
+            "max_results": 10
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "text": "bonjour le monde",
+              "target_language": "en",
+              "source_language": "fr"
+            },
+            "tool": "translate"
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: hello world",
+              "url": "https://example.com/r1?q=hello+world",
+              "snippet": "Mock snippet 1 discussing hello world. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: hello world",
+              "url": "https://example.com/r2?q=hello+world",
+              "snippet": "Mock snippet 2 discussing hello world. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: hello world",
+              "url": "https://example.com/r3?q=hello+world",
+              "snippet": "Mock snippet 3 discussing hello world. Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T11_image_email_10624",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_c.jpg",
+            "categories": [
+              "car",
+              "truck",
+              "bike"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_c.jpg",
+              "categories": [
+                "car",
+                "truck",
+                "bike"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_25852",
+      "calls": [
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_a.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_a.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_91714",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-01",
+            "end_date": "2026-08-01",
+            "max_events": 50
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-01",
+              "end_date": "2026-08-01",
+              "max_events": 50
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_80323",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://wttr.in/London?format=j1",
+            "max_chars": 2000
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://api.open-meteo.com/v1/forecast?latitude=51.5&longitude=-0.12&current_weather=true",
+            "max_chars": 2000
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "current weather in London temperature conditions",
+            "max_results": 5
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from https://wttr.in/London?format=j1. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://api.open-meteo.com/v1/forecast?latitude=51.5&longitude=-0.12&current_weather=true. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: current weather in London temperature conditions",
+              "url": "https://example.com/r1?q=current+weather+in+London+temperature+conditions",
+              "snippet": "Mock snippet 1 discussing current weather in London temperature conditions. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: current weather in London temperature conditions",
+              "url": "https://example.com/r2?q=current+weather+in+London+temperature+conditions",
+              "snippet": "Mock snippet 2 discussing current weather in London temperature conditions. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: current weather in London temperature conditions",
+              "url": "https://example.com/r3?q=current+weather+in+London+temperature+conditions",
+              "snippet": "Mock snippet 3 discussing current weather in London temperature conditions. Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T21_db_insert_email_20575",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "orders",
+            "values": {
+              "order_id": "O123",
+              "total": 99.99
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "alice@example.com",
+            "subject": "Order Confirmation O123",
+            "body": "Your order O123 has been confirmed. Total: $99.99."
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "orders",
+              "values": {
+                "order_id": "O123",
+                "total": 99.99
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_22215d9d"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T1_weather_email_77623",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://wttr.in/Tokyo?format=3",
+            "max_chars": 500
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://api.open-meteo.com/v1/forecast?latitude=35.6895&longitude=139.6917&current_weather=true",
+            "max_chars": 1000
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "current weather in Tokyo temperature",
+            "max_results": 5
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from https://wttr.in/Tokyo?format=3. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://api.open-meteo.com/v1/forecast?latitude=35.6895&longitude=139.6917&current_weather=true. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: current weather in Tokyo temperature",
+              "url": "https://example.com/r1?q=current+weather+in+Tokyo+temperature",
+              "snippet": "Mock snippet 1 discussing current weather in Tokyo temperature. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: current weather in Tokyo temperature",
+              "url": "https://example.com/r2?q=current+weather+in+Tokyo+temperature",
+              "snippet": "Mock snippet 2 discussing current weather in Tokyo temperature. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: current weather in Tokyo temperature",
+              "url": "https://example.com/r3?q=current+weather+in+Tokyo+temperature",
+              "snippet": "Mock snippet 3 discussing current weather in Tokyo temperature. Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T20_audio_classify_notify_32951",
+      "calls": [
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_b.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        },
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_b.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_b.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_b.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T5_calendar_conflict_notify_62449",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-01",
+            "end_date": "2026-08-01",
+            "max_events": 100
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-01",
+              "end_date": "2026-08-01",
+              "max_events": 100
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "sub_T11_image_email_42171",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_b.jpg",
+            "categories": [
+              "electronics",
+              "clothing",
+              "food"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_b.jpg",
+              "categories": [
+                "electronics",
+                "clothing",
+                "food"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    }
+  ]
+}

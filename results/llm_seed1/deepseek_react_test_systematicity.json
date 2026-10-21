@@ -1,0 +1,5433 @@
+{
+  "agent": "DeepSeek-ReAct",
+  "split": "test_systematicity",
+  "n_tasks": 100,
+  "task_metrics": [
+    {
+      "task_id": "T5_calendar_conflict_notify_10490",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_add",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T5_calendar_conflict_notify_41715",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_add",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T22_calendar_list_filter_47601",
+      "template_id": "T22_calendar_list_filter",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_list",
+        "search_web",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T11_image_email_48196",
+      "template_id": "T11_image_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "image_classify",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T12_ocr_write_83270",
+      "template_id": "T12_ocr_write",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T11_image_email_65258",
+      "template_id": "T11_image_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "image_classify",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T15_image_crop_ocr_45372",
+      "template_id": "T15_image_crop_ocr",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.4166666666666667,
+      "n_calls": 2,
+      "expected_chain": [
+        "image_crop",
+        "ocr_extract",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T6_timezone_meeting_59788",
+      "template_id": "T6_timezone_meeting",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "get_datetime",
+        "unit_convert",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_64048",
+      "template_id": "T18_datetime_format_calendar",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.25,
+      "n_calls": 2,
+      "expected_chain": [
+        "get_datetime",
+        "format_date",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T17_translate_search_summary_38127",
+      "template_id": "T17_translate_search_summary",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 2,
+      "expected_chain": [
+        "search_web",
+        "summarize",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T10_price_monitor_alert_64620",
+      "template_id": "T10_price_monitor_alert",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.2,
+      "coc": 0.0,
+      "aba": 0.2916666666666667,
+      "n_calls": 6,
+      "expected_chain": [
+        "search_web",
+        "unit_convert",
+        "send_sms",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T1_weather_email_95558",
+      "template_id": "T1_weather_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "search_web",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T10_price_monitor_alert_57128",
+      "template_id": "T10_price_monitor_alert",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.2,
+      "coc": 0.0,
+      "aba": 0.3125,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_web",
+        "unit_convert",
+        "send_sms",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T20_audio_classify_notify_53503",
+      "template_id": "T20_audio_classify_notify",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "audio_classify",
+        "send_push",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T5_calendar_conflict_notify_37486",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_add",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_76420",
+      "template_id": "T18_datetime_format_calendar",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.25,
+      "n_calls": 2,
+      "expected_chain": [
+        "get_datetime",
+        "format_date",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T6_timezone_meeting_11365",
+      "template_id": "T6_timezone_meeting",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "get_datetime",
+        "unit_convert",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T14_sql_filter_email_71297",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "sql_query",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T5_calendar_conflict_notify_69606",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_add",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T21_db_insert_email_13215",
+      "template_id": "T21_db_insert_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "db_insert",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T14_sql_filter_email_66981",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "sql_query",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_30376",
+      "template_id": "T18_datetime_format_calendar",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.75,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 3,
+      "expected_chain": [
+        "get_datetime",
+        "format_date",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T20_audio_classify_notify_35451",
+      "template_id": "T20_audio_classify_notify",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 2,
+      "expected_chain": [
+        "audio_classify",
+        "send_push",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T21_db_insert_email_40877",
+      "template_id": "T21_db_insert_email",
+      "split": "test_systematicity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 1.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_95872",
+      "template_id": "T18_datetime_format_calendar",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.25,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "get_datetime",
+        "format_date",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T17_translate_search_summary_69032",
+      "template_id": "T17_translate_search_summary",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "search_web",
+        "summarize",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T10_price_monitor_alert_51524",
+      "template_id": "T10_price_monitor_alert",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.2,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "search_web",
+        "unit_convert",
+        "send_sms",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T11_image_email_35363",
+      "template_id": "T11_image_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "image_classify",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T20_audio_classify_notify_94679",
+      "template_id": "T20_audio_classify_notify",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "audio_classify",
+        "send_push",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T11_image_email_34206",
+      "template_id": "T11_image_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "image_classify",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T9_rss_filter_summarize_61562",
+      "template_id": "T9_rss_filter_summarize",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 1,
+      "expected_chain": [
+        "fetch_url",
+        "search_web",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T12_ocr_write_42013",
+      "template_id": "T12_ocr_write",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T11_image_email_66721",
+      "template_id": "T11_image_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "image_classify",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_35199",
+      "template_id": "T18_datetime_format_calendar",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.25,
+      "n_calls": 2,
+      "expected_chain": [
+        "get_datetime",
+        "format_date",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T17_translate_search_summary_45427",
+      "template_id": "T17_translate_search_summary",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "search_web",
+        "summarize",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T1_weather_email_69273",
+      "template_id": "T1_weather_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.25,
+      "n_calls": 2,
+      "expected_chain": [
+        "search_web",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T15_image_crop_ocr_91380",
+      "template_id": "T15_image_crop_ocr",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.4166666666666667,
+      "n_calls": 2,
+      "expected_chain": [
+        "image_crop",
+        "ocr_extract",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T5_calendar_conflict_notify_19640",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_add",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T10_price_monitor_alert_59400",
+      "template_id": "T10_price_monitor_alert",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.2,
+      "coc": 0.0,
+      "aba": 0.4166666666666667,
+      "n_calls": 3,
+      "expected_chain": [
+        "search_web",
+        "unit_convert",
+        "send_sms",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T9_rss_filter_summarize_88842",
+      "template_id": "T9_rss_filter_summarize",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 1,
+      "expected_chain": [
+        "fetch_url",
+        "search_web",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_40925",
+      "template_id": "T18_datetime_format_calendar",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.25,
+      "n_calls": 2,
+      "expected_chain": [
+        "get_datetime",
+        "format_date",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T14_sql_filter_email_55031",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 3,
+      "expected_chain": [
+        "sql_query",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T5_calendar_conflict_notify_31145",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_add",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T21_db_insert_email_77805",
+      "template_id": "T21_db_insert_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 1,
+      "expected_chain": [
+        "db_insert",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T21_db_insert_email_20984",
+      "template_id": "T21_db_insert_email",
+      "split": "test_systematicity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 1.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_71998",
+      "template_id": "T18_datetime_format_calendar",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.25,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "get_datetime",
+        "format_date",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T15_image_crop_ocr_89066",
+      "template_id": "T15_image_crop_ocr",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.4166666666666667,
+      "n_calls": 2,
+      "expected_chain": [
+        "image_crop",
+        "ocr_extract",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T9_rss_filter_summarize_64360",
+      "template_id": "T9_rss_filter_summarize",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 1,
+      "expected_chain": [
+        "fetch_url",
+        "search_web",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T15_image_crop_ocr_73938",
+      "template_id": "T15_image_crop_ocr",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.4166666666666667,
+      "n_calls": 2,
+      "expected_chain": [
+        "image_crop",
+        "ocr_extract",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T11_image_email_43210",
+      "template_id": "T11_image_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "image_classify",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_84422",
+      "template_id": "T18_datetime_format_calendar",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.75,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 3,
+      "expected_chain": [
+        "get_datetime",
+        "format_date",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T11_image_email_10657",
+      "template_id": "T11_image_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "image_classify",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T5_calendar_conflict_notify_97207",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_add",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T20_audio_classify_notify_57590",
+      "template_id": "T20_audio_classify_notify",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "audio_classify",
+        "send_push",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T12_ocr_write_27442",
+      "template_id": "T12_ocr_write",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T22_calendar_list_filter_40374",
+      "template_id": "T22_calendar_list_filter",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_list",
+        "search_web",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T10_price_monitor_alert_47688",
+      "template_id": "T10_price_monitor_alert",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.2,
+      "coc": 0.0,
+      "aba": 0.4166666666666667,
+      "n_calls": 3,
+      "expected_chain": [
+        "search_web",
+        "unit_convert",
+        "send_sms",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T6_timezone_meeting_77195",
+      "template_id": "T6_timezone_meeting",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "get_datetime",
+        "unit_convert",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T12_ocr_write_39898",
+      "template_id": "T12_ocr_write",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T20_audio_classify_notify_91473",
+      "template_id": "T20_audio_classify_notify",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "audio_classify",
+        "send_push",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T9_rss_filter_summarize_40818",
+      "template_id": "T9_rss_filter_summarize",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 2,
+      "expected_chain": [
+        "fetch_url",
+        "search_web",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T5_calendar_conflict_notify_62001",
+      "template_id": "T5_calendar_conflict_notify",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_add",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T9_rss_filter_summarize_29877",
+      "template_id": "T9_rss_filter_summarize",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 1,
+      "expected_chain": [
+        "fetch_url",
+        "search_web",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T21_db_insert_email_89345",
+      "template_id": "T21_db_insert_email",
+      "split": "test_systematicity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 1.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T17_translate_search_summary_10737",
+      "template_id": "T17_translate_search_summary",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 0,
+      "expected_chain": [
+        "search_web",
+        "summarize",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T17_translate_search_summary_32534",
+      "template_id": "T17_translate_search_summary",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.0,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "search_web",
+        "summarize",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T21_db_insert_email_81789",
+      "template_id": "T21_db_insert_email",
+      "split": "test_systematicity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 1.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T12_ocr_write_41419",
+      "template_id": "T12_ocr_write",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T10_price_monitor_alert_87476",
+      "template_id": "T10_price_monitor_alert",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.2,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "search_web",
+        "unit_convert",
+        "send_sms",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T14_sql_filter_email_41930",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "sql_query",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T6_timezone_meeting_43957",
+      "template_id": "T6_timezone_meeting",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 2,
+      "expected_chain": [
+        "get_datetime",
+        "unit_convert",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T1_weather_email_39144",
+      "template_id": "T1_weather_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_web",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T22_calendar_list_filter_50406",
+      "template_id": "T22_calendar_list_filter",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.6666666666666666,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 2,
+      "expected_chain": [
+        "calendar_list",
+        "search_web",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T14_sql_filter_email_10558",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "sql_query",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T20_audio_classify_notify_68791",
+      "template_id": "T20_audio_classify_notify",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 2,
+      "expected_chain": [
+        "audio_classify",
+        "send_push",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_19183",
+      "template_id": "T18_datetime_format_calendar",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.25,
+      "n_calls": 2,
+      "expected_chain": [
+        "get_datetime",
+        "format_date",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T14_sql_filter_email_44650",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "sql_query",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T14_sql_filter_email_96395",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "sql_query",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T15_image_crop_ocr_26949",
+      "template_id": "T15_image_crop_ocr",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.4166666666666667,
+      "n_calls": 2,
+      "expected_chain": [
+        "image_crop",
+        "ocr_extract",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T21_db_insert_email_30390",
+      "template_id": "T21_db_insert_email",
+      "split": "test_systematicity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 1.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T22_calendar_list_filter_28447",
+      "template_id": "T22_calendar_list_filter",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_list",
+        "search_web",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T12_ocr_write_40137",
+      "template_id": "T12_ocr_write",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "ocr_extract",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T15_image_crop_ocr_81061",
+      "template_id": "T15_image_crop_ocr",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.4166666666666667,
+      "n_calls": 2,
+      "expected_chain": [
+        "image_crop",
+        "ocr_extract",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T15_image_crop_ocr_88131",
+      "template_id": "T15_image_crop_ocr",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.4166666666666667,
+      "n_calls": 2,
+      "expected_chain": [
+        "image_crop",
+        "ocr_extract",
+        "write_file",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T6_timezone_meeting_36992",
+      "template_id": "T6_timezone_meeting",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.25,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "get_datetime",
+        "unit_convert",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T11_image_email_49626",
+      "template_id": "T11_image_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "image_classify",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_43995",
+      "template_id": "T18_datetime_format_calendar",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.25,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "get_datetime",
+        "format_date",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T14_sql_filter_email_79977",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "sql_query",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T14_sql_filter_email_38205",
+      "template_id": "T14_sql_filter_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.6666666666666666,
+      "n_calls": 1,
+      "expected_chain": [
+        "sql_query",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T11_image_email_89590",
+      "template_id": "T11_image_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "image_classify",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T9_rss_filter_summarize_34437",
+      "template_id": "T9_rss_filter_summarize",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 1,
+      "expected_chain": [
+        "fetch_url",
+        "search_web",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_23788",
+      "template_id": "T18_datetime_format_calendar",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.75,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 3,
+      "expected_chain": [
+        "get_datetime",
+        "format_date",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T1_weather_email_10887",
+      "template_id": "T1_weather_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.0,
+      "n_calls": 1,
+      "expected_chain": [
+        "search_web",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T1_weather_email_71362",
+      "template_id": "T1_weather_email",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.5,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 4,
+      "expected_chain": [
+        "search_web",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_90359",
+      "template_id": "T18_datetime_format_calendar",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.75,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 3,
+      "expected_chain": [
+        "get_datetime",
+        "format_date",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T10_price_monitor_alert_89759",
+      "template_id": "T10_price_monitor_alert",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.2,
+      "coc": 0.0,
+      "aba": 0.375,
+      "n_calls": 2,
+      "expected_chain": [
+        "search_web",
+        "unit_convert",
+        "send_sms",
+        "calendar_add",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T9_rss_filter_summarize_12736",
+      "template_id": "T9_rss_filter_summarize",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 1,
+      "expected_chain": [
+        "fetch_url",
+        "search_web",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T22_calendar_list_filter_74812",
+      "template_id": "T22_calendar_list_filter",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.5,
+      "n_calls": 1,
+      "expected_chain": [
+        "calendar_list",
+        "search_web",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T21_db_insert_email_54330",
+      "template_id": "T21_db_insert_email",
+      "split": "test_systematicity",
+      "tsr": 1.0,
+      "tca": 1.0,
+      "coc": 1.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 2,
+      "expected_chain": [
+        "db_insert",
+        "send_email",
+        "send_email"
+      ]
+    },
+    {
+      "task_id": "T9_rss_filter_summarize_31800",
+      "template_id": "T9_rss_filter_summarize",
+      "split": "test_systematicity",
+      "tsr": 0.0,
+      "tca": 0.3333333333333333,
+      "coc": 0.0,
+      "aba": 0.3333333333333333,
+      "n_calls": 1,
+      "expected_chain": [
+        "fetch_url",
+        "search_web",
+        "send_email",
+        "send_email"
+      ]
+    }
+  ],
+  "traces": [
+    {
+      "task_id": "T5_calendar_conflict_notify_10490",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-01T00:00:00Z",
+            "end_date": "2026-08-01T23:59:59Z",
+            "max_events": 100
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-01T00:00:00Z",
+              "end_date": "2026-08-01T23:59:59Z",
+              "max_events": 100
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T5_calendar_conflict_notify_41715",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-01",
+            "end_date": "2026-08-01",
+            "max_events": 100
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-01",
+              "end_date": "2026-08-01",
+              "max_events": 100
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T22_calendar_list_filter_47601",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-09-01",
+            "end_date": "2026-09-30",
+            "max_events": 100
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-09-01",
+              "end_date": "2026-09-30",
+              "max_events": 100
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T11_image_email_48196",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_a.jpg",
+            "categories": [
+              "car",
+              "truck",
+              "bike"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_a.jpg",
+              "categories": [
+                "car",
+                "truck",
+                "bike"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T12_ocr_write_83270",
+      "calls": [
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/img/receipt_a.jpg",
+            "language": "eng"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/receipt_a.jpg",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T11_image_email_65258",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_a.jpg",
+            "categories": [
+              "car",
+              "truck",
+              "bike"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_a.jpg",
+              "categories": [
+                "car",
+                "truck",
+                "bike"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T15_image_crop_ocr_45372",
+      "calls": [
+        {
+          "tool": "image_crop",
+          "args": {
+            "source_path": "/img/page_a.jpg",
+            "x": 50,
+            "y": 100,
+            "width": 300,
+            "height": 100,
+            "output_path": "/tmp/page_a_cropped.jpg"
+          }
+        },
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/tmp/page_a_cropped.jpg",
+            "language": "eng"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "source_path": "/img/page_a.jpg",
+              "x": 50,
+              "y": 100,
+              "width": 300,
+              "height": 100,
+              "output_path": "/tmp/page_a_cropped.jpg"
+            },
+            "tool": "image_crop"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/tmp/page_a_cropped.jpg",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T6_timezone_meeting_59788",
+      "calls": [
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Meeting",
+            "start_time": "2026-07-23T09:00:00+00:00",
+            "duration_minutes": 60,
+            "attendees": [
+              "alice@example.com"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_2e5393e1",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_64048",
+      "calls": [
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "format_date",
+          "args": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "format": "%Y-%m-%d"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "datetime": "2026-07-23T10:00:00+00:00",
+              "format": "%Y-%m-%d"
+            },
+            "tool": "format_date"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T17_translate_search_summary_38127",
+      "calls": [
+        {
+          "tool": "translate",
+          "args": {
+            "text": "konnichiwa",
+            "target_language": "en",
+            "source_language": "fr"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "konnichiwa",
+            "max_results": 5
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "text": "konnichiwa",
+              "target_language": "en",
+              "source_language": "fr"
+            },
+            "tool": "translate"
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: konnichiwa",
+              "url": "https://example.com/r1?q=konnichiwa",
+              "snippet": "Mock snippet 1 discussing konnichiwa. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: konnichiwa",
+              "url": "https://example.com/r2?q=konnichiwa",
+              "snippet": "Mock snippet 2 discussing konnichiwa. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: konnichiwa",
+              "url": "https://example.com/r3?q=konnichiwa",
+              "snippet": "Mock snippet 3 discussing konnichiwa. Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T10_price_monitor_alert_64620",
+      "calls": [
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "GOOGL stock price in GBP today",
+            "max_results": 5
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com/r1?q=GOOGL+stock+price+in+GBP+today",
+            "max_chars": 2000
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "GOOGL share price GBP",
+            "max_results": 5
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL",
+            "max_chars": 2000
+          }
+        },
+        {
+          "tool": "list_files",
+          "args": {
+            "directory": ".",
+            "pattern": "*"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: GOOGL stock price in GBP today",
+              "url": "https://example.com/r1?q=GOOGL+stock+price+in+GBP+today",
+              "snippet": "Mock snippet 1 discussing GOOGL stock price in GBP today. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: GOOGL stock price in GBP today",
+              "url": "https://example.com/r2?q=GOOGL+stock+price+in+GBP+today",
+              "snippet": "Mock snippet 2 discussing GOOGL stock price in GBP today. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: GOOGL stock price in GBP today",
+              "url": "https://example.com/r3?q=GOOGL+stock+price+in+GBP+today",
+              "snippet": "Mock snippet 3 discussing GOOGL stock price in GBP today. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com/r1?q=GOOGL+stock+price+in+GBP+today. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: GOOGL share price GBP",
+              "url": "https://example.com/r1?q=GOOGL+share+price+GBP",
+              "snippet": "Mock snippet 1 discussing GOOGL share price GBP. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: GOOGL share price GBP",
+              "url": "https://example.com/r2?q=GOOGL+share+price+GBP",
+              "snippet": "Mock snippet 2 discussing GOOGL share price GBP. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: GOOGL share price GBP",
+              "url": "https://example.com/r3?q=GOOGL+share+price+GBP",
+              "snippet": "Mock snippet 3 discussing GOOGL share price GBP. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://query1.finance.yahoo.com/v8/finance/chart/GOOGL. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "directory": ".",
+              "pattern": "*"
+            },
+            "tool": "list_files"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T1_weather_email_95558",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "current weather in Sydney",
+            "max_results": 5
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com/r1?q=current+weather+in+Sydney",
+            "max_chars": 5000
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: current weather in Sydney",
+              "url": "https://example.com/r1?q=current+weather+in+Sydney",
+              "snippet": "Mock snippet 1 discussing current weather in Sydney. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: current weather in Sydney",
+              "url": "https://example.com/r2?q=current+weather+in+Sydney",
+              "snippet": "Mock snippet 2 discussing current weather in Sydney. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: current weather in Sydney",
+              "url": "https://example.com/r3?q=current+weather+in+Sydney",
+              "snippet": "Mock snippet 3 discussing current weather in Sydney. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com/r1?q=current+weather+in+Sydney. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T10_price_monitor_alert_57128",
+      "calls": [
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "America/New_York"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "AAPL stock price in JPY",
+            "max_results": 5
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "AAPL stock price in JPY today",
+            "max_results": 10
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL",
+            "max_chars": 5000
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "America/New_York",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: AAPL stock price in JPY",
+              "url": "https://example.com/r1?q=AAPL+stock+price+in+JPY",
+              "snippet": "Mock snippet 1 discussing AAPL stock price in JPY. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: AAPL stock price in JPY",
+              "url": "https://example.com/r2?q=AAPL+stock+price+in+JPY",
+              "snippet": "Mock snippet 2 discussing AAPL stock price in JPY. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: AAPL stock price in JPY",
+              "url": "https://example.com/r3?q=AAPL+stock+price+in+JPY",
+              "snippet": "Mock snippet 3 discussing AAPL stock price in JPY. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: AAPL stock price in JPY today",
+              "url": "https://example.com/r1?q=AAPL+stock+price+in+JPY+today",
+              "snippet": "Mock snippet 1 discussing AAPL stock price in JPY today. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: AAPL stock price in JPY today",
+              "url": "https://example.com/r2?q=AAPL+stock+price+in+JPY+today",
+              "snippet": "Mock snippet 2 discussing AAPL stock price in JPY today. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: AAPL stock price in JPY today",
+              "url": "https://example.com/r3?q=AAPL+stock+price+in+JPY+today",
+              "snippet": "Mock snippet 3 discussing AAPL stock price in JPY today. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://query1.finance.yahoo.com/v8/finance/chart/AAPL. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T20_audio_classify_notify_53503",
+      "calls": [
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_a.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_a.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T5_calendar_conflict_notify_37486",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-02",
+            "end_date": "2026-08-02",
+            "max_events": 100
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-02",
+              "end_date": "2026-08-02",
+              "max_events": 100
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_76420",
+      "calls": [
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "format_date",
+          "args": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "format": "%m/%d/%Y %H:%M"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "datetime": "2026-07-23T10:00:00+00:00",
+              "format": "%m/%d/%Y %H:%M"
+            },
+            "tool": "format_date"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T6_timezone_meeting_11365",
+      "calls": [
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Meeting",
+            "start_time": "2026-07-23T09:00:00+00:00",
+            "duration_minutes": 60,
+            "attendees": [
+              "bob@example.com",
+              "carol@example.com"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_fa449e93",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T14_sql_filter_email_71297",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT id, email FROM customers LIMIT 5",
+            "database": "main"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT id, email FROM customers LIMIT 5",
+              "database": "main"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T5_calendar_conflict_notify_69606",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-02T00:00:00Z",
+            "end_date": "2026-08-03T00:00:00Z",
+            "max_events": 100
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-02T00:00:00Z",
+              "end_date": "2026-08-03T00:00:00Z",
+              "max_events": 100
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T21_db_insert_email_13215",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "users",
+            "values": {
+              "name": "Alice",
+              "active": 1
+            }
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "users",
+              "values": {
+                "name": "Alice",
+                "active": 1
+              }
+            },
+            "tool": "db_insert"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T14_sql_filter_email_66981",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT name FROM active_users",
+            "database": "main"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT name FROM active_users",
+              "database": "main"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_30376",
+      "calls": [
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "format_date",
+          "args": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "format": "%d %b %Y"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Sprint Review",
+            "start_time": "2026-07-23T10:00:00+00:00"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "datetime": "2026-07-23T10:00:00+00:00",
+              "format": "%d %b %Y"
+            },
+            "tool": "format_date"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_38cfc5df",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T20_audio_classify_notify_35451",
+      "calls": [
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_b.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        },
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_b.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_b.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_b.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T21_db_insert_email_40877",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "events",
+            "values": {
+              "order_id": "O123",
+              "total": 99.99
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "Order Confirmation",
+            "body": "Your order O123 has been received. Total: $99.99."
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "events",
+              "values": {
+                "order_id": "O123",
+                "total": 99.99
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_55527aba"
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_95872",
+      "calls": [
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T17_translate_search_summary_69032",
+      "calls": [
+        {
+          "tool": "translate",
+          "args": {
+            "text": "konnichiwa",
+            "target_language": "en",
+            "source_language": "ja"
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "hello",
+            "max_results": 3
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "text": "konnichiwa",
+              "target_language": "en",
+              "source_language": "ja"
+            },
+            "tool": "translate"
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: hello",
+              "url": "https://example.com/r1?q=hello",
+              "snippet": "Mock snippet 1 discussing hello. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: hello",
+              "url": "https://example.com/r2?q=hello",
+              "snippet": "Mock snippet 2 discussing hello. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: hello",
+              "url": "https://example.com/r3?q=hello",
+              "snippet": "Mock snippet 3 discussing hello. Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T10_price_monitor_alert_51524",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "MSFT stock price in EUR",
+            "max_results": 5
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: MSFT stock price in EUR",
+              "url": "https://example.com/r1?q=MSFT+stock+price+in+EUR",
+              "snippet": "Mock snippet 1 discussing MSFT stock price in EUR. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: MSFT stock price in EUR",
+              "url": "https://example.com/r2?q=MSFT+stock+price+in+EUR",
+              "snippet": "Mock snippet 2 discussing MSFT stock price in EUR. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: MSFT stock price in EUR",
+              "url": "https://example.com/r3?q=MSFT+stock+price+in+EUR",
+              "snippet": "Mock snippet 3 discussing MSFT stock price in EUR. Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T11_image_email_35363",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_b.jpg",
+            "categories": [
+              "car",
+              "truck",
+              "bike"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_b.jpg",
+              "categories": [
+                "car",
+                "truck",
+                "bike"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T20_audio_classify_notify_94679",
+      "calls": [
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_b.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_b.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T11_image_email_34206",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_a.jpg",
+            "categories": [
+              "electronics",
+              "clothing",
+              "food"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_a.jpg",
+              "categories": [
+                "electronics",
+                "clothing",
+                "food"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T9_rss_filter_summarize_61562",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com/feed1",
+            "max_chars": 10000
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com/feed1. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T12_ocr_write_42013",
+      "calls": [
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/img/receipt_a.jpg",
+            "language": "eng"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/receipt_a.jpg",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T11_image_email_66721",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_b.jpg",
+            "categories": [
+              "electronics",
+              "clothing",
+              "food"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_b.jpg",
+              "categories": [
+                "electronics",
+                "clothing",
+                "food"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_35199",
+      "calls": [
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "format_date",
+          "args": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "format": "%d %b %Y"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "datetime": "2026-07-23T10:00:00+00:00",
+              "format": "%d %b %Y"
+            },
+            "tool": "format_date"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T17_translate_search_summary_45427",
+      "calls": [
+        {
+          "tool": "translate",
+          "args": {
+            "text": "konnichiwa",
+            "target_language": "en",
+            "source_language": "zh"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "text": "konnichiwa",
+              "target_language": "en",
+              "source_language": "zh"
+            },
+            "tool": "translate"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T1_weather_email_69273",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "\"https://wttr.in/Sydney?format": "%C+%t+%w\"",
+            "max_chars": 500
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "max_results": 5
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from . This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: ",
+              "url": "https://example.com/r1?q=",
+              "snippet": "Mock snippet 1 discussing . Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: ",
+              "url": "https://example.com/r2?q=",
+              "snippet": "Mock snippet 2 discussing . Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: ",
+              "url": "https://example.com/r3?q=",
+              "snippet": "Mock snippet 3 discussing . Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T15_image_crop_ocr_91380",
+      "calls": [
+        {
+          "tool": "image_crop",
+          "args": {
+            "source_path": "/img/page_a.jpg",
+            "x": 100,
+            "y": 150,
+            "width": 300,
+            "height": 100,
+            "output_path": "/tmp/cropped_a.jpg"
+          }
+        },
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/tmp/cropped_a.jpg",
+            "language": "eng"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "source_path": "/img/page_a.jpg",
+              "x": 100,
+              "y": 150,
+              "width": 300,
+              "height": 100,
+              "output_path": "/tmp/cropped_a.jpg"
+            },
+            "tool": "image_crop"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/tmp/cropped_a.jpg",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T5_calendar_conflict_notify_19640",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-02",
+            "end_date": "2026-08-02",
+            "max_events": 100
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-02",
+              "end_date": "2026-08-02",
+              "max_events": 100
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T10_price_monitor_alert_59400",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "AAPL stock price in EUR",
+            "max_results": 5
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "AAPL stock price in EUR today",
+            "max_results": 10
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=1d&interval=1d",
+            "max_chars": 2000
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: AAPL stock price in EUR",
+              "url": "https://example.com/r1?q=AAPL+stock+price+in+EUR",
+              "snippet": "Mock snippet 1 discussing AAPL stock price in EUR. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: AAPL stock price in EUR",
+              "url": "https://example.com/r2?q=AAPL+stock+price+in+EUR",
+              "snippet": "Mock snippet 2 discussing AAPL stock price in EUR. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: AAPL stock price in EUR",
+              "url": "https://example.com/r3?q=AAPL+stock+price+in+EUR",
+              "snippet": "Mock snippet 3 discussing AAPL stock price in EUR. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: AAPL stock price in EUR today",
+              "url": "https://example.com/r1?q=AAPL+stock+price+in+EUR+today",
+              "snippet": "Mock snippet 1 discussing AAPL stock price in EUR today. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: AAPL stock price in EUR today",
+              "url": "https://example.com/r2?q=AAPL+stock+price+in+EUR+today",
+              "snippet": "Mock snippet 2 discussing AAPL stock price in EUR today. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: AAPL stock price in EUR today",
+              "url": "https://example.com/r3?q=AAPL+stock+price+in+EUR+today",
+              "snippet": "Mock snippet 3 discussing AAPL stock price in EUR today. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=1d&interval=1d. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T9_rss_filter_summarize_88842",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com/feed1",
+            "max_chars": 10000
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com/feed1. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_40925",
+      "calls": [
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "format_date",
+          "args": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "format": "%Y-%m-%d"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "datetime": "2026-07-23T10:00:00+00:00",
+              "format": "%Y-%m-%d"
+            },
+            "tool": "format_date"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T14_sql_filter_email_55031",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT id, email FROM customers LIMIT 5",
+            "database": "main"
+          }
+        },
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT id, email FROM customers LIMIT 5",
+            "database": "main"
+          }
+        },
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT id, email FROM customers LIMIT 5",
+            "database": "main"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT id, email FROM customers LIMIT 5",
+              "database": "main"
+            },
+            "tool": "sql_query"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT id, email FROM customers LIMIT 5",
+              "database": "main"
+            },
+            "tool": "sql_query"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT id, email FROM customers LIMIT 5",
+              "database": "main"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T5_calendar_conflict_notify_31145",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-02",
+            "end_date": "2026-08-02",
+            "max_events": 50
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-02",
+              "end_date": "2026-08-02",
+              "max_events": 50
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T21_db_insert_email_77805",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "events",
+            "values": {
+              "name": "Alice",
+              "active": 1
+            }
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "events",
+              "values": {
+                "name": "Alice",
+                "active": 1
+              }
+            },
+            "tool": "db_insert"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T21_db_insert_email_20984",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "events",
+            "values": {
+              "order_id": "O123",
+              "total": 99.99
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "alice@example.com",
+            "subject": "Order confirmation",
+            "body": "Your order O123 has been confirmed. Total: 99.99."
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "events",
+              "values": {
+                "order_id": "O123",
+                "total": 99.99
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_871e55b1"
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_71998",
+      "calls": [
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T15_image_crop_ocr_89066",
+      "calls": [
+        {
+          "tool": "image_crop",
+          "args": {
+            "source_path": "/img/page_a.jpg",
+            "x": 150,
+            "y": 50,
+            "width": 200,
+            "height": 150,
+            "output_path": "/tmp/cropped_a.jpg"
+          }
+        },
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/tmp/cropped_a.jpg",
+            "language": "eng"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "source_path": "/img/page_a.jpg",
+              "x": 150,
+              "y": 50,
+              "width": 200,
+              "height": 150,
+              "output_path": "/tmp/cropped_a.jpg"
+            },
+            "tool": "image_crop"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/tmp/cropped_a.jpg",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T9_rss_filter_summarize_64360",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com/feed1",
+            "max_chars": 10000
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com/feed1. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T15_image_crop_ocr_73938",
+      "calls": [
+        {
+          "tool": "image_crop",
+          "args": {
+            "source_path": "/img/page_a.jpg",
+            "x": 100,
+            "y": 100,
+            "width": 300,
+            "height": 100,
+            "output_path": "/tmp/cropped_a.jpg"
+          }
+        },
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/tmp/cropped_a.jpg",
+            "language": "eng"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "source_path": "/img/page_a.jpg",
+              "x": 100,
+              "y": 100,
+              "width": 300,
+              "height": 100,
+              "output_path": "/tmp/cropped_a.jpg"
+            },
+            "tool": "image_crop"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/tmp/cropped_a.jpg",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T11_image_email_43210",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_c.jpg",
+            "categories": [
+              "electronics",
+              "clothing",
+              "food"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_c.jpg",
+              "categories": [
+                "electronics",
+                "clothing",
+                "food"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_84422",
+      "calls": [
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "format_date",
+          "args": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "format": "%d %b %Y"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Sprint Review",
+            "start_time": "2026-07-23T10:00:00+00:00"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "datetime": "2026-07-23T10:00:00+00:00",
+              "format": "%d %b %Y"
+            },
+            "tool": "format_date"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_38cfc5df",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T11_image_email_10657",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_b.jpg",
+            "categories": [
+              "car",
+              "truck",
+              "bike"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_b.jpg",
+              "categories": [
+                "car",
+                "truck",
+                "bike"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T5_calendar_conflict_notify_97207",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-01",
+            "end_date": "2026-08-02",
+            "max_events": 100
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-01",
+              "end_date": "2026-08-02",
+              "max_events": 100
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T20_audio_classify_notify_57590",
+      "calls": [
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_b.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_b.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T12_ocr_write_27442",
+      "calls": [
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/img/receipt_b.jpg",
+            "language": "eng"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/receipt_b.jpg",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T22_calendar_list_filter_40374",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-09-01",
+            "end_date": "2026-09-30",
+            "max_events": 100
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-09-01",
+              "end_date": "2026-09-30",
+              "max_events": 100
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T10_price_monitor_alert_47688",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "MSFT Microsoft stock price in EUR",
+            "max_results": 5
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "MSFT stock price EUR current quote",
+            "max_results": 10
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?interval=1d&range=1d",
+            "max_chars": 2000
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: MSFT Microsoft stock price in EUR",
+              "url": "https://example.com/r1?q=MSFT+Microsoft+stock+price+in+EUR",
+              "snippet": "Mock snippet 1 discussing MSFT Microsoft stock price in EUR. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: MSFT Microsoft stock price in EUR",
+              "url": "https://example.com/r2?q=MSFT+Microsoft+stock+price+in+EUR",
+              "snippet": "Mock snippet 2 discussing MSFT Microsoft stock price in EUR. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: MSFT Microsoft stock price in EUR",
+              "url": "https://example.com/r3?q=MSFT+Microsoft+stock+price+in+EUR",
+              "snippet": "Mock snippet 3 discussing MSFT Microsoft stock price in EUR. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: MSFT stock price EUR current quote",
+              "url": "https://example.com/r1?q=MSFT+stock+price+EUR+current+quote",
+              "snippet": "Mock snippet 1 discussing MSFT stock price EUR current quote. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: MSFT stock price EUR current quote",
+              "url": "https://example.com/r2?q=MSFT+stock+price+EUR+current+quote",
+              "snippet": "Mock snippet 2 discussing MSFT stock price EUR current quote. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: MSFT stock price EUR current quote",
+              "url": "https://example.com/r3?q=MSFT+stock+price+EUR+current+quote",
+              "snippet": "Mock snippet 3 discussing MSFT stock price EUR current quote. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://query1.finance.yahoo.com/v8/finance/chart/MSFT?interval=1d&range=1d. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T6_timezone_meeting_77195",
+      "calls": [
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "Europe/London"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Meeting",
+            "start_time": "2026-07-23T10:00:00+00:00",
+            "duration_minutes": 60,
+            "attendees": [
+              "bob@example.com",
+              "carol@example.com"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "Europe/London",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_75ef6d24",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T12_ocr_write_39898",
+      "calls": [
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/img/receipt_b.jpg",
+            "language": "eng"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/receipt_b.jpg",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T20_audio_classify_notify_91473",
+      "calls": [
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_a.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_a.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T9_rss_filter_summarize_40818",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com/feed2",
+            "max_chars": 10000
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com/feed2",
+            "max_chars": 100000
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com/feed2. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com/feed2. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T5_calendar_conflict_notify_62001",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-02",
+            "end_date": "2026-08-02",
+            "max_events": 100
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-02",
+              "end_date": "2026-08-02",
+              "max_events": 100
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T9_rss_filter_summarize_29877",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com/feed1",
+            "max_chars": 10000
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com/feed1. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T21_db_insert_email_89345",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "events",
+            "values": {
+              "order_id": "O123",
+              "total": 99.99
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "alice@example.com",
+            "subject": "Order Confirmation O123",
+            "body": "Your order O123 has been confirmed. Total: $99.99."
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "events",
+              "values": {
+                "order_id": "O123",
+                "total": 99.99
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_22215d9d"
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T17_translate_search_summary_10737",
+      "calls": [],
+      "results": [],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T17_translate_search_summary_32534",
+      "calls": [
+        {
+          "tool": "translate",
+          "args": {
+            "text": "konnichiwa",
+            "target_language": "English",
+            "source_language": "ja"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "text": "konnichiwa",
+              "target_language": "English",
+              "source_language": "ja"
+            },
+            "tool": "translate"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T21_db_insert_email_81789",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "users",
+            "values": {
+              "name": "Alice",
+              "active": 1
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "Order Confirmation",
+            "body": "Hi Bob, your order has been confirmed. Details: Name: Alice, Active: 1. Thank you!"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "users",
+              "values": {
+                "name": "Alice",
+                "active": 1
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_95519f6c"
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T12_ocr_write_41419",
+      "calls": [
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/img/receipt_a.jpg",
+            "language": "eng"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/receipt_a.jpg",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T10_price_monitor_alert_87476",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {}
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: ",
+              "url": "https://example.com/r1?q=",
+              "snippet": "Mock snippet 1 discussing . Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: ",
+              "url": "https://example.com/r2?q=",
+              "snippet": "Mock snippet 2 discussing . Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: ",
+              "url": "https://example.com/r3?q=",
+              "snippet": "Mock snippet 3 discussing . Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T14_sql_filter_email_41930",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT name FROM active_users",
+            "database": "archive"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT name FROM active_users",
+              "database": "archive"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T6_timezone_meeting_43957",
+      "calls": [
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Meeting",
+            "start_time": "2026-07-23T09:00:00+00:00",
+            "duration_minutes": 60,
+            "attendees": [
+              "alice@example.com"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_2e5393e1",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T1_weather_email_39144",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "current weather in Paris",
+            "max_results": 5
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com/r1?q=current+weather+in+Paris",
+            "max_chars": 2000
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "Paris weather today temperature conditions",
+            "max_results": 5
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://wttr.in/Paris?format=3",
+            "max_chars": 500
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: current weather in Paris",
+              "url": "https://example.com/r1?q=current+weather+in+Paris",
+              "snippet": "Mock snippet 1 discussing current weather in Paris. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: current weather in Paris",
+              "url": "https://example.com/r2?q=current+weather+in+Paris",
+              "snippet": "Mock snippet 2 discussing current weather in Paris. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: current weather in Paris",
+              "url": "https://example.com/r3?q=current+weather+in+Paris",
+              "snippet": "Mock snippet 3 discussing current weather in Paris. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com/r1?q=current+weather+in+Paris. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: Paris weather today temperature conditions",
+              "url": "https://example.com/r1?q=Paris+weather+today+temperature+conditions",
+              "snippet": "Mock snippet 1 discussing Paris weather today temperature conditions. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: Paris weather today temperature conditions",
+              "url": "https://example.com/r2?q=Paris+weather+today+temperature+conditions",
+              "snippet": "Mock snippet 2 discussing Paris weather today temperature conditions. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: Paris weather today temperature conditions",
+              "url": "https://example.com/r3?q=Paris+weather+today+temperature+conditions",
+              "snippet": "Mock snippet 3 discussing Paris weather today temperature conditions. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://wttr.in/Paris?format=3. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T22_calendar_list_filter_50406",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-01",
+            "end_date": "2026-08-31",
+            "max_events": 100
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "review",
+            "max_results": 5
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-01",
+              "end_date": "2026-08-31",
+              "max_events": 100
+            },
+            "tool": "calendar_list"
+          }
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: review",
+              "url": "https://example.com/r1?q=review",
+              "snippet": "Mock snippet 1 discussing review. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: review",
+              "url": "https://example.com/r2?q=review",
+              "snippet": "Mock snippet 2 discussing review. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: review",
+              "url": "https://example.com/r3?q=review",
+              "snippet": "Mock snippet 3 discussing review. Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T14_sql_filter_email_10558",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT id, email FROM customers LIMIT 5",
+            "database": "analytics"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT id, email FROM customers LIMIT 5",
+              "database": "analytics"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T20_audio_classify_notify_68791",
+      "calls": [
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_b.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        },
+        {
+          "tool": "audio_classify",
+          "args": {
+            "audio_path": "/audio/clip_b.mp3",
+            "categories": [
+              "speech",
+              "music",
+              "alarm",
+              "silence"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_b.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "audio_path": "/audio/clip_b.mp3",
+              "categories": [
+                "speech",
+                "music",
+                "alarm",
+                "silence"
+              ]
+            },
+            "tool": "audio_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_19183",
+      "calls": [
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "format_date",
+          "args": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "format": "%Y-%m-%d"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "datetime": "2026-07-23T10:00:00+00:00",
+              "format": "%Y-%m-%d"
+            },
+            "tool": "format_date"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T14_sql_filter_email_44650",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT id, email FROM customers LIMIT 5",
+            "database": "main"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT id, email FROM customers LIMIT 5",
+              "database": "main"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T14_sql_filter_email_96395",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT id, email FROM customers LIMIT 5",
+            "database": "main"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT id, email FROM customers LIMIT 5",
+              "database": "main"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T15_image_crop_ocr_26949",
+      "calls": [
+        {
+          "tool": "image_crop",
+          "args": {
+            "source_path": "/img/page_b.jpg",
+            "x": 100,
+            "y": 150,
+            "width": 200,
+            "height": 150,
+            "output_path": "/tmp/cropped_b.jpg"
+          }
+        },
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/tmp/cropped_b.jpg",
+            "language": "eng"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "source_path": "/img/page_b.jpg",
+              "x": 100,
+              "y": 150,
+              "width": 200,
+              "height": 150,
+              "output_path": "/tmp/cropped_b.jpg"
+            },
+            "tool": "image_crop"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/tmp/cropped_b.jpg",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T21_db_insert_email_30390",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "users",
+            "values": {
+              "name": "Alice",
+              "active": 1
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "bob@example.com",
+            "subject": "New user record created",
+            "body": "A new user record has been created with the name Alice."
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "users",
+              "values": {
+                "name": "Alice",
+                "active": 1
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_79a5db15"
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T22_calendar_list_filter_28447",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-01",
+            "end_date": "2026-09-30",
+            "max_events": 100
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-01",
+              "end_date": "2026-09-30",
+              "max_events": 100
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T12_ocr_write_40137",
+      "calls": [
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/img/receipt_b.jpg",
+            "language": "eng"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/receipt_b.jpg",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T15_image_crop_ocr_81061",
+      "calls": [
+        {
+          "tool": "image_crop",
+          "args": {
+            "source_path": "/img/page_a.jpg",
+            "x": 50,
+            "y": 150,
+            "width": 300,
+            "height": 150,
+            "output_path": "/tmp/cropped_b.jpg"
+          }
+        },
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/tmp/cropped_b.jpg",
+            "language": "eng"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "source_path": "/img/page_a.jpg",
+              "x": 50,
+              "y": 150,
+              "width": 300,
+              "height": 150,
+              "output_path": "/tmp/cropped_b.jpg"
+            },
+            "tool": "image_crop"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/tmp/cropped_b.jpg",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T15_image_crop_ocr_88131",
+      "calls": [
+        {
+          "tool": "image_crop",
+          "args": {
+            "source_path": "/img/page_b.jpg",
+            "x": 100,
+            "y": 150,
+            "width": 200,
+            "height": 100,
+            "output_path": "/tmp/cropped_b.png"
+          }
+        },
+        {
+          "tool": "ocr_extract",
+          "args": {
+            "image_path": "/tmp/cropped_b.png",
+            "language": "eng"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "source_path": "/img/page_b.jpg",
+              "x": 100,
+              "y": 150,
+              "width": 200,
+              "height": 100,
+              "output_path": "/tmp/cropped_b.png"
+            },
+            "tool": "image_crop"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/tmp/cropped_b.png",
+              "language": "eng"
+            },
+            "tool": "ocr_extract"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T6_timezone_meeting_36992",
+      "calls": [
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T11_image_email_49626",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_a.jpg",
+            "categories": [
+              "electronics",
+              "clothing",
+              "food"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_a.jpg",
+              "categories": [
+                "electronics",
+                "clothing",
+                "food"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_43995",
+      "calls": [
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T14_sql_filter_email_79977",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT name FROM active_users",
+            "database": "archive"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT name FROM active_users",
+              "database": "archive"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T14_sql_filter_email_38205",
+      "calls": [
+        {
+          "tool": "sql_query",
+          "args": {
+            "query": "SELECT id, email FROM customers LIMIT 5",
+            "database": "main"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "query": "SELECT id, email FROM customers LIMIT 5",
+              "database": "main"
+            },
+            "tool": "sql_query"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T11_image_email_89590",
+      "calls": [
+        {
+          "tool": "image_classify",
+          "args": {
+            "image_path": "/img/product_c.jpg",
+            "categories": [
+              "electronics",
+              "clothing",
+              "food"
+            ]
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "image_path": "/img/product_c.jpg",
+              "categories": [
+                "electronics",
+                "clothing",
+                "food"
+              ]
+            },
+            "tool": "image_classify"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T9_rss_filter_summarize_34437",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com/feed1",
+            "max_chars": 10000
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com/feed1. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_23788",
+      "calls": [
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "format_date",
+          "args": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "format": "%m/%d/%Y %H:%M"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Demo Day",
+            "start_time": "07/23/2026 10:00"
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "datetime": "2026-07-23T10:00:00+00:00",
+              "format": "%m/%d/%Y %H:%M"
+            },
+            "tool": "format_date"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_057e7525",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T1_weather_email_10887",
+      "calls": [
+        {
+          "tool": "search_web",
+          "args": {}
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: ",
+              "url": "https://example.com/r1?q=",
+              "snippet": "Mock snippet 1 discussing . Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: ",
+              "url": "https://example.com/r2?q=",
+              "snippet": "Mock snippet 2 discussing . Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: ",
+              "url": "https://example.com/r3?q=",
+              "snippet": "Mock snippet 3 discussing . Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T1_weather_email_71362",
+      "calls": [
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "Europe/London"
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&current_weather=true",
+            "max_chars": 2000
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "London current weather conditions today",
+            "max_results": 5
+          }
+        },
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://wttr.in/London?format=3",
+            "max_chars": 500
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "Europe/London",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://api.open-meteo.com/v1/forecast?latitude=51.5074&longitude=-0.1278&current_weather=true. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: London current weather conditions today",
+              "url": "https://example.com/r1?q=London+current+weather+conditions+today",
+              "snippet": "Mock snippet 1 discussing London current weather conditions today. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: London current weather conditions today",
+              "url": "https://example.com/r2?q=London+current+weather+conditions+today",
+              "snippet": "Mock snippet 2 discussing London current weather conditions today. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: London current weather conditions today",
+              "url": "https://example.com/r3?q=London+current+weather+conditions+today",
+              "snippet": "Mock snippet 3 discussing London current weather conditions today. Contains numbers: 42, 17, 88."
+            }
+          ]
+        },
+        {
+          "success": true,
+          "output": "Fetched content from https://wttr.in/London?format=3. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T18_datetime_format_calendar_90359",
+      "calls": [
+        {
+          "tool": "get_datetime",
+          "args": {
+            "timezone": "UTC"
+          }
+        },
+        {
+          "tool": "format_date",
+          "args": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "format": "%Y-%m-%d"
+          }
+        },
+        {
+          "tool": "calendar_add",
+          "args": {
+            "title": "Sprint Review",
+            "start_time": "2026-07-23T10:00:00+00:00",
+            "duration_minutes": 60,
+            "attendees": []
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "datetime": "2026-07-23T10:00:00+00:00",
+            "timezone": "UTC",
+            "weekday": "Thursday"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "datetime": "2026-07-23T10:00:00+00:00",
+              "format": "%Y-%m-%d"
+            },
+            "tool": "format_date"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "created",
+            "event_id": "evt_48a0c030",
+            "conflicts": []
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T10_price_monitor_alert_89759",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?interval=1d&range=1d",
+            "max_chars": 2000
+          }
+        },
+        {
+          "tool": "search_web",
+          "args": {
+            "query": "MSFT Microsoft stock price in GBP today",
+            "max_results": 5
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from https://query1.finance.yahoo.com/v8/finance/chart/MSFT?interval=1d&range=1d. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        },
+        {
+          "success": true,
+          "output": [
+            {
+              "title": "Result 1 for: MSFT Microsoft stock price in GBP today",
+              "url": "https://example.com/r1?q=MSFT+Microsoft+stock+price+in+GBP+today",
+              "snippet": "Mock snippet 1 discussing MSFT Microsoft stock price in GBP today. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 2 for: MSFT Microsoft stock price in GBP today",
+              "url": "https://example.com/r2?q=MSFT+Microsoft+stock+price+in+GBP+today",
+              "snippet": "Mock snippet 2 discussing MSFT Microsoft stock price in GBP today. Contains numbers: 42, 17, 88."
+            },
+            {
+              "title": "Result 3 for: MSFT Microsoft stock price in GBP today",
+              "url": "https://example.com/r3?q=MSFT+Microsoft+stock+price+in+GBP+today",
+              "snippet": "Mock snippet 3 discussing MSFT Microsoft stock price in GBP today. Contains numbers: 42, 17, 88."
+            }
+          ]
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T9_rss_filter_summarize_12736",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com/feed2",
+            "max_chars": 10000
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com/feed2. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T22_calendar_list_filter_74812",
+      "calls": [
+        {
+          "tool": "calendar_list",
+          "args": {
+            "start_date": "2026-08-01",
+            "end_date": "2026-09-30",
+            "max_events": 100
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "start_date": "2026-08-01",
+              "end_date": "2026-09-30",
+              "max_events": 100
+            },
+            "tool": "calendar_list"
+          }
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T21_db_insert_email_54330",
+      "calls": [
+        {
+          "tool": "db_insert",
+          "args": {
+            "table": "orders",
+            "values": {
+              "name": "Alice",
+              "active": 1
+            }
+          }
+        },
+        {
+          "tool": "send_email",
+          "args": {
+            "to": "alice@example.com",
+            "subject": "Confirmation",
+            "body": "Hi Alice, your record has been created successfully."
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": {
+            "echo": {
+              "table": "orders",
+              "values": {
+                "name": "Alice",
+                "active": 1
+              }
+            },
+            "tool": "db_insert"
+          }
+        },
+        {
+          "success": true,
+          "output": {
+            "status": "sent",
+            "message_id": "msg_a04b2786"
+          }
+        }
+      ],
+      "success": true,
+      "termination_reason": "agent_stopped"
+    },
+    {
+      "task_id": "T9_rss_filter_summarize_31800",
+      "calls": [
+        {
+          "tool": "fetch_url",
+          "args": {
+            "url": "https://example.com/feed2",
+            "max_chars": 10000
+          }
+        }
+      ],
+      "results": [
+        {
+          "success": true,
+          "output": "Fetched content from https://example.com/feed2. This page discusses the topic in detail. Key numbers: 42, 100, 250. Relevant facts and figures are presented throughout."
+        }
+      ],
+      "success": false,
+      "termination_reason": "agent_stopped"
+    }
+  ]
+}

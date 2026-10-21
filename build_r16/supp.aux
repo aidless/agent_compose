@@ -1,0 +1,54 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Per-Agent Per-Split Metric Tables}{1}{section.1}\protected@file@percent }
+\newlabel{app:per-agent-metrics}{{1}{1}{Per-Agent Per-Split Metric Tables}{section.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Per-agent per-split metric table (TSR, COC, ABA). ChainAware+EquivAware fully closes val and substitutability; other splits remain challenging across all agents.}}{1}{table.1}\protected@file@percent }
+\newlabel{tab:full-metrics}{{1}{1}{Per-agent per-split metric table (TSR, COC, ABA). ChainAware+EquivAware fully closes val and substitutability; other splits remain challenging across all agents}{table.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}DeepSeek-V4-Flash Validation}{1}{section.2}\protected@file@percent }
+\newlabel{app:deepseek-full}{{2}{1}{DeepSeek-V4-Flash Validation}{section.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces DeepSeek-V4-Flash per-split TSR (both agents at 200 instances per split, 1{,}600 tasks total). All cells complete; 95\% bootstrap CIs are listed in the following table.}}{2}{table.2}\protected@file@percent }
+\newlabel{tab:deepseek-full}{{2}{2}{DeepSeek-V4-Flash per-split TSR (both agents at 200 instances per split, 1{,}600 tasks total). All cells complete; 95\% bootstrap CIs are listed in the following table}{table.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces DeepSeek-V4-Flash TSR + CGG with 95\% bootstrap confidence intervals (1000 iterations, seed 42; both agents at N=200 per split). CIs are reported in CGG only when statistically distinct from zero.}}{2}{table.3}\protected@file@percent }
+\newlabel{tab:deepseek-ci}{{3}{2}{DeepSeek-V4-Flash TSR + CGG with 95\% bootstrap confidence intervals (1000 iterations, seed 42; both agents at N=200 per split). CIs are reported in CGG only when statistically distinct from zero}{table.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Statistical Test Outputs}{2}{section.3}\protected@file@percent }
+\newlabel{app:stats-full}{{3}{2}{Statistical Test Outputs}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Friedman Test}{2}{subsection.3.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Friedman test across 5 template agents, per-task paired ranks. Null hypothesis (all agents rank equally) rejected on every split.}}{2}{table.4}\protected@file@percent }
+\newlabel{tab:friedman-full}{{4}{2}{Friedman test across 5 template agents, per-task paired ranks. Null hypothesis (all agents rank equally) rejected on every split}{table.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Critical Difference}{2}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Pairwise Wilcoxon (selected contrasts)}{2}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Error Analysis Breakdown}{2}{section.4}\protected@file@percent }
+\newlabel{app:errors}{{4}{2}{Error Analysis Breakdown}{section.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}EquivAware Ablation}{2}{section.5}\protected@file@percent }
+\newlabel{app:equiv-ablation}{{5}{2}{EquivAware Ablation}{section.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Tool Library (30 tools across 8 domains)}{2}{section.6}\protected@file@percent }
+\newlabel{app:tools}{{6}{2}{Tool Library (30 tools across 8 domains)}{section.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Selected pairwise Wilcoxon signed-rank contrasts. Full $5 \times 5$ matrix in \texttt  {results/statistical\_tests.json} (attached as supplementary archive).}}{3}{table.5}\protected@file@percent }
+\newlabel{tab:wilcoxon}{{5}{3}{Selected pairwise Wilcoxon signed-rank contrasts. Full $5 \times 5$ matrix in \texttt {results/statistical\_tests.json} (attached as supplementary archive)}{table.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Error-type breakdown for Native FC (rates among failed tasks). Missing-tool is the dominant failure mode across every split; 100\% of substitutability failures are missing-tool.}}{3}{table.6}\protected@file@percent }
+\newlabel{tab:errors}{{6}{3}{Error-type breakdown for Native FC (rates among failed tasks). Missing-tool is the dominant failure mode across every split; 100\% of substitutability failures are missing-tool}{table.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Task Templates (25 across 6 chain lengths)}{3}{section.7}\protected@file@percent }
+\newlabel{app:templates}{{7}{3}{Task Templates (25 across 6 chain lengths)}{section.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces EquivAware lifts ChainAware's substitutability TSR from 0.250 (constant-tool baseline) to 1.000; no other split is affected.}}{4}{table.7}\protected@file@percent }
+\newlabel{tab:equiv-ablation}{{7}{4}{EquivAware lifts ChainAware's substitutability TSR from 0.250 (constant-tool baseline) to 1.000; no other split is affected}{table.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Chain-Length-Stratified TSR}{4}{section.8}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces TSR by expected chain length (Reflexion omitted: identical to ReAct). ChainAware's matched-length advantage appears at 3-tool systematicity and in substitutability, not in 4-tool productivity, where ReAct's lenient call-everything behavior scores higher.}}{4}{table.8}\protected@file@percent }
+\newlabel{tab:chain_strata}{{8}{4}{TSR by expected chain length (Reflexion omitted: identical to ReAct). ChainAware's matched-length advantage appears at 3-tool systematicity and in substitutability, not in 4-tool productivity, where ReAct's lenient call-everything behavior scores higher}{table.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}External Validity (Second Tool Library)}{4}{section.9}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces TSR on the second tool library (generic inference). Every agent drops from the i.i.d. validation split (1.00) to systematicity (0.43) and productivity (0.00 for template agents; 0.57 for ChainAware), and ChainAware is best on both compositional axes. Full per-agent values and the verdict are in \texttt  {results/external\_validity.json}.}}{4}{table.9}\protected@file@percent }
+\newlabel{tab:ext_validity}{{9}{4}{TSR on the second tool library (generic inference). Every agent drops from the i.i.d. validation split (1.00) to systematicity (0.43) and productivity (0.00 for template agents; 0.57 for ChainAware), and ChainAware is best on both compositional axes. Full per-agent values and the verdict are in \texttt {results/external\_validity.json}}{table.9}{}}
+\@writefile{toc}{\contentsline {paragraph}{Verdict and limitations.}{4}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}Three-Way Ablation (Training $\times $ Detector $\times $ Scoring)}{5}{section.10}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Three-way ablation. Training is necessary for substitutability under equivalence-aware scoring (0.25 $\rightarrow $ 1.00); the variant detector is inert on the metric (1.00 with or without it); and the equivalence-aware evaluator supplies the remaining credit---under strict scoring ChainAware drops to 0.205. On productivity, ReAct's lenient call-everything behavior scores higher than ChainAware under both scoring regimes.}}{5}{table.10}\protected@file@percent }
+\newlabel{tab:ablation_threeway}{{10}{5}{Three-way ablation. Training is necessary for substitutability under equivalence-aware scoring (0.25 $\rightarrow $ 1.00); the variant detector is inert on the metric (1.00 with or without it); and the equivalence-aware evaluator supplies the remaining credit---under strict scoring ChainAware drops to 0.205. On productivity, ReAct's lenient call-everything behavior scores higher than ChainAware under both scoring regimes}{table.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {11}Seed-Level Variance (5 independent seeds)}{5}{section.11}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces TSR mean and min--max range over 5 independent task seeds (split sizes are 400, 600, 600, and 200, respectively). Chain-Aware shows the largest productivity variance (0.293--0.452), so single-seed comparisons should use its 5-seed mean.}}{5}{table.11}\protected@file@percent }
+\newlabel{tab:seed_variance}{{11}{5}{TSR mean and min--max range over 5 independent task seeds (split sizes are 400, 600, 600, and 200, respectively). Chain-Aware shows the largest productivity variance (0.293--0.452), so single-seed comparisons should use its 5-seed mean}{table.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {12}Hyperparameters and Configuration}{5}{section.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {13}Bootstrap 95\% Confidence Intervals (TSR)}{6}{section.13}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Task Success Rate (TSR) with bootstrap 95\% CIs per split (both DeepSeek agents at N=200 per split).}}{6}{table.12}\protected@file@percent }
+\newlabel{tab:bootstrap_ci}{{12}{6}{Task Success Rate (TSR) with bootstrap 95\% CIs per split (both DeepSeek agents at N=200 per split)}{table.12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {14}Reproducibility Checklist (NeurIPS-style)}{6}{section.14}\protected@file@percent }
+\gdef \@abspage@last{6}

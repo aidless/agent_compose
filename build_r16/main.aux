@@ -1,0 +1,111 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{schick2023toolformer,yao2023react,qin2023toolllm}
+\citation{liu2024agentbench,trivedi2024appworld,patil2024bfcl}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Compositional Generalization Gap across five agent paradigms. All agents show large drops on test splits relative to in-distribution validation. ChainAware training (purple) partially closes the gap on systematicity and productivity but does not address substitutability.}}{2}{figure.1}\protected@file@percent }
+\newlabel{fig:cgg}{{1}{2}{Compositional Generalization Gap across five agent paradigms. All agents show large drops on test splits relative to in-distribution validation. ChainAware training (purple) partially closes the gap on systematicity and productivity but does not address substitutability}{figure.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Problem Formalization}{2}{section.2}\protected@file@percent }
+\newlabel{sec:problem}{{2}{2}{Problem Formalization}{section.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces The 30 tools in AgentCompose, organized by 8 domains. Three domains (data/database, image/vision, audio/speech) are added beyond the original 10-tool pilot.}}{3}{table.1}\protected@file@percent }
+\newlabel{tab:tools}{{1}{3}{The 30 tools in AgentCompose, organized by 8 domains. Three domains (data/database, image/vision, audio/speech) are added beyond the original 10-tool pilot}{table.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces AgentCompose splits (3{,}000 tasks total). Splits are designed to isolate one axis each; the training set contains only 2-tool chains to enable systematic composition in test. Construction checks are verified programmatically (\texttt  {scripts/audit\_split\_leakage.py}; \texttt  {results/split\_leakage\_audit.json}).}}{3}{table.2}\protected@file@percent }
+\newlabel{tab:splits}{{2}{3}{AgentCompose splits (3{,}000 tasks total). Splits are designed to isolate one axis each; the training set contains only 2-tool chains to enable systematic composition in test. Construction checks are verified programmatically (\texttt {scripts/audit\_split\_leakage.py}; \texttt {results/split\_leakage\_audit.json})}{table.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}The AgentCompose Benchmark}{3}{section.3}\protected@file@percent }
+\newlabel{sec:benchmark}{{3}{3}{The AgentCompose Benchmark}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Tool Library}{3}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Task Templates and Splits}{3}{subsection.3.2}\protected@file@percent }
+\citation{yao2023react}
+\citation{shinn2023reflexion}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Simulator and Evaluation}{4}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Experiments}{4}{section.4}\protected@file@percent }
+\newlabel{sec:experiments}{{4}{4}{Experiments}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Main Results}{4}{subsection.4.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Task Success Rate (TSR) on the 30-tool / 3{,}000-task AgentCompose benchmark. The four splits contain 400, 600, 600, and 200 instances, respectively. Template-agent rows report 5-seed means with min--max ranges (seed set 42, 1--4); both DeepSeek rows use 200 instances per split (1{,}600 tasks total) with bootstrap 95\% CIs. EquivAware extends ChainAware with equivalence-group detection; see Section~\ref {sec:equiv}. Bootstrap CIs and 5-seed variance accompany all rows (Supplementary Tables~\ref {tab:bootstrap_ci} and~\ref {tab:seed_variance}).}}{5}{table.3}\protected@file@percent }
+\newlabel{tab:main}{{3}{5}{Task Success Rate (TSR) on the 30-tool / 3{,}000-task AgentCompose benchmark. The four splits contain 400, 600, 600, and 200 instances, respectively. Template-agent rows report 5-seed means with min--max ranges (seed set 42, 1--4); both DeepSeek rows use 200 instances per split (1{,}600 tasks total) with bootstrap 95\% CIs. EquivAware extends ChainAware with equivalence-group detection; see Section~\ref {sec:equiv}. Bootstrap CIs and 5-seed variance accompany all rows (Supplementary Tables~\ref {tab:bootstrap_ci} and~\ref {tab:seed_variance})}{table.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Substitutability decomposed into true substitutions (159 tasks where a canonical tool is replaced by a functional equivalent) and controls (41 tasks whose chains contain no substitutable tool; these templates---e.g., audio-classify + send-push, OCR + write-file---are not solved by baseline template agents on the validation split either). ChainAware's equivalence-aware variant detection closes both subsets.}}{5}{table.4}\protected@file@percent }
+\newlabel{tab:sub_decomp}{{4}{5}{Substitutability decomposed into true substitutions (159 tasks where a canonical tool is replaced by a functional equivalent) and controls (41 tasks whose chains contain no substitutable tool; these templates---e.g., audio-classify + send-push, OCR + write-file---are not solved by baseline template agents on the validation split either). ChainAware's equivalence-aware variant detection closes both subsets}{table.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Error-type breakdown for Native FC. Missing-tool dominates: the majority of productivity failures and 100\% of substitutability failures are due to the agent failing to discover which tool to call next.}}{6}{figure.2}\protected@file@percent }
+\newlabel{fig:errors}{{2}{6}{Error-type breakdown for Native FC. Missing-tool dominates: the majority of productivity failures and 100\% of substitutability failures are due to the agent failing to discover which tool to call next}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Error Analysis}{6}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Method: Chain-Aware Fine-Tuning}{6}{section.5}\protected@file@percent }
+\newlabel{sec:method}{{5}{6}{Method: Chain-Aware Fine-Tuning}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Statistical Tests}{6}{subsection.5.1}\protected@file@percent }
+\newlabel{sec:stats}{{5.1}{6}{Statistical Tests}{subsection.5.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Friedman test across the five template-agent rows (three distinct behaviors; see text). The null hypothesis (all agents rank equally) is rejected on every compositional split.}}{7}{table.5}\protected@file@percent }
+\newlabel{tab:friedman}{{5}{7}{Friedman test across the five template-agent rows (three distinct behaviors; see text). The null hypothesis (all agents rank equally) is rejected on every compositional split}{table.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Critical Difference (Demsar, 2006) diagram across the five template-agent rows on \texttt  {test\_productivity} (Reflexion$\equiv $ReAct and NativeFC$\equiv $PlanExecute in this heuristic implementation; see degeneracy note). Lower ranks are better. ChainAware is statistically indistinguishable from the strongest baseline at $CD = 0.25$; all agents are significantly better than Plan-Execute and Native FC.}}{7}{figure.3}\protected@file@percent }
+\newlabel{fig:cd}{{3}{7}{Critical Difference (Demsar, 2006) diagram across the five template-agent rows on \texttt {test\_productivity} (Reflexion$\equiv $ReAct and NativeFC$\equiv $PlanExecute in this heuristic implementation; see degeneracy note). Lower ranks are better. ChainAware is statistically indistinguishable from the strongest baseline at $CD = 0.25$; all agents are significantly better than Plan-Execute and Native FC}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}EquivAware: Detecting Functional Equivalents}{7}{subsection.5.2}\protected@file@percent }
+\newlabel{sec:equiv}{{5.2}{7}{EquivAware: Detecting Functional Equivalents}{subsection.5.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Equivalence protocol (complete).}{7}{section*.1}\protected@file@percent }
+\citation{qin2023toolllm}
+\citation{liu2024agentbench}
+\citation{trivedi2024appworld}
+\citation{yao2024tau}
+\citation{patil2024bfcl}
+\citation{jimenez2024swe}
+\citation{lake2018generalization}
+\citation{kim2020cogs}
+\citation{hupkes2020}
+\citation{lake2018generalization}
+\citation{yao2023react}
+\citation{schick2023toolformer}
+\citation{shinn2023reflexion}
+\citation{wei2022chain}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Six equivalence groups spanning the 30-tool AgentCompose library. The substitutability split substitutes canonical $\to $ variant on the first substitutable tool in each validation task's chain.}}{8}{table.6}\protected@file@percent }
+\newlabel{tab:equiv}{{6}{8}{Six equivalence groups spanning the 30-tool AgentCompose library. The substitutability split substitutes canonical $\to $ variant on the first substitutable tool in each validation task's chain}{table.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Effect of synthetic chain augmentation. Productivity TSR improves from 0.145 to 0.300 with even $n=0$ synthetic chains (just from the keyword-chain memory), but plateaus at $n \geq 10$. Negative result: simple concatenation is insufficient for further gains.}}{8}{figure.4}\protected@file@percent }
+\newlabel{fig:ablation}{{4}{8}{Effect of synthetic chain augmentation. Productivity TSR improves from 0.145 to 0.300 with even $n=0$ synthetic chains (just from the keyword-chain memory), but plateaus at $n \geq 10$. Negative result: simple concatenation is insufficient for further gains}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Ablation: Effect of Synthetic Chains}{8}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Related Work}{8}{section.6}\protected@file@percent }
+\newlabel{sec:related}{{6}{8}{Related Work}{section.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{Agent benchmarks.}{8}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Compositional generalization in NLP.}{8}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Agent methods.}{8}{section*.4}\protected@file@percent }
+\bibstyle{tmlr}
+\bibdata{refs}
+\bibcite{deepseek2024v3}{{1}{2024}{{DeepSeek-AI}}{{}}}
+\bibcite{hupkes2020}{{2}{2020}{{Hupkes et~al.}}{{Hupkes, Dankers, Mul, and Bruni}}}
+\bibcite{jimenez2024swe}{{3}{2024}{{Jimenez et~al.}}{{Jimenez, Yang, Wettig, Yao, Pei, Press, and Narasimhan}}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Discussion and Limitations}{9}{section.7}\protected@file@percent }
+\newlabel{sec:discussion}{{7}{9}{Discussion and Limitations}{section.7}{}}
+\@writefile{toc}{\contentsline {paragraph}{Real LLM validation.}{9}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Negative result on synthetic augmentation.}{9}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Scale at 30 tools / 3{,}000 tasks.}{9}{section*.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Reproducibility.}{9}{section*.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Broader Impact and Ethics}{9}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9}Conclusion}{9}{section.9}\protected@file@percent }
+\newlabel{sec:conclusion}{{9}{9}{Conclusion}{section.9}{}}
+\@writefile{toc}{\contentsline {paragraph}{Future work.}{9}{section*.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Acknowledgments}{9}{section*.10}\protected@file@percent }
+\bibcite{kim2020cogs}{{4}{2020}{{Kim \& Linzen}}{{Kim and Linzen}}}
+\bibcite{lake2018generalization}{{5}{2018}{{Lake \& Baroni}}{{Lake and Baroni}}}
+\bibcite{liu2024agentbench}{{6}{2024}{{Liu et~al.}}{{Liu, Yu, Zhang, Xu, Lei, Wang, Ding, Wen, Zhou, Zhang, Ding, Li, Li, Wang, Liu, Zhang, Lu, Bai, Feng, Hu, Guo, and Yin}}}
+\bibcite{patil2024bfcl}{{7}{2024}{{Patil et~al.}}{{Patil, Zhang, Wang, and Gonzalez}}}
+\bibcite{qin2023toolllm}{{8}{2023}{{Qin et~al.}}{{Qin, Liang, Ye, Zhu, Yan, Lu, Lin, Cong, Tang, Qian, Zhao, Hong, Hong, Gao, Chen, Xiao, Lu, Wang, Song, Fang, Zhao, Xu, Miao, Lin, Wang, Huang, Wang, Liu, Han, Sun, and Sun}}}
+\bibcite{schick2023toolformer}{{9}{2023}{{Schick et~al.}}{{Schick, Dwivedi-Yu, Dess\`i, Raileanu, Lomeli, Zettlemoyer, Cancedda, and Scialom}}}
+\bibcite{shinn2023reflexion}{{10}{2023}{{Shinn et~al.}}{{Shinn, Cassano, Gopinath, Narasimhan, and Yao}}}
+\bibcite{trivedi2024appworld}{{11}{2024}{{Trivedi et~al.}}{{Trivedi, Khot, Hartmann, Minkov, Appalaraju, Gupta, Khot, Khashabi, Sabharwal, and Clark}}}
+\bibcite{wei2022chain}{{12}{2022}{{Wei et~al.}}{{Wei, Wang, Schuurmans, Bosma, Ichter, Xia, Chi, Le, and Zhou}}}
+\bibcite{yao2023react}{{13}{2023}{{Yao et~al.}}{{Yao, Zhao, Yu, Du, Shafran, Narasimhan, and Cao}}}
+\bibcite{yao2024tau}{{14}{2024}{{Yao et~al.}}{{Yao, Heinecke, Nie, Miao, Chen, Zhao, Khashabi, Chen, Hmamouche, Fang, Xia, Gui, Liu, Wang, Li, Chai, Shan, Wang, Wang, He, Zhang, Liu, Wu, Shi, Shinn, Xu, Yang, Shen, Tang, Ho, Yu, Lin, Ni, Yang, Chen, Zhu, Liang, Wang, Yu, Karp, Wu, Huang, He, Huang, Xu, Liang, Zhang, Zhang, Fu, Lu, Ye, Zhang, Zhang, Yang, Wang, Zhang, Zhou, Guo, and Zhao}}}
+\citation{deepseek2024v3}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Appendix}{11}{appendix.A}\protected@file@percent }
+\newlabel{app:llm}{{A}{11}{Appendix}{appendix.A}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Full Per-Agent Per-Split Metrics}{11}{subsection.A.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Per-agent per-split metric heatmap. TSR, COC, ABA for each (agent, split) cell.}}{11}{figure.5}\protected@file@percent }
+\newlabel{fig:heatmap}{{5}{11}{Per-agent per-split metric heatmap. TSR, COC, ABA for each (agent, split) cell}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Chain Length Distribution}{11}{subsection.A.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Distribution of chain lengths per split. Test splits have longer chains than training.}}{11}{figure.6}\protected@file@percent }
+\newlabel{fig:chain_dist}{{6}{11}{Distribution of chain lengths per split. Test splits have longer chains than training}{figure.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Reproducibility}{11}{subsection.A.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.4}Real LLM Validation: DeepSeek-V4-Flash}{12}{subsection.A.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces DeepSeek-V4-Flash validation (DeepSeek-ReAct at $N{=}200$ per split; DeepSeek-FC at $N{=}100$). 95\% bootstrap CIs (1000 iter) are reported in the supplementary. CGG$_{\text  {prod}}$ = TSR$_{\text  {val}} -$ TSR$_{\text  {productivity}}$; CGG$_{\text  {sub}}$ similarly.}}{12}{table.7}\protected@file@percent }
+\newlabel{tab:llm}{{7}{12}{DeepSeek-V4-Flash validation (DeepSeek-ReAct at $N{=}200$ per split; DeepSeek-FC at $N{=}100$). 95\% bootstrap CIs (1000 iter) are reported in the supplementary. CGG$_{\text {prod}}$ = TSR$_{\text {val}} -$ TSR$_{\text {productivity}}$; CGG$_{\text {sub}}$ similarly}{table.7}{}}
+\@writefile{toc}{\contentsline {paragraph}{Findings.}{12}{section*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Bootstrap confidence intervals.}{12}{section*.13}\protected@file@percent }
+\gdef \@abspage@last{12}

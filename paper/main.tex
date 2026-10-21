@@ -20,12 +20,7 @@
 \emergencystretch=2em
 
 \title{AgentCompose: Quantifying Compositional Generalization \\ in LLM Tool Use}
-
-\author{
-Anonymous \\
-Anonymous Institution \\
-\texttt{anonymous@example.com}
-}
+\author{Zewen Liu \\ Qilu Institute of Technology \\ \texttt{liuzewen@qlnu.edu.cn}}
 
 \date{}
 
@@ -191,6 +186,8 @@ Table~\ref{tab:main} reports the headline results. Three observations:
     \item \textbf{Productivity is the hardest axis}: Mean TSR on the productivity split is 0.37 for the four baseline agents and 0.45 for ChainAware. The upper bound on the largest unseen 4-tool chains remains below 0.55 across all paradigms.
     \item \textbf{Substitutability is universally unsolved without EquivAware}: All four baseline template agents score 0.25 on substitutability---the same as a constant-tool predictor that ignores the substituted variant. EquivAware lifts ChainAware to 1.00 by detecting the variant named in the natural-language prompt and substituting it into the committed chain.
 \end{enumerate}
+
+Compositional-gap power (unit is one task): for the productivity gap on disk (Val $N{=}400$, productivity $N{=}600$) the two-sample two-sided $\alpha{=}0.05$, power $0.8$ minimum detectable rate difference is $\mathrm{MDE}{=}(z_{.975}{+}z_{.8})\sqrt{0.25(1/400{+}1/600)}{=}(1.960{+}0.842)\times 0.0323{\approx}0.09$, so the ChainAware Val-to-productivity gap ($1.00{-}0.45{=}0.55$) is well above MDE while sub-$0.09$ inter-agent differences on the same split are not distinguishable; the ChainAware+EquivAware substitutability $1.00$ is an evaluator-side routing rule (Sec.~\ref{sec:equiv}) and is reported as diagnostic only, not as a pre-registered confirmatory agent-capability contrast.
 
 The lenient ``call-everything'' behavior that ReAct and Reflexion exhibit on in-distribution tasks backfires on systematicity and productivity: they call the wrong number of tools in the wrong order, failing the strict success criteria.
 

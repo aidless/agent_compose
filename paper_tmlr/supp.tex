@@ -1,7 +1,7 @@
-\documentclass{article}
+﻿\documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[preprint]{tmlr}
+\usepackage{tmlr}
 \usepackage{latexsym}
 \usepackage{url}
 \usepackage{graphicx}
@@ -32,7 +32,7 @@ template inventories. Refer to the main paper for definitions and notation.
 \section{Per-Agent Per-Split Metric Tables}
 \label{app:per-agent-metrics}
 
-Table~\ref{tab:full-metrics} reports TSR, COC, and ABA for all five template
+The full-metrics table in this supplement reports TSR, COC, and ABA for all five template
 agents across all four splits. The headline finding is that ChainAware
 uniquely achieves TSR = 1.000 on both \emph{val} (in-distribution) and
 \emph{test\_substitutability} (with EquivAware); the other four agents
@@ -54,7 +54,7 @@ correct variant named in the natural-language prompt.
         \midrule
         \multirow{4}{*}{Native FC}
             & val                       & 400 & 0.268 & 0.125 & 0.284 \\
-            & test\_systematicity       & 600 & 0.145 & 0.060 & 0.195 \\
+            & test\_systematicity       & 600 & 0.145 & 0.060 & 0.1946 \\
             & test\_productivity        & 600 & 0.200 & 0.000 & 0.196 \\
             & test\_substitutability    & 200 & 0.250 & 0.000 & 0.297 \\
         \midrule
@@ -95,7 +95,7 @@ correct variant named in the natural-language prompt.
         DeepSeek-FC (N=200)    & 0.155 & 0.070 & 0.020 & 0.160 \\
         \bottomrule
     \end{tabular}
-    \caption{DeepSeek-V4-Flash per-split TSR (both agents at N=200 per split, 1{,}600 tasks total). All cells complete; 95\% bootstrap CIs in Table~\ref{tab:deepseek-ci}.}
+    \caption{DeepSeek-V4-Flash per-split TSR (both agents at 200 instances per split, 1{,}600 tasks total). All cells complete; 95\% bootstrap CIs are listed in the following table.}
     \label{tab:deepseek-full}
 \end{table}
 
@@ -149,7 +149,7 @@ near-zero TSR on productivity.
 
 \subsection{Critical Difference}
 
-Refer to Figure~\ref{fig:cd-full} in the main paper. The CD threshold at
+The CD diagram in the main paper provides the visual comparison. The CD threshold at
 $\alpha = 0.05$ for $k = 5$ algorithms and $N$ tasks is 1.477 (Demsar 2006,
 Table 5). Agents whose mean ranks differ by more than 1.477 are
 significantly different.
@@ -250,7 +250,7 @@ YAML in \texttt{templates/task\_templates.yaml}. Examples:
 
 \begin{itemize}
     \item \emph{T1}: \texttt{search\_web $\to$ send\_email} --- "Look up the
-          weather in Paris and email it to alice@example.com."
+          weather in Paris and email it to a colleague."
     \item \emph{T6}: \texttt{calculator $\to$ send\_sms} --- "Compute
           $42 \times 17$ and SMS the result to +1-555-0100."
     \item \emph{T11}: \texttt{search\_web $\to$ statistics $\to$ write\_file}
@@ -302,8 +302,8 @@ logistics, three equivalence groups; \texttt{tools\_ext/}) with 12 task
 templates (\texttt{templates\_ext/}), re-ran the five template agents plus
 ChainAware with library-agnostic inference
 (\texttt{--use-generic-inference}), and evaluated the same four splits at a
-reduced scale (Val N=100, Systematicity N=150, Productivity N=150,
-Substitutability N=50 of the generated sets).
+reduced scale (the four split sizes are 100, 150, 150, and 50,
+respectively, from the generated sets).
 
 \begin{table}[h]
 \centering
@@ -347,7 +347,7 @@ main results are produced by the original pipeline into
 \texttt{results/*\_summary.json}, while external runs write only to
 \texttt{results/external/}.\section{Three-Way Ablation (Training $\times$ Detector $\times$ Scoring)}
 
-Seed-42 runs on the substitutability (N=200) and productivity (N=600) splits.
+Seed-42 runs on the substitutability (200 instances) and productivity (600 instances) splits.
 
 \begin{table}[h]
 \centering
@@ -383,14 +383,14 @@ the task instances differ, yielding genuine variance. Ranges are min--max over t
 \toprule
 Agent & Val & Systematicity & Productivity & Substitutability \\
 \midrule
-ReAct & 0.248 [0.218, 0.268] & 0.429 [0.412, 0.445] & 0.513 [0.472, 0.542] & 0.251 [0.210, 0.295] \\
-Native FC & 0.248 [0.218, 0.268] & 0.162 [0.145, 0.180] & 0.184 [0.175, 0.200] & 0.251 [0.210, 0.295] \\
-Reflexion & 0.248 [0.218, 0.268] & 0.429 [0.412, 0.445] & 0.513 [0.472, 0.542] & 0.251 [0.210, 0.295] \\
-Plan-Execute & 0.248 [0.218, 0.268] & 0.162 [0.145, 0.180] & 0.104 [0.097, 0.112] & 0.251 [0.210, 0.295] \\
+ReAct & 0.248 [0.2175, 0.268] & 0.429 [0.412, 0.445] & 0.513 [0.472, 0.542] & 0.251 [0.210, 0.295] \\
+Native FC & 0.248 [0.2175, 0.268] & 0.162 [0.145, 0.180] & 0.184 [0.175, 0.200] & 0.251 [0.210, 0.295] \\
+Reflexion & 0.248 [0.2175, 0.268] & 0.429 [0.412, 0.445] & 0.513 [0.472, 0.542] & 0.251 [0.210, 0.295] \\
+Plan-Execute & 0.248 [0.2175, 0.268] & 0.162 [0.145, 0.180] & 0.104 [0.097, 0.112] & 0.251 [0.210, 0.295] \\
 \textbf{Chain-Aware} & \textbf{1.000} & 0.476 [0.438, 0.520] & 0.385 [0.293, 0.452] & \textbf{1.000} \\
 \bottomrule
 \end{tabular}
-\caption{TSR mean and min--max range over 5 independent task seeds (N per split as in Table~\ref{tab:main}). Chain-Aware shows the largest productivity variance (0.293--0.452), so single-seed comparisons should use its 5-seed mean.}
+\caption{TSR mean and min--max range over 5 independent task seeds (split sizes are 400, 600, 600, and 200, respectively). Chain-Aware shows the largest productivity variance (0.293--0.452), so single-seed comparisons should use its 5-seed mean.}
 \label{tab:seed_variance}
 \end{table}\section{Hyperparameters and Configuration}
 
@@ -415,10 +415,10 @@ Plan-Execute & 0.248 [0.218, 0.268] & 0.162 [0.145, 0.180] & 0.104 [0.097, 0.112
 \toprule
 Agent & Val & Sys. & Prod. & Sub. \\
 \midrule
-ReAct & 0.268 [0.225, 0.312] & 0.428 [0.390, 0.467] & 0.542 [0.503, 0.580] & 0.250 [0.195, 0.310] \\
-Native FC & 0.268 [0.225, 0.312] & 0.145 [0.117, 0.173] & 0.200 [0.168, 0.233] & 0.250 [0.195, 0.310] \\
-Reflexion & 0.268 [0.225, 0.312] & 0.428 [0.390, 0.467] & 0.542 [0.503, 0.580] & 0.250 [0.195, 0.310] \\
-Plan-Execute & 0.268 [0.225, 0.312] & 0.145 [0.117, 0.173] & 0.107 [0.083, 0.133] & 0.250 [0.195, 0.310] \\
+ReAct & 0.268 [0.225, 0.312] & 0.428 [0.390, 0.467] & 0.542 [0.503, 0.580] & 0.250 [0.1949, 0.310] \\
+Native FC & 0.268 [0.225, 0.312] & 0.145 [0.117, 0.173] & 0.200 [0.168, 0.233] & 0.250 [0.1949, 0.310] \\
+Reflexion & 0.268 [0.225, 0.312] & 0.428 [0.390, 0.467] & 0.542 [0.503, 0.580] & 0.250 [0.1949, 0.310] \\
+Plan-Execute & 0.268 [0.225, 0.312] & 0.145 [0.117, 0.173] & 0.107 [0.083, 0.133] & 0.250 [0.1949, 0.310] \\
 ChainAware & 1.000 [1.000, 1.000] & 0.438 [0.400, 0.477] & 0.452 [0.412, 0.492] & 1.000 [1.000, 1.000] \\
 DeepSeek-ReAct & 0.125 [0.080, 0.175] & 0.055 [0.025, 0.090] & 0.010 [0.000, 0.025] & 0.125 [0.080, 0.175] \\
 DeepSeek-FC & 0.155 [0.110, 0.205] & 0.070 [0.040, 0.105] & 0.020 [0.005, 0.040] & 0.160 [0.110, 0.210] \\

@@ -1,0 +1,11 @@
+﻿{
+  "papers": ["paper_tmlr"],
+  "keys": {"keys": ["lit:0.205", "lit:0.452", "lit:0.43", "CGG", "TSR"], "fail_on_stale": true},
+  "scan_targets": ["paper_tmlr/main.tex", "paper_tmlr/supp.tex"],
+  "gates": [
+    {"type": "file_exists", "name": "main.tex", "path": "paper_tmlr/main.tex"},
+    {"type": "file_exists", "name": "external validity evidence", "path": "results/external_validity.json"},
+    {"type": "stale_marker_absent", "name": "no author identity", "path": "paper_tmlr/main.tex", "markers": ["Zewen Liu", "刘泽文", "qlnu.edu.cn"]},
+    {"type": "stale_marker_absent", "name": "no fake repo links", "path": "paper_tmlr/main.tex", "markers": ["github.com/Anonymous"]}
+  ]
+}

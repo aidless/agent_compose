@@ -1,0 +1,133 @@
+\begin{thebibliography}{14}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{DeepSeek-AI}(2024)]{deepseek2024v3}
+{DeepSeek-AI}.
+\newblock {DeepSeek-V3} technical report.
+\newblock Technical report, DeepSeek-AI, 2024.
+\newblock arXiv preprint arXiv:2412.19437.
+
+\bibitem[Hupkes et~al.(2020)Hupkes, Dankers, Mul, and Bruni]{hupkes2020}
+Dieuwke Hupkes, Verna Dankers, Mathijs Mul, and Elia Bruni.
+\newblock Compositionality decomposed: How do neural networks generalise?
+\newblock \emph{Journal of Artificial Intelligence Research}, 67:\penalty0
+  757--795, 2020.
+
+\bibitem[Jimenez et~al.(2024)Jimenez, Yang, Wettig, Yao, Pei, Press, and
+  Narasimhan]{jimenez2024swe}
+Carlos~E. Jimenez, John Yang, Alexander Wettig, Shunyu Yao, Kexin Pei, Ofir
+  Press, and Karthik Narasimhan.
+\newblock {SWE}-bench: Can language models resolve real-world github issues?
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2024.
+
+\bibitem[Kim \& Linzen(2020)Kim and Linzen]{kim2020cogs}
+Najoung Kim and Tal Linzen.
+\newblock {COGS}: A compositional generalization challenge based on semantic
+  interpretation.
+\newblock In \emph{Proceedings of the 2020 Conference on Empirical Methods in
+  Natural Language Processing (EMNLP)}, 2020.
+
+\bibitem[Lake \& Baroni(2018)Lake and Baroni]{lake2018generalization}
+Brenden~M. Lake and Marco Baroni.
+\newblock Generalization without systematicity: On the compositional skills of
+  sequence-to-sequence recurrent networks.
+\newblock In \emph{Proceedings of the 35th International Conference on Machine
+  Learning (ICML)}, 2018.
+
+\bibitem[Liu et~al.(2024)Liu, Yu, Zhang, Xu, Lei, Wang, Ding, Wen, Zhou, Zhang,
+  Ding, Li, Li, Wang, Liu, Zhang, Lu, Bai, Feng, Hu, Guo, and
+  Yin]{liu2024agentbench}
+Xiao Liu, Hao Yu, Hanchen Zhang, Yifan Xu, Yu~Lei, Hao Wang, Yi~Ding, Jie Wen,
+  Jie Zhou, Xin Zhang, Shuxian Ding, Ning Li, Xiaohua Li, Haoran Wang, Haiyang
+  Liu, Ming Zhang, Zhili Lu, Chen Bai, Tianbao Feng, Dingkun Hu, Yang Guo, and
+  Da~Yin.
+\newblock {AgentBench}: Evaluating llms as agents.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2024.
+
+\bibitem[Patil et~al.(2024)Patil, Zhang, Wang, and Gonzalez]{patil2024bfcl}
+Shishir~G. Patil, Tianjun Zhang, Xin Wang, and Joseph~E. Gonzalez.
+\newblock Berkeley function calling leaderboard.
+\newblock Technical report, UC Berkeley, 2024.
+
+\bibitem[Qin et~al.(2023)Qin, Liang, Ye, Zhu, Yan, Lu, Lin, Cong, Tang, Qian,
+  Zhao, Hong, Hong, Gao, Chen, Xiao, Lu, Wang, Song, Fang, Zhao, Xu, Miao, Lin,
+  Wang, Huang, Wang, Liu, Han, Sun, and Sun]{qin2023toolllm}
+Yujia Qin, Shihao Liang, Yining Ye, Kunlun Zhu, Lan Yan, Yaxi Lu, Yankai Lin,
+  Xin Cong, Xiangru Tang, Bill Qian, Sihan Zhao, Lauren Hong, Runchu Hong, Shu
+  Gao, Jean Chen, Minglei Xiao, Ruilin Lu, Xinyu Wang, Song Song, Jiawei Fang,
+  Jie Zhao, Yiliu Xu, Wei Miao, Sitao Lin, Qinyuan Wang, Ranran Huang, Leyang
+  Wang, Zhiyuan Liu, Xu~Han, Maosong Sun, and Hao Sun.
+\newblock {ToolLLM}: Facilitating large language models to master 16000+
+  real-world apis.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2023.
+
+\bibitem[Schick et~al.(2023)Schick, Dwivedi-Yu, Dess\`i, Raileanu, Lomeli,
+  Zettlemoyer, Cancedda, and Scialom]{schick2023toolformer}
+Timo Schick, Jane Dwivedi-Yu, Roberto Dess\`i, Roberta Raileanu, Maria Lomeli,
+  Luke Zettlemoyer, Nicola Cancedda, and Thomas Scialom.
+\newblock Toolformer: Language models can teach themselves to use tools.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2023.
+
+\bibitem[Shinn et~al.(2023)Shinn, Cassano, Gopinath, Narasimhan, and
+  Yao]{shinn2023reflexion}
+Noah Shinn, Federico Cassano, Edward Gopinath, Karthik Narasimhan, and Shunyu
+  Yao.
+\newblock Reflexion: Language agents with verbal reinforcement learning.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2023.
+
+\bibitem[Trivedi et~al.(2024)Trivedi, Khot, Hartmann, Minkov, Appalaraju,
+  Gupta, Khot, Khashabi, Sabharwal, and Clark]{trivedi2024appworld}
+Harsh Trivedi, Tushar Khot, Mareike Hartmann, Ruslan Minkov, Sashank
+  Appalaraju, Supriya Gupta, Ashish Khot, Daniel Khashabi, Ashish Sabharwal,
+  and Peter Clark.
+\newblock {AppWorld}: A controllable world of apps and people for benchmarking
+  interactive coding agents.
+\newblock In \emph{Proceedings of the 62nd Annual Meeting of the Association
+  for Computational Linguistics (ACL)}, 2024.
+
+\bibitem[Wei et~al.(2022)Wei, Wang, Schuurmans, Bosma, Ichter, Xia, Chi, Le,
+  and Zhou]{wei2022chain}
+Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia,
+  Ed~Chi, Quoc Le, and Denny Zhou.
+\newblock Chain-of-thought prompting elicits reasoning in large language
+  models.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2022.
+
+\bibitem[Yao et~al.(2023)Yao, Zhao, Yu, Du, Shafran, Narasimhan, and
+  Cao]{yao2023react}
+Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan,
+  and Yuan Cao.
+\newblock {ReAct}: Synergizing reasoning and acting in language models.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2023.
+
+\bibitem[Yao et~al.(2024)Yao, Heinecke, Nie, Miao, Chen, Zhao, Khashabi, Chen,
+  Hmamouche, Fang, Xia, Gui, Liu, Wang, Li, Chai, Shan, Wang, Wang, He, Zhang,
+  Liu, Wu, Shi, Shinn, Xu, Yang, Shen, Tang, Ho, Yu, Lin, Ni, Yang, Chen, Zhu,
+  Liang, Wang, Yu, Karp, Wu, Huang, He, Huang, Xu, Liang, Zhang, Zhang, Fu, Lu,
+  Ye, Zhang, Zhang, Yang, Wang, Zhang, Zhou, Guo, and Zhao]{yao2024tau}
+Shunyu Yao, Jeffrey Heinecke, Juan~Carlos Nie, Zhiwei Miao, Wenliang Chen, Xia
+  Zhao, Daniel Khashabi, Han Chen, Yassine Hmamouche, Emily Fang, Yichen Xia,
+  Zhicheng Gui, Nan Liu, Renxuan Wang, Hengrui Li, Pengfei Chai, Xin Shan,
+  Zhiheng Wang, Shijie Wang, Guangyu He, Yizhou Zhang, Gengyun Liu, Shuohan Wu,
+  Xuewei Shi, Noah Shinn, Yifei Xu, Fan Yang, Yixin Shen, Liyun Tang, Julie Ho,
+  Hao Yu, Shuhang Lin, Yun Ni, Zhen Yang, Long Chen, Kai Zhu, Yuncong Liang,
+  Lina Wang, Zhengyu Yu, Jason Karp, Shuo Wu, Jing Huang, Yifeng He, Wei Huang,
+  Li~Xu, Yong Liang, Chen Zhang, Xinyu Zhang, Lu~Fu, Xin Lu, Bin Ye, Mianna
+  Zhang, Yifei Zhang, Jintao Yang, Xiaofei Wang, Yan Zhang, Bowen Zhou,
+  Mingshuai Guo, and Zheng Zhao.
+\newblock $\tau$-bench: A benchmark for tool-agent-user interaction in
+  real-world domains.
+\newblock \emph{arXiv preprint}, 2024.
+
+\end{thebibliography}

@@ -14,4 +14,4 @@
 - Body content unchanged from the COLM version; only template/preamble converted.
 - Bibliography is inline `thebibliography` (kept as-is); can be converted to `refs.bib` before submission if required.
 - Double-blind: author block already anonymous; no personal URLs in body.
-- Reproducibility: `python scripts/run_all.py --skip-llm` (see repo README).
+- Reproducibility: the anonymous archive contains frozen manuscript/evidence artifacts. Generation and evaluation scripts are maintained in the source repository and will be released with the de-anonymized package; no external script path is claimed to be executable from this archive.

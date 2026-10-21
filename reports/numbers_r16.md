@@ -1,0 +1,58 @@
+# Number-consistency scan report
+
+Target: `paper`  |  text files: 3  |  json files: 0
+
+## Stale markers: 0
+
+## Inverted confidence intervals: 0
+
+## Most frequent numeric literals (top 25)
+- 1.00: 33
+- 0.25: 26
+- 0.125: 17
+- 0.00: 17
+- 1.000: 15
+- 0.21: 13
+- 0.001: 13
+- 0.000: 13
+- 0.268: 13
+- 0.250: 11
+- 0.205: 9
+- 0.27: 9
+- 0.45: 9
+- 0.155: 8
+- 0.145: 8
+- 0.10: 7
+- 0.080: 7
+- 0.175: 7
+- 0.055: 7
+- 0.025: 7
+- 0.210: 7
+- 0.05: 7
+- 0.43: 6
+- 0.010: 6
+- 0.110: 6
+
+## Values in evidence JSON but never in text: 0
+
+
+## Table-vs-prose mismatches: 19
+- table `0.210` vs prose `0.21` @ main.tex:40  :: -tool: 0.75 vs 0.21), and equivale
+- table `0.001` vs prose `0.0` @ main.tex:116  :: {failure\_rate=0.0} for the main
+- table `0.070` vs prose `0.07` @ main.tex:163  :: drops to 0.08/0.07 on systematici
+- table `0.000` vs prose `0.001` @ main.tex:42  :: nificant ($p < 0.001$); in this heu
+- table `0.080` vs prose `0.08` @ main.tex:163  :: n but drops to 0.08/0.07 on system
+- table `0.00` vs prose `0.001` @ main.tex:42  :: nificant ($p < 0.001$); in this heu
+- table `1.00` vs prose `1.000` @ main.tex:42  :: (baseline) to 1.000 under equivale
+- table `0.02` vs prose `0.020` @ main.tex:325  :: 5 (val, FC) to 0.020 (productivity)
+- table `0.30` vs prose `0.300` @ main.tex:230  :: from 0.145 to 0.300 with even $n=0
+- table `0.25` vs prose `0.250` @ main.tex:42  :: utability from 0.250 (baseline) to
+- table `0.10` vs prose `0.1` @ main.tex:283  :: niformly low (~0.1--0.4) because
+- table `1.0` vs prose `1.00` @ main.tex:40  :: on completion (1.00), matched-leng
+- table `2.4` vs prose `2.40` @ main.tex:327  :: costs under \$2.40. \end{enumerat
+- table `0.250` vs prose `0.25` @ supp.tex:39  :: ateau at TSR = 0.25 on substitutab
+- table `0.001` vs prose `0.00` @ supp.tex:189  :: productivity (0.00 for template a
+- table `1.000` vs prose `1.00` @ supp.tex:188  :: idation split (1.00) to systematic
+- table `0.000` vs prose `0.00` @ supp.tex:189  :: productivity (0.00 for template a
+- table `1.00` vs prose `1.000` @ supp.tex:37  :: achieves TSR = 1.000 on both \emph{
+- table `0.25` vs prose `0.250` @ supp.tex:104  :: ility TSR from 0.250 (constant-tool
