@@ -4,22 +4,43 @@ Used only when `use_generic_inference=True` (external-validity runs). The
 default heuristic agents keep their original hardcoded keyword maps so the
 main-benchmark results are unchanged.
 """
+
 from __future__ import annotations
 
 import re
-from typing import Any, Iterable, Optional
+from collections.abc import Iterable
+from typing import Any
 
 STOPWORDS = {
-    "the", "a", "an", "and", "or", "for", "with", "to", "of", "in", "on",
-    "current", "given", "then", "using", "via", "from", "your", "you", "and",
+    "the",
+    "a",
+    "an",
+    "and",
+    "or",
+    "for",
+    "with",
+    "to",
+    "of",
+    "in",
+    "on",
+    "current",
+    "given",
+    "then",
+    "using",
+    "via",
+    "from",
+    "your",
+    "you",
 }
 
 
 def _tokens(text: str) -> set[str]:
-    return {t for t in re.findall(r"[a-z0-9]+", str(text).lower()) if t not in STOPWORDS and len(t) > 2}
+    return {
+        t for t in re.findall(r"[a-z0-9]+", str(text).lower()) if t not in STOPWORDS and len(t) > 2
+    }
 
 
-def infer_tool_generic(library, nl: str, called: Iterable[str]) -> Optional[str]:
+def infer_tool_generic(library, nl: str, called: Iterable[str]) -> str | None:
     """Return the uncalled library tool whose name/description/params best match the NL."""
     called = set(called)
     nl_tokens = _tokens(nl)

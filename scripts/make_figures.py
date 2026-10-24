@@ -42,8 +42,15 @@ def load_all_summaries(results_dir: Path) -> dict[str, dict[str, dict]]:
 
 def fig1_cgg_bar(summaries: dict, output_dir: Path) -> None:
     """Bar chart: CGG across agents × 3 test splits. Includes template + DeepSeek agents."""
-    agents = ["react", "native_fc", "reflexion", "plan_execute", "chain_aware",
-              "deepseek_react", "deepseek_fc"]
+    agents = [
+        "react",
+        "native_fc",
+        "reflexion",
+        "plan_execute",
+        "chain_aware",
+        "deepseek_react",
+        "deepseek_fc",
+    ]
     splits = ["test_systematicity", "test_productivity", "test_substitutability"]
     split_labels = ["Systematicity", "Productivity", "Substitutability"]
 
@@ -79,7 +86,7 @@ def fig1_cgg_bar(summaries: dict, output_dir: Path) -> None:
     fig.savefig(output_dir / "fig1_cgg_bar.pdf", dpi=300, bbox_inches="tight")
     fig.savefig(output_dir / "fig1_cgg_bar.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
-    print(f"✓ fig1_cgg_bar saved")
+    print("✓ fig1_cgg_bar saved")
 
 
 def fig2_metrics_heatmap(summaries: dict, output_dir: Path) -> None:
@@ -100,7 +107,11 @@ def fig2_metrics_heatmap(summaries: dict, output_dir: Path) -> None:
     im = ax.imshow(matrix, cmap="YlGnBu", aspect="auto", vmin=0, vmax=1)
     ax.set_xticks(range(len(splits) * len(metrics)))
     ax.set_xticklabels(
-        [f"{s.replace('test_', '').replace('val', 'i.i.d.')[:4]}\n{m.upper()}" for s in splits for m in metrics]
+        [
+            f"{s.replace('test_', '').replace('val', 'i.i.d.')[:4]}\n{m.upper()}"
+            for s in splits
+            for m in metrics
+        ]
     )
     ax.set_yticks(range(len(agents)))
     ax.set_yticklabels(agents)
@@ -116,7 +127,7 @@ def fig2_metrics_heatmap(summaries: dict, output_dir: Path) -> None:
     fig.savefig(output_dir / "fig2_metrics_heatmap.pdf", dpi=300, bbox_inches="tight")
     fig.savefig(output_dir / "fig2_metrics_heatmap.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
-    print(f"✓ fig2_metrics_heatmap saved")
+    print("✓ fig2_metrics_heatmap saved")
 
 
 def fig3_error_breakdown(results_dir: Path, figures_dir: Path) -> None:
@@ -160,7 +171,7 @@ def fig3_error_breakdown(results_dir: Path, figures_dir: Path) -> None:
     fig.savefig(figures_dir / "fig3_error_breakdown.pdf", dpi=300, bbox_inches="tight")
     fig.savefig(figures_dir / "fig3_error_breakdown.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
-    print(f"✓ fig3_error_breakdown saved")
+    print("✓ fig3_error_breakdown saved")
 
 
 def fig4_ablation(results_dir: Path, figures_dir: Path) -> None:
@@ -188,7 +199,7 @@ def fig4_ablation(results_dir: Path, figures_dir: Path) -> None:
     fig.savefig(figures_dir / "fig4_ablation.pdf", dpi=300, bbox_inches="tight")
     fig.savefig(figures_dir / "fig4_ablation.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
-    print(f"✓ fig4_ablation saved")
+    print("✓ fig4_ablation saved")
 
 
 def fig5_chain_length_dist(data_dir: Path, output_dir: Path) -> None:
@@ -217,7 +228,7 @@ def fig5_chain_length_dist(data_dir: Path, output_dir: Path) -> None:
     fig.savefig(output_dir / "fig5_chain_length_dist.pdf", dpi=300, bbox_inches="tight")
     fig.savefig(output_dir / "fig5_chain_length_dist.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
-    print(f"✓ fig5_chain_length_dist saved")
+    print("✓ fig5_chain_length_dist saved")
 
 
 def main() -> None:

@@ -60,9 +60,7 @@ def test_productivity_no_overlap_with_train(generator: TaskGenerator) -> None:
 def test_substitutability_applies_substitution(generator: TaskGenerator) -> None:
     """Substitutability test should have at least one substituted tool."""
     splits = generator.generate_all()
-    sub_applied = [
-        t for t in splits["test_substitutability"] if t.metadata.get("substituted_tool")
-    ]
+    sub_applied = [t for t in splits["test_substitutability"] if t.metadata.get("substituted_tool")]
     assert len(sub_applied) > 0
 
 

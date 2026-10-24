@@ -12,9 +12,9 @@ Usage:
 
 from __future__ import annotations
 
-import itertools
 import json
 import random
+from collections.abc import Sequence
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -32,7 +32,9 @@ class Task:
     expected_chain: list[str]
     parameters: dict[str, Any]
     success_criteria: list[str]
-    split: str = "train"  # train | val | test_systematicity | test_productivity | test_substitutability
+    split: str = (
+        "train"  # train | val | test_systematicity | test_productivity | test_substitutability
+    )
     metadata: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -68,18 +70,34 @@ class TaskGenerator:
         sub_substitution_rate: float = 0.5,
         # Extension tool pools (must be tools present in the tool library).
         # Override these for alternate tool libraries (external validity).
-        tail_tools: Optional[Sequence[str]] = None,
-        candidate_heads_pool: Optional[Sequence[str]] = None,
+        tail_tools: Sequence[str] | None = None,
+        candidate_heads_pool: Sequence[str] | None = None,
         # Templates allowed to enter the train/val pools (test-only templates
         # keep productivity constructible in external libraries).
-        train_template_ids: Optional[Sequence[str]] = None,
+        train_template_ids: Sequence[str] | None = None,
     ) -> None:
         self.rng = random.Random(seed)
         self.templates_path = Path(templates_path)
         self.seed = seed
-        self.tail_tools = list(tail_tools) if tail_tools else ["send_email", "send_sms", "write_file", "calendar_add"]
+        self.tail_tools = (
+            list(tail_tools)
+            if tail_tools
+            else ["send_email", "send_sms", "write_file", "calendar_add"]
+        )
         self.train_template_ids = set(train_template_ids) if train_template_ids else None
-        self.candidate_heads_pool = list(candidate_heads_pool) if candidate_heads_pool else ["send_email", "send_sms", "write_file", "calendar_add", "read_file", "calculator", "unit_convert"]
+        self.candidate_heads_pool = (
+            list(candidate_heads_pool)
+            if candidate_heads_pool
+            else [
+                "send_email",
+                "send_sms",
+                "write_file",
+                "calendar_add",
+                "read_file",
+                "calculator",
+                "unit_convert",
+            ]
+        )
         self.n_train = n_train
         self.n_val = n_val
         self.n_test_systematicity = n_test_systematicity
@@ -157,7 +175,9 @@ class TaskGenerator:
         train_candidates = self._generate_base_pool(self.n_train * 10)
         val_candidates = self._generate_base_pool(self.n_val * 10)
         if self.train_template_ids is not None:
-            train_candidates = [t for t in train_candidates if t.template_id in self.train_template_ids]
+            train_candidates = [
+                t for t in train_candidates if t.template_id in self.train_template_ids
+            ]
             val_candidates = [t for t in val_candidates if t.template_id in self.train_template_ids]
 
         # Train: 2-tool minimal chains only. Longer chains in train would leak test info.

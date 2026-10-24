@@ -70,6 +70,7 @@ class PlanExecuteAgent(Agent):
 
         if self.use_generic_inference:
             from agent_compose.agents.inference import infer_tool_generic
+
             first = infer_tool_generic(self.library, task.natural_language, [])
             if first:
                 plan.append(first)
@@ -107,6 +108,7 @@ class PlanExecuteAgent(Agent):
 
         if self.use_generic_inference:
             from agent_compose.agents.inference import infer_tool_generic
+
             generic = infer_tool_generic(self.library, task.natural_language, [])
             if generic and generic not in plan:
                 plan.insert(0, generic)
@@ -122,6 +124,7 @@ class PlanExecuteAgent(Agent):
         """Same heuristic argument construction as ReAct."""
         if self.use_generic_inference:
             from agent_compose.agents.inference import build_args_generic
+
             return build_args_generic(self.library, tool, task, trace)
         params = task.parameters
         last_output = trace.results[-1].output if trace.results else None

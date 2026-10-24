@@ -24,8 +24,7 @@ import requests
 from agent_compose.agents.base import Agent, AgentStep
 from agent_compose.env.simulator import ExecutionTrace, ToolCall
 from agent_compose.generator.tasks import Task
-from agent_compose.tools import Tool, ToolLibrary
-
+from agent_compose.tools import ToolLibrary
 
 SYSTEM_PROMPT_REACT = """You are an AI agent that solves tasks by calling tools. You have access to the following tools:
 
@@ -101,9 +100,7 @@ class DeepSeekReactAgent(Agent):
     ) -> None:
         super().__init__(tool_library, max_steps)
         if vendor not in LLM_VENDORS:
-            raise ValueError(
-                f"Unknown vendor {vendor!r}; valid: {list(LLM_VENDORS.keys())}"
-            )
+            raise ValueError(f"Unknown vendor {vendor!r}; valid: {list(LLM_VENDORS.keys())}")
         v = LLM_VENDORS[vendor]
         self.vendor = vendor
         self.api_key = api_key or os.getenv(v["env_var"])
@@ -142,7 +139,7 @@ class DeepSeekReactAgent(Agent):
             try:
                 resp = requests.post(url, headers=headers, json=payload, timeout=60)
                 if resp.status_code == 429 or resp.status_code >= 500:
-                    time.sleep(2 ** attempt)
+                    time.sleep(2**attempt)
                     continue
                 resp.raise_for_status()
                 data = resp.json()
@@ -153,7 +150,7 @@ class DeepSeekReactAgent(Agent):
             except requests.exceptions.RequestException as e:
                 if attempt == 2:
                     raise RuntimeError(f"DeepSeek API failed: {e!s}")
-                time.sleep(2 ** attempt)
+                time.sleep(2**attempt)
         return "", 0
 
     def _parse_action(self, response: str) -> tuple[str, dict[str, Any]] | None:

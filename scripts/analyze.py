@@ -10,8 +10,6 @@ import argparse
 import json
 from pathlib import Path
 
-from agent_compose.eval.statistical_tests import friedman_test, wilcoxon_test
-
 
 def load_agent_results(results_dir: Path, agent_name: str, split_name: str) -> list[dict]:
     """Load one agent's results on one split."""
@@ -24,7 +22,9 @@ def load_agent_results(results_dir: Path, agent_name: str, split_name: str) -> l
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Analyze AgentCompose results")
-    parser.add_argument("--results-dir", type=Path, default=Path(__file__).parent.parent / "results")
+    parser.add_argument(
+        "--results-dir", type=Path, default=Path(__file__).parent.parent / "results"
+    )
     args = parser.parse_args()
 
     # Discover available results

@@ -67,11 +67,22 @@ def compute_cgg_ci(agent: str, per_split: dict[str, list[float]]) -> dict[str, d
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--results-dir", type=Path, default=Path(__file__).parent.parent / "results")
-    parser.add_argument("--agents", nargs="+", default=[
-        "react", "native_fc", "reflexion", "plan_execute", "chain_aware",
-        "deepseek_react", "deepseek_fc",
-    ])
+    parser.add_argument(
+        "--results-dir", type=Path, default=Path(__file__).parent.parent / "results"
+    )
+    parser.add_argument(
+        "--agents",
+        nargs="+",
+        default=[
+            "react",
+            "native_fc",
+            "reflexion",
+            "plan_execute",
+            "chain_aware",
+            "deepseek_react",
+            "deepseek_fc",
+        ],
+    )
     args = parser.parse_args()
 
     summary: dict[str, dict] = {}
@@ -97,9 +108,13 @@ def main() -> None:
         }
         print(f"\n{agent}:")
         for split, ci in split_cis.items():
-            print(f"  {split:24s} TSR={ci['mean']:.3f}  95%CI=[{ci['ci_low']:.3f}, {ci['ci_high']:.3f}]  N={ci['n']}")
+            print(
+                f"  {split:24s} TSR={ci['mean']:.3f}  95%CI=[{ci['ci_low']:.3f}, {ci['ci_high']:.3f}]  N={ci['n']}"
+            )
         for split, cgg in cgg_cis.items():
-            print(f"  CGG_{split.replace('test_', ''):14s} = {cgg['cgg']:+.3f}  95%CI=[{cgg['cgg_ci_low']:+.3f}, {cgg['cgg_ci_high']:+.3f}]")
+            print(
+                f"  CGG_{split.replace('test_', ''):14s} = {cgg['cgg']:+.3f}  95%CI=[{cgg['cgg_ci_low']:+.3f}, {cgg['cgg_ci_high']:+.3f}]"
+            )
 
     out = args.results_dir / "bootstrap_ci.json"
     out.write_text(json.dumps(summary, indent=2), encoding="utf-8")

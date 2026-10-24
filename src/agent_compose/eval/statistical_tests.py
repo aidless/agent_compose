@@ -106,7 +106,9 @@ def wilcoxon_test(
     )
 
 
-def friedman_test(results_by_agent: dict[str, list[float]], metric_name: str = "score") -> dict[str, Any]:
+def friedman_test(
+    results_by_agent: dict[str, list[float]], metric_name: str = "score"
+) -> dict[str, Any]:
     """Friedman test: compare multiple agents across the same tasks.
 
     results_by_agent: {agent_name: [metric_per_task]}

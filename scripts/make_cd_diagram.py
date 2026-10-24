@@ -74,7 +74,9 @@ def find_cliques(ranks: list[int], cd: float) -> list[list[int]]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--results-dir", type=Path, default=Path(__file__).parent.parent / "results")
+    parser.add_argument(
+        "--results-dir", type=Path, default=Path(__file__).parent.parent / "results"
+    )
     parser.add_argument("--output-dir", type=Path, default=Path(__file__).parent.parent / "figures")
     parser.add_argument("--split", default="test_productivity")
     parser.add_argument("--alpha", type=float, default=0.05)

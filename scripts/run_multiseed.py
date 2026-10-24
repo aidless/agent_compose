@@ -11,6 +11,7 @@ seed-level TSR stats across results/ (seed 42) and results/seed{S}/.
 Usage:
   python scripts/run_multiseed.py --seeds 1 2 3 4
 """
+
 from __future__ import annotations
 
 import argparse
@@ -28,7 +29,7 @@ CANONICAL_SEED = 42
 
 def run(cmd: str) -> None:
     print(f"$ {cmd}", flush=True)
-    proc = subprocess.run(shlex.split(cmd), cwd=str(PROJECT_ROOT))
+    proc = subprocess.run(shlex.split(cmd), cwd=str(PROJECT_ROOT), check=False)
     if proc.returncode != 0:
         raise SystemExit(f"FAILED ({proc.returncode}): {cmd}")
 
@@ -50,8 +51,10 @@ def main() -> int:
         print(f"\n===== SEED {seed} =====", flush=True)
         run(f"python scripts/generate.py --seed {seed}")
         for agent in args.agents:
-            run(f"python scripts/evaluate.py --agent {agent} --split all "
-                f"--output-dir results/seed{seed} --seed {seed}")
+            run(
+                f"python scripts/evaluate.py --agent {agent} --split all "
+                f"--output-dir results/seed{seed} --seed {seed}"
+            )
 
     # Restore canonical data
     run(f"python scripts/generate.py --seed {CANONICAL_SEED}")

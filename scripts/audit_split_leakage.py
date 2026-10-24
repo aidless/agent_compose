@@ -12,6 +12,7 @@ Checks (against data/generated/*.jsonl):
 
 Writes results/split_leakage_audit.json. Deterministic; no LLM calls.
 """
+
 from __future__ import annotations
 
 import json
@@ -51,7 +52,9 @@ def main() -> None:
         }
     report["chain_length"] = len_report
     report["checks"] = {}
-    report["checks"]["length2_train_val"] = (len_report["train"]["n_not_length2"] == 0 and len_report["val"]["n_not_length2"] == 0)
+    report["checks"]["length2_train_val"] = (
+        len_report["train"]["n_not_length2"] == 0 and len_report["val"]["n_not_length2"] == 0
+    )
 
     train_pairs = set()
     for t in splits["train"]:
@@ -73,7 +76,10 @@ def main() -> None:
         if ordered_pairs(t["expected_chain"]) & train_pairs:
             prod_leaks += 1
     prod_frac = prod_leaks / max(1, len(splits["test_productivity"]))
-    report["productivity"] = {"with_trained_pair": prod_leaks, "fraction_leaked": round(prod_frac, 6)}
+    report["productivity"] = {
+        "with_trained_pair": prod_leaks,
+        "fraction_leaked": round(prod_frac, 6),
+    }
     report["checks"]["productivity_zero_trained_pair"] = prod_frac == 0.0
 
     # 4. substitutability: derived from val templates, with tool substitution

@@ -73,6 +73,7 @@ class NativeFCAgent(Agent):
 
         if self.use_generic_inference:
             from agent_compose.agents.inference import infer_tool_generic
+
             return infer_tool_generic(self.library, task.natural_language, called)
 
         # Priority tool patterns
@@ -99,6 +100,7 @@ class NativeFCAgent(Agent):
 
         if self.use_generic_inference:
             from agent_compose.agents.inference import infer_tool_generic
+
             return infer_tool_generic(self.library, task.natural_language, called)
 
         return None
@@ -107,6 +109,7 @@ class NativeFCAgent(Agent):
         """Build args from task params + prior results (with proper binding)."""
         if self.use_generic_inference:
             from agent_compose.agents.inference import build_args_generic
+
             return build_args_generic(self.library, tool, task, trace)
         params = task.parameters
 
@@ -147,7 +150,7 @@ class NativeFCAgent(Agent):
         if tool == "send_sms":
             return {
                 "phone": params.get("phone_number", "+10000000000"),
-                "message": f"Alert: 100",
+                "message": "Alert: 100",
             }
         if tool == "read_file":
             return {"path": params.get("input_file", "/data/numbers_a.csv")}

@@ -21,7 +21,6 @@ from agent_compose.eval.metrics import Evaluator
 from agent_compose.eval.runner import evaluate_split, load_split, save_results
 from agent_compose.tools import ToolLibrary
 
-
 AGENT_REGISTRY = {
     "react": ReActAgent,
     "native_fc": NativeFCAgent,
@@ -46,20 +45,49 @@ def main() -> None:
     )
     parser.add_argument(
         "--split",
-        choices=["train", "val", "test_systematicity", "test_productivity", "test_substitutability", "all"],
+        choices=[
+            "train",
+            "val",
+            "test_systematicity",
+            "test_productivity",
+            "test_substitutability",
+            "all",
+        ],
         default="all",
     )
-    parser.add_argument("--data-dir", type=Path, default=Path(__file__).parent.parent / "data" / "generated")
+    parser.add_argument(
+        "--data-dir", type=Path, default=Path(__file__).parent.parent / "data" / "generated"
+    )
     parser.add_argument("--tools-dir", type=Path, default=Path(__file__).parent.parent / "tools")
     parser.add_argument("--output-dir", type=Path, default=Path(__file__).parent.parent / "results")
-    parser.add_argument("--max-tasks", type=int, default=None, help="Limit tasks per split (for testing)")
+    parser.add_argument(
+        "--max-tasks", type=int, default=None, help="Limit tasks per split (for testing)"
+    )
     parser.add_argument("--use-oracle", action="store_true", help="Use oracle chain (upper bound)")
-    parser.add_argument("--failure-rate", type=float, default=0.0, help="Tool failure injection rate")
+    parser.add_argument(
+        "--failure-rate", type=float, default=0.0, help="Tool failure injection rate"
+    )
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--use-generic-inference", action="store_true", help="Use library-agnostic tool inference (external validity runs)")
-    parser.add_argument("--no-equiv-eval", action="store_true", help="Strict scoring: equivalence groups disabled in the evaluator")
-    parser.add_argument("--no-chain-training", action="store_true", help="ChainAware: skip training on train chains (ablation)")
-    parser.add_argument("--no-equiv-detector", action="store_true", help="ChainAware: disable equivalence variant detection (ablation)")
+    parser.add_argument(
+        "--use-generic-inference",
+        action="store_true",
+        help="Use library-agnostic tool inference (external validity runs)",
+    )
+    parser.add_argument(
+        "--no-equiv-eval",
+        action="store_true",
+        help="Strict scoring: equivalence groups disabled in the evaluator",
+    )
+    parser.add_argument(
+        "--no-chain-training",
+        action="store_true",
+        help="ChainAware: skip training on train chains (ablation)",
+    )
+    parser.add_argument(
+        "--no-equiv-detector",
+        action="store_true",
+        help="ChainAware: disable equivalence variant detection (ablation)",
+    )
     args = parser.parse_args()
 
     # Load tools
@@ -100,8 +128,12 @@ def main() -> None:
 
         tasks = load_split(file_path)
         task_metrics, traces = evaluate_split(
-            agent, simulator, tasks, split_name,
-            max_tasks=args.max_tasks, library=None if args.no_equiv_eval else library,
+            agent,
+            simulator,
+            tasks,
+            split_name,
+            max_tasks=args.max_tasks,
+            library=None if args.no_equiv_eval else library,
         )
         split_metrics = evaluator.aggregate(task_metrics)
 

@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import argparse
 import json
-from collections import Counter
 from pathlib import Path
 
 from agent_compose.eval.error_analysis import (
@@ -21,9 +20,15 @@ from agent_compose.eval.runner import load_split
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--data-dir", type=Path, default=Path(__file__).parent.parent / "data" / "generated")
-    parser.add_argument("--results-dir", type=Path, default=Path(__file__).parent.parent / "results")
-    parser.add_argument("--agents", nargs="+", default=["react", "native_fc", "reflexion", "plan_execute"])
+    parser.add_argument(
+        "--data-dir", type=Path, default=Path(__file__).parent.parent / "data" / "generated"
+    )
+    parser.add_argument(
+        "--results-dir", type=Path, default=Path(__file__).parent.parent / "results"
+    )
+    parser.add_argument(
+        "--agents", nargs="+", default=["react", "native_fc", "reflexion", "plan_execute"]
+    )
     args = parser.parse_args()
 
     print("=" * 80)
@@ -88,7 +93,9 @@ def main() -> None:
     for agent, reports in all_reports.items():
         output_data[agent] = {
             "rates": error_rates(reports),
-            "totals": {split: {et.value: 0 for et in ErrorType} for split in set(r.split for r in reports)},
+            "totals": {
+                split: {et.value: 0 for et in ErrorType} for split in {r.split for r in reports}
+            },
         }
         for r in reports:
             output_data[agent]["totals"].setdefault(r.split, {}).setdefault(r.error_type.value, 0)

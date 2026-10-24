@@ -32,7 +32,6 @@ from agent_compose.eval.metrics import Evaluator
 from agent_compose.eval.runner import evaluate_split, load_split, save_results
 from agent_compose.tools import ToolLibrary
 
-
 # Maps agent_id → (class, default_vendor)
 AGENT_REGISTRY: dict[str, tuple[type, str]] = {
     "deepseek_react": (DeepSeekReactAgent, "deepseek"),
@@ -49,17 +48,32 @@ def main() -> None:
     parser.add_argument("--agent", choices=list(AGENT_REGISTRY.keys()), default="deepseek_react")
     parser.add_argument(
         "--split",
-        choices=["train", "val", "test_systematicity", "test_productivity", "test_substitutability", "all"],
+        choices=[
+            "train",
+            "val",
+            "test_systematicity",
+            "test_productivity",
+            "test_substitutability",
+            "all",
+        ],
         default="all",
     )
-    parser.add_argument("--data-dir", type=Path, default=Path(__file__).parent.parent / "data" / "generated")
+    parser.add_argument(
+        "--data-dir", type=Path, default=Path(__file__).parent.parent / "data" / "generated"
+    )
     parser.add_argument("--output-dir", type=Path, default=Path(__file__).parent.parent / "results")
     parser.add_argument("--max-tasks", type=int, default=None, help="Limit tasks per split")
     parser.add_argument("--max-steps", type=int, default=10)
-    parser.add_argument("--model", type=str, default=None, help="Override default model for the vendor")
-    parser.add_argument("--vendor", type=str, default=None,
-                        choices=list(LLM_VENDORS.keys()),
-                        help="Override vendor (default: derived from agent id)")
+    parser.add_argument(
+        "--model", type=str, default=None, help="Override default model for the vendor"
+    )
+    parser.add_argument(
+        "--vendor",
+        type=str,
+        default=None,
+        choices=list(LLM_VENDORS.keys()),
+        help="Override vendor (default: derived from agent id)",
+    )
     parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
 
@@ -102,7 +116,9 @@ def main() -> None:
         save_results(output_path, task_metrics, traces, agent.name, split_name)
 
         print(f"  TSR: {agg.tsr:.3f} | COC: {agg.coc:.3f} | ABA: {agg.aba:.3f}")
-        print(f"  Tokens: {agent._total_tokens} | Time: {elapsed:.1f}s ({elapsed/len(tasks):.1f}s/task)")
+        print(
+            f"  Tokens: {agent._total_tokens} | Time: {elapsed:.1f}s ({elapsed / len(tasks):.1f}s/task)"
+        )
         # DeepSeek V4 Flash pricing (estimate): $0.14/M input, $0.28/M output
         cost_est = agent._total_tokens * 0.00000021  # avg of input/output
         print(f"  Est. cost: ${cost_est:.4f}")

@@ -20,7 +20,9 @@ SPLITS = ["val", "test_systematicity", "test_productivity", "test_substitutabili
 def main() -> None:
     parser = argparse.ArgumentParser(description="Aggregate LLM agent summary")
     parser.add_argument("--agent", required=True, choices=["deepseek_react", "deepseek_fc"])
-    parser.add_argument("--results-dir", type=Path, default=Path(__file__).parent.parent / "results")
+    parser.add_argument(
+        "--results-dir", type=Path, default=Path(__file__).parent.parent / "results"
+    )
     args = parser.parse_args()
 
     summary: dict[str, dict] = {}
@@ -47,11 +49,13 @@ def main() -> None:
         if summary_path.exists():
             try:
                 prev = json.loads(summary_path.read_text(encoding="utf-8"))
-            except Exception:
+            except Exception:  # noqa: BLE001 - a corrupt summary must not abort aggregation
                 prev = {}
 
         tokens = prev.get(split, {}).get("tokens", 0) if isinstance(prev.get(split), dict) else 0
-        time_s = prev.get(split, {}).get("time_s", 0.0) if isinstance(prev.get(split), dict) else 0.0
+        time_s = (
+            prev.get(split, {}).get("time_s", 0.0) if isinstance(prev.get(split), dict) else 0.0
+        )
 
         summary[split] = {
             "tsr": tsr,

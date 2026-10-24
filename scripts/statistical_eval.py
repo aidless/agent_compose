@@ -53,7 +53,9 @@ def align_by_task_id(results_dir: Path, agents: list[str], split: str) -> dict[s
     return aligned
 
 
-def win_tie_loss(agents: list[str], aligned: dict[str, list[float]], reference: str) -> dict[str, dict[str, int]]:
+def win_tie_loss(
+    agents: list[str], aligned: dict[str, list[float]], reference: str
+) -> dict[str, dict[str, int]]:
     """Count W/T/L for reference vs each other agent on paired tasks."""
     out = {}
     if reference not in aligned:
@@ -88,7 +90,7 @@ def friedman_per_split(
             res = friedman_test(aligned, metric_name=f"TSR_{split}")
             res["aligned_n"] = len(next(iter(aligned.values())))
             out[split] = res
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - one failing split must not hide the others
             out[split] = {"error": str(e)}
     return out
 
@@ -142,10 +144,20 @@ def cd_diagram_data(
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--results-dir", type=Path, default=Path(__file__).parent.parent / "results")
-    parser.add_argument("--agents", nargs="+", default=[
-        "react", "native_fc", "reflexion", "plan_execute", "chain_aware",
-    ])
+    parser.add_argument(
+        "--results-dir", type=Path, default=Path(__file__).parent.parent / "results"
+    )
+    parser.add_argument(
+        "--agents",
+        nargs="+",
+        default=[
+            "react",
+            "native_fc",
+            "reflexion",
+            "plan_execute",
+            "chain_aware",
+        ],
+    )
     args = parser.parse_args()
 
     splits = ["val", "test_systematicity", "test_productivity", "test_substitutability"]
@@ -154,7 +166,9 @@ def main() -> None:
         "wilcoxon": pairwise_wilcoxon(args.results_dir, args.agents, splits),
         "cd_data": {s: cd_diagram_data(args.results_dir, args.agents, s) for s in splits},
         "win_tie_loss_chain_aware": {
-            s: win_tie_loss(args.agents, align_by_task_id(args.results_dir, args.agents, s), "chain_aware")
+            s: win_tie_loss(
+                args.agents, align_by_task_id(args.results_dir, args.agents, s), "chain_aware"
+            )
             for s in splits
         },
     }
@@ -166,7 +180,9 @@ def main() -> None:
             print(f"  {split:24s} ERROR: {res['error']}")
             continue
         sig = "*" if res.get("significant_at_05") else " "
-        print(f"  {split:24s} χ²={res['statistic']:7.3f}  p={res['p_value']:.4f}  {sig}  N={res['aligned_n']}")
+        print(
+            f"  {split:24s} χ²={res['statistic']:7.3f}  p={res['p_value']:.4f}  {sig}  N={res['aligned_n']}"
+        )
 
     print("\n" + "=" * 70)
     print("Critical Difference (mean TSR rank, lower=better):")
@@ -187,7 +203,9 @@ def main() -> None:
             if "chain_aware" not in key:
                 continue
             sig = "*" if res["significant_at_05"] else " "
-            print(f"  {split:24s} {key:40s} p={res['p_value']:.4f}  d={res['effect_size']:.2f}  {sig}")
+            print(
+                f"  {split:24s} {key:40s} p={res['p_value']:.4f}  d={res['effect_size']:.2f}  {sig}"
+            )
 
     out = args.results_dir / "statistical_tests.json"
     out.write_text(json.dumps(summary, indent=2, default=float), encoding="utf-8")

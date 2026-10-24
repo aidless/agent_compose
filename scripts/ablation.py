@@ -26,7 +26,6 @@ def ablation_n_synthetic(data_dir: Path, output_dir: Path, n_values: list[int]) 
     library = ToolLibrary(tools_dir)
     simulator = ToolSimulator(library, failure_rate=0.0, seed=42)
     train_tasks = load_split(data_dir / "train.jsonl")
-    val_tasks = load_split(data_dir / "val.jsonl")
     prod_tasks = load_split(data_dir / "test_productivity.jsonl")
 
     results = []
@@ -44,9 +43,7 @@ def ablation_n_synthetic(data_dir: Path, output_dir: Path, n_values: list[int]) 
                 "coc_productivity": metrics.coc,
             }
         )
-        print(
-            f"  n_synthetic={n:>4d}: TSR={metrics.tsr:.3f}, COC={metrics.coc:.3f}"
-        )
+        print(f"  n_synthetic={n:>4d}: TSR={metrics.tsr:.3f}, COC={metrics.coc:.3f}")
 
     output_path = output_dir / "ablation_n_synthetic.json"
     output_path.write_text(json.dumps(results, indent=2), encoding="utf-8")
@@ -89,7 +86,9 @@ def ablation_failure_rate(data_dir: Path, output_dir: Path, rates: list[float]) 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Ablation experiments")
-    parser.add_argument("--data-dir", type=Path, default=Path(__file__).parent.parent / "data" / "generated")
+    parser.add_argument(
+        "--data-dir", type=Path, default=Path(__file__).parent.parent / "data" / "generated"
+    )
     parser.add_argument("--output-dir", type=Path, default=Path(__file__).parent.parent / "results")
     args = parser.parse_args()
 

@@ -11,7 +11,6 @@ Metrics:
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Any
 
 from agent_compose.env.simulator import ExecutionTrace
 from agent_compose.generator.tasks import Task

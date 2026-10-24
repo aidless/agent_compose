@@ -37,21 +37,21 @@ PROJECT_ROOT = Path(__file__).parent.parent
 # - is_optional=True:  only runs when --skip-llm is NOT set
 STEPS_FULL: list[tuple[str, str, bool]] = [
     ("generate", "python scripts/generate.py --seed 42", False),
-    ("eval:react",         "python scripts/evaluate.py --agent react --split all",            False),
-    ("eval:native_fc",     "python scripts/evaluate.py --agent native_fc --split all",        False),
-    ("eval:reflexion",     "python scripts/evaluate.py --agent reflexion --split all",        False),
-    ("eval:plan_execute",  "python scripts/evaluate.py --agent plan_execute --split all",     False),
-    ("eval:chain_aware",   "python scripts/evaluate.py --agent chain_aware --split all",      False),
-    ("bootstrap_ci",       "python scripts/bootstrap_ci.py",                                  False),
-    ("statistical_eval",   "python scripts/statistical_eval.py",                              False),
-    ("make_cd_diagram",    "python scripts/make_cd_diagram.py",                               False),
-    ("make_figures",       "python scripts/make_figures.py",                                  False),
+    ("eval:react", "python scripts/evaluate.py --agent react --split all", False),
+    ("eval:native_fc", "python scripts/evaluate.py --agent native_fc --split all", False),
+    ("eval:reflexion", "python scripts/evaluate.py --agent reflexion --split all", False),
+    ("eval:plan_execute", "python scripts/evaluate.py --agent plan_execute --split all", False),
+    ("eval:chain_aware", "python scripts/evaluate.py --agent chain_aware --split all", False),
+    ("bootstrap_ci", "python scripts/bootstrap_ci.py", False),
+    ("statistical_eval", "python scripts/statistical_eval.py", False),
+    ("make_cd_diagram", "python scripts/make_cd_diagram.py", False),
+    ("make_figures", "python scripts/make_figures.py", False),
     # DeepSeek aggregation — assumes per-split DeepSeek runs already
     # completed and results/deepseek_*_summary.json exists. To run the LLM
     # evaluations themselves, use scripts/evaluate_llm.py directly.
-    ("aggregate:deepseek_react", "python scripts/aggregate_llm.py --agent deepseek_react",   True),
-    ("aggregate:deepseek_fc",    "python scripts/aggregate_llm.py --agent deepseek_fc",      True),
-    ("regen_figures_with_llm",   "python scripts/make_figures.py",                            True),
+    ("aggregate:deepseek_react", "python scripts/aggregate_llm.py --agent deepseek_react", True),
+    ("aggregate:deepseek_fc", "python scripts/aggregate_llm.py --agent deepseek_fc", True),
+    ("regen_figures_with_llm", "python scripts/make_figures.py", True),
 ]
 
 AGENT_LIST = ["react", "native_fc", "reflexion", "plan_execute", "chain_aware"]
@@ -108,7 +108,7 @@ def main() -> None:
     total_start = time.time()
     timings: list[tuple[str, float]] = []
 
-    print(f"AgentCompose full reproduction pipeline")
+    print("AgentCompose full reproduction pipeline")
     print(f"  Project root: {PROJECT_ROOT}")
     print(f"  Steps:        {len(steps)}")
     print(f"  Skip LLM:     {args.skip_llm}")
@@ -123,7 +123,7 @@ def main() -> None:
 
     total = time.time() - total_start
     print(f"\n{'=' * 70}")
-    print(f"✓ ALL STEPS COMPLETE in {total:.1f}s ({total/60:.1f} min)")
+    print(f"✓ ALL STEPS COMPLETE in {total:.1f}s ({total / 60:.1f} min)")
     print(f"{'=' * 70}")
     if timings:
         print("\nStep timings:")

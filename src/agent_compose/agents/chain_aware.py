@@ -14,7 +14,6 @@ For real chain-aware fine-tuning of an LLM, see `methods/chain_aware_ft.py`.
 
 from __future__ import annotations
 
-import re
 from collections import Counter
 from typing import Any
 
@@ -42,7 +41,12 @@ class ChainAwareAgent(Agent):
         super().__init__(tool_library, max_steps)
         self.use_generic_inference = use_generic_inference
         self.use_equiv_detector = use_equiv_detector
-        self.inner = NativeFCAgent(tool_library, max_steps, use_oracle=use_oracle, use_generic_inference=use_generic_inference)
+        self.inner = NativeFCAgent(
+            tool_library,
+            max_steps,
+            use_oracle=use_oracle,
+            use_generic_inference=use_generic_inference,
+        )
         # chain_patterns: maps keyword-set -> most common tool chain
         self.chain_patterns: dict[frozenset[str], list[str]] = {}
         self.chain_counter: Counter[tuple[str, ...]] = Counter()
@@ -104,7 +108,17 @@ class ChainAwareAgent(Agent):
     def _extract_keywords(self, nl: str) -> set[str]:
         """Extract tool-relevant keywords from natural language."""
         keyword_patterns = {
-            "search_web": ["weather", "stock", "price", "search", "look up", "find", "search_web", "search_news", "search_academic"],
+            "search_web": [
+                "weather",
+                "stock",
+                "price",
+                "search",
+                "look up",
+                "find",
+                "search_web",
+                "search_news",
+                "search_academic",
+            ],
             "search_news": ["news", "headline", "search_news"],
             "search_academic": ["paper", "research", "arxiv", "search_academic"],
             "search_image": ["image", "photo", "picture"],
@@ -159,7 +173,9 @@ class ChainAwareAgent(Agent):
             best_overlap = -1
             for sig, chain in self.chain_patterns.items():
                 overlap = len(sig & keywords)
-                if overlap > best_overlap and (sig.issubset(keywords) or keywords.issubset(sig) or overlap >= 2):
+                if overlap > best_overlap and (
+                    sig.issubset(keywords) or keywords.issubset(sig) or overlap >= 2
+                ):
                     best_overlap = overlap
                     best_match = chain
             if best_match is not None:
@@ -170,9 +186,7 @@ class ChainAwareAgent(Agent):
             # EquivAware: detect variant mentioned in task NL and substitute
             # into the committed chain (only on first step).
             if len(trace.calls) == 0 and self.use_equiv_detector:
-                self._committed_chain = self._apply_equiv_substitution(
-                    task, self._committed_chain
-                )
+                self._committed_chain = self._apply_equiv_substitution(task, self._committed_chain)
             step_num = len(trace.calls)
             if step_num < len(self._committed_chain):
                 tool = self._committed_chain[step_num]
@@ -187,9 +201,7 @@ class ChainAwareAgent(Agent):
         # Fall back to inner NativeFC
         return self.inner.act(task, trace)
 
-    def _apply_equiv_substitution(
-        self, task: Task, chain: list[str]
-    ) -> list[str]:
+    def _apply_equiv_substitution(self, task: Task, chain: list[str]) -> list[str]:
         """For each tool in chain, if task NL mentions a functionally-equivalent
         variant, substitute it in. Returns a new chain list.
         """

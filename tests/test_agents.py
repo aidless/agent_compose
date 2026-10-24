@@ -42,7 +42,9 @@ def test_reflexion_creates_reflection(tool_lib: ToolLibrary, simulator: ToolSimu
     # Simulate a failed call
     trace.calls.append(ToolCall(tool_name="bad_tool", arguments={}, call_id="c1"))
     trace.results.append(
-        ToolResult(call_id="c1", tool_name="bad_tool", success=False, error="Unknown tool: bad_tool")
+        ToolResult(
+            call_id="c1", tool_name="bad_tool", success=False, error="Unknown tool: bad_tool"
+        )
     )
     step = agent.act(task, trace)
     assert step.action is not None

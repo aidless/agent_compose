@@ -60,9 +60,7 @@ def test_send_email_records_side_effect(simulator: ToolSimulator) -> None:
 
 
 def test_unknown_tool_returns_error(simulator: ToolSimulator) -> None:
-    result = simulator.execute(
-        ToolCall(tool_name="does_not_exist", arguments={}, call_id="c5")
-    )
+    result = simulator.execute(ToolCall(tool_name="does_not_exist", arguments={}, call_id="c5"))
     assert not result.success
     assert "Unknown tool" in result.error
 
@@ -77,6 +75,9 @@ def test_failure_injection_deterministic() -> None:
     r1a = sim1.execute(ToolCall(tool_name="search_web", arguments={"query": "x"}, call_id="FIXED"))
     r1b = sim1.execute(ToolCall(tool_name="search_web", arguments={"query": "x"}, call_id="FIXED"))
     assert r1a.success == r1b.success  # Deterministic for same call_id
+    r2a = sim2.execute(ToolCall(tool_name="search_web", arguments={"query": "x"}, call_id="FIXED"))
+    r2b = sim2.execute(ToolCall(tool_name="search_web", arguments={"query": "x"}, call_id="FIXED"))
+    assert r2a.success == r2b.success  # Same holds for a different seed
 
 
 def test_read_file_returns_mock_content(simulator: ToolSimulator) -> None:

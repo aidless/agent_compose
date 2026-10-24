@@ -9,7 +9,6 @@ For real ReAct with an LLM, see `agents/react_llm.py` (TODO).
 
 from __future__ import annotations
 
-import re
 from typing import Any
 
 from agent_compose.agents.base import Agent, AgentStep
@@ -33,7 +32,13 @@ class ReActAgent(Agent):
 
     name = "ReAct-template"
 
-    def __init__(self, tool_library: ToolLibrary, max_steps: int = 8, use_oracle: bool = False, use_generic_inference: bool = False) -> None:
+    def __init__(
+        self,
+        tool_library: ToolLibrary,
+        max_steps: int = 8,
+        use_oracle: bool = False,
+        use_generic_inference: bool = False,
+    ) -> None:
         super().__init__(tool_library, max_steps)
         self.use_generic_inference = use_generic_inference
         self.use_oracle = use_oracle
@@ -68,6 +73,7 @@ class ReActAgent(Agent):
 
         if self.use_generic_inference:
             from agent_compose.agents.inference import infer_tool_generic
+
             return infer_tool_generic(self.library, task.natural_language, called)
 
         # Simple keyword matching
@@ -94,6 +100,7 @@ class ReActAgent(Agent):
         if not scores:
             if self.use_generic_inference:
                 from agent_compose.agents.inference import infer_tool_generic
+
                 return infer_tool_generic(self.library, task.natural_language, called)
             return None
         return max(scores, key=scores.get)
@@ -102,6 +109,7 @@ class ReActAgent(Agent):
         """Build arguments for a tool call from task params and prior results."""
         if self.use_generic_inference:
             from agent_compose.agents.inference import build_args_generic
+
             return build_args_generic(self.library, tool, task, trace)
         params = task.parameters
 
@@ -140,7 +148,9 @@ class ReActAgent(Agent):
         if tool == "calendar_add":
             return {
                 "title": "Event",
-                "start_time": params.get("date", params.get("meeting_time", "2026-08-01T10:00:00Z")),
+                "start_time": params.get(
+                    "date", params.get("meeting_time", "2026-08-01T10:00:00Z")
+                ),
                 "duration_minutes": 60,
             }
         return {}

@@ -11,8 +11,7 @@ wrong chain order) and emit a templated reflection.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
-from typing import Any
+from dataclasses import dataclass
 
 from agent_compose.agents.base import Agent, AgentStep
 from agent_compose.agents.react import ReActAgent
@@ -44,7 +43,12 @@ class ReflexionAgent(Agent):
         use_generic_inference: bool = False,
     ) -> None:
         super().__init__(tool_library, max_steps)
-        self.inner_agent = ReActAgent(tool_library, max_steps, use_oracle=use_oracle, use_generic_inference=use_generic_inference)
+        self.inner_agent = ReActAgent(
+            tool_library,
+            max_steps,
+            use_oracle=use_oracle,
+            use_generic_inference=use_generic_inference,
+        )
         self.max_reflections = max_reflections
         self.reflections: list[Reflection] = []
 

@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 
+from agent_compose.env.simulator import ExecutionTrace, ToolCall, ToolResult
 from agent_compose.eval.metrics import Evaluator
 from agent_compose.eval.statistical_tests import (
     cohens_d,
     friedman_test,
     wilcoxon_test,
 )
-from agent_compose.env.simulator import ExecutionTrace, ToolCall, ToolResult
 from agent_compose.generator.tasks import Task
 
 
@@ -24,7 +24,9 @@ def make_task(template_id: str = "T1_test", chain: list[str] | None = None) -> T
     )
 
 
-def make_trace(task: Task, calls: list[tuple[str, dict]], all_succeed: bool = True) -> ExecutionTrace:
+def make_trace(
+    task: Task, calls: list[tuple[str, dict]], all_succeed: bool = True
+) -> ExecutionTrace:
     trace = ExecutionTrace(task_id=task.task_id)
     for i, (tool_name, args) in enumerate(calls):
         call = ToolCall(tool_name=tool_name, arguments=args, call_id=f"c{i}")
@@ -95,7 +97,13 @@ def test_aba_argument_binding() -> None:
 
 def test_aggregate_split_metrics() -> None:
     task = make_task(chain=["search_web", "send_email"])
-    trace1 = make_trace(task, [("search_web", {"query": "x"}), ("send_email", {"to": "alice@example.com", "subject": "x", "body": "y"})])
+    trace1 = make_trace(
+        task,
+        [
+            ("search_web", {"query": "x"}),
+            ("send_email", {"to": "alice@example.com", "subject": "x", "body": "y"}),
+        ],
+    )
     trace2 = make_trace(task, [("search_web", {"query": "y"})])
     task2 = make_task(template_id="T2", chain=["search_web"])
     task2.task_id = "test_T2"

@@ -4,7 +4,6 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
-from typing import Any
 
 from agent_compose.env.simulator import ExecutionTrace, ToolCall, ToolResult
 from agent_compose.generator.tasks import Task

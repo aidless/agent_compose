@@ -109,6 +109,7 @@ def test_figures_exist() -> None:
 def test_llm_vendor_registry() -> None:
     """LLM_VENDORS exposes at least DeepSeek + OpenAI + Anthropic configs."""
     from agent_compose.agents.llm_react import LLM_VENDORS
+
     assert "deepseek" in LLM_VENDORS
     assert "openai" in LLM_VENDORS
     assert "anthropic" in LLM_VENDORS
@@ -122,6 +123,7 @@ def test_llm_vendor_registry() -> None:
 def test_llm_agent_raises_without_api_key(monkeypatch) -> None:
     """DeepSeekReactAgent must raise ValueError when no API key is set."""
     from pathlib import Path
+
     from agent_compose.agents.llm_react import DeepSeekReactAgent
     from agent_compose.tools import ToolLibrary
 

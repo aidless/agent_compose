@@ -3,13 +3,12 @@
 from __future__ import annotations
 
 import json
-import time
 from pathlib import Path
 from typing import Any
 
-from agent_compose.agents.base import Agent, AgentRunResult
+from agent_compose.agents.base import Agent
 from agent_compose.env.simulator import ExecutionTrace, ToolSimulator
-from agent_compose.eval.metrics import Evaluator, SplitMetrics, TaskMetrics, _trace_satisfies_task
+from agent_compose.eval.metrics import Evaluator, TaskMetrics, _trace_satisfies_task
 from agent_compose.generator.tasks import Task
 
 
