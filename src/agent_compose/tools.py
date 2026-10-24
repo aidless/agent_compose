@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional, Union
 
 from pydantic import BaseModel, Field
 
@@ -16,10 +16,11 @@ class Tool(BaseModel):
     domain: str
     description: str
     parameters: dict[str, Any]
-    returns: dict[str, Any] | str
+    # Pydantic evaluates these annotations at runtime, and `X | Y` raises on 3.9.
+    returns: Union[dict[str, Any], str]  # noqa: UP007
     side_effects: list[str] = Field(default_factory=list)
     failure_modes: list[str] = Field(default_factory=list)
-    example_call: dict[str, Any] | None = None
+    example_call: Optional[dict[str, Any]] = None  # noqa: UP045
     example_output: Any = None
 
 
