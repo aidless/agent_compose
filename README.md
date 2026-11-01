@@ -101,6 +101,18 @@ python scripts/evaluate_llm.py --agent claude_fc --split test_productivity --max
 
 完整数字 + 95% bootstrap CI 见 `paper/main.tex` Table 1 + `paper/supp.tex` Appendix B。
 
+## 证明什么 / 不证明什么
+
+**证明什么（本仓库可复算）**：这是**模拟器环境**下、30 工具 / 3000 合成任务的 benchmark。它证明了：在受控 JSON-API 模拟器里，4 个模板 baseline agent 在 val（i.i.d.）上被短链任务卡住（TSR ≈ 0.27），而 ChainAware 的 keyword→chain 记忆把 val 提到 1.00；EquivAware 把 substitutability 从 0.25 提到 1.00（`results/` 下的 `*_summary.json` 可重算，含 bootstrap CI）。
+
+**不证明什么（诚实性边界，来自 `CLAIM_LEDGER.md` 与 `REVIEW_CARD.md`）**：
+- **不是真实生产能力的证据**。模拟器 + 单一家族（DeepSeek-V4-Flash）的 pilot（N=100/split）不能外推到生产级多供应商场景（C05、C06 blocked/inconclusive）。
+- **"Fine-Tuning" 实为 keyword→chain 查表**，不是参数训练（REVIEW_CARD Major 2）；零新参数。
+- **组合泛化的"gap"有低基线伪影风险**：本结果中 ReAct 在 productivity 上反而高于 val（0.54 > 0.27），ChainAware 的 productivity（0.45）**低于** ReAct——"striking gap" 结论在原稿中已被重算推翻（REVIEW_CARD A 证据 6）。
+- **val 恒为 1.00 是查表捷径的伪影**（REVIEW_CARD Major 3）：4 个模板 agent val 全部恒等于 0.2675，提示任务集在 val 上区分度不足。
+- **不是生产就绪结论**（C06 blocked）：模拟器成功 ≠ 真实用户/安全/部署验证。
+- **未发表**：COLM 2026 首选，double-blind 清单仍在 `paper/double_blind_checklist.md`；投稿状态见下表。
+
 ## 🔁 Reproduction
 
 ```bash
@@ -125,7 +137,9 @@ python scripts/run_all.py --skip-llm
 | Figures (6 figures) | `make_figures.py` | ~10s |
 | **Total** | `--skip-llm` | **~4 min** |
 
-测试：34 unit tests + 5 smoke tests = **39 / 39 pass** in `<30 s`.
+测试：41 / 41 pass（`python3 -m pytest tests/ -q`，2026-11-01 实测；先跑
+`python3 scripts/generate.py --seed 42` 生成 `data/generated/val.jsonl` 再跑，
+否则 `test_smoke.py` 会因数据未生成而 skip）。
 
 ## 🛠️ Components
 
