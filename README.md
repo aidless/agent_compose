@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![CI](https://img.shields.io/badge/CI-pytest%20%2B%20ruff-blue)](.github/workflows/)
 [![Tests](https://img.shields.io/badge/tests-41%2F41_passing-brightgreen)](tests/)
-[![Tasks](https://img.shields.io/badge/tasks-3000-blue.svg)](data/generated/)
+[![Tasks](https://img.shields.io/badge/tasks-3000-blue.svg)](scripts/generate.py)
 [![Tools](https://img.shields.io/badge/tools-30-blue.svg)](tools/)
 
 ## 🎯 研究问题
