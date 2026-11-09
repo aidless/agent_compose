@@ -46,9 +46,13 @@ def main() -> None:
         print(f"  {'Split':30s} {'N':>5s} {'TSR':>8s} {'TCA':>8s} {'COC':>8s} {'ABA':>8s}")
         print("  " + "-" * 70)
         for split, m in data.items():
+            if not isinstance(m, dict) or "tsr" not in m or "n" not in m:
+                continue
+            tca = m["tca"] if "tca" in m else float("nan")
+            coc = m["coc"] if "coc" in m else float("nan")
+            aba = m["aba"] if "aba" in m else float("nan")
             print(
-                f"  {split:30s} {m['n']:>5d} {m['tsr']:>8.3f} {m['tca']:>8.3f} "
-                f"{m['coc']:>8.3f} {m['aba']:>8.3f}"
+                f"  {split:30s} {m['n']:>5d} {m['tsr']:>8.3f} {tca:>8.3f} {coc:>8.3f} {aba:>8.3f}"
             )
 
     # Compute CGG matrix

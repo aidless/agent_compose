@@ -30,6 +30,7 @@ from agent_compose.agents.llm_react import LLM_VENDORS, DeepSeekFCAgent, DeepSee
 from agent_compose.env.simulator import ToolSimulator
 from agent_compose.eval.metrics import Evaluator
 from agent_compose.eval.runner import evaluate_split, load_split, save_results
+from agent_compose.invariants import display_path
 from agent_compose.tools import ToolLibrary
 
 # Maps agent_id → (class, default_vendor)
@@ -98,7 +99,7 @@ def main() -> None:
     for split_name in splits:
         file_path = args.data_dir / f"{split_name}.jsonl"
         if not file_path.exists():
-            print(f"⚠ {file_path} not found")
+            print(f"⚠ {display_path(file_path)} not found")
             continue
 
         tasks = load_split(file_path)
@@ -137,9 +138,24 @@ def main() -> None:
         print(f"\n🎯 CGG (val - productivity): {cgg:+.3f}")
 
     if summary:
+        # Stamp what this process actually knows. Do not invent a date that
+        # would change the file on every run; callers who need a clock can
+        # record one outside the score file.
+        summary["_provenance"] = {
+            "status": "OBSERVED",
+            "kind": "live-llm",
+            "model": getattr(agent, "model", None) or "UNKNOWN",
+            "date": "UNKNOWN",
+            "seed": args.seed,
+            "note": (
+                "Written by scripts/evaluate_llm.py. date is UNKNOWN because "
+                "this script does not stamp a clock. model is the client "
+                "setting for this process, not a claim about older files."
+            ),
+        }
         summary_path = args.output_dir / f"{args.agent}_summary.json"
         summary_path.write_text(json.dumps(summary, indent=2), encoding="utf-8")
-        print(f"\n✓ Summary → {summary_path}")
+        print(f"\n✓ Summary → {display_path(summary_path)}")
 
 
 if __name__ == "__main__":

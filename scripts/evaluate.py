@@ -19,6 +19,7 @@ from agent_compose.agents.reflexion import ReflexionAgent
 from agent_compose.env.simulator import ToolSimulator
 from agent_compose.eval.metrics import Evaluator
 from agent_compose.eval.runner import evaluate_split, load_split, save_results
+from agent_compose.invariants import display_path
 from agent_compose.tools import ToolLibrary
 
 AGENT_REGISTRY = {
@@ -122,7 +123,7 @@ def main() -> None:
     for split_name in splits:
         file_path = args.data_dir / f"{split_name}.jsonl"
         if not file_path.exists():
-            print(f"⚠ Split file not found: {file_path}")
+            print(f"⚠ Split file not found: {display_path(file_path)}")
             print("  Run `python scripts/generate.py` first.")
             continue
 
@@ -147,7 +148,7 @@ def main() -> None:
         print(f"  TCA:     {split_metrics.tca:.3f}")
         print(f"  COC:     {split_metrics.coc:.3f}")
         print(f"  ABA:     {split_metrics.aba:.3f}")
-        print(f"  → saved to {output_path}")
+        print(f"  → saved to {display_path(output_path)}")
 
         results_summary[split_name] = {
             "tsr": split_metrics.tsr,
@@ -161,7 +162,7 @@ def main() -> None:
     if results_summary:
         summary_path = args.output_dir / f"{args.agent}_summary.json"
         summary_path.write_text(json.dumps(results_summary, indent=2), encoding="utf-8")
-        print(f"\n✓ Summary saved to {summary_path}")
+        print(f"\n✓ Summary saved to {display_path(summary_path)}")
 
         # Compute CGG if we have all splits
         if "val" in results_summary and "test_productivity" in results_summary:

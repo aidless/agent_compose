@@ -88,8 +88,9 @@ class ChainAwareAgent(Agent):
                 shared = set(c1) & set(c2)
                 if not shared:
                     continue
-                # Concatenate via shared tool: c1 + c2 (skip duplicate)
-                bridge = next(iter(shared))
+                # Concatenate via shared tool: c1 + c2 (skip duplicate).
+                # min() keeps the bridge stable across PYTHONHASHSEED values.
+                bridge = min(shared)
                 # Find bridge index in c2
                 if bridge in c2:
                     new_chain = c1 + c2[c2.index(bridge) + 1 :]

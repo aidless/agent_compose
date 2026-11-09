@@ -1,0 +1,28 @@
+{
+  "dataset_sha256": "bcb0902888c206b2754c6cf3d19e9e7defd1b04ff339da9d3828294fbdd3e0e4",
+  "domains": [
+    "audio_speech",
+    "communication",
+    "computation",
+    "data_database",
+    "file_io",
+    "image_vision",
+    "information_retrieval",
+    "scheduling"
+  ],
+  "n_domains": 8,
+  "n_equivalence_groups": 6,
+  "n_tasks": 3000,
+  "n_templates": 25,
+  "n_test_functions": 53,
+  "n_tools": 36,
+  "package_version": "0.1.0",
+  "seed": 42,
+  "splits": {
+    "test_productivity": 600,
+    "test_substitutability": 200,
+    "test_systematicity": 600,
+    "train": 1200,
+    "val": 400
+  }
+}

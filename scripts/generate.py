@@ -11,6 +11,7 @@ import json
 from pathlib import Path
 
 from agent_compose.generator.tasks import TaskGenerator
+from agent_compose.invariants import display_path
 
 
 def main() -> None:
@@ -58,7 +59,7 @@ def main() -> None:
     paths = gen.save_splits(splits, args.output)
 
     print("\n✓ Generation complete")
-    print(f"  Output directory: {args.output}")
+    print(f"  Output directory: {display_path(args.output)}")
     for split_name, file_path in paths.items():
         print(f"  {split_name:30s} → {file_path.name} ({file_path.stat().st_size} bytes)")
 
@@ -76,7 +77,7 @@ def main() -> None:
     # Save statistics as well
     stats_path = args.output / "statistics.json"
     stats_path.write_text(json.dumps(stats, indent=2), encoding="utf-8")
-    print(f"\n✓ Statistics saved to {stats_path}")
+    print(f"\n✓ Statistics saved to {display_path(stats_path)}")
 
 
 if __name__ == "__main__":
