@@ -1,237 +1,117 @@
 # AgentCompose
 
-[![CI](https://github.com/aidless/agent_compose/actions/workflows/lint.yml/badge.svg)](https://github.com/aidless/agent_compose/actions/workflows/lint.yml)
+STATUS: WORK-IN-PROGRESS — not A yet
 
-> **Benchmarking Compositional Generalization in LLM Tool Use**
+[![Offline tests](https://github.com/aidless/agent_compose/actions/workflows/test.yml/badge.svg)](https://github.com/aidless/agent_compose/actions/workflows/test.yml)
+[![Lint](https://github.com/aidless/agent_compose/actions/workflows/lint.yml/badge.svg)](https://github.com/aidless/agent_compose/actions/workflows/lint.yml)
 
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/python-3)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![CI](https://img.shields.io/badge/CI-pytest%20%2B%20ruff-blue)](.github/workflows/)
-[![Tests](https://img.shields.io/badge/tests-41%2F41_passing-brightgreen)](tests/)
-[![Tasks](https://img.shields.io/badge/tasks-3000-blue.svg)](scripts/generate.py)
-[![Tools](https://img.shields.io/badge/tools-30-blue.svg)](tools/)
+AgentCompose measures whether agents reuse a fixed synthetic tool library in held-out combinations: systematicity (longer chains that still contain a pair seen in training), productivity (adjacent pairs absent from training), and substitutability (one tool swapped for an author-declared equivalent).
+It does not measure real APIs, production workflows, or live model quality, and it does not claim a leaderboard, a package release, external users, or a paper acceptance.
+STATUS: WORK-IN-PROGRESS — not A yet. The gap list is below. False greens are in [FAILURE_MODES.md](FAILURE_MODES.md).
 
-## 🎯 研究问题
+Package version **0.1.0** (alpha, `Development Status :: 3 - Alpha`). The `0.2.0` string in `tools/_equivalence.json` is a file-local counter, not this package version.
 
-LLM Agent 在工具调用时，**能否泛化到训练时从未见过的新工具组合**？
+## Two paths
 
-这是 Agent 走向真实生产场景的关键瓶颈：
-- 真实场景下用户会不断**新增工具**
-- 工作流会**重新排列**已有工具
-- 功能等价的工具会有**不同的 schema**
-
-现有 benchmark（ToolBench / AgentBench / BFCL / AppWorld 等）**都没有刻意隔离"组合"维度**，因此无法回答上述问题。
-
-## 🔬 三种组合泛化能力
-
-| 维度 | 英文 | 含义 |
-|---|---|---|
-| **系统性** | Systematicity | 见过原子 A, B, C，能否组合出 A→B→C？ |
-| **生产性** | Productivity | 能否造出训练时从未共现的工具链？ |
-| **替换性** | Substitutability | 功能等价的工具 X 换成 Y，能否识别？ |
-
-## 📦 内容
-
-```
-agent_compose/
-├── tools/          # 30 个工具的 JSON schema（8 domains）
-├── templates/      # 25 个任务模板
-├── data/           # 3000 个生成任务（jsonl）
-├── env/            # JSON API simulator
-├── agents/         # 5 个 template agents + DeepSeek wrapper
-├── methods/        # ChainAware + EquivAware
-├── eval/           # 评估指标 + 统计检验
-├── results/        # 实验输出
-├── figures/        # 论文图（fig1-6）
-├── paper/          # LaTeX 论文
-└── scripts/        # generate / evaluate / analyze / run_all
-```
-
-## 🚀 Quick Start
+**Offline (no API key).** This is what [`.github/workflows/test.yml`](.github/workflows/test.yml) runs. It does not call a model.
 
 ```bash
-# 1. 安装（开发模式 + DeepSeek LLM 可选）
 pip install -e ".[dev]"
-pip install -e ".[llm]"   # 仅在跑 DeepSeek 时需要
-
-# 2. 一行命令复现所有 template-agent 实验（~15-20 min, 无 LLM）
-python scripts/run_all.py --skip-llm
-
-# 3. 跑测试
-pytest tests/ -q
-
-# 4. 单 agent 单 split 试用
-python scripts/evaluate.py --agent chain_aware --split test_productivity
+pytest -q
 ```
 
-需要 DeepSeek API 时把 key 放进 `.env`（已 .gitignore）：
+`pytest` regenerates the seed-42 task set, checks the hash in `benchmark_manifest.json`, and re-scores the five heuristic agents. Collected test count is `n_test_functions` in that manifest (the suite does not use parametrize). One local run of this suite, after dependencies are installed, finishes in seconds. `pip install` is the slow step; a fresh clone with a warm cache stays inside 15 minutes.
+
+**Live models (not CI).** `scripts/evaluate_llm.py` needs `DEEPSEEK_API_KEY`, `OPENAI_API_KEY`, or `ANTHROPIC_API_KEY` in a gitignored `.env`. Nothing in GitHub Actions calls it. A new summary written by that script records the client model string and leaves the date UNKNOWN.
 
 ```bash
-DEEPSEEK_API_KEY=sk-...
-# 可选 — 跑 OpenAI / Anthropic 对照时
-OPENAI_API_KEY=sk-...
-ANTHROPIC_API_KEY=sk-ant-...
+python scripts/evaluate_llm.py --agent deepseek_react --split val --max-tasks 30
 ```
 
-跑 GPT-4o-mini 或 Claude Haiku 对照：
+`python scripts/run_all.py --skip-llm` reruns the simulator pipeline locally. It is not a CI job, and a zero exit code does not mean the new files match the committed summaries.
+
+## Observed numbers
+
+<!-- OBSERVED:START -->
+Pinned by `benchmark_manifest.json` and `tests/test_drift.py`:
+36 JSON tool schemas, 25 templates, 8 domains, 6 author-declared equivalence groups, seed 42.
+Split sizes: train 1200, val 400, test_systematicity 600, test_productivity 600, test_substitutability 200 (3000 tasks).
+Dataset SHA-256: `bcb0902888c206b2754c6cf3d19e9e7defd1b04ff339da9d3828294fbdd3e0e4`.
+The JSONL is gitignored. A fresh clone regenerates it; it is not a committed artifact.
+
+### Simulator snapshots
+
+Committed `results/{agent}_summary.json` files do not store a model, date, or seed. Provenance of those files: **UNKNOWN**. They are historical snapshots.
+`results/recompute_seed42.json` is an OBSERVED recompute dated 2026-11-09 with seed 42, failure_rate 0, equivalence-tolerant scoring on, and ChainAware's equivalence detector on. Model: none (heuristic agents in the JSON simulator).
+
+| Agent | Split | Committed TSR | Recompute TSR | N |
+|---|---|---:|---:|---:|
+| react | val | 0.2675 | 0.2675 | 400 |
+| react | test_systematicity | 0.428333333333 | 0.428333333333 | 600 |
+| react | test_productivity | 0.541666666667 | 0.533333333333 | 600 |
+| react | test_substitutability | 0.25 | 0.25 | 200 |
+| native_fc | val | 0.2675 | 0.2675 | 400 |
+| native_fc | test_systematicity | 0.145 | 0.145 | 600 |
+| native_fc | test_productivity | 0.2 | 0.191666666667 | 600 |
+| native_fc | test_substitutability | 0.25 | 0.25 | 200 |
+| reflexion | val | 0.2675 | 0.2675 | 400 |
+| reflexion | test_systematicity | 0.428333333333 | 0.428333333333 | 600 |
+| reflexion | test_productivity | 0.541666666667 | 0.533333333333 | 600 |
+| reflexion | test_substitutability | 0.25 | 0.25 | 200 |
+| plan_execute | val | 0.2675 | 0.2675 | 400 |
+| plan_execute | test_systematicity | 0.145 | 0.145 | 600 |
+| plan_execute | test_productivity | 0.106666666667 | 0.0983333333333 | 600 |
+| plan_execute | test_substitutability | 0.25 | 0.25 | 200 |
+| chain_aware | val | 1 | 1 | 400 |
+| chain_aware | test_systematicity | 0.438333333333 | 0.438333333333 | 600 |
+| chain_aware | test_productivity | 0.451666666667 | 0.443333333333 | 600 |
+| chain_aware | test_substitutability | 1 | 1 | 200 |
+
+The recompute differs from the committed summaries in 13 metric cells (TSR, TCA, COC, ABA, or N). The full list is `mismatches_vs_committed_summaries` in `results/recompute_seed42.json`. Do not collapse the two columns into one leaderboard.
+
+### Live LLM fragments
+
+OBSERVED means of `task_metrics` in the committed per-split files. **model: UNKNOWN. date: UNKNOWN. seed: UNKNOWN.**
+`deepseek_react_summary.json` contains only `val`. `deepseek_fc_summary.json` contains only `test_substitutability`. Those summary files are not a four-split result.
+
+| File agent field | Split | N | TSR | TCA | COC | ABA |
+|---|---|---:|---:|---:|---:|---:|
+| DeepSeek-ReAct | val | 200 | 0.125 | 0.475 | 0.12 | 0.469305555556 |
+| DeepSeek-ReAct | test_systematicity | 200 | 0.055 | 0.385083333333 | 0.055 | 0.426770833333 |
+| DeepSeek-ReAct | test_productivity | 200 | 0.01 | 0.32125 | 0 | 0.308120039683 |
+| DeepSeek-ReAct | test_substitutability | 200 | 0.125 | 0.2525 | 0 | 0.471666666667 |
+| DeepSeek-FC | val | 200 | 0.155 | 0.4675 | 0.155 | 0.47375 |
+| DeepSeek-FC | test_systematicity | 200 | 0.07 | 0.410166666667 | 0.07 | 0.441111111111 |
+| DeepSeek-FC | test_productivity | 200 | 0.02 | 0.325416666667 | 0 | 0.327430555556 |
+| DeepSeek-FC | test_substitutability | 200 | 0.16 | 0.2475 | 0 | 0.471805555556 |
+
+Each live split above has N=200 stored traces, not the full generated split (val 400, systematicity 600, productivity 600, substitutability 200). Substitutability is the only live split that covers its full generated size, and only by coincidence of that size being 200.
+<!-- OBSERVED:END -->
+
+Domain membership and equivalence groups live in `tools/_equivalence.json`. The drift test checks that list against the schema files. Groups are author-declared. They are not an independent adjudication. `calendar_add` / `calendar_list` is one of those groups.
+
+Heuristic agents live under `src/agent_compose/agents/`. ChainAware stores chains from the training split and can swap in an equivalence variant. It is not a trained neural model.
+
+## What this is not yet
+
+STATUS stays WORK-IN-PROGRESS — not A yet, because:
+
+1. No committed live run records model id, date, seed, temperature, and a pre-specified analysis. Trace means above are UNKNOWN on model, date, and seed, and each file holds 200 tasks.
+2. The historical simulator summaries and the 2026-11-09 recompute disagree in 13 metric cells. The drift is pinned, not explained.
+3. Substitutability success uses author-declared groups plus equivalence-tolerant scoring. A TSR of 1 is not a human judgment that two tools match.
+4. ChainAware validation TSR of 1 is replay of training chains, not evidence of compositional generalization.
+5. `results/statistical_tests.json` contains bare NaN, and some heuristic agents tie. Those p-values are not a ranking of distinct systems.
+6. `figures/` was not regenerated after the plotting code stopped treating a missing split as a gap of 0.
+7. There is no package release, no external user report, and no paper acceptance. Drafts under `paper/` and `paper_tmlr/` are manuscripts only.
+
+## Development
 
 ```bash
-python scripts/evaluate_llm.py --agent gpt_react --split val --max-tasks 50
-python scripts/evaluate_llm.py --agent claude_fc --split test_productivity --max-tasks 30
+pytest -q
+python scripts/check_drift.py
+pre-commit run --all-files
 ```
 
-## 📊 实际结果（30-tool benchmark）
+Lint CI is [`.github/workflows/lint.yml`](.github/workflows/lint.yml) (ruff and black on `src/`, `scripts/`, `tests/`). It does not run the benchmark.
 
-5 template agents + 2 DeepSeek agents × 4 splits（val=400, sys=600, prod=600, sub=200 tasks）：
-
-| Agent | Val (i.i.d.) | Systematicity | Productivity | Substitutability |
-|---|---|---|---|---|
-| ReAct | 0.27 | 0.43 | 0.54 | 0.25 |
-| Native FC | 0.27 | 0.15 | 0.20 | 0.25 |
-| Reflexion | 0.27 | 0.43 | 0.54 | 0.25 |
-| Plan-Execute | 0.27 | 0.15 | 0.11 | 0.25 |
-| **ChainAware (Ours)** | **1.00** | 0.44 | 0.45 | 0.25 |
-| **ChainAware + EquivAware (Ours)** | **1.00** | 0.44 | 0.45 | **1.00** |
-| DeepSeek-ReAct (N=100) | 0.13 | 0.06 | 0.04 | 0.14 |
-| DeepSeek-FC (N=100) | 0.10 | 0.08 | 0.07 | TBD |
-
-**Key findings**:
-- 4 个 baseline template agents 卡在 val TSR ≈ 0.27（短 2-tool chain 不满足 3/4-tool val）
-- ChainAware 通过 keyword→chain memory 完全解决 val (1.00)
-- EquivAware 把 substitutability 从 0.25 提到 1.00（d = -2.44）
-- DeepSeek 即使 N=100 仍卡在 productivity/sub ≈ 0，证明 gap 不是模板 artifact
-
-完整数字 + 95% bootstrap CI 见 `paper/main.tex` Table 1 + `paper/supp.tex` Appendix B。
-
-## 🔁 Reproduction
-
-```bash
-# 端到端复现（不含 LLM）
-python scripts/run_all.py --skip-llm
-
-# 期望产出：
-#   data/generated/{train,val,test_*}.jsonl   (3000 tasks)
-#   results/{agent}_summary.json              (5 agents)
-#   results/bootstrap_ci.json                 (1000-iter CI)
-#   results/statistical_tests.json            (Friedman + Wilcoxon)
-#   figures/fig{1..6}_*.{pdf,png}             (12 files)
-```
-
-| 步骤 | 脚本 | 耗时（CPU 1 core） |
-|---|---|---|
-| Generate 3000 tasks | `generate.py --seed 42` | ~3s |
-| Evaluate 5 agents × 4 splits | `evaluate.py --agent X --split all` × 5 | ~3 min |
-| Bootstrap CI (1000 iter) | `bootstrap_ci.py` | ~10s |
-| Friedman + Wilcoxon | `statistical_eval.py` | ~5s |
-| CD diagram | `make_cd_diagram.py` | ~2s |
-| Figures (6 figures) | `make_figures.py` | ~10s |
-| **Total** | `--skip-llm` | **~4 min** |
-
-测试：34 unit tests + 5 smoke tests = **39 / 39 pass** in `<30 s`.
-
-## 🛠️ Components
-
-### Tool Library (`tools/`)
-
-30 tools across 8 domains:
-- **Information Retrieval** (5): `search_web`, `search_news`, `fetch_url`, `summarize`, `translate`
-- **Computation** (5): `calculator`, `unit_convert`, `statistics`, `round`, `sort`
-- **Communication** (4): `send_email`, `send_sms`, `send_push`, `send_slack`
-- **File I/O** (5): `read_file`, `write_file`, `append_file`, `list_files`, `delete_file`
-- **Scheduling** (4): `get_datetime`, `calendar_add`, `calendar_list`, `format_date`
-- **Data/Database** (4): `sql_query`, `csv_filter`, `db_insert`, `json_transform`
-- **Image/Vision** (4): `image_resize`, `image_crop`, `image_classify`, `ocr_extract`
-- **Audio/Speech** (3): `audio_transcribe`, `text_to_speech`, `audio_classify`
-
-### 6 Equivalence Groups (`tools/_equivalence.json`)
-
-| Group | Canonical | Variant |
-|---|---|---|
-| G1_search | `search_web` | `search_news` |
-| G2_communicate | `send_email` | `send_sms` |
-| G3_data_query | `sql_query` | `csv_filter` |
-| G4_visual_recognize | `image_classify` | `ocr_extract` |
-| G5_notify | `send_slack` | `send_push` |
-| G6_calendar_op | `calendar_add` | `calendar_list` |
-
-### Method: ChainAware + EquivAware
-
-- **ChainAware** (`agents/chain_aware.py`): Native FC + chain-pattern memory + synthetic chain augmentation.
-- **EquivAware** (overlay on ChainAware): On first step, scan task NL for variants named in equivalence groups and substitute into the committed chain. Zero new parameters.
-
-### Statistical Tests
-
-- Friedman test (5 agents × split, χ² + p)
-- Pairwise Wilcoxon signed-rank (with Bonferroni)
-- Critical Difference diagram (Demsar 2006)
-- Bootstrap 95% CI for TSR and CGG (1000 iterations)
-
-## 📝 论文投稿
-
-| Venue | 截稿 | 状态 |
-|---|---|---|
-| COLM 2026 | ~2026-09 | 🎯 首选 |
-| ICLR 2027 | ~2026-10 | 🎯 备选 |
-| TMLR | 滚动 | 🎯 长线 |
-
-### COLM 2026 submission package
-
-```bash
-# Compiles main.tex + supp.tex, archives source code, bundles submission.zip.
-# Requires TeX Live (tested with TeX Live 2026).
-bash scripts/build_submission.sh
-```
-
-Output:
-
-| File | Pages | Size |
-|---|---|---|
-| `paper/main.pdf` | 15 | ~290 KB |
-| `paper/supp.pdf` | 6 | ~145 KB |
-| `paper/submission.zip` | (bundle) | ~484 KB |
-
-Reviewer metadata + double-blind checklist live in:
-
-- `paper/double_blind_checklist.md` (anonymization audit)
-- `paper/openreview_metadata.md` (submission form values)
-
-## 📜 引用
-
-TBD（论文发表后补）
-
-## 🧪 Development
-
-### 跑测试
-
-```bash
-pytest                    # 全部 41 个测试
-pytest tests/test_smoke.py # 仅 smoke test
-```
-
-### Pre-commit（推荐）
-
-```bash
-pip install pre-commit
-pre-commit install        # 装 hook（之后 git commit 自动跑）
-pre-commit run --all-files  # 手动跑全部
-```
-
-包含的 hooks：
-- **ruff** (lint + format) — `src/`、`scripts/`、`tests/`
-- **black** — 兜底格式化
-- **pre-commit-hooks** — 尾空格 / EOF / YAML/TOML / 大文件检测
-
-### CI（GitHub Actions）
-
-`.github/workflows/` 提供两条 workflow：
-
-| Workflow | 触发 | 内容 |
-|---|---|---|
-| `test.yml` | push / PR 到 `main` | Python 3.9/3.10/3.11 矩阵跑 pytest + `scripts/run_all.py --skip-llm` 烟测 |
-| `lint.yml` | push / PR 到 `main` | ruff check + ruff format --check + black --check |
-
-无需 secret；DeepSeek API key 仅本地 `.env` 用，CI 全程跳过 LLM 步骤。
-
-## 📄 License
-
-MIT
+License: MIT.

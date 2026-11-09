@@ -1,0 +1,259 @@
+{
+  "agents": {
+    "chain_aware": {
+      "test_productivity": {
+        "aba": 0.18286805555555555,
+        "coc": 0.1,
+        "n": 600,
+        "tca": 0.52,
+        "tsr": 0.44333333333333336
+      },
+      "test_substitutability": {
+        "aba": 0.28597222222222224,
+        "coc": 0.205,
+        "n": 200,
+        "tca": 0.6025,
+        "tsr": 1.0
+      },
+      "test_systematicity": {
+        "aba": 0.1907037037037037,
+        "coc": 0.335,
+        "n": 600,
+        "tca": 0.7161666666666666,
+        "tsr": 0.43833333333333335
+      },
+      "val": {
+        "aba": 0.2911111111111111,
+        "coc": 1.0,
+        "n": 400,
+        "tca": 1.0,
+        "tsr": 1.0
+      }
+    },
+    "native_fc": {
+      "test_productivity": {
+        "aba": 0.19640046296296296,
+        "coc": 0.015833333333333335,
+        "n": 600,
+        "tca": 0.4411111111111111,
+        "tsr": 0.19166666666666668
+      },
+      "test_substitutability": {
+        "aba": 0.2975,
+        "coc": 0.0,
+        "n": 200,
+        "tca": 0.315,
+        "tsr": 0.25
+      },
+      "test_systematicity": {
+        "aba": 0.19462962962962962,
+        "coc": 0.0875,
+        "n": 600,
+        "tca": 0.4590833333333333,
+        "tsr": 0.145
+      },
+      "val": {
+        "aba": 0.284375,
+        "coc": 0.19625,
+        "n": 400,
+        "tca": 0.52375,
+        "tsr": 0.2675
+      }
+    },
+    "plan_execute": {
+      "test_productivity": {
+        "aba": 0.20570601851851852,
+        "coc": 0.015833333333333335,
+        "n": 600,
+        "tca": 0.3977777777777778,
+        "tsr": 0.09833333333333333
+      },
+      "test_substitutability": {
+        "aba": 0.31666666666666665,
+        "coc": 0.0,
+        "n": 200,
+        "tca": 0.315,
+        "tsr": 0.25
+      },
+      "test_systematicity": {
+        "aba": 0.22337962962962962,
+        "coc": 0.0875,
+        "n": 600,
+        "tca": 0.4590833333333333,
+        "tsr": 0.145
+      },
+      "val": {
+        "aba": 0.3070833333333333,
+        "coc": 0.19625,
+        "n": 400,
+        "tca": 0.52375,
+        "tsr": 0.2675
+      }
+    },
+    "react": {
+      "test_productivity": {
+        "aba": 0.06180555555555556,
+        "coc": 0.315,
+        "n": 600,
+        "tca": 0.7620833333333333,
+        "tsr": 0.5333333333333333
+      },
+      "test_substitutability": {
+        "aba": 0.056749999999999995,
+        "coc": 0.0,
+        "n": 200,
+        "tca": 0.3925,
+        "tsr": 0.25
+      },
+      "test_systematicity": {
+        "aba": 0.05527777777777777,
+        "coc": 0.20583333333333334,
+        "n": 600,
+        "tca": 0.7215277777777778,
+        "tsr": 0.42833333333333334
+      },
+      "val": {
+        "aba": 0.057374999999999995,
+        "coc": 0.19625,
+        "n": 400,
+        "tca": 0.58375,
+        "tsr": 0.2675
+      }
+    },
+    "reflexion": {
+      "test_productivity": {
+        "aba": 0.06180555555555556,
+        "coc": 0.315,
+        "n": 600,
+        "tca": 0.7620833333333333,
+        "tsr": 0.5333333333333333
+      },
+      "test_substitutability": {
+        "aba": 0.056749999999999995,
+        "coc": 0.0,
+        "n": 200,
+        "tca": 0.3925,
+        "tsr": 0.25
+      },
+      "test_systematicity": {
+        "aba": 0.05527777777777777,
+        "coc": 0.20583333333333334,
+        "n": 600,
+        "tca": 0.7215277777777778,
+        "tsr": 0.42833333333333334
+      },
+      "val": {
+        "aba": 0.057374999999999995,
+        "coc": 0.19625,
+        "n": 400,
+        "tca": 0.58375,
+        "tsr": 0.2675
+      }
+    }
+  },
+  "mismatches_vs_committed_summaries": [
+    {
+      "agent": "chain_aware",
+      "committed": 0.1780254629629633,
+      "metric": "aba",
+      "recompute": 0.18286805555555555,
+      "split": "test_productivity"
+    },
+    {
+      "agent": "chain_aware",
+      "committed": 0.45166666666666666,
+      "metric": "tsr",
+      "recompute": 0.44333333333333336,
+      "split": "test_productivity"
+    },
+    {
+      "agent": "chain_aware",
+      "committed": 0.22097222222222215,
+      "metric": "aba",
+      "recompute": 0.28597222222222224,
+      "split": "test_substitutability"
+    },
+    {
+      "agent": "chain_aware",
+      "committed": 0.1552870370370374,
+      "metric": "aba",
+      "recompute": 0.1907037037037037,
+      "split": "test_systematicity"
+    },
+    {
+      "agent": "chain_aware",
+      "committed": 0.21986111111111165,
+      "metric": "aba",
+      "recompute": 0.2911111111111111,
+      "split": "val"
+    },
+    {
+      "agent": "native_fc",
+      "committed": 0.2,
+      "metric": "tsr",
+      "recompute": 0.19166666666666668,
+      "split": "test_productivity"
+    },
+    {
+      "agent": "plan_execute",
+      "committed": 0.2127893518518519,
+      "metric": "aba",
+      "recompute": 0.20570601851851852,
+      "split": "test_productivity"
+    },
+    {
+      "agent": "plan_execute",
+      "committed": 0.10666666666666667,
+      "metric": "tsr",
+      "recompute": 0.09833333333333333,
+      "split": "test_productivity"
+    },
+    {
+      "agent": "plan_execute",
+      "committed": 0.29166666666666674,
+      "metric": "aba",
+      "recompute": 0.31666666666666665,
+      "split": "test_substitutability"
+    },
+    {
+      "agent": "plan_execute",
+      "committed": 0.20805555555555552,
+      "metric": "aba",
+      "recompute": 0.22337962962962962,
+      "split": "test_systematicity"
+    },
+    {
+      "agent": "plan_execute",
+      "committed": 0.28208333333333324,
+      "metric": "aba",
+      "recompute": 0.3070833333333333,
+      "split": "val"
+    },
+    {
+      "agent": "react",
+      "committed": 0.5416666666666666,
+      "metric": "tsr",
+      "recompute": 0.5333333333333333,
+      "split": "test_productivity"
+    },
+    {
+      "agent": "reflexion",
+      "committed": 0.5416666666666666,
+      "metric": "tsr",
+      "recompute": 0.5333333333333333,
+      "split": "test_productivity"
+    }
+  ],
+  "provenance": {
+    "chain_aware_equiv_detector": true,
+    "chain_aware_trained_on": "train split from TaskGenerator seed 42",
+    "date": "2026-11-09",
+    "equiv_scoring": true,
+    "failure_rate": 0.0,
+    "kind": "simulator-heuristic-recompute",
+    "model": "none",
+    "note": "OBSERVED recompute of the heuristic agents against the current generator and scorer. Historical results/*_summary.json files do not record a date or a seed. Where the two disagree, neither number is a live model score.",
+    "seed": 42,
+    "status": "OBSERVED"
+  }
+}

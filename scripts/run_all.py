@@ -14,9 +14,10 @@ Usage:
     python scripts/run_all.py --skip-llm      # skip DeepSeek-only steps
     python scripts/run_all.py --skip-eval     # skip per-agent eval (assume already done)
 
-Each step aborts the pipeline on failure with a non-zero exit code so CI can
-catch regressions. Total wall-clock on a single CPU core is ~15-20 minutes
-(--skip-llm) or ~3 hours (with DeepSeek N=100, depending on API latency).
+Each step aborts the pipeline on failure with a non-zero exit code. This
+script is not a CI job. A zero exit code does not mean the new files match
+the committed summaries. Live model steps run only when --skip-llm is absent,
+and they still need per-split files already produced by scripts/evaluate_llm.py.
 
 DeepSeek API key is loaded from `.env` (gitignored) via `evaluate_llm.py`.
 """
@@ -29,6 +30,8 @@ import subprocess
 import sys
 import time
 from pathlib import Path
+
+from agent_compose.invariants import display_path
 
 PROJECT_ROOT = Path(__file__).parent.parent
 
@@ -62,7 +65,7 @@ def run_step(label: str, cmd: str, cwd: Path) -> float:
     print(f"\n{'=' * 70}")
     print(f"▶ STEP: {label}")
     print(f"  CMD: {cmd}")
-    print(f"  CWD: {cwd}")
+    print(f"  CWD: {display_path(cwd)}")
     print(f"{'=' * 70}")
     start = time.time()
     # Use shlex to safely split; shell=False avoids Windows cmd quoting issues.
@@ -109,7 +112,7 @@ def main() -> None:
     timings: list[tuple[str, float]] = []
 
     print("AgentCompose full reproduction pipeline")
-    print(f"  Project root: {PROJECT_ROOT}")
+    print(f"  Project root: {display_path(PROJECT_ROOT)}")
     print(f"  Steps:        {len(steps)}")
     print(f"  Skip LLM:     {args.skip_llm}")
     print(f"  Skip eval:    {args.skip_eval}")

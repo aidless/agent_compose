@@ -52,24 +52,21 @@ def test_run_all_dry_run_lists_steps() -> None:
     assert "make_figures" in proc.stdout
 
 
-@pytest.mark.skipif(
-    not (PROJECT_ROOT / "data" / "generated" / "val.jsonl").exists(),
-    reason="val split not yet generated; run `python scripts/generate.py` first",
-)
-def test_val_split_exists_and_is_valid_jsonl() -> None:
-    """The val.jsonl file should parse as one-JSON-per-line."""
-    val_path = PROJECT_ROOT / "data" / "generated" / "val.jsonl"
-    assert val_path.exists()
-    n = 0
-    for line in val_path.read_text(encoding="utf-8").splitlines():
-        if not line.strip():
-            continue
-        d = json.loads(line)  # raises on malformed JSON
-        assert "task_id" in d
-        assert "expected_chain" in d
-        assert isinstance(d["expected_chain"], list)
-        n += 1
-    assert n >= 100, f"val split should have ≥100 tasks, got {n}"
+def test_generated_jsonl_is_gitignored() -> None:
+    """The 3000-task JSONL is regenerated, not committed.
+
+    A skip when ``data/generated/`` is absent used to let a fresh clone report
+    a green suite without ever building the dataset. Regeneration is asserted
+    in ``tests/test_drift.py``.
+    """
+    gitignore = (PROJECT_ROOT / ".gitignore").read_text(encoding="utf-8")
+    assert "data/" in gitignore
+    proc = subprocess.run(
+        ["git", "check-ignore", "-q", "data/generated/val.jsonl"],
+        cwd=str(PROJECT_ROOT),
+        check=False,
+    )
+    assert proc.returncode == 0
 
 
 @pytest.mark.skipif(

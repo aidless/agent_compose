@@ -1,4 +1,8 @@
-name: Tests
+name: Offline tests
+
+# This workflow does not call a model API and does not read API keys.
+# Live runs are scripts/evaluate_llm.py. They are not a CI gate and they
+# are not evidence that the committed score files match a fresh execution.
 
 on:
   push:
@@ -8,7 +12,7 @@ on:
 
 jobs:
   test:
-    name: pytest (Python ${{ matrix.python-version }})
+    name: offline pytest (Python ${{ matrix.python-version }})
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -38,10 +42,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e ".[dev]"
 
-      - name: Run pytest
+      - name: Run offline pytest
         run: |
           python -m pytest -v --tb=short
-
-      - name: "Smoke test: end-to-end reproduce (skip LLM)"
-        run: |
-          python scripts/run_all.py --skip-llm

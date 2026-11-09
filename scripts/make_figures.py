@@ -19,6 +19,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
+from agent_compose.invariants import cgg_or_none
+
 # Color palette
 COLORS = {
     "react": "#1f77b4",
@@ -62,16 +64,13 @@ def fig1_cgg_bar(summaries: dict, output_dir: Path) -> None:
     for i, agent in enumerate(agents):
         if agent not in summaries or "val" not in summaries[agent]:
             continue
-        val_tsr = summaries[agent]["val"]["tsr"]
-        cggs = []
-        for split in splits:
-            if split in summaries[agent]:
-                cgg = val_tsr - summaries[agent][split]["tsr"]
-            else:
-                cgg = 0
-            cggs.append(cgg)
+        cggs = [cgg_or_none(summaries[agent], split) for split in splits]
+        if all(value is None for value in cggs):
+            # A missing split is an unmeasured gap, not a gap of zero.
+            continue
+        plotted = [np.nan if value is None else value for value in cggs]
         offset = (i - (n_agents - 1) / 2) * width
-        ax.bar(x + offset, cggs, width, label=agent, color=COLORS.get(agent, "gray"))
+        ax.bar(x + offset, plotted, width, label=agent, color=COLORS.get(agent, "gray"))
 
     ax.set_xlabel("Test Split", fontsize=12)
     ax.set_ylabel("Compositional Generalization Gap (TSR drop)", fontsize=12)

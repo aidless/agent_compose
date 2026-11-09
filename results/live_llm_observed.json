@@ -1,0 +1,80 @@
+{
+  "agents": {
+    "deepseek_fc": {
+      "test_productivity": {
+        "aba": 0.32743055555555556,
+        "agent_field": "DeepSeek-FC",
+        "coc": 0.0,
+        "n": 200,
+        "tca": 0.32541666666666663,
+        "tsr": 0.02
+      },
+      "test_substitutability": {
+        "aba": 0.4718055555555556,
+        "agent_field": "DeepSeek-FC",
+        "coc": 0.0,
+        "n": 200,
+        "tca": 0.2475,
+        "tsr": 0.16
+      },
+      "test_systematicity": {
+        "aba": 0.44111111111111106,
+        "agent_field": "DeepSeek-FC",
+        "coc": 0.07,
+        "n": 200,
+        "tca": 0.4101666666666667,
+        "tsr": 0.07
+      },
+      "val": {
+        "aba": 0.47375,
+        "agent_field": "DeepSeek-FC",
+        "coc": 0.155,
+        "n": 200,
+        "tca": 0.4675,
+        "tsr": 0.155
+      }
+    },
+    "deepseek_react": {
+      "test_productivity": {
+        "aba": 0.3081200396825397,
+        "agent_field": "DeepSeek-ReAct",
+        "coc": 0.0,
+        "n": 200,
+        "tca": 0.32125,
+        "tsr": 0.01
+      },
+      "test_substitutability": {
+        "aba": 0.4716666666666666,
+        "agent_field": "DeepSeek-ReAct",
+        "coc": 0.0,
+        "n": 200,
+        "tca": 0.2525,
+        "tsr": 0.125
+      },
+      "test_systematicity": {
+        "aba": 0.4267708333333334,
+        "agent_field": "DeepSeek-ReAct",
+        "coc": 0.055,
+        "n": 200,
+        "tca": 0.38508333333333333,
+        "tsr": 0.055
+      },
+      "val": {
+        "aba": 0.4693055555555556,
+        "agent_field": "DeepSeek-ReAct",
+        "coc": 0.12,
+        "n": 200,
+        "tca": 0.475,
+        "tsr": 0.125
+      }
+    }
+  },
+  "provenance": {
+    "date": "UNKNOWN",
+    "kind": "committed-task-metrics-mean",
+    "model": "UNKNOWN",
+    "note": "OBSERVED means of task_metrics in the committed per-split JSON. Those files do not record model, date, seed, temperature, or prompt hash. llm_react.py names deepseek-v4-flash as a client default; that string is not evidence about these files. The matching *_summary.json files are partial and are not this table.",
+    "seed": "UNKNOWN",
+    "status": "OBSERVED"
+  }
+}
