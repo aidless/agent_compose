@@ -1,5 +1,7 @@
 # AgentCompose
 
+[![CI](https://github.com/aidless/agent_compose/actions/workflows/lint.yml/badge.svg)](https://github.com/aidless/agent_compose/actions/workflows/lint.yml)
+
 > **Benchmarking Compositional Generalization in LLM Tool Use**
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/python-3)
