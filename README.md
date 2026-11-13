@@ -1,12 +1,14 @@
 # AgentCompose
 
+[![CI](https://github.com/aidless/agent_compose/actions/workflows/lint.yml/badge.svg)](https://github.com/aidless/agent_compose/actions/workflows/lint.yml)
+
 > **Benchmarking Compositional Generalization in LLM Tool Use**
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/python-3)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![CI](https://img.shields.io/badge/CI-pytest%20%2B%20ruff-blue)](.github/workflows/)
 [![Tests](https://img.shields.io/badge/tests-41%2F41_passing-brightgreen)](tests/)
-[![Tasks](https://img.shields.io/badge/tasks-3000-blue.svg)](data/generated/)
+[![Tasks](https://img.shields.io/badge/tasks-3000-blue.svg)](scripts/generate.py)
 [![Tools](https://img.shields.io/badge/tools-30-blue.svg)](tools/)
 
 ## 🎯 研究问题
