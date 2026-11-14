@@ -1,0 +1,129 @@
+{
+ "total": 20,
+ "passed": 20,
+ "failed": 0,
+ "selftest": false,
+ "failed_by_axis": {},
+ "results": [
+  {
+   "id": "AC-01",
+   "axis": "tools/library",
+   "ok": true,
+   "detail": "36"
+  },
+  {
+   "id": "AC-02",
+   "axis": "tools/equivalence",
+   "ok": true,
+   "detail": "6"
+  },
+  {
+   "id": "AC-03",
+   "axis": "tools/equivalence",
+   "ok": true,
+   "detail": "True"
+  },
+  {
+   "id": "AC-04",
+   "axis": "sim/arithmetic",
+   "ok": true,
+   "detail": "14.0"
+  },
+  {
+   "id": "AC-05",
+   "axis": "sim/units",
+   "ok": true,
+   "detail": "14925.3731"
+  },
+  {
+   "id": "AC-06",
+   "axis": "sim/units",
+   "ok": true,
+   "detail": "212.0"
+  },
+  {
+   "id": "AC-07",
+   "axis": "sim/files",
+   "ok": true,
+   "detail": "11"
+  },
+  {
+   "id": "AC-08",
+   "axis": "sim/messages",
+   "ok": true,
+   "detail": "email_0002"
+  },
+  {
+   "id": "AC-09",
+   "axis": "sim/failure",
+   "ok": true,
+   "detail": "True"
+  },
+  {
+   "id": "AC-10",
+   "axis": "sim/guard",
+   "ok": true,
+   "detail": "raised ValueError"
+  },
+  {
+   "id": "AC-11",
+   "axis": "metrics/tsr",
+   "ok": true,
+   "detail": "1.0"
+  },
+  {
+   "id": "AC-12",
+   "axis": "metrics/tsr",
+   "ok": true,
+   "detail": "0.0"
+  },
+  {
+   "id": "AC-13",
+   "axis": "metrics/tca",
+   "ok": true,
+   "detail": "0.5"
+  },
+  {
+   "id": "AC-14",
+   "axis": "metrics/coc",
+   "ok": true,
+   "detail": "0.5"
+  },
+  {
+   "id": "AC-15",
+   "axis": "metrics/aba",
+   "ok": true,
+   "detail": "0.75"
+  },
+  {
+   "id": "AC-16",
+   "axis": "stats/cohen",
+   "ok": true,
+   "detail": "-1.224744871391589"
+  },
+  {
+   "id": "AC-17",
+   "axis": "stats/wilcoxon",
+   "ok": true,
+   "detail": "raised ValueError"
+  },
+  {
+   "id": "AC-18",
+   "axis": "stats/friedman",
+   "ok": true,
+   "detail": "9.0"
+  },
+  {
+   "id": "AC-19",
+   "axis": "data/split",
+   "ok": true,
+   "detail": "600"
+  },
+  {
+   "id": "AC-20",
+   "axis": "data/stats",
+   "ok": true,
+   "detail": "1200"
+  }
+ ]
+}

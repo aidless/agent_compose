@@ -8,3 +8,4 @@
 
 eval:
 	PYTHONPATH=src python3 -m pytest tests
+	python3 eval/run_cases.py

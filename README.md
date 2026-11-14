@@ -249,3 +249,40 @@ pre-commit run --all-files  # 手动跑全部
 ## 📄 License
 
 MIT
+## 验收标准与复算
+
+本仓判为合格的条件是 `python3 eval/run_cases.py` 通过率必须为 100%（20/20），且 `make eval` 退出码必须为 0；任何一条失败即判为不合格。
+
+题库在 `eval/cases.jsonl`，20 条七键（`id/axis/question/expected/mode/verify/source`），其中 18 条 `expr`/`raises` 真调本仓 API（`ToolLibrary`、`ToolSimulator`、`Evaluator`、`load_split`、统计检验），期望值由实现现算而非抄文档。
+
+| axis | 条数 | 覆盖的判据点 |
+|---|---|---|
+| `tools/library` | 1 | `ToolLibrary` 实际载入的工具数（排除 `_` 前缀元数据） |
+| `tools/equivalence` | 2 | `_equivalence.json` 组数 + `is_equivalent` 判定 |
+| `sim/arithmetic` | 1 | calculator 表达式优先级 |
+| `sim/units` | 2 | 货币换算与温度换算 |
+| `sim/files` | 1 | write/append 后 state 内容 |
+| `sim/messages` | 1 | 消息 id 递增 |
+| `sim/failure` | 1 | 注入失败标记 |
+| `sim/guard` | 1 | 非法 `failure_rate` 抛 `ValueError` |
+| `metrics/tsr` | 2 | 完整链 1.0 / 缺工具 0.0 |
+| `metrics/tca` | 1 | 部分命中 0.5 |
+| `metrics/coc` | 1 | 顺序颠倒 0.5 |
+| `metrics/aba` | 1 | 参数绑定均值 0.75 |
+| `stats/cohen` | 1 | Cohen's d 数值 |
+| `stats/wilcoxon` | 1 | 不等长配对抛 `ValueError` |
+| `stats/friedman` | 1 | Friedman 统计量 |
+| `data/split` | 1 | `test_productivity.jsonl` 载入条数 |
+| `data/stats` | 1 | `statistics.json` 记录的 train 任务数 |
+
+复算三条：
+
+```bash
+python3 eval/run_cases.py            # 20/20 才算合格
+python3 eval/run_cases.py --selftest # 必须 19/20（证明题库会红）
+python3 eval/run_cases.py --save     # 落 eval/run-report.json 供复算
+```
+
+`make eval` 会先跑既有 41 个 pytest 单测，再跑这 20 条验收题；两段任一失败即返回非 0。
+
+失败归因按 `axis` 汇总，例如 `metrics/tsr: 1 条 —— AC-12` 说明缺工具的那条 TSR 断言变红，应先查 `src/agent_compose/eval/metrics.py:19` 的 `_trace_satisfies_task`，而不是改题库期望值。
